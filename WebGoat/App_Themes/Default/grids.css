@@ -1,0 +1,115 @@
+﻿/*GRID STYLES*/
+.GridView
+{
+    color: #484848;
+    border: 1px solid #D1E0EF;
+    font-size: 12px;
+}
+.GridView td, .GridView tr, .GridView th
+{
+    padding: 4px;
+    width: 200px;
+}
+.HeaderStyle
+{
+    background-color: #005f9c;
+    color: white;
+    font-weight: bold;
+}
+.RowStyle
+{
+    background-color: #DFEFFF;
+    vertical-align: top;
+}
+.AlternatingRowStyle
+{
+    background-color: #fff;
+}
+.SelectedRowStyle
+{
+    background-color: #a7cbec;
+}
+.PagerStyle
+{
+}
+
+.PagerStyle table
+{
+    margin:10px;
+}
+
+.PagerStyle td, .PagerStyle tr, .PagerStyle th
+{
+    width:auto !important;
+    padding:0;
+}
+
+.PagerStyle span, .PagerStyle a
+{
+   border: 1px solid #dfefff;
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 4px;
+    padding: 4px 8px;
+    text-decoration:none;
+}
+.PagerStyle span
+{
+     background-color: #dfefff;
+     }
+.PagerStyle a
+{
+    
+     color:#005F9C;}
+.PagerStyle a:hover{background-color: #dfefff;}
+
+.FooterStyle
+{
+    background-color: #92b2ce;
+}
+.HeaderStyle a
+{
+    color: White;
+    text-decoration: none;
+    background: url(./images/listing/sort-regular.png) right center no-repeat;
+    display:block;
+}
+.GridIcon
+{
+    position: relative;
+    top: 8px;
+    display:block;
+}
+.ico-edit
+{
+    background-image: url('./images/listing/ico-edit.png');
+    background-repeat: no-repeat;
+    height: 24px;
+}
+.ico-view
+{
+    background-image: url('./images/listing/ico-view.png');
+    background-repeat: no-repeat;
+    height:24px;}
+/** Grid Header Styles Ends ***/
+
+/*** Sorting styles ***/
+.sortasc-row, .sortdesc-row
+{
+    background-color: #eef9fe;
+}
+
+.sortasc-header a, .sortdesc-header a
+{
+    display: block;
+}
+.sortasc-header a
+{
+    background: url(./images/listing/asc.png) right center no-repeat;
+}
+.sortdesc-header a
+{
+    background: url(./images/listing/desc.png) right center no-repeat;
+}
+
+/*** Sorting styles ends ***/

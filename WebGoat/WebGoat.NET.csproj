@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83B04441-0F79-4424-AAD0-46E0C3CDDAA1}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OWASP.WebGoat.NET</RootNamespace>
+    <AssemblyName>DotNetGoat</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\Master-Pages\Site.Master" />
+    <Content Include="Web.sitemap" />
+    <Content Include="resources\client-scripts\menu.js" />
+    <Content Include="resources\client-scripts\jquery-1.4.2.min.js" />
+    <Content Include="App_Themes\Default\left-menu.css" />
+    <Content Include="App_Themes\Default\grids.css" />
+    <Content Include="App_Themes\Default\Forms.css" />
+    <Content Include="App_Themes\Default\buttons.css" />
+    <Content Include="App_Themes\Default\BreadCrumb.css" />
+    <Content Include="App_Themes\Default\03.layout.css" />
+    <Content Include="App_Themes\Default\02.text.css" />
+    <Content Include="App_Themes\Default\01.960_24_col.css" />
+    <Content Include="App_Themes\Default\00.reset.css" />
+    <Content Include="App_Themes\Default\WebGoat.skin" />
+    <Content Include="App_Themes\Default\images\listing\asc.png" />
+    <Content Include="App_Themes\Default\images\listing\desc.png" />
+    <Content Include="App_Themes\Default\images\listing\ico-edit.png" />
+    <Content Include="App_Themes\Default\images\listing\ico-view.png" />
+    <Content Include="App_Themes\Default\images\listing\sort-regular.png" />
+    <Content Include="App_Themes\Default\images\extras\ico-delete.png" />
+    <Content Include="App_Themes\Default\images\extras\loader-modal.gif" />
+    <Content Include="App_Themes\Default\images\IconHome.gif" />
+    <Content Include="App_Themes\Default\images\blank.gif" />
+    <Content Include="App_Themes\Default\images\calendar.png" />
+    <Content Include="App_Themes\Default\images\Chevron.gif" />
+    <Content Include="App_Themes\Default\images\ChevronOverlay.png" />
+    <Content Include="App_Themes\Default\images\eisk-5-logo-x2.png" />
+    <Content Include="App_Themes\Default\images\eisk-header-grad.png" />
+    <Content Include="App_Themes\Default\images\eisk-logo.png" />
+    <Content Include="Content\About.aspx" />
+    <Content Include="Content\BasicAuth.aspx" />
+    <Content Include="Content\Challenge1.aspx" />
+    <Content Include="Content\Challenge2.aspx" />
+    <Content Include="Content\Challenge3.aspx" />
+    <Content Include="Content\ChangePwd.aspx" />
+    <Content Include="Content\ClientSideStorage.aspx" />
+    <Content Include="Content\CommandInjection.aspx" />
+    <Content Include="Content\CSRFDemo.aspx" />
+    <Content Include="Content\DomXSS.aspx" />
+    <Content Include="Content\EmbeddedError.aspx" />
+    <Content Include="Content\EncryptVSEncode.aspx" />
+    <Content Include="Content\Error.aspx" />
+    <Content Include="Content\ExploitDebug.aspx" />
+    <Content Include="Content\FlashScripting.aspx" />
+    <Content Include="Content\ForcedBrowsing.aspx" />
+    <Content Include="Content\FormBasedAuth.aspx" />
+    <Content Include="Content\Global.asax" />
+    <Content Include="Content\HiddenField.aspx" />
+    <Content Include="Content\InjectionExercise.aspx" />
+    <Content Include="Content\jQueryInjection.aspx" />
+    <Content Include="Content\XSSExercise.aspx" />
+    <Content Include="Content\WSDL.aspx" />
+    <Content Include="Content\WSAttacks.aspx" />
+    <Content Include="Content\JSONInjection.aspx" />
+    <Content Include="Content\LogInjection.aspx" />
+    <Content Include="Content\LogoutIssues.aspx" />
+    <Content Include="Content\proxytest.aspx" />
+    <Content Include="Content\Worm.aspx" />
+    <Content Include="Content\Viewstate.aspx" />
+    <Content Include="Content\StoredXSS.aspx" />
+    <Content Include="Content\SQLInjectionDiscovery.aspx" />
+    <Content Include="Content\SQLInjection.aspx" />
+    <Content Include="Content\SessionExercise.aspx" />
+    <Content Include="Content\SessionFixation.aspx" />
+    <Content Include="Content\SamplePage.aspx" />
+    <Content Include="Content\ReflectedXSS.aspx" />
+    <Content Include="Content\ParamTampering.aspx" />
+    <Content Include="Content\ResponseSplitting.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="App_Themes\Default\images\logo.png" />
+    <Content Include="App_Themes\Default\images\logo2.png" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Content\PathManipulation.aspx" />
+    <Content Include="Content\PwdComplexity.aspx" />
+    <Content Include="resources\client-scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="resources\jquery-ui\jquery-ui-1.8.16.custom.css" />
+    <Content Include="resources\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="resources\jquery-ui\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="resources\jquery-ui\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="resources\jquery-ui\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="resources\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="resources\jquery-ui\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Web.config" />
+    <Content Include="Content\RebuildDatabase.aspx" />
+    <Content Include="AddNewUser.aspx" />
+    <Content Include="resources\images\infrared_logo.png" />
+    <Content Include="resources\client-scripts\jquery-1.6.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="resources\Master-Pages\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="resources\Master-Pages\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Content\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\BasicAuth.aspx.cs">
+      <DependentUpon>BasicAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\BasicAuth.aspx.designer.cs">
+      <DependentUpon>BasicAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge1.aspx.cs">
+      <DependentUpon>Challenge1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge1.aspx.designer.cs">
+      <DependentUpon>Challenge1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge2.aspx.cs">
+      <DependentUpon>Challenge2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge2.aspx.designer.cs">
+      <DependentUpon>Challenge2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge3.aspx.cs">
+      <DependentUpon>Challenge3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge3.aspx.designer.cs">
+      <DependentUpon>Challenge3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ChangePwd.aspx.cs">
+      <DependentUpon>ChangePwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ChangePwd.aspx.designer.cs">
+      <DependentUpon>ChangePwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ClientSideStorage.aspx.cs">
+      <DependentUpon>ClientSideStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ClientSideStorage.aspx.designer.cs">
+      <DependentUpon>ClientSideStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\CommandInjection.aspx.cs">
+      <DependentUpon>CommandInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\CommandInjection.aspx.designer.cs">
+      <DependentUpon>CommandInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\dbtest.aspx.cs">
+      <DependentUpon>RebuildDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\dbtest.aspx.designer.cs">
+      <DependentUpon>RebuildDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\CSRFDemo.aspx.cs">
+      <DependentUpon>CSRFDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\CSRFDemo.aspx.designer.cs">
+      <DependentUpon>CSRFDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\DomXSS.aspx.cs">
+      <DependentUpon>DomXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\DomXSS.aspx.designer.cs">
+      <DependentUpon>DomXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EmbeddedError.aspx.cs">
+      <DependentUpon>EmbeddedError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EmbeddedError.aspx.designer.cs">
+      <DependentUpon>EmbeddedError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EncryptVSEncode.aspx.cs">
+      <DependentUpon>EncryptVSEncode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EncryptVSEncode.aspx.designer.cs">
+      <DependentUpon>EncryptVSEncode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ExploitDebug.aspx.cs">
+      <DependentUpon>ExploitDebug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ExploitDebug.aspx.designer.cs">
+      <DependentUpon>ExploitDebug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FlashScripting.aspx.cs">
+      <DependentUpon>FlashScripting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FlashScripting.aspx.designer.cs">
+      <DependentUpon>FlashScripting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ForcedBrowsing.aspx.cs">
+      <DependentUpon>ForcedBrowsing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ForcedBrowsing.aspx.designer.cs">
+      <DependentUpon>ForcedBrowsing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FormBasedAuth.aspx.cs">
+      <DependentUpon>FormBasedAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FormBasedAuth.aspx.designer.cs">
+      <DependentUpon>FormBasedAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HiddenField.aspx.cs">
+      <DependentUpon>HiddenField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HiddenField.aspx.designer.cs">
+      <DependentUpon>HiddenField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\InjectionExercise.aspx.cs">
+      <DependentUpon>InjectionExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\InjectionExercise.aspx.designer.cs">
+      <DependentUpon>InjectionExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\jQueryInjection.aspx.cs">
+      <DependentUpon>jQueryInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\jQueryInjection.aspx.designer.cs">
+      <DependentUpon>jQueryInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XSSExercise.aspx.cs">
+      <DependentUpon>XSSExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XSSExercise.aspx.designer.cs">
+      <DependentUpon>XSSExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\WSDL.aspx.cs">
+      <DependentUpon>WSDL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\WSDL.aspx.designer.cs">
+      <DependentUpon>WSDL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\WSAttacks.aspx.cs">
+      <DependentUpon>WSAttacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\WSAttacks.aspx.designer.cs">
+      <DependentUpon>WSAttacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\JSONInjection.aspx.cs">
+      <DependentUpon>JSONInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\JSONInjection.aspx.designer.cs">
+      <DependentUpon>JSONInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\LogInjection.aspx.cs">
+      <DependentUpon>LogInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\LogInjection.aspx.designer.cs">
+      <DependentUpon>LogInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\LogoutIssues.aspx.cs">
+      <DependentUpon>LogoutIssues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\LogoutIssues.aspx.designer.cs">
+      <DependentUpon>LogoutIssues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\proxytest.aspx.cs">
+      <DependentUpon>proxytest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\proxytest.aspx.designer.cs">
+      <DependentUpon>proxytest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Worm.aspx.cs">
+      <DependentUpon>Worm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Worm.aspx.designer.cs">
+      <DependentUpon>Worm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Viewstate.aspx.cs">
+      <DependentUpon>Viewstate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Viewstate.aspx.designer.cs">
+      <DependentUpon>Viewstate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\StoredXSS.aspx.cs">
+      <DependentUpon>StoredXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\StoredXSS.aspx.designer.cs">
+      <DependentUpon>StoredXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SQLInjectionDiscovery.aspx.cs">
+      <DependentUpon>SQLInjectionDiscovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SQLInjectionDiscovery.aspx.designer.cs">
+      <DependentUpon>SQLInjectionDiscovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SQLInjection.aspx.cs">
+      <DependentUpon>SQLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SQLInjection.aspx.designer.cs">
+      <DependentUpon>SQLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SessionExercise.aspx.cs">
+      <DependentUpon>SessionExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SessionExercise.aspx.designer.cs">
+      <DependentUpon>SessionExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SessionFixation.aspx.cs">
+      <DependentUpon>SessionFixation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SessionFixation.aspx.designer.cs">
+      <DependentUpon>SessionFixation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SamplePage.aspx.cs">
+      <DependentUpon>SamplePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SamplePage.aspx.designer.cs">
+      <DependentUpon>SamplePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReflectedXSS.aspx.cs">
+      <DependentUpon>ReflectedXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReflectedXSS.aspx.designer.cs">
+      <DependentUpon>ReflectedXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ParamTampering.aspx.cs">
+      <DependentUpon>ParamTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ParamTampering.aspx.designer.cs">
+      <DependentUpon>ParamTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ResponseSplitting.aspx.cs">
+      <DependentUpon>ResponseSplitting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ResponseSplitting.aspx.designer.cs">
+      <DependentUpon>ResponseSplitting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PathManipulation.aspx.cs">
+      <DependentUpon>PathManipulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PathManipulation.aspx.designer.cs">
+      <DependentUpon>PathManipulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PwdComplexity.aspx.cs">
+      <DependentUpon>PwdComplexity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\IOHelper.cs" />
+    <Compile Include="Code\DatabaseUtilities.cs" />
+    <Compile Include="AddNewUser.aspx.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewUser.aspx.designer.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\SQLiteMembershipProvider.cs" />
+    <Compile Include="Code\SQLiteProfileProvider.cs" />
+    <Compile Include="Code\SQLiteRoleProvider.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="resources\" />
+    <Folder Include="resources\Master-Pages\" />
+    <Folder Include="resources\client-scripts\" />
+    <Folder Include="App_Themes\" />
+    <Folder Include="App_Themes\Default\" />
+    <Folder Include="App_Themes\Default\images\" />
+    <Folder Include="App_Themes\Default\images\extras\" />
+    <Folder Include="App_Themes\Default\images\listing\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="..\" />
+    <Folder Include="Content\" />
+    <Folder Include="downloads\" />
+    <Folder Include="Code\" />
+    <Folder Include="Code\" />
+    <Folder Include="resources\jquery-ui\images\" />
+    <Folder Include="resources\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\goatdb.sqlite" />
+    <None Include="App_Data\tables.sql" />
+    <None Include="App_Data\tabledata.sql" />
+    <None Include="App_Data\data.sql" />
+    <None Include="App_Data\app_data.sqlite" />
+    <None Include="downloads\authentication.pdf" />
+    <None Include="downloads\csrf.pdf" />
+    <None Include="downloads\transport_layer.pdf" />
+    <None Include="downloads\architecture.pdf" />
+    <None Include="App_Data\Provider.sqlite" />
+  </ItemGroup>
+</Project>
