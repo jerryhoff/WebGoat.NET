@@ -18,5 +18,9 @@ namespace OWASP.WebGoat.NET {
 		protected System.Web.UI.WebControls.Content Content3;
 		
 		protected System.Web.UI.WebControls.Content Content2;
+		
+		protected System.Web.UI.WebControls.Label lblOutput;
+		
+		protected System.Web.UI.WebControls.Button ButtonProceed;
 	}
 }

@@ -21,6 +21,8 @@ namespace OWASP.WebGoat.NET {
 		
 		protected System.Web.UI.WebControls.Button btnFind;
 		
+		protected System.Web.UI.WebControls.GridView grdEmail;
+		
 		protected System.Web.UI.WebControls.Label lblOutput;
 	}
 }

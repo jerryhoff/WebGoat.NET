@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SQLInjection.aspx.cs" Inherits="OWASP.WebGoat.NET.SQLInjection" MasterPageFile="~/resources/Master-Pages/Site.Master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SQLInjection.aspx.cs" Inherits="OWASP.WebGoat.NET.SQLInjection" MasterPageFile="~/Resources/Master-Pages/Site.Master" %>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">
@@ -24,25 +24,21 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
         <h1 class="title-regular-4 clearfix">
-			Mailing List
-		</h1>
-        Join our mailing list, and we&#39;ll send you updates on our fantastic deals!<p/><p/>
+			Employee Email</h1>
+        Are you looking to contact one of our employees?&nbsp; Use this form to find 
+        their email quickly!<br />
+        <br />
+        Enter the first few letters of their first or last name:<br />
     <p>
         <table>
             <tr>
-                <td>First Name: </td><td><asp:TextBox ID="txtFirst" runat="server" Columns="25"></asp:TextBox></td>
+                <td>Name: </td><td><asp:TextBox ID="txtName" runat="server" Columns="25"></asp:TextBox></td>
             </tr>
-            <tr>
-                <td>Last Name: </td><td><asp:TextBox ID="txtLast" runat="server" Columns="25"></asp:TextBox></td>
-            </tr>
-            <tr>
-                <td>Email: </td><td><asp:TextBox ID="txtEmail" runat="server" Columns="50"></asp:TextBox></td>
-            </tr>
-        </table>
+            </table>
     </p>
     <p>
         <asp:Button ID="btnAdd" runat="server" onclick="btnFind_Click" 
-            Text="Add Me To The List!" />
+            Text="Find Employee" />
     </p>
     <hr />
     <p>

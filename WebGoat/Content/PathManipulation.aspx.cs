@@ -12,9 +12,9 @@ namespace OWASP.WebGoat.NET
     {
         protected void Page_Load(object sender, EventArgs e)
         {	
-			if(Request.QueryString["filename"] == null)
-        	{
-				DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/downloads"));
+			//if(Request.QueryString["filename"] == null)
+        	//{
+				DirectoryInfo di = new DirectoryInfo(Server.MapPath("~/Downloads"));
 	        	int i = 0;
 	        	
 	        	foreach(FileInfo fi in di.GetFiles())
@@ -27,15 +27,22 @@ namespace OWASP.WebGoat.NET
 	            	cph.Controls.Add(HL);
 	            	cph.Controls.Add(new LiteralControl("<br/>"));
 	        	}
-        	}
-        	else
-        	{
+        	//}
+        	//else
+        	//{
         		string filename = Request.QueryString["filename"];
         		if(filename != null)
         		{
-        			ResponseFile(Request, Response, filename, MapPath("~/Downloads/" + filename), 100);
-        		}
-        	}
+                    try
+                    {
+                        ResponseFile(Request, Response, filename, MapPath("~/Downloads/" + filename), 100);
+                    }
+                    catch (Exception ex)
+                    {
+                        lblStatus.Text = "File not found: " + filename;   
+                    }
+                }
+        	//}
         }
         
         public static bool ResponseFile(HttpRequest _Request, HttpResponse _Response, string _fileName, string _fullPath, long _speed)

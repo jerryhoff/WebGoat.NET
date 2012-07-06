@@ -1,0 +1,22 @@
+	
+	From the prompt, cd into the WebGoat.NET DB directory
+
+        % cd /WebGoat.NET/DB
+
+    Start the mysql utility, giving the name (and password, if needed) of a user permission to create databases. For example, to use the default root user:
+
+        % mysql --user=root 
+
+    Create the webgoat_coins database and load the schema. (Loading the schema the schema the first time will give error messages as it attemps to empty any existing tables, just ignore these.)
+
+        mysql> create database webgoat_coins; 
+		mysql> use webgoat_coins; 
+        mysql> source create_webgoatcoins.sql; 
+
+    Load the table contents:
+
+        mysql> source load_webgoatcoins.sql; 
+
+    Exit from mysql:
+
+        mysql> quit; 

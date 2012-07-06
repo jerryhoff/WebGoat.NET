@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
+using System.Drawing;
 
 namespace OWASP.WebGoat.NET
 {
@@ -23,17 +24,17 @@ namespace OWASP.WebGoat.NET
         	//sha1
         	//encryption with password
 			
-			string s = txtString.Text;
-			//string p = txtPassword.Text;
+			string secret = txtString.Text;
+			string key = txtPassword.Text;
 			
         	Table t = new Table();
         	t.Width = new Unit("100%");
 			
-			t.Rows.Add(MakeRow("URL Encoded:", Server.UrlEncode(s)));
-			t.Rows.Add(MakeRow("Base64 Encoded:", Base64(s)));
-			t.Rows.Add(MakeRow("SHA1 Hashed:", SHA(s, WG_Hash.Sha1)));
-			t.Rows.Add(MakeRow("SHA256 Hashed:", SHA(s, WG_Hash.Sha256)));
-			
+			t.Rows.Add(MakeRow("URL Encoded:", Server.UrlEncode(secret)));
+			t.Rows.Add(MakeRow("Base64 Encoded:", Base64(secret)));
+			t.Rows.Add(MakeRow("SHA1 Hashed:", SHA(secret, WG_Hash.Sha1)));
+			t.Rows.Add(MakeRow("SHA256 Hashed:", SHA(secret, WG_Hash.Sha256)));
+			t.Rows.Add(MakeRow("Rijndael Encrypted: ", Encypt(secret, key), Color.LightGreen));
         
         	ContentPlaceHolder cph = (ContentPlaceHolder)this.Master.FindControl("BodyContentPlaceholder");
 			cph.Controls.Add(new LiteralControl("<p/>"));
@@ -54,6 +55,21 @@ namespace OWASP.WebGoat.NET
 			row.Cells.Add(t2);
 			return row;
         }
+        private TableRow MakeRow(string label, string val, Color color)
+        {
+            TableRow row = new TableRow();
+            row.BackColor = color;
+
+            TableCell t1 = new TableCell();
+            t1.Text = label;
+            row.Cells.Add(t1);
+
+            TableCell t2 = new TableCell();
+            t2.Text = val;
+            row.Cells.Add(t2);
+            return row;
+        }
+        
         
         private string Base64(string s)
     	{
@@ -65,11 +81,11 @@ namespace OWASP.WebGoat.NET
     	{
     		byte[] bytes = System.Text.ASCIIEncoding.ASCII.GetBytes(s);
 			byte[] result;
-			HashAlgorithm sha;
+            HashAlgorithm sha = new SHA1Managed();
 			switch(hash){
-				case WG_Hash.Sha1:
-					sha = new SHA1Managed();
-					break;
+				//case WG_Hash.Sha1:
+				//	sha = new SHA1Managed();
+				//	break;
 				case WG_Hash.Sha256:
 					sha = new SHA256Managed();
 					break;
@@ -77,5 +93,11 @@ namespace OWASP.WebGoat.NET
 			result = sha.ComputeHash(bytes);
 			return System.Convert.ToBase64String(result);
     	}
+
+        private string Encypt(string s, string key)
+        {
+            string result = UtilitiesHelper.EncryptStringAES(s, key);
+            return result;
+        }
     }
 }

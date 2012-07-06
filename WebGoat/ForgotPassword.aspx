@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="OWASP.WebGoat.NET.ForgotPassword" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="OWASP.WebGoat.NET.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
     <label runat="server" id="lblHeader"></label>
 </asp:Content>

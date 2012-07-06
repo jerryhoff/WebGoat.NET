@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace OWASP.WebGoat.NET
 {
@@ -16,13 +17,18 @@ namespace OWASP.WebGoat.NET
 
 		protected void btnFind_Click (object sender, EventArgs e)
 		{
-			try {
-				DatabaseUtilities du = new DatabaseUtilities ();
-				string email = du.GetEmailByUserID (txtID.Text);
-				lblOutput.Text = email;
-			} catch (Exception ex) {
-				lblOutput.Text = ex.Message;
-			}
+            try
+            {
+                DatabaseUtilities du = new DatabaseUtilities(Server);
+                string name = txtID.Text.Substring(0, 3);
+                string output = du.GetEmailByCustomerNumber(name);
+
+                lblOutput.Text = output;
+            }
+            catch (Exception ex)
+            {
+                lblOutput.Text = ex.Message;
+            }
 		}
 	}
 }

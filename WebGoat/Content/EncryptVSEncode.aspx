@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="EncryptVSEncode.aspx.cs" Inherits="OWASP.WebGoat.NET.EncryptVSEncode" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="EncryptVSEncode.aspx.cs" Inherits="OWASP.WebGoat.NET.EncryptVSEncode" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">
     This page illustrates multiple encoding algorithms - type in a string and observe the output.

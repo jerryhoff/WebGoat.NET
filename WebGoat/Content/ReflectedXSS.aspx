@@ -1,4 +1,4 @@
-<%@ Page Title="" validateRequest="false" Language="C#" MasterPageFile="~/resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="ReflectedXSS.aspx.cs" Inherits="OWASP.WebGoat.NET.ReflectedXSS" %>
+<%@ Page Title="" validateRequest="false" Language="C#" MasterPageFile="~/Resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="ReflectedXSS.aspx.cs" Inherits="OWASP.WebGoat.NET.ReflectedXSS" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
 
@@ -8,8 +8,22 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
-	<h1 class="title-regular-4 clearfix">Classifieds</h1>
+	<h1 class="title-regular-4 clearfix">Our Offices</h1>
+	Need to visit our offices?&nbsp; Click on a city below and get the details.<br />
+    <br />
+    
+    <a href="ReflectedXSS.aspx?city=San+Francisco">San Francisco</a> | 
+    <a href="ReflectedXSS.aspx?city=Boston">Boston</a> | 
+    <a href="ReflectedXSS.aspx?city=NYC">NYC</a> | 
+    <a href="ReflectedXSS.aspx?city=Paris">Paris</a> | 
+    <a href="ReflectedXSS.aspx?city=Tokyo">Tokyo</a> | 
+    <a href="ReflectedXSS.aspx?city=Sydney">Sydney</a> | 
+    <a href="ReflectedXSS.aspx?city=London">London</a>
+    
+    <br />
+    <br />
 	<asp:Label ID="lblOutput" runat="server" Text=""></asp:Label>
+	        <br />
 	        <asp:DetailsView ID="dtlView" runat="server" BorderStyle="Solid" 
             CellPadding="10" CellSpacing="10" EnableModelValidation="True" 
             ForeColor="#333333" GridLines="None" Height="50px" Width="100%">

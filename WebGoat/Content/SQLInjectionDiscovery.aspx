@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SQLInjectionDiscovery.aspx.cs" Inherits="OWASP.WebGoat.NET.SQLInjectionDiscovery" MasterPageFile="~/resources/Master-Pages/Site.Master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SQLInjectionDiscovery.aspx.cs" Inherits="OWASP.WebGoat.NET.SQLInjectionDiscovery" MasterPageFile="~/Resources/Master-Pages/Site.Master" %>
 
 
 
@@ -12,12 +12,24 @@
     <h1 class="title-regular-4 clearfix">
         Email Address Finder:
     </h1>
-        Enter the User ID:
+
+    Enter the three digit customer ID to find the customer's email address.  Only the first three characters will be recognized.
+    <br />
+    Example: 103
+
+    <p />
+    <hr />
+
+        Enter the Customer ID:
         <asp:TextBox ID="txtID" runat="server"></asp:TextBox>
         <asp:Button ID="btnFind" runat="server" onclick="btnFind_Click" 
             Text="Find Email!" />
     
-    <hr />
+    <br />
+    <br />
+    <asp:GridView ID="grdEmail" runat="server">
+    </asp:GridView>
+    <br />
     <p>
         <asp:Label ID="lblOutput" runat="server"></asp:Label>
     </p>

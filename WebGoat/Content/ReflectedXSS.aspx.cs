@@ -10,48 +10,19 @@ namespace OWASP.WebGoat.NET
 {
 	public partial class ReflectedXSS : System.Web.UI.Page
 	{
-		protected void Page_Load (object sender, EventArgs e)
-		{
-			if (Request ["classifiedID"] == null)
-				RefreshListings ();
-			else
-				DisplayMessage ();
-		}
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Request["city"] != null)
+                LoadCity(Request["city"]);
+        }
 
-		void RefreshListings ()
+		void LoadCity (String city)
 		{
-			DatabaseUtilities du = new DatabaseUtilities ();
-			DataTable dt = du.GetPostingLinks ();
-			int i = 0;
-			foreach (DataRow dr in dt.Rows) {
-					HyperLink HL = new HyperLink();
-	            	HL.ID = "HyperLink" + i++;
-	            	HL.Text = dr[1].ToString();
-	            	HL.NavigateUrl = Request.FilePath + "?classifiedID="+ dr[0];
-	            	ContentPlaceHolder cph = (ContentPlaceHolder)this.Master.FindControl("BodyContentPlaceholder");
-	            	cph.Controls.Add(HL);
-	            	cph.Controls.Add(new LiteralControl("<br/>"));
-			}
-			
-		}
-		
-		void DisplayMessage ()
-		{
-            try
-            {
-                int id = int.Parse(Request["classifiedID"]);
-                DatabaseUtilities du = new DatabaseUtilities();
-                DataTable dt = du.GetPostingByID(id);
-                dtlView.DataSource = dt;
-                dtlView.DataBind();
-                RefreshListings();
-            }
-            catch (Exception ex)
-            {
-                lblOutput.Text = "Record " + Request["classifiedID"] + " not found";
-                Console.WriteLine(ex.Message);
-            }
-     
+            DatabaseUtilities du = new DatabaseUtilities(Server);
+            DataSet ds = du.GetOffice(city);
+            lblOutput.Text = "Here are the details for our " + city + " Office";
+            dtlView.DataSource = ds.Tables[0];
+            dtlView.DataBind();
 		}
 	}
 }

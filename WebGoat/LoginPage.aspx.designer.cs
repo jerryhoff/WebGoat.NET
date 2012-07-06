@@ -15,20 +15,14 @@ namespace OWASP.WebGoat.NET {
 		
 		protected System.Web.UI.WebControls.Content Content1;
 		
-		protected System.Web.UI.HtmlControls.HtmlGenericControl lblHeader;
-		
 		protected System.Web.UI.WebControls.Content Content3;
 		
 		protected System.Web.UI.WebControls.Content Content2;
 		
 		protected System.Web.UI.WebControls.Literal labelMessage;
 		
-		protected System.Web.UI.HtmlControls.HtmlInputText txtUserName;
-		
-		protected System.Web.UI.HtmlControls.HtmlInputText txtPassword;
-		
-		protected System.Web.UI.HtmlControls.HtmlInputCheckBox checkBoxRemember;
-		
 		protected System.Web.UI.WebControls.Button buttonLogOn;
+		
+		protected System.Web.UI.WebControls.Button buttonAdminLogOn;
 	}
 }

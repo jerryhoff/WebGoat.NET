@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="OWASP.WebGoat.NET.About" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Resources/Master-Pages/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="OWASP.WebGoat.NET.About" %>
 
 
 <asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">

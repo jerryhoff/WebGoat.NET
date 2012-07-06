@@ -78,7 +78,7 @@ form.inline p
 /* Success, notice and error boxes
 -------------------------------------------------------------- */
 
-.error, .notice, .success
+.error, .notice, .success, .message, .product, .product2, .logo
 {
     padding: .8em;
     margin-bottom: 1em;
@@ -103,6 +103,40 @@ form.inline p
     color: #264409;
     border-color: #C6D880;
 }
+.message
+{
+    background: #FFFFFF;
+    color: #264409;
+    border-color: #C6D880;    
+}
+
+.product, .product2
+{
+    background: #ffffff;
+    border-color: #463E3F;
+    border: 5px solid #ddd;
+    -moz-border-radius: 15px;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+}
+
+.product2
+{
+    width:80%;
+    text-transform:uppercase;
+    border-color: #6D6968;
+    padding:30px;
+}
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
 .error a
 {
     color: #8a1f11;
@@ -112,6 +146,14 @@ form.inline p
     color: #514721;
 }
 .success a
+{
+    color: #264409;
+}
+.product a
+{
+    color: #264409;
+}
+.product2 a
 {
     color: #264409;
 }
@@ -143,4 +185,12 @@ select
 .validator
 {
     color:Red;
+}
+
+/* TINY */
+.tiny
+{
+   font-family: verdana,arial,helvetica,sans-serif;
+   font-size: x-small;
+   color: #E47911;
 }

@@ -1,4 +1,4 @@
-﻿body
+body
 {
 	min-height:100%;
     text-align: center;
@@ -51,7 +51,7 @@
 }
 .HeaderGrad
 {
-    background-image: url('./images/eisk-header-grad.png');
+    background-image: url('./images/header-grad.png');
     height: 96px;
     width: 100%;
 }
@@ -138,7 +138,6 @@
 . .round-box
 {
     -moz-border-radius: 6px;
-    border-radius: 6px;
 }
 .FooterMain
 {
@@ -181,3 +180,22 @@
     vertical-align: sub;
 }
 
+table.customerdata {
+	border-width: 2px;
+	border-spacing: 5px;
+	border-style: dotted;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: rgb(250, 240, 230);
+	margin-left:auto;
+    margin-right:auto;
+    width:75%;
+}
+
+table.customerdata td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+}

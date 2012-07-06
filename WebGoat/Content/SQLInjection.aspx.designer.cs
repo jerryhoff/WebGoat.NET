@@ -19,11 +19,7 @@ namespace OWASP.WebGoat.NET {
 		
 		protected System.Web.UI.WebControls.Content Content2;
 		
-		protected System.Web.UI.WebControls.TextBox txtFirst;
-		
-		protected System.Web.UI.WebControls.TextBox txtLast;
-		
-		protected System.Web.UI.WebControls.TextBox txtEmail;
+		protected System.Web.UI.WebControls.TextBox txtName;
 		
 		protected System.Web.UI.WebControls.Button btnAdd;
 		

@@ -11,57 +11,44 @@ namespace OWASP.WebGoat.NET
 	public partial class StoredXSS : System.Web.UI.Page
 	{
 		protected void Page_Load (object sender, EventArgs e)
-		{
-			if (Request ["id"] == null)
-				RefreshListings ();
-			else
-				DisplayMessage ();
-		}
+        {
+            lblMessage.Visible = false;
+            txtEmail.Enabled = true;
+            if (!Page.IsPostBack)
+                LoadComments();
 
-		protected void btnAdd_Click (object sender, EventArgs e)
-		{
-			
-			DatabaseUtilities du = new DatabaseUtilities ();
-			du.AddNewPosting (txtTitle.Text, txtEmail.Text, txtMessage.Text);
-			RefreshListings ();
-			//lblOutput.Text = result;
-		}
+        }
 
-		void RefreshListings ()
+        protected void btnSave_Click(object sender, EventArgs e)
 		{
-			DatabaseUtilities du = new DatabaseUtilities ();
-			DataTable posts = du.GetAllPostings ();
-			
-			string output = string.Empty;
-			foreach (DataRow dr in posts.Rows) {
-				foreach (DataColumn col in posts.Columns) {
-					output += "<b><i>" + col.ColumnName + "</i></b>: " + dr [col.ColumnName] + "<br/>";
-				}
-				output += "<p/>";
-			}
-			lblOutput.Text = output;
-		}
-
-		void DisplayMessage ()
-		{
-			/*
-            if (Request["id"] != null)
+            try
             {
-                try
-                {
-                    int id = int.Parse(Request["id"]);
-                    DatabaseUtilities du = new DatabaseUtilities();
-                    DataSet ds = du.GetPostingByID(id);
-                    dtlView.DataSource = ds;
-                    dtlView.DataBind();
-                    RefreshListings();
-                }
-                catch (Exception ex)
-                {
-                    lblOutput.Text = "Error: " + ex.Message;
-                }
+                DatabaseUtilities du = new DatabaseUtilities(Server);
+                string error_message = du.AddComment("user_cmt", txtEmail.Text, txtComment.Text);
+                txtComment.Text = string.Empty;
+                lblMessage.Visible = true;
+                LoadComments();
             }
-            */
+            catch (Exception ex)
+            {
+                lblMessage.Text = ex.Message;
+                lblMessage.Visible = true;
+            }
 		}
+
+        void LoadComments()
+        {
+            DatabaseUtilities du = new DatabaseUtilities(Server);   
+            DataSet ds = du.GetComments("user_cmt");
+            //string output = string.Empty;
+            string comments = string.Empty;
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                comments += "<strong>Email:</strong>" + row["email"] + "<span style='font-size: x-small;color: #E47911;'> (Email Address Verified!) </span><br/>";
+                comments += "<strong>Comment:</strong><br/>" + row["comment"] + "<br/><hr/>";
+
+            }
+            lblComments.Text = comments;
+        }
 	}
 }

@@ -21,14 +21,32 @@ namespace OWASP.WebGoat.NET {
 		
 		protected System.Web.UI.WebControls.Label lblMessage;
 		
-		protected System.Web.UI.WebControls.DetailsView dtlView;
+		protected System.Web.UI.WebControls.Label lblComments;
 		
-		protected System.Web.UI.WebControls.TextBox txtTitle;
+		protected System.Web.UI.WebControls.Table Table1;
+		
+		protected System.Web.UI.WebControls.TableRow TableRow1;
+		
+		protected System.Web.UI.WebControls.TableCell TableCell1;
+		
+		protected System.Web.UI.WebControls.TableCell TableCell2;
 		
 		protected System.Web.UI.WebControls.TextBox txtEmail;
 		
-		protected System.Web.UI.WebControls.TextBox txtMessage;
+		protected System.Web.UI.WebControls.TableRow TableRow2;
 		
-		protected System.Web.UI.WebControls.Button btnAdd;
+		protected System.Web.UI.WebControls.TableCell TableCell3;
+		
+		protected System.Web.UI.WebControls.TableCell TableCell4;
+		
+		protected System.Web.UI.WebControls.TextBox txtComment;
+		
+		protected System.Web.UI.WebControls.TableRow TableRow3;
+		
+		protected System.Web.UI.WebControls.TableCell TableCell5;
+		
+		protected System.Web.UI.WebControls.TableCell TableCell6;
+		
+		protected System.Web.UI.WebControls.Button btnSave;
 	}
 }
