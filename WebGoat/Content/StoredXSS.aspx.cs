@@ -25,7 +25,7 @@ namespace OWASP.WebGoat.NET
             {
                 DatabaseUtilities du = new DatabaseUtilities(Server);
                 string error_message = du.AddComment("user_cmt", txtEmail.Text, txtComment.Text);
-                txtComment.Text = string.Empty;
+                txtComment.Text = error_message;
                 lblMessage.Visible = true;
                 LoadComments();
             }

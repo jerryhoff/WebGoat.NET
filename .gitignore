@@ -1,0 +1,10 @@
+# Project Files #
+#################
+*.userprefs
+WebGoat/WebGoat.NET.pidb
+WebGoat/bin
+WebGoat/obj
+
+# Trash Files #
+###############
+.DS_Store
