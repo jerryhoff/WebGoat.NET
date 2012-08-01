@@ -796,6 +796,7 @@
     <None Include="downloads\csrf.pdf" />
     <None Include="downloads\transport_layer.pdf" />
     <None Include="downloads\architecture.pdf" />
+    <None Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

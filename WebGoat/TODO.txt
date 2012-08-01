@@ -1,1 +1,50 @@
+Unassigned:
 
++ LINQ SQLi
++ Entity SQLi
++ NHibernate SQLi
++ Hard Code Passwords  (PWD in source code)
++ XML Injection
++ Weak Auth (basic auth)
++ Cleartext passwords (commonly used config files) (in web.config)
++ Password disclosure to screen or to log
++ Session id to the screen / log
++ URL rewriting (e.g. session cookie in url. can rewrite)
++ Httponly (cookie flag)
++ Secure (cookie) flag
+  * Flag for cookie to be sent only over HTTPS
++ Session timeout (config setting)
++ Dir traversal
++ Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
++ Verb tampering (changing POST/GET etc. request to something different)
+  * Google verb tampering by author: Rshan 
++ Unsafe
++ LDAP injection (research the APIs / point to the APIs) 
++ Header injection
++ XSS
++ XPATH Injection
++ Unchecked redirects (already in there)
++ Hard coded salts, keys
++ Weak cryptographic cypher (mode & padding). 
+  * Find out the default behavior (mode & padding)
+  * Find out an example where we specify bad values
++ Insecure message digest
++ Insecure random # gen
++ Hard coded seed (For when using random funcationality)
++ Not using SSL
++ Custom crypto (args have to use a byte array and do a bitwise operation)
++ Using an insecure protocol (web client / http client) (weak ssl algo) 
++ Global error handling
++ Information disclosure
+  * Extra sensitive information that may go out (server that is running etc.)
++ Debugging enabled
++ Denial Of Service
++ Readline (denial of service)
++ Unpatched libraries 
++ Unencrypted viewstate
+
+Harry:
+
++ Command Injection
+  * Also part of automatic DB setup
++ Create adaptor for switching out DBs
