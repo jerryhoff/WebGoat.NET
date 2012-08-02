@@ -1,6 +1,6 @@
 Unassigned:
 
-+ LINQ SQLi
+
 + Entity SQLi
 + NHibernate SQLi
 + Hard Code Passwords  (PWD in source code)
@@ -48,3 +48,8 @@ Harry:
 + Command Injection
   * Also part of automatic DB setup
 + Create adaptor for switching out DBs
+
+Ray:
+
++ XSS
++ LINQ SQLi
