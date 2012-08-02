@@ -259,7 +259,7 @@ namespace OWASP.WebGoat.NET
 
         public DataSet GetComments(string productCode)
         {
-            string sql = "select * from comments where productCode = @productCode";
+            string sql = "select * from Comments where productCode = @productCode";
             MySqlDataAdapter da = new MySqlDataAdapter(sql, GetGoatDBConnection());
             da.SelectCommand.Parameters.AddWithValue("@productCode", productCode); 
             DataSet ds = new DataSet();
