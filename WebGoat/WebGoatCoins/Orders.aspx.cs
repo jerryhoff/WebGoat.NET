@@ -7,11 +7,16 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using System.Collections.Specialized;
+using OWASP.WebGoat.NET.App_Code.DB;
+using OWASP.WebGoat.NET.App_Code;
 
 namespace OWASP.WebGoat.NET.WebGoatCoins
 {
     public partial class Orders : System.Web.UI.Page
     {
+    
+        private IDbProvider du = Settings.CurrentDbProvider;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             int id;
@@ -20,7 +25,6 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
                 lblOutput.Text = "Sorry, an unspecified problem regarding your Customer ID has occurred.  Are your cookies enabled?";
             else
             {
-                DatabaseUtilities du = new DatabaseUtilities(Server);
                 ds = du.GetOrders(id);
 
                 if (!Page.IsPostBack) //generate the data grid

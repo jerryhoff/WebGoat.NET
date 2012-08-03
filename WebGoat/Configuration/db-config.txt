@@ -1,1 +1,1 @@
-SERVER=localhost;PORT=8889;DATABASE=webgoat_coins;UID=root;PWD=root
+SERVER=localhost;PORT=3306;DATABASE=webgoat_coins;UID=root;PWD=

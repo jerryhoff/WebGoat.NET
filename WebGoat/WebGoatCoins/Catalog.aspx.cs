@@ -5,15 +5,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using OWASP.WebGoat.NET.App_Code.DB;
+using OWASP.WebGoat.NET.App_Code;
 
 namespace OWASP.WebGoat.NET.WebGoatCoins
 {
     public partial class Catalog : System.Web.UI.Page
     {
+        private IDbProvider du = Settings.CurrentDbProvider;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            DatabaseUtilities du = new DatabaseUtilities(Server);
-            //DataSet ds = du.GetCatalogData();
             DataSet ds = du.GetProductsAndCategories();
 
             foreach (DataRow catRow in ds.Tables["categories"].Rows)

@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OWASP.WebGoat.NET.App_Code.DB;
+using OWASP.WebGoat.NET.App_Code;
 
 namespace OWASP.WebGoat.NET.WebGoatCoins
 {
     public partial class ChangePassword : System.Web.UI.Page
     {
+        private IDbProvider du = Settings.CurrentDbProvider;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,7 +29,6 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
                     customerNumber = Request.Cookies["customerNumber"].Value;
                 }
 
-                DatabaseUtilities du = new DatabaseUtilities(Server);
                 string output = du.UpdateCustomerPassword(int.Parse(customerNumber), txtPassword1.Text);
                 labelMessage.Text = output;
             }

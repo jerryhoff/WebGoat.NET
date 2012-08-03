@@ -7,12 +7,15 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.IO;
 using System.Configuration;
+using OWASP.WebGoat.NET.App_Code.DB;
+using OWASP.WebGoat.NET.App_Code;
 
 namespace OWASP.WebGoat.NET
 {
 	public partial class RebuildDatabase : System.Web.UI.Page
-	{
-		   
+	{	   
+        private IDbProvider du = Settings.CurrentDbProvider;
+        
 		protected void Page_Load (object sender, EventArgs e)
 		{
             if(!Page.IsPostBack)
@@ -36,12 +39,7 @@ namespace OWASP.WebGoat.NET
 
 		protected void btnTest_Click (object sender, EventArgs e)
 		{			
-
-			DatabaseUtilities du = new DatabaseUtilities (Server);
-			//if (du.RecreateGoatDB ())
-			//	lblOutput.Text = "DB Recreated";
-            lblOutput.Text = du.Test();
-                
+            lblOutput.Text = du.TestConnection() ? "Works!" : "Problem";
 		}
 
         protected void btnTestConfiguration_Click(object sender, EventArgs e)
@@ -57,9 +55,7 @@ namespace OWASP.WebGoat.NET
                 lblOutput.Text = result;
             else
             {
-                DatabaseUtilities du = new DatabaseUtilities(Server);
-                string msg = du.TestDatabaseConnection();
-                if (msg == null)
+                if (du.TestConnection())
                 {
                     labelSuccess.Text = "Connection to Database Successful!";
                     PanelSuccess.Visible = true;
@@ -67,7 +63,7 @@ namespace OWASP.WebGoat.NET
                 }
                 else
                 {
-                    labelError.Text = msg;
+                    labelError.Text = "Error testing database. Please see logs.";
                     PanelError.Visible = true;
                     Session["DBConfigured"] = null;
                 }

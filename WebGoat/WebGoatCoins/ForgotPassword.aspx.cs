@@ -4,11 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using OWASP.WebGoat.NET.App_Code;
+using OWASP.WebGoat.NET.App_Code.DB;
 
 namespace OWASP.WebGoat.NET.WebGoatCoins
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
+    
+        private IDbProvider du = Settings.CurrentDbProvider;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -20,20 +25,28 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
 
         protected void ButtonCheckEmail_Click(object sender, EventArgs e)
         {
-            DatabaseUtilities du = new DatabaseUtilities(Server);
-            string result = du.GetSecurityQuestion(Response, txtEmail.Text);
-            if (result == null)
+            string[] result = du.GetSecurityQuestionAndAnswer(txtEmail.Text);
+            
+            if (string.IsNullOrEmpty(result[0]))
             {
                 labelQuestion.Text = "That email address was not found in our database!";
                 PanelForgotPasswordStep2.Visible = false;
                 PanelForgotPasswordStep3.Visible = false;
-            }
-            else
-            {
-                labelQuestion.Text = "Here is the question we have on file for you: <strong>" + result + "</strong>";
-                PanelForgotPasswordStep2.Visible = true;
-                PanelForgotPasswordStep3.Visible = false;
-            }
+                
+                return;
+            }    
+            labelQuestion.Text = "Here is the question we have on file for you: <strong>" + result[0] + "</strong>";
+            PanelForgotPasswordStep2.Visible = true;
+            PanelForgotPasswordStep3.Visible = false;
+            
+                   
+            HttpCookie cookie = new HttpCookie("encr_sec_qu_ans");
+
+            //encode twice for more security!
+
+            cookie.Value = Encoder.Encode(Encoder.Encode(result[1]));
+
+            Response.Cookies.Add(cookie);
         }
 
         protected void ButtonRecoverPassword_Click(object sender, EventArgs e)
@@ -44,7 +57,7 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
                 string encrypted_password = Request.Cookies["encr_sec_qu_ans"].Value.ToString();
                 
                 //decode it (twice for extra security!)
-                string security_answer = UtilitiesHelper.Decode(UtilitiesHelper.Decode(encrypted_password));
+                string security_answer = Encoder.Decode(Encoder.Decode(encrypted_password));
                 
                 if (security_answer.Trim().ToLower().Equals(txtAnswer.Text.Trim().ToLower()))
                 {
@@ -67,7 +80,6 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
 
         string getPassword(string email)
         {
-            DatabaseUtilities du = new DatabaseUtilities(Server);
             string password = du.GetPasswordByEmail(email);
             return password;
         }

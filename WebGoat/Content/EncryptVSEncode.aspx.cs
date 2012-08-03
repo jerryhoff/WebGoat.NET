@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Drawing;
+using OWASP.WebGoat.NET.App_Code;
 
 namespace OWASP.WebGoat.NET
 {
@@ -96,7 +97,7 @@ namespace OWASP.WebGoat.NET
 
         private string Encypt(string s, string key)
         {
-            string result = UtilitiesHelper.EncryptStringAES(s, key);
+            string result = Encoder.EncryptStringAES(s, key);
             return result;
         }
     }

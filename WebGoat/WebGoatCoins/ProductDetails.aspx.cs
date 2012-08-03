@@ -5,12 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using OWASP.WebGoat.NET.App_Code.DB;
+using OWASP.WebGoat.NET.App_Code;
 
 namespace OWASP.WebGoat.NET.WebGoatCoins
 {
     public partial class ProductDetails : System.Web.UI.Page
     {
 
+        private IDbProvider du = Settings.CurrentDbProvider;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMessage.Visible = false;
@@ -22,7 +26,6 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
             if (!Page.IsPostBack) 
             {
                 
-                DatabaseUtilities du = new DatabaseUtilities(Server);
                 DataSet ds = du.GetCatalogData();
                 ddlItems.DataSource = ds.Tables[0];
                 ddlItems.DataTextField = "productName";
@@ -35,7 +38,6 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
         {
             try
             {
-                DatabaseUtilities du = new DatabaseUtilities(Server);
                 string error_message = du.AddComment(hiddenFieldProductID.Value, txtEmail.Text, txtComment.Text);
                 txtComment.Text = error_message;
                 lblMessage.Visible = true;
@@ -50,7 +52,6 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
 
         void LoadComments()
         {
-            DatabaseUtilities du = new DatabaseUtilities(Server);
             string id = Request["productNumber"];
             if (id == null) id = "S18_2795"; //this month's special    
             DataSet ds = du.GetProductDetails(id);
