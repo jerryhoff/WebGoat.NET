@@ -4,6 +4,7 @@
 WebGoat/WebGoat.NET.pidb
 WebGoat/bin
 WebGoat/obj
+WebGoat/App_Data/*
 
 # Trash Files #
 ###############
