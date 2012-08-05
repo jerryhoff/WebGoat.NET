@@ -6,14 +6,16 @@ namespace OWASP.WebGoat.NET.App_Code.DB
     public interface IDbProvider
     {
         string Name { get; }
-    
+
         bool TestConnection();
+        
+        ConfigFile DbConfigFile { get; set; }
 
         DataSet GetCatalogData();
 
         bool IsValidCustomerLogin(string email, string password);
 
-        Boolean RecreateGoatDb();
+        bool RecreateGoatDb();
 
         string GetCustomerEmail(string customerNumber);
 

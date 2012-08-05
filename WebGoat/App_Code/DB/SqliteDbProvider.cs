@@ -5,17 +5,14 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 {
     public class SqliteDbProvider : IDbProvider
     {
-        public SqliteDbProvider()
-        {
-
-        }
-
         public string Name { get { return "Sqlite"; } }
 
         public bool TestConnection()
         {
             throw new System.NotImplementedException();
         }
+        
+        public ConfigFile DbConfigFile { get; set; }
 
         public DataSet GetCatalogData()
         {

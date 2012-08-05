@@ -27,7 +27,9 @@ Global
 		$3.inheritsSet = null
 		$3.scope = text/x-csharp
 		$0.CSharpFormattingPolicy = $4
+		$4.IndentSwitchBody = True
 		$4.AnonymousMethodBraceStyle = NextLine
+		$4.PropertyBraceStyle = DoNotChange
 		$4.PropertyGetBraceStyle = DoNotChange
 		$4.PropertySetBraceStyle = DoNotChange
 		$4.EventAddBraceStyle = NextLine

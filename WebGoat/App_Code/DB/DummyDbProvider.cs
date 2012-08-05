@@ -5,15 +5,17 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 {
     public class DummyDbProvider : IDbProvider
     {
-        public DummyDbProvider()
-        {
-        }
         
         public bool TestConnection()
         {
             return true;
         }
 
+        public ConfigFile DbConfigFile
+        {
+            get; set;
+        }
+        
         public DataSet GetCatalogData()
         {
             return null;

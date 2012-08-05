@@ -1,44 +1,50 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using log4net;
+using System.Reflection;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
-	//NOT THREAD SAFE!
-	public class DbProviderFactory
-	{
-		private static Dictionary<Type, IDbProvider> _providers= new Dictionary<Type, IDbProvider>();
-		
-		public static IDbProvider CreateMySqlDbProvider()
-		{
-			if (_providers.ContainsKey(typeof(MySqlDbProvider)))
-			    return _providers[typeof(MySqlDbProvider)];
-			    
-			//TODO: Need to fill in implementation
-			
-			Debug.Assert(_providers.ContainsKey(typeof(MySqlDbProvider)));
-			
-			throw new NotImplementedException();
-		}
-		
-		public static IDbProvider CreateSqliteProvider()
-		{
-			if (_providers.ContainsKey(typeof(SqliteDbProvider)))
-			    return _providers[typeof(SqliteDbProvider)];
-			    
-			//TODO: Need to fill in implementation
-			
-			Debug.Assert(_providers.ContainsKey(typeof(SqliteDbProvider)));
-			
-			throw new NotImplementedException();
-		}
+    //NOT THREAD SAFE!
+    public class DbProviderFactory
+    {
+        private static DummyDbProvider _dummyProvider = new DummyDbProvider();
+        private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         
-        public static IDbProvider CreateDummyDbProvider()
+        public static IDbProvider Create(string filePath)
         {
-            if (!_providers.ContainsKey(typeof(DummyDbProvider)))
-                _providers[typeof(DummyDbProvider)] = new DummyDbProvider();
-                
-            return _providers[typeof(DummyDbProvider)];
+            ConfigFile configFile = new ConfigFile(filePath);
+            
+            configFile.Load();
+            
+            switch (configFile.Get(DbConstants.KEY_DB_TYPE))
+            {
+                case DbConstants.DB_TYPE_MYSQL:
+                    return CreateMySqlDbProvider(configFile);
+                case DbConstants.DB_TYPE_SQLITE:
+                    return CreateSqliteProvider(configFile);
+                default:
+                    log.Info("Empty DB Type. Returning Dummy provider");        
+                    return _dummyProvider;
+            }
         }
-	}
+        
+        private static IDbProvider CreateMySqlDbProvider(ConfigFile configFile)
+        {
+            log.Info("Creating MySql Provider");
+                                                             
+            IDbProvider provider = new MySqlDbProvider();
+            provider.DbConfigFile = configFile;
+            
+            return provider;
+        }
+        
+        private static IDbProvider CreateSqliteProvider(ConfigFile configFile)
+        {
+            log.Info("Creating Sqlite Provider");
+            
+            throw new NotImplementedException();
+        }
+    }
 }

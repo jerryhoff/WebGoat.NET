@@ -20,13 +20,11 @@ namespace OWASP.WebGoat.NET
 		{
             if(!Page.IsPostBack)
             {
-                IOHelper iohelper = new IOHelper(Server);
-                var values = iohelper.GetDBConfigDictionary();
-                txtServer.Text = values["SERVER"];
-                txtPort.Text = values["PORT"];
-                txtDatabase.Text = values["DATABASE"];
-                txtUserName.Text = values["UID"];
-                txtPassword.Text = values["PWD"];
+                txtServer.Text = du.DbConfigFile.Get(DbConstants.KEY_HOST);
+                txtPort.Text = du.DbConfigFile.Get(DbConstants.KEY_PORT);
+                txtDatabase.Text = du.DbConfigFile.Get(DbConstants.KEY_DATABASE);
+                txtUserName.Text = du.DbConfigFile.Get(DbConstants.KEY_UID);
+                txtPassword.Text = du.DbConfigFile.Get(DbConstants.KEY_PWD);
             }
 
             PanelSuccess.Visible = false;
@@ -44,29 +42,26 @@ namespace OWASP.WebGoat.NET
 
         protected void btnTestConfiguration_Click(object sender, EventArgs e)
         {
-            //get all the fields, save in conf file
-            //use that to then connect to the database
+            //TODO: Need to provide interface for saving multiple configs need VS for it.
+            du.DbConfigFile.Set(DbConstants.KEY_HOST, txtServer.Text);
+            du.DbConfigFile.Set(DbConstants.KEY_PORT, txtPort.Text);
+            du.DbConfigFile.Set(DbConstants.KEY_DATABASE, txtDatabase.Text);
+            du.DbConfigFile.Set(DbConstants.KEY_UID, txtUserName.Text);
+            du.DbConfigFile.Set(DbConstants.KEY_PWD, txtPassword.Text);
             
-            IOHelper iohelper = new IOHelper(Server);
+            du.DbConfigFile.Save();
             
-            string result = iohelper.SaveDBConfigString(txtServer.Text, txtPort.Text, txtDatabase.Text, txtUserName.Text, txtPassword.Text);
-
-            if (result != null)
-                lblOutput.Text = result;
+            if (du.TestConnection())
+            {
+                labelSuccess.Text = "Connection to Database Successful!";
+                PanelSuccess.Visible = true;
+                Session["DBConfigured"] = true;
+            }
             else
             {
-                if (du.TestConnection())
-                {
-                    labelSuccess.Text = "Connection to Database Successful!";
-                    PanelSuccess.Visible = true;
-                    Session["DBConfigured"] = true;
-                }
-                else
-                {
-                    labelError.Text = "Error testing database. Please see logs.";
-                    PanelError.Visible = true;
-                    Session["DBConfigured"] = null;
-                }
+                labelError.Text = "Error testing database. Please see logs.";
+                PanelError.Visible = true;
+                Session["DBConfigured"] = null;
             }
         }
 

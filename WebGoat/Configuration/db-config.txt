@@ -1,1 +1,0 @@
-SERVER=localhost;PORT=3306;DATABASE=webgoat_coins;UID=root;PWD=

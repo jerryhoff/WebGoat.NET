@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Security.Principal;
 using OWASP.WebGoat.NET.App_Code;
+using log4net.Config;
 
 namespace OWASP.WebGoat.NET
 {
@@ -14,12 +14,13 @@ namespace OWASP.WebGoat.NET
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            XmlConfigurator.Configure();
+            
+            Settings.Init();
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Settings.Init();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

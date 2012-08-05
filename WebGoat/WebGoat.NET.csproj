@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configuration\db-config.txt" />
     <Content Include="Content\ForgotPassword.aspx" />
     <Content Include="Content\UploadPathManipulation.aspx" />
     <Content Include="Global.asax" />
@@ -658,7 +657,6 @@
       <DependentUpon>PwdComplexity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="App_Code\IOHelper.cs" />
     <Compile Include="AddNewUser.aspx.cs">
       <DependentUpon>AddNewUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -760,6 +758,8 @@
     <Compile Include="App_Code\Settings.cs" />
     <Compile Include="App_Code\CookieManager.cs" />
     <Compile Include="App_Code\DB\DummyDbProvider.cs" />
+    <Compile Include="App_Code\ConfigFile.cs" />
+    <Compile Include="App_Code\DB\DbConstants.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!--Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" /-->
@@ -804,6 +804,7 @@
     <Folder Include="WebGoatCoins\uploads\" />
     <Folder Include="App_Data\" />
     <Folder Include="App_Code\DB\" />
+    <Folder Include="Configuration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="WebGoatCoins\ProductDetails.aspx" />
