@@ -5,7 +5,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 {
     public class SqliteDbProvider : IDbProvider
     {
-        public string Name { get { return "Sqlite"; } }
+        public string Name { get { return DbConstants.DB_TYPE_SQLITE; } }
 
         public bool TestConnection()
         {

@@ -47,7 +47,7 @@ Harry:
 
 + Command Injection
   * Also part of automatic DB setup
-+ Create adaptor for switching out DBs
++ Create adaptor for switching out DBs (DONE)
 
 Ray:
 
