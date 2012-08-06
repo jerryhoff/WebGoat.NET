@@ -20,7 +20,8 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
                                                   configFile.Get(DbConstants.KEY_UID),
-                                                  configFile.Get(DbConstants.KEY_PWD));
+                                                  "root");//configFile.Get(DbConstants.KEY_PWD));
+            //FIXME Password constant needs to use password defined by user
         }
         
         private ConfigFile _configFile;
@@ -44,9 +45,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             {
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
-                    MySqlCommand cmd = new MySqlCommand("select top 1 * from information_schema.tables");
-                
+                    MySqlCommand cmd = new MySqlCommand("select * from information_schema.TABLES");
+                    cmd.Connection = connection;
+                    connection.Open();
                     cmd.ExecuteNonQuery();
+                    connection.Close();
                 }
                 return true;
             }
@@ -61,7 +64,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             using (MySqlConnection connection = new MySqlConnection(_connectionString))
             {
-                MySqlDataAdapter da = new MySqlDataAdapter("select * from products", connection);
+                MySqlDataAdapter da = new MySqlDataAdapter("select * from Products", connection);
                 DataSet ds = new DataSet();
             
                 da.Fill(ds);
