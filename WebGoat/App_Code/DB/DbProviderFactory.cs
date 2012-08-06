@@ -44,7 +44,10 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             log.Info("Creating Sqlite Provider");
             
-            throw new NotImplementedException();
+            IDbProvider provider = new SqliteDbProvider();
+            provider.DbConfigFile = configFile;
+            
+            return provider;
         }
     }
 }
