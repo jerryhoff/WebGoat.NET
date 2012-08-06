@@ -28,10 +28,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public ConfigFile DbConfigFile
         {
-            get
-            {
-                return _configFile; 
-            }
+            get { return _configFile; }
             set
             {
                 _connectionString = ConfigConnection(value);

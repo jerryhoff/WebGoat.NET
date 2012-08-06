@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SQLite;
 using log4net;
 using System.Reflection;
+using System.IO;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -59,107 +60,488 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public DataSet GetCatalogData()
         {
-            throw new System.NotImplementedException();
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter("select * from Products", connection);
+                DataSet ds = new DataSet();
+            
+                da.Fill(ds);
+            
+                return ds;
+            }
         }
 
         public bool IsValidCustomerLogin(string email, string password)
         {
-            throw new System.NotImplementedException();
+                        //encode password
+            string encoded_password = Encoder.Encode(password);
+            
+            //check email/password
+            string sql = "select * from CustomerLogin where email = '" + email + "' and password = '" + encoded_password + "';";
+                        
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+            
+                //TODO: User reader instead (for all calls)
+                DataSet ds = new DataSet();
+            
+                da.Fill(ds);
+                
+                try
+                {
+                    return ds.Tables[0].Rows.Count == 0;
+                }
+                catch (Exception ex)
+                {
+                    //Log this and pass the ball along.
+                    log.Error("Error checking login", ex);
+                    
+                    throw new Exception("Error checking login", ex);
+                }
+            }
         }
 
         public bool RecreateGoatDb()
         {
-            throw new System.NotImplementedException();
+            File.Delete(DbConfigFile.Get(DbConstants.KEY_FILE_NAME));
+            SQLiteConnection.CreateFile(DbConfigFile.Get(DbConstants.KEY_FILE_NAME));
+            
+            using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
+            {
+                conn.Open();
+                
+                
+            }
+            
+            return false;
+        }
+
+        //Find the bugs!
+        public string CustomCustomerLogin(string email, string password)
+        {
+            string error_message = null;
+            try
+            {
+                //get data
+                string sql = "select * from CustomerLogin where email = '" + email + "';";
+                
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+
+                    //check if email address exists
+                    if (ds.Tables[0].Rows.Count == 0)
+                    {
+                        error_message = "Email Address Not Found!";
+                        return error_message;
+                    }
+
+                    string encoded_password = ds.Tables[0].Rows[0]["Password"].ToString();
+                    string decoded_password = Encoder.Decode(encoded_password);
+
+                    if (password.Trim().ToLower() != decoded_password.Trim().ToLower())
+                    {
+                        error_message = "Password Not Valid For This Email Address!";
+                    }
+                    else
+                    {
+                        //login successful
+                        error_message = null;
+                    }
+                }
+                
+            }
+            catch (SQLiteException ex)
+            {
+                log.Error("Error with custom customer login", ex);
+                error_message = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error with custom customer login", ex);
+            }
+
+            return error_message;    
         }
 
         public string GetCustomerEmail(string customerNumber)
         {
-            throw new System.NotImplementedException();
+            string output = null;
+            try
+            {
+            
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    string sql = "select email from CustomerLogin where customerNumber = " + customerNumber;
+                    SQLiteCommand command = new SQLiteCommand(sql, connection);
+                    output = command.ExecuteScalar().ToString();
+                } 
+            }
+            catch (Exception ex)
+            {
+                output = ex.Message;
+            }
+            return output;
         }
 
         public DataSet GetCustomerDetails(string customerNumber)
         {
-            throw new System.NotImplementedException();
+            string sql = "select Customers.customerNumber, Customers.customerName, Customers.logoFileName, Customers.contactLastName, Customers.contactFirstName, " +
+                "Customers.phone, Customers.addressLine1, Customers.addressLine2, Customers.city, Customers.state, Customers.postalCode, Customers.country, " +
+                "Customers.salesRepEmployeeNumber, Customers.creditLimit, CustomerLogin.email, CustomerLogin.password, CustomerLogin.question_id, CustomerLogin.answer " +
+                "From Customers, CustomerLogin where Customers.customerNumber = CustomerLogin.customerNumber and Customers.customerNumber = " + customerNumber;
+
+            DataSet ds = new DataSet();
+            try
+            {
+            
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                    da.Fill(ds);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error getting customer details", ex);
+                
+                throw new ApplicationException("Error getting customer details", ex);
+            }
+            return ds;
+
         }
 
         public DataSet GetOffice(string city)
         {
-            throw new System.NotImplementedException();
+        
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                string sql = "select * from Offices where city = @city";
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                da.SelectCommand.Parameters.AddWithValue("@city", city);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
         }
 
         public DataSet GetComments(string productCode)
         {
-            throw new System.NotImplementedException();
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                string sql = "select * from Comments where productCode = @productCode";
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                da.SelectCommand.Parameters.AddWithValue("@productCode", productCode); 
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
         }
 
         public string AddComment(string productCode, string email, string comment)
         {
-            throw new System.NotImplementedException();
+            string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');";
+            string output = null;
+            
+            try
+            {
+
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    SQLiteCommand command = new SQLiteCommand(sql, connection);
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error adding comment", ex);
+                output = ex.Message;
+            }
+            
+            return output;
         }
 
         public string UpdateCustomerPassword(int customerNumber, string password)
         {
-            throw new System.NotImplementedException();
+            string sql = "update CustomerLogin set password = '" + Encoder.Encode(password) + "' where customerNumber = " + customerNumber;
+            string output = null;
+            try
+            {
+            
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    SQLiteCommand command = new SQLiteCommand(sql, connection);
+                
+                    int rows_added = command.ExecuteNonQuery();
+                    
+                    log.Info("Rows Added: " + rows_added + " to comment table");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error updating customer password", ex);
+                output = ex.Message;
+            }
+            return output;
         }
 
         public string[] GetSecurityQuestionAndAnswer(string email)
         {
-            throw new System.NotImplementedException();
+            string sql = "select SecurityQuestions.question_text, CustomerLogin.answer from CustomerLogin, " + 
+                "SecurityQuestions where CustomerLogin.email = '" + email + "' and CustomerLogin.question_id = " +
+                "SecurityQuestions.question_id;";
+                
+            string[] qAndA = new string[2];
+            
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    DataRow row = ds.Tables[0].Rows[0];
+                    qAndA[0] = row[0].ToString();
+                    qAndA[1] = row[1].ToString();
+                }
+            }
+            
+            return qAndA;
         }
 
         public string GetPasswordByEmail(string email)
         {
-            throw new System.NotImplementedException();
+            string result = string.Empty;
+            try
+            {
+            
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    //get data
+                    string sql = "select * from CustomerLogin where email = '" + email + "';";
+                    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+
+                    //check if email address exists
+                    if (ds.Tables[0].Rows.Count == 0)
+                    {
+                        result = "Email Address Not Found!";
+                    }
+
+                    string encoded_password = ds.Tables[0].Rows[0]["Password"].ToString();
+                    string decoded_password = Encoder.Decode(encoded_password);
+                    result = decoded_password;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = ex.Message;
+            }
+            return result;
         }
 
         public DataSet GetUsers()
         {
-            throw new System.NotImplementedException();
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                string sql = "select * from CustomerLogin;";
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
         }
-
+       
         public DataSet GetOrders(int customerID)
         {
-            throw new System.NotImplementedException();
+        
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                string sql = "select * from Orders where customerNumber = " + customerID;
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count == 0)
+                    return null;
+                else
+                    return ds;
+            }
         }
 
         public DataSet GetProductDetails(string productCode)
         {
-            throw new System.NotImplementedException();
+            string sql = string.Empty;
+            SQLiteDataAdapter da;
+            DataSet ds = new DataSet();
+
+
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                sql = "select * from Products where productCode = '" + productCode + "'";
+                da = new SQLiteDataAdapter(sql, connection);
+                da.Fill(ds, "products");
+
+                sql = "select * from Comments where productCode = '" + productCode + "'";
+                da = new SQLiteDataAdapter(sql, connection);
+                da.Fill(ds, "comments");
+
+                DataRelation dr = new DataRelation("prod_comments",
+                ds.Tables["products"].Columns["productCode"], //category table
+                ds.Tables["comments"].Columns["productCode"], //product table
+                false);
+
+                ds.Relations.Add(dr);
+                return ds;
+            }
         }
 
         public DataSet GetOrderDetails(int orderNumber)
         {
-            throw new System.NotImplementedException();
+
+            string sql = "select Customers.customerName, Orders.customerNumber, Orders.orderNumber, Products.productName, " + 
+                "OrderDetails.quantityOrdered, OrderDetails.priceEach, Products.productImage " + 
+                "from OrderDetails, Products, Orders, Customers where " + 
+                "Customers.customerNumber = Orders.customerNumber " + 
+                "and OrderDetails.productCode = Products.productCode " + 
+                "and Orders.orderNumber = OrderDetails.orderNumber " + 
+                "and OrderDetails.orderNumber = " + orderNumber;
+            
+            
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count == 0)
+                    return null;
+                else
+                    return ds;
+            }
         }
 
         public DataSet GetPayments(int customerNumber)
         {
-            throw new System.NotImplementedException();
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                string sql = "select * from Payments where customerNumber = " + customerNumber;
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count == 0)
+                    return null;
+                else
+                    return ds;
+            }
         }
 
         public DataSet GetProductsAndCategories()
         {
-            throw new System.NotImplementedException();
+            return GetProductsAndCategories(0);
         }
 
         public DataSet GetProductsAndCategories(int catNumber)
         {
-            throw new System.NotImplementedException();
+            //TODO: Rerun the database script.
+            string sql = string.Empty;
+            SQLiteDataAdapter da;
+            DataSet ds = new DataSet();
+
+            //catNumber is optional.  If it is greater than 0, add the clause to both statements.
+            string catClause = string.Empty;
+            if (catNumber >= 1)
+                catClause += " where catNumber = " + catNumber; 
+
+
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+
+                sql = "select * from Categories" + catClause;
+                da = new SQLiteDataAdapter(sql, connection);
+                da.Fill(ds, "categories");
+
+                sql = "select * from Products" + catClause;
+                da = new SQLiteDataAdapter(sql, connection);
+                da.Fill(ds, "products");
+
+
+                //category / products relationship
+                DataRelation dr = new DataRelation("cat_prods", 
+                ds.Tables["categories"].Columns["catNumber"], //category table
+                ds.Tables["products"].Columns["catNumber"], //product table
+                false);
+
+                ds.Relations.Add(dr);
+                return ds;
+            }
         }
 
         public DataSet GetEmailByName(string name)
         {
-            throw new System.NotImplementedException();
+            string sql = "select firstName, lastName, email from Employees where firstName like '" + name + "%' or lastName like '" + name + "%'";
+            
+            
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count == 0)
+                    return null;
+                else
+                    return ds;
+            }
         }
 
         public string GetEmailByCustomerNumber(string num)
         {
-            throw new System.NotImplementedException();
+            string output = "";
+            try
+            {
+            
+                using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+                {
+                    string sql = "select email from CustomerLogin where customerNumber = " + num;
+                    SQLiteCommand cmd = new SQLiteCommand(sql, connection);
+                    output = (string)cmd.ExecuteScalar();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error getting email by customer number", ex);
+                output = ex.Message;
+            }
+            
+            return output;
         }
 
         public DataSet GetCustomerEmails(string email)
         {
-            throw new System.NotImplementedException();
+            string sql = "select email from CustomerLogin where email like '" + email + "%'";
+            
+            
+            using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
+            {
+                SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count == 0)
+                    return null;
+                else
+                    return ds;
+            }
         }
 
     }
