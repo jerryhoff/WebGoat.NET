@@ -26,10 +26,6 @@ Unassigned:
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
   * Find out an example where we specify bad values
-+ Insecure message digest
-+ Insecure random # gen
-+ Hard coded seed (For when using random funcationality)
-+ Not using SSL
 + Custom crypto (args have to use a byte array and do a bitwise operation)
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
@@ -42,10 +38,14 @@ Unassigned:
 
 Harry:
 
-+ Command Injection
-  * Also part of automatic DB setup
++ Command Injection (DONE)
+  * Also part of automatic DB setup (DONE)
 + Create adaptor for switching out DBs (DONE)
-  * Amend Rebuild Page to easily switchout DBs
+  * Amend Rebuild Page to easily switchout DBs (DONE)
++ Insecure message digest
++ Insecure random # gen
++ Hard coded seed (For when using random funcationality)
++ Not using SSL
 
 Ray:
 
