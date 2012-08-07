@@ -63,6 +63,9 @@ namespace OWASP.WebGoat.NET
                 PanelError.Visible = true;
                 Session["DBConfigured"] = null;
             }
+            
+            //TODO: Piggybacking on Test button. Use separate rebuild button when you get designer tool
+            du.RecreateGoatDb();
         }
 
         protected void btnRebuildDatabase_Click(object sender, EventArgs e)

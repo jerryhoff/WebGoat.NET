@@ -12,13 +12,13 @@ DELETE FROM Products;
 DELETE FROM Categories;
 DELETE FROM Comments;
 
-.import datafiles/customers.txt Customers
-.import datafiles/customerlogin.txt CustomerLogin
-.import datafiles/securityquestions.txt SecurityQuestions
-.import datafiles/employees.txt Employees
-.import datafiles/offices.txt Offices
-.import datafiles/orderdetails.txt OrderDetails
-.import datafiles/orders.txt Orders
-.import datafiles/payments.txt Payments
-.import datafiles/categories.txt Categories
-.import datafiles/products.txt Products
+.import DB_Scripts/datafiles/customers.txt Customers
+.import DB_Scripts/datafiles/customerlogin.txt CustomerLogin
+.import DB_Scripts/datafiles/securityquestions.txt SecurityQuestions
+.import DB_Scripts/datafiles/employees.txt Employees
+.import DB_Scripts/datafiles/offices.txt Offices
+.import DB_Scripts/datafiles/orderdetails.txt OrderDetails
+.import DB_Scripts/datafiles/orders.txt Orders
+.import DB_Scripts/datafiles/payments.txt Payments
+.import DB_Scripts/datafiles/categories.txt Categories
+.import DB_Scripts/datafiles/products.txt Products

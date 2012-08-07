@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using log4net;
 using System.Reflection;
 using System.IO;
+using System.Diagnostics;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -77,7 +78,8 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             string encoded_password = Encoder.Encode(password);
             
             //check email/password
-            string sql = "select * from CustomerLogin where email = '" + email + "' and password = '" + encoded_password + "';";
+            string sql = "select * from CustomerLogin where email = '" + email + "' and password = '" + 
+                         encoded_password + "';";
                         
             using (SQLiteConnection connection = new SQLiteConnection(_connectionString))
             {
@@ -104,17 +106,80 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public bool RecreateGoatDb()
         {
-            File.Delete(DbConfigFile.Get(DbConstants.KEY_FILE_NAME));
-            SQLiteConnection.CreateFile(DbConfigFile.Get(DbConstants.KEY_FILE_NAME));
+            string dbFile = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
             
-            using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
+            log.Info("Running recreate");
+            
+            try
             {
-                conn.Open();
+                Process process = new Process();
+                process.EnableRaisingEvents = false;
+                process.StartInfo.FileName = "/usr/bin/sqlite3";
+                process.StartInfo.Arguments = dbFile;
+                process.StartInfo.UseShellExecute   = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.RedirectStandardInput = true;
                 
+                process.Start();
+                
+                using(StreamReader reader = new StreamReader(new FileStream(DbConstants.DB_CREATE_SCRIPT, FileMode.Open)))
+                {  
+                    string line;
+                    
+                    while((line = reader.ReadLine()) != null)
+                        process.StandardInput.WriteLine(line);
+                }
+                
+                
+                log.Info(process.StandardOutput.ReadToEnd());
+                
+                string error = process.StandardError.ReadToEnd();
+                
+                if (!string.IsNullOrEmpty(error))
+                    log.Error(error);
+                
+                process.WaitForExit();
+                process.Close();
+                
+                
+                process = new Process();
+                process.EnableRaisingEvents = false;
+                process.StartInfo.FileName = "/usr/bin/sqlite3";
+                process.StartInfo.Arguments = dbFile;
+                process.StartInfo.UseShellExecute   = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.RedirectStandardInput = true;
+                process.Start();
+                
+                using(StreamReader reader = new StreamReader(new FileStream(DbConstants.DB_LOAD_SQLITE_SCRIPT, FileMode.Open)))
+                {  
+                    string line;
+                    
+                    while((line = reader.ReadLine()) != null)
+                        process.StandardInput.WriteLine(line);
+                }
+                
+
+                log.Info(process.StandardOutput.ReadToEnd());
+
+                error = process.StandardError.ReadToEnd();
+                
+                process.WaitForExit();
+                process.Close();
+                
+                if (!string.IsNullOrEmpty(error))
+                    log.Error(error);
+
+                return true;
                 
             }
-            
-            return false;
+            catch (Exception ex)
+            {
+                log.Error("Error rebuilding DB", ex);
+                return false;
+            }
         }
 
         //Find the bugs!

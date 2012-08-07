@@ -18,5 +18,9 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         public const string DB_TYPE_SQLITE = "Sqlite";
         public const string CONFIG_EXT = "config";
             
+        //DB Scripts
+        public const string DB_CREATE_SCRIPT = "DB_Scripts/create_webgoatcoins.sql";
+        public const string DB_LOAD_MYSQL_SCRIPT = "DB_Scripts/load_webgoatcoins.sql";
+        public const string DB_LOAD_SQLITE_SCRIPT = "DB_Scripts/load_webgoatcoins_sqlite3.sql";
     }
 }
