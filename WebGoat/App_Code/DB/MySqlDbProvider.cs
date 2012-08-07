@@ -40,14 +40,15 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(_connectionString))
+                /*using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
-                    MySqlCommand cmd = new MySqlCommand("select * from information_schema.TABLES");
-                    cmd.Connection = connection;
                     connection.Open();
+                    MySqlCommand cmd = new MySqlCommand("select * from information_schema.TABLES", connection);
                     cmd.ExecuteNonQuery();
                     connection.Close();
-                }
+                }*/
+                MySqlHelper.ExecuteNonQuery(_connectionString, "select * from information_schema.TABLES");
+                
                 return true;
             }
             catch(Exception ex)
@@ -500,12 +501,13 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             try
             {
             
-                using (MySqlConnection connection = new MySqlConnection(_connectionString))
+                output = (String)MySqlHelper.ExecuteScalar(_connectionString, "select email from CustomerLogin where customerNumber = " + num);
+                /*using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     string sql = "select email from CustomerLogin where customerNumber = " + num;
                     MySqlCommand cmd = new MySqlCommand(sql, connection);
                     output = (string)cmd.ExecuteScalar();
-                }
+                }*/
                 
             }
             catch (Exception ex)
