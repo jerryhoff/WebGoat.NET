@@ -5,6 +5,7 @@ using log4net;
 using System.Reflection;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -123,7 +124,6 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         
         
             Process process = new Process();
-            process.EnableRaisingEvents = false;
             process.StartInfo.FileName = sqlExec;
             process.StartInfo.Arguments = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
             process.StartInfo.UseShellExecute = false;
@@ -131,25 +131,47 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             process.StartInfo.RedirectStandardError = true;
             process.StartInfo.RedirectStandardInput = true;
                 
-            process.Start();
+            using (AutoResetEvent outWh = new AutoResetEvent(false))
+            using (AutoResetEvent errWh = new AutoResetEvent(false))
+            {
+                process.OutputDataReceived += (sender, e) => {
+                    if (e.Data == null)
+                        outWh.Set();
+                    else
+                        log.Info(e.Data);
+                };
+                process.ErrorDataReceived += (sender, e) =>
+                {
+                    if (e.Data == null)
+                        errWh.Set();
+                    else
+                        log.Error(e.Data);
+                };
+
+                process.Start();
+
+
                 
-            using (StreamReader reader = new StreamReader(new FileStream(script, FileMode.Open)))
-            {  
-                string line;
+                using (StreamReader reader = new StreamReader(new FileStream(script, FileMode.Open)))
+                {  
+                    string line;
                     
-                while ((line = reader.ReadLine()) != null)
-                    process.StandardInput.WriteLine(line);
+                    while ((line = reader.ReadLine()) != null)
+                        process.StandardInput.WriteLine(line);
+                }
+                
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+                
+                int timeout = 5 * 1000;
+                
+                if (process.WaitForExit(timeout) && outWh.WaitOne(timeout) && errWh.WaitOne(timeout))
+                    log.Info(string.Format("Script {0} ran fine", script));
+                else
+                    log.Error(string.Format("Timeout on script: {0}", script));
+                
+                process.Close();
             }
-                
-            log.Info(process.StandardOutput.ReadToEnd());
-                
-            string error = process.StandardError.ReadToEnd();
-                
-            if (!string.IsNullOrEmpty(error))
-                log.Error(error);
-                
-            process.WaitForExit();
-            process.Close();
         }
         
         public bool RecreateGoatDb()
