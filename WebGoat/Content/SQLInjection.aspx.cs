@@ -20,14 +20,16 @@ namespace OWASP.WebGoat.NET
 
 		}
 
-		protected void btnFind_Click (object sender, EventArgs e)
-		{
+		protected void btnFind_Click(object sender, EventArgs e)
+        {
             string name = txtName.Text;
             DataSet ds = du.GetEmailByName(name);
 
-            grdEmail.DataSource = ds.Tables[0];
-            grdEmail.DataBind();
-
+            if (ds != null)
+            {
+                grdEmail.DataSource = ds.Tables[0];
+                grdEmail.DataBind();
+            }
 		}
 	}
 }
