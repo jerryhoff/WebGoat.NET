@@ -23,6 +23,10 @@ namespace OWASP.WebGoat.NET
                 lblOutput.Text = string.Format("You appear to be connected to a valid {0} provider. " +
                                                "If you want to reconfigure or rebuild the database, click on the button below!", du.Name);
                 Session["DBConfigured"] = true;
+
+                //Info leak
+                HttpCookie cookie = new HttpCookie("Server", System.Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(Server.MachineName)));
+                Response.Cookies.Add(cookie);
             }
             else
             {
