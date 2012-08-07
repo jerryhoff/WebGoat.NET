@@ -27,5 +27,13 @@ namespace OWASP.WebGoat.NET
             dtlView.DataSource = ds.Tables[0];
             dtlView.DataBind();
 		}
+
+        void FixedLoadCity (String city)
+        {
+            DataSet ds = du.GetOffice(city);
+            lblOutput.Text = "Here are the details for our " + Server.HtmlEncode(city) + " Office";
+            dtlView.DataSource = ds.Tables[0];
+            dtlView.DataBind();
+        }
 	}
 }
