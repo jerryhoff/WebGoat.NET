@@ -15,7 +15,8 @@ namespace OWASP.WebGoat.NET.App_Code
             
             string path = Environment.GetEnvironmentVariable("PATH");
             Environment.SetEnvironmentVariable("PATH", string.Format("{0}:/usr/local/mysql/bin", path));
-            
+            Environment.SetEnvironmentVariable("PATH", string.Format("{0}:/Applications/MAMP/Library/bin", path));
+
             CurrentDbProvider = DbProviderFactory.Create(configPath);
         }
         
