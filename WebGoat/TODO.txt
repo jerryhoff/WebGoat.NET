@@ -21,10 +21,8 @@ Unassigned:
 + Unsafe
 + LDAP injection (research the APIs / point to the APIs) 
 + Header injection
-+ XSS
 + XPATH Injection
 + Unchecked redirects (already in there)
-+ Hard coded salts, keys
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
   * Find out an example where we specify bad values
@@ -35,8 +33,7 @@ Unassigned:
 + Custom crypto (args have to use a byte array and do a bitwise operation)
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
-+ Information disclosure
-  * Extra sensitive information that may go out (server that is running etc.)
+
 + Debugging enabled
 + Denial Of Service
 + Readline (denial of service)
@@ -54,3 +51,6 @@ Ray:
 
 + XSS
 + LINQ SQLi
++ Information disclosure
+  * Extra sensitive information that may go out (server that is running etc.)
++ Hard coded salts, keys  
