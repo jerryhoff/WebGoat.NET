@@ -43,53 +43,53 @@ DELETE FROM Comments;
 
 /* Load records into the tables. There should be no warnings.*/
 
-LOAD DATA LOCAL INFILE './datafiles/customers.txt' INTO TABLE Customers
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/customers.txt' INTO TABLE Customers
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/customerlogin.txt' INTO TABLE CustomerLogin
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/customerlogin.txt' INTO TABLE CustomerLogin
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/securityquestions.txt' INTO TABLE SecurityQuestions
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/securityquestions.txt' INTO TABLE SecurityQuestions
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/employees.txt' INTO TABLE Employees
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/employees.txt' INTO TABLE Employees
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/offices.txt' INTO TABLE Offices
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/offices.txt' INTO TABLE Offices
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/orderdetails.txt' INTO TABLE OrderDetails
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/orderdetails.txt' INTO TABLE OrderDetails
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/orders.txt' INTO TABLE Orders
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/orders.txt' INTO TABLE Orders
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;
 
-LOAD DATA LOCAL INFILE './datafiles/payments.txt' INTO TABLE Payments
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/payments.txt' INTO TABLE Payments
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 100;
 
-LOAD DATA LOCAL INFILE './datafiles/categories.txt' INTO TABLE Categories 
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/categories.txt' INTO TABLE Categories 
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
           
 SHOW WARNINGS LIMIT 100;
 
 
-LOAD DATA LOCAL INFILE './datafiles/products.txt' INTO TABLE Products
+LOAD DATA LOCAL INFILE 'DB_Scripts/datafiles/products.txt' INTO TABLE Products
           FIELDS TERMINATED BY '|' LINES TERMINATED BY '\n';
 
 SHOW WARNINGS LIMIT 10;

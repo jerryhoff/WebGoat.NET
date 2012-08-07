@@ -982,7 +982,6 @@
     <None Include="DB_Scripts\datafiles\products_old.txt" />
     <None Include="DB_Scripts\datafiles\securityquestions.txt" />
     <None Include="DB_Scripts\products\.DS_Store" />
-    <None Include="DB_Scripts\sqlite3.sh" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

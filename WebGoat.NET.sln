@@ -35,9 +35,9 @@ Global
 		$4.EventAddBraceStyle = NextLine
 		$4.EventRemoveBraceStyle = NextLine
 		$4.StatementBraceStyle = NextLine
-		$4.PlaceElseOnNewLine = True
-		$4.PlaceCatchOnNewLine = True
-		$4.PlaceFinallyOnNewLine = True
+		$4.ElseNewLinePlacement = NewLine
+		$4.CatchNewLinePlacement = NewLine
+		$4.FinallyNewLinePlacement = NewLine
 		$4.BeforeMethodDeclarationParentheses = False
 		$4.BeforeMethodCallParentheses = False
 		$4.BeforeConstructorDeclarationParentheses = False

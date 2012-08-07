@@ -104,76 +104,64 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
         }
 
+        private void ExecSqliteScript(string script)
+        {
+            ProcessStartInfo whichProcInfo = new ProcessStartInfo
+            {
+                FileName = "which",
+                Arguments = "sqlite3",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+            };
+            
+            var whichProc = Process.Start(whichProcInfo);
+            
+            string sqlExec = whichProc.StandardOutput.ReadLine();
+            
+            whichProc.WaitForExit();
+            whichProc.Close();
+        
+        
+            Process process = new Process();
+            process.EnableRaisingEvents = false;
+            process.StartInfo.FileName = sqlExec;
+            process.StartInfo.Arguments = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.RedirectStandardError = true;
+            process.StartInfo.RedirectStandardInput = true;
+                
+            process.Start();
+                
+            using (StreamReader reader = new StreamReader(new FileStream(script, FileMode.Open)))
+            {  
+                string line;
+                    
+                while ((line = reader.ReadLine()) != null)
+                    process.StandardInput.WriteLine(line);
+            }
+                
+            log.Info(process.StandardOutput.ReadToEnd());
+                
+            string error = process.StandardError.ReadToEnd();
+                
+            if (!string.IsNullOrEmpty(error))
+                log.Error(error);
+                
+            process.WaitForExit();
+            process.Close();
+        }
+        
         public bool RecreateGoatDb()
         {
-            string dbFile = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
-            
-            log.Info("Running recreate");
-            
             try
             {
-                Process process = new Process();
-                process.EnableRaisingEvents = false;
-                process.StartInfo.FileName = "/usr/bin/sqlite3";
-                process.StartInfo.Arguments = dbFile;
-                process.StartInfo.UseShellExecute   = false;
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.RedirectStandardError = true;
-                process.StartInfo.RedirectStandardInput = true;
+                log.Info("Running recreate");
                 
-                process.Start();
+                ExecSqliteScript(DbConstants.DB_CREATE_SCRIPT);
+                ExecSqliteScript(DbConstants.DB_LOAD_SQLITE_SCRIPT);
                 
-                using(StreamReader reader = new StreamReader(new FileStream(DbConstants.DB_CREATE_SCRIPT, FileMode.Open)))
-                {  
-                    string line;
-                    
-                    while((line = reader.ReadLine()) != null)
-                        process.StandardInput.WriteLine(line);
-                }
-                
-                
-                log.Info(process.StandardOutput.ReadToEnd());
-                
-                string error = process.StandardError.ReadToEnd();
-                
-                if (!string.IsNullOrEmpty(error))
-                    log.Error(error);
-                
-                process.WaitForExit();
-                process.Close();
-                
-                
-                process = new Process();
-                process.EnableRaisingEvents = false;
-                process.StartInfo.FileName = "/usr/bin/sqlite3";
-                process.StartInfo.Arguments = dbFile;
-                process.StartInfo.UseShellExecute   = false;
-                process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.RedirectStandardError = true;
-                process.StartInfo.RedirectStandardInput = true;
-                process.Start();
-                
-                using(StreamReader reader = new StreamReader(new FileStream(DbConstants.DB_LOAD_SQLITE_SCRIPT, FileMode.Open)))
-                {  
-                    string line;
-                    
-                    while((line = reader.ReadLine()) != null)
-                        process.StandardInput.WriteLine(line);
-                }
-                
-
-                log.Info(process.StandardOutput.ReadToEnd());
-
-                error = process.StandardError.ReadToEnd();
-                
-                process.WaitForExit();
-                process.Close();
-                
-                if (!string.IsNullOrEmpty(error))
-                    log.Error(error);
-
                 return true;
-                
             }
             catch (Exception ex)
             {

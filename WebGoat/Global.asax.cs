@@ -6,6 +6,7 @@ using System.Web.SessionState;
 using System.Security.Principal;
 using OWASP.WebGoat.NET.App_Code;
 using log4net.Config;
+using System.Diagnostics;
 
 namespace OWASP.WebGoat.NET
 {
@@ -14,7 +15,10 @@ namespace OWASP.WebGoat.NET
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            XmlConfigurator.Configure();
+            if (Debugger.IsAttached)
+                BasicConfigurator.Configure();
+            else
+                XmlConfigurator.Configure();
             
             Settings.Init();
         }

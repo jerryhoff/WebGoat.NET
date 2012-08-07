@@ -3,6 +3,8 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using log4net;
 using System.Reflection;
+using System.Diagnostics;
+using System.IO;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -13,15 +15,28 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         
         public string Name { get { return DbConstants.DB_TYPE_MYSQL; } }
         
-        private static string ConfigConnection(ConfigFile configFile)
+        private string ConfigConnection(ConfigFile configFile)
         {
-            return string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
+            if (configFile == null)
+                return string.Empty;
+                
+            if (!string.IsNullOrEmpty(configFile.Get(DbConstants.KEY_PWD)))
+            {
+                return string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
                                                   configFile.Get(DbConstants.KEY_HOST),
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
                                                   configFile.Get(DbConstants.KEY_UID),
-                                                  "root");//configFile.Get(DbConstants.KEY_PWD));
-            //FIXME Password constant needs to use password defined by user
+                                                  configFile.Get(DbConstants.KEY_PWD));
+            }
+            else
+            {
+                 return string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3}",
+                                                  configFile.Get(DbConstants.KEY_HOST),
+                                                  configFile.Get(DbConstants.KEY_PORT),
+                                                  configFile.Get(DbConstants.KEY_DATABASE),
+                                                  configFile.Get(DbConstants.KEY_UID));
+            }
         }
         
         private ConfigFile _configFile;
@@ -51,7 +66,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 log.Error("Error testing DB", ex);
                 return false;
@@ -71,9 +86,79 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
         }
 
+        private void ExecMySqlScript(string script)
+        {
+            ProcessStartInfo whichProcInfo = new ProcessStartInfo
+            {
+                FileName = "which",
+                Arguments = "mysql",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+            };
+            
+            Process whichProc = Process.Start(whichProcInfo);
+            
+            string sqlExec = whichProc.StandardOutput.ReadLine();
+            
+            whichProc.WaitForExit();
+            whichProc.Close();
+            
+            string args;
+            
+            if (string.IsNullOrEmpty(DbConfigFile.Get(DbConstants.KEY_PWD)))
+            {
+                args = string.Format("--user={0} --database={1} --host={2} -f",
+                        DbConfigFile.Get(DbConstants.KEY_UID),
+                        DbConfigFile.Get(DbConstants.KEY_DATABASE),
+                        DbConfigFile.Get(DbConstants.KEY_HOST));
+            }
+            else
+            {
+                args = string.Format("--user={0} --password={1} --database={2} --host={3} -f",
+                        DbConfigFile.Get(DbConstants.KEY_UID),
+                        DbConfigFile.Get(DbConstants.KEY_PWD),
+                        DbConfigFile.Get(DbConstants.KEY_DATABASE),
+                        DbConfigFile.Get(DbConstants.KEY_HOST));
+            }
+            
+            Process process = new Process();
+            
+            process.EnableRaisingEvents = false;
+            process.StartInfo.FileName = sqlExec;
+            process.StartInfo.Arguments = args;
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardInput = true;
+                
+            process.Start();
+                
+            using (StreamReader reader = new StreamReader(new FileStream(script, FileMode.Open)))
+            {  
+                string line;
+                    
+                while ((line = reader.ReadLine()) != null)
+                    process.StandardInput.WriteLine(line);
+            }
+                
+            process.WaitForExit(10 * 1000);
+            process.Close();
+        }
+        
         public bool RecreateGoatDb()
         {
-            return false;
+            try
+            {
+                log.Info("Running recreate");
+                
+                ExecMySqlScript(DbConstants.DB_CREATE_SCRIPT);
+                ExecMySqlScript(DbConstants.DB_LOAD_MYSQL_SCRIPT);
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error rebuilding DB", ex);
+                return false;
+            }
         }
 
         public bool IsValidCustomerLogin(string email, string password)
