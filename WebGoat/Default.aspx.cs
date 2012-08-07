@@ -25,7 +25,7 @@ namespace OWASP.WebGoat.NET
                 Session["DBConfigured"] = true;
 
                 //Info leak
-                HttpCookie cookie = new HttpCookie("Server", System.Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(Server.MachineName)));
+                HttpCookie cookie = new HttpCookie("Server", Encoder.Encode(Server.MachineName));
                 Response.Cookies.Add(cookie);
             }
             else
