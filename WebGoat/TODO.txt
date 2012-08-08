@@ -42,6 +42,7 @@ Harry:
   * Also part of automatic DB setup (DONE)
 + Create adaptor for switching out DBs (DONE)
   * Amend Rebuild Page to easily switchout DBs (DONE)
++ Debugging leaks (WORKING)
 + Insecure message digest
 + Insecure random # gen
 + Hard coded seed (For when using random funcationality)
