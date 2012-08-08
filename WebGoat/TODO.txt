@@ -6,15 +6,9 @@ Unassigned:
 + Hard Code Passwords  (PWD in source code)
 + XML Injection
 + Weak Auth (basic auth)
-+ Cleartext passwords (commonly used config files) (in web.config)
-+ Password disclosure to screen or to log
-+ Session id to the screen / log
-+ URL rewriting (e.g. session cookie in url. can rewrite)
 + Httponly (cookie flag)
 + Secure (cookie) flag
   * Flag for cookie to be sent only over HTTPS
-+ Session timeout (config setting)
-+ Dir traversal
 + Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
 + Verb tampering (changing POST/GET etc. request to something different)
   * Google verb tampering by author: Rshan 
@@ -30,7 +24,6 @@ Unassigned:
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
 
-+ Debugging enabled
 + Denial Of Service
 + Readline (denial of service)
 + Unpatched libraries 
@@ -49,8 +42,17 @@ Harry:
 
 Ray:
 
-+ XSS
++ XSS (Done)
 + LINQ SQLi
-+ Information disclosure
++ Information disclosure (Done)
   * Extra sensitive information that may go out (server that is running etc.)
-+ Hard coded salts, keys  
++ Hard coded salts, keys 
++ Session id to the screen / log (Done) 
++ URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
+
+
++ Session timeout (config setting) (Done)
++ Dir traversal (Done)
++ Cleartext passwords (commonly used config files) (in web.config) (Done)
++ Debugging enabled (Done)
++ Password disclosure to screen or to log (Done)
