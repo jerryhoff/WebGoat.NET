@@ -87,23 +87,8 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
         }
 
-        private void ExecMySqlScript(string script)
+        public bool RecreateGoatDb()
         {
-            ProcessStartInfo whichProcInfo = new ProcessStartInfo
-            {
-                FileName = "which",
-                Arguments = "mysql",
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-            };
-            
-            Process whichProc = Process.Start(whichProcInfo);
-            
-            string sqlExec = whichProc.StandardOutput.ReadLine();
-            
-            whichProc.WaitForExit();
-            whichProc.Close();
-            
             string args;
             
             if (string.IsNullOrEmpty(DbConfigFile.Get(DbConstants.KEY_PWD)))
@@ -121,74 +106,18 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                         DbConfigFile.Get(DbConstants.KEY_DATABASE),
                         DbConfigFile.Get(DbConstants.KEY_HOST));
             }
-            
-            Process process = new Process();
-            
-            process.StartInfo.FileName = sqlExec;
-            process.StartInfo.Arguments = args;
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardInput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.RedirectStandardOutput = true;
-            
-            using (AutoResetEvent outWh = new AutoResetEvent(false))
-            using (AutoResetEvent errWh = new AutoResetEvent(false))
-            {
-                process.OutputDataReceived += (sender, e) => {
-                    if (e.Data == null)
-                        outWh.Set();
-                    else
-                        log.Info(e.Data);
-                };
-                process.ErrorDataReceived += (sender, e) =>
-                {
-                    if (e.Data == null)
-                        errWh.Set();
-                    else
-                        log.Error(e.Data);
-                };
 
-                process.Start();
-
-                using (StreamReader reader = new StreamReader(new FileStream(script, FileMode.Open)))
-                {  
-                    string line;
-                    
-                    while ((line = reader.ReadLine()) != null)
-                        process.StandardInput.WriteLine(line);
-                }
-                
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-                
-                int timeout = 5 * 1000;
-                
-                if (process.WaitForExit(timeout) && outWh.WaitOne(timeout) && errWh.WaitOne(timeout))
-                    log.Info(string.Format("Script {0} ran fine", script));
-                else
-                    log.Error(string.Format("Timeout on script: {0}", script));
-                
-            }
-                
-            process.Close();              
-        }
+            log.Info("Running recreate");
         
-        public bool RecreateGoatDb()
-        {
-            try
-            {
-                log.Info("Running recreate");
-                
-                ExecMySqlScript(DbConstants.DB_CREATE_SCRIPT);
-                ExecMySqlScript(DbConstants.DB_LOAD_MYSQL_SCRIPT);
-                
-                return true;
-            }
-            catch (Exception ex)
-            {
-                log.Error("Error rebuilding DB", ex);
+            string cmd = Util.Which("mysql");
+
+            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_CREATE_SCRIPT) != 0)
                 return false;
-            }
+
+            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_LOAD_MYSQL_SCRIPT) != 0)
+                return false;
+
+            return true;
         }
 
         public bool IsValidCustomerLogin(string email, string password)
@@ -211,7 +140,8 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 
                 try
                 {
-                    return ds.Tables[0].Rows.Count == 0;
+                    return ds.Tables[0].Rows.Count != 0;
+
                 }
                 catch (Exception ex)
                 {

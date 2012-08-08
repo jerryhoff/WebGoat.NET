@@ -15,8 +15,8 @@
         </asp:Panel>
 
            
-        <p />
-        <p />
+        <br />
+        <br />
             <table style="width:100%;">
                 <tr>
                     <td class="style1">
@@ -59,7 +59,7 @@
                     </td>
                 </tr>
             </table>
-        <p />
+        <br />
         
 
         <asp:Panel ID="PanelSuccess" runat="server">
@@ -82,71 +82,11 @@
         <br />
         <br />
 
-<asp:Panel ID="PanelRebuildFailure" runat="server" Visible="true">
-        <div class="error">
-            <asp:Literal runat="server" EnableViewState="False" ID="labelRebuildFailure">
-            Currently - WebGoat.NET does not support automated rebuiding of the database.  For now:
-<p/>
-From the prompt, cd into the WebGoat.NET DB directory
-<p/>
-<tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	% cd WebGoat.NET/DB
-</tt>
-<p/>
-
-Start the mysql utility, giving the name (and password, if needed) of a user permission to create databases. For example, to use the default root user:
-<p/>
-<tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% mysql --user=root 
-</tt>
-<p/>
-Create the webgoat_coins database and load the schema. (Loading the schema the schema the first time will give error messages as it attemps to empty any existing tables, just ignore these.)
-<p/>
-<tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mysql> create database webgoat_coins; 
-	<p/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mysql> use webgoat_coins; 
-    <p/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mysql> source create_webgoatcoins.sql; 
-</tt>
-<p/>
-Load the table contents:
-<tt>
-	<p/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mysql> source load_webgoatcoins.sql; 
-</tt>
-<p/>
-Exit from mysql:
-<p/>
-<tt>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mysql> quit; 
-</tt>
-            
-            </asp:Literal>
-        </div>
-</asp:Panel>		
-		
-
-        
-        
-
-
-
-        <!--
-        	<table style="width:100%;">
-                <tr>
-                    <td class="style1">
-                        &nbsp;DB Path:</td>
-                    <td class="style2">
-                        <asp:TextBox ID="txtPathToDB" runat="server" Height="16px" Width="371px" 
-                            CssClass="text"></asp:TextBox>
-                    </td>
-                </tr>
-                
-            </table>
-        -->
-
-
+        <asp:Panel ID="PanelRebuildFailure" runat="server">
+                <div class="error"/>
+                <asp:Literal runat="server" EnableViewState="False" ID="labelRebuildFailure" />
+        </asp:Panel>     
+     
         <asp:Panel ID="PanelRebuildSuccess" runat="server">
             <div class="success">
             <asp:Literal runat="server" EnableViewState="False" ID="labelRebuildSuccess"></asp:Literal>
@@ -154,11 +94,8 @@ Exit from mysql:
         </asp:Panel>
 
 
-
-		<!--
         <asp:Button ID="btnRebuildDatabase" runat="server" onclick="btnRebuildDatabase_Click" 
             Text="Rebuild Database" SkinID="Button" />
-        -->
         <br />
         <asp:Label ID="lblStatus" runat="server"></asp:Label>
         <br />

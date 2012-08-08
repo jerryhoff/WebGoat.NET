@@ -911,6 +911,7 @@
     <Compile Include="App_Code\DB\DummyDbProvider.cs" />
     <Compile Include="App_Code\ConfigFile.cs" />
     <Compile Include="App_Code\DB\DbConstants.cs" />
+    <Compile Include="App_Code\Util.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!--Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" /-->

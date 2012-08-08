@@ -33,12 +33,12 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
             string email = txtUserName.Text;
             string pwd = txtPassword.Text;
 
-            log.Info("User attempted to log in with password " + pwd);
+            log.Info("User " + email + " attempted to log in with password " + pwd);
 
             if (!du.IsValidCustomerLogin(email, pwd))
             {
                 labelError.Text = "Incorrect username/password"; 
-               
+                PanelError.Visible = true;
                 return;
             }
             // put ticket into the cookie
