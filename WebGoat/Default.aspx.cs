@@ -33,6 +33,8 @@ namespace OWASP.WebGoat.NET
                 lblOutput.Text = "Before proceeding, please ensure this instance of WebGoat.NET can connect to the database!";
             }
 
+            // Write viewState to Screen 
+            ViewState["Session"] = Session.SessionID;
         }
     }
 }
