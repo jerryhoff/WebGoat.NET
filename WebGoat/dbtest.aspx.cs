@@ -31,7 +31,7 @@ namespace OWASP.WebGoat.NET
             PanelError.Visible = false;
             
             PanelRebuildSuccess.Visible = false;
-            //PanelRebuildFailure.Visible = false;
+            PanelRebuildFailure.Visible = false;
 
 		}
 
@@ -63,14 +63,22 @@ namespace OWASP.WebGoat.NET
                 PanelError.Visible = true;
                 Session["DBConfigured"] = null;
             }
-            
-            //TODO: Piggybacking on Test button. Use separate rebuild button when you get designer tool
-            du.RecreateGoatDb();
         }
 
         protected void btnRebuildDatabase_Click(object sender, EventArgs e)
         {
-
+            if (du.RecreateGoatDb())
+            {
+                labelRebuildSuccess.Text = "Database Rebuild Successful!";
+                PanelRebuildSuccess.Visible = true;
+                Session["DBConfigured"] = true;
+            }
+            else
+            {
+                labelRebuildFailure.Text = "Error rebuilding database. Please see logs.";
+                PanelRebuildFailure.Visible = true;
+                Session["DBConfigured"] = null;
+            }
         }
 	}
 }

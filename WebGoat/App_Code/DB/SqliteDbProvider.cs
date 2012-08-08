@@ -105,91 +105,20 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
         }
 
-        private void ExecSqliteScript(string script)
-        {
-            ProcessStartInfo whichProcInfo = new ProcessStartInfo
-            {
-                FileName = "which",
-                Arguments = "sqlite3",
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-            };
-            
-            var whichProc = Process.Start(whichProcInfo);
-            
-            string sqlExec = whichProc.StandardOutput.ReadLine();
-            
-            whichProc.WaitForExit();
-            whichProc.Close();
-        
-        
-            Process process = new Process();
-            process.StartInfo.FileName = sqlExec;
-            process.StartInfo.Arguments = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
-            process.StartInfo.UseShellExecute = false;
-            process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.RedirectStandardError = true;
-            process.StartInfo.RedirectStandardInput = true;
-                
-            using (AutoResetEvent outWh = new AutoResetEvent(false))
-            using (AutoResetEvent errWh = new AutoResetEvent(false))
-            {
-                process.OutputDataReceived += (sender, e) => {
-                    if (e.Data == null)
-                        outWh.Set();
-                    else
-                        log.Info(e.Data);
-                };
-                process.ErrorDataReceived += (sender, e) =>
-                {
-                    if (e.Data == null)
-                        errWh.Set();
-                    else
-                        log.Error(e.Data);
-                };
-
-                process.Start();
-
-
-                
-                using (StreamReader reader = new StreamReader(new FileStream(script, FileMode.Open)))
-                {  
-                    string line;
-                    
-                    while ((line = reader.ReadLine()) != null)
-                        process.StandardInput.WriteLine(line);
-                }
-                
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
-                
-                int timeout = 5 * 1000;
-                
-                if (process.WaitForExit(timeout) && outWh.WaitOne(timeout) && errWh.WaitOne(timeout))
-                    log.Info(string.Format("Script {0} ran fine", script));
-                else
-                    log.Error(string.Format("Timeout on script: {0}", script));
-                
-                process.Close();
-            }
-        }
-        
         public bool RecreateGoatDb()
         {
-            try
-            {
-                log.Info("Running recreate");
-                
-                ExecSqliteScript(DbConstants.DB_CREATE_SCRIPT);
-                ExecSqliteScript(DbConstants.DB_LOAD_SQLITE_SCRIPT);
-                
-                return true;
-            }
-            catch (Exception ex)
-            {
-                log.Error("Error rebuilding DB", ex);
+            log.Info("Running recreate");
+
+            string cmd = Util.Which("sqlite3");
+            string args = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
+
+            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_CREATE_SCRIPT) != 0)
                 return false;
-            }
+
+            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_LOAD_SQLITE_SCRIPT) != 0)
+                return false;
+
+            return true;
         }
 
         //Find the bugs!
