@@ -20,7 +20,7 @@ namespace OWASP.WebGoat.NET
             else
                 XmlConfigurator.Configure();
             
-            Settings.Init();
+            Settings.Init(Server);
         }
 
         protected void Session_Start(object sender, EventArgs e)
