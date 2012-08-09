@@ -12,14 +12,23 @@ namespace OWASP.WebGoat.NET.App_Code.DB
     public class SqliteDbProvider : IDbProvider
     {
         private string _connectionString = string.Empty;
+        private string _clientExec;
+        private string _dbFileName;
+
         ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         
         public string Name { get { return DbConstants.DB_TYPE_SQLITE; } }
 
+        public SqliteDbProvider(ConfigFile configFile)
+        {
+            _connectionString = string.Format("Data Source={0};Version=3", configFile.Get(DbConstants.KEY_FILE_NAME));
+
+            _clientExec = configFile.Get(DbConstants.KEY_CLIENT_EXEC);
+            _dbFileName = configFile.Get(DbConstants.KEY_FILE_NAME);
+        }
+
         public bool TestConnection()
         {   
-            
-                
             try
             {
                 using (SQLiteConnection conn = new SQLiteConnection(_connectionString))
@@ -40,23 +49,6 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             {
                 log.Error("Error testing DB", ex);
                 return false;
-            }
-        }
-        
-        private static string ConfigConnection(ConfigFile configFile)
-        {
-            return string.Format("Data Source={0};Version=3", configFile.Get(DbConstants.KEY_FILE_NAME));
-        }
-        
-        private ConfigFile _configFile;
-
-        public ConfigFile DbConfigFile
-        {
-            get { return _configFile; } 
-            set
-            {
-                _connectionString = ConfigConnection(value);
-                _configFile = value;
             }
         }
 
@@ -109,13 +101,10 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             log.Info("Running recreate");
 
-            string cmd = Util.Which("sqlite3");
-            string args = DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
-
-            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_CREATE_SCRIPT) != 0)
+            if (Util.RunProcessWithInput(_clientExec, _dbFileName, DbConstants.DB_CREATE_SCRIPT) != 0)
                 return false;
 
-            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_LOAD_SQLITE_SCRIPT) != 0)
+            if (Util.RunProcessWithInput(_clientExec, _dbFileName, DbConstants.DB_LOAD_SQLITE_SCRIPT) != 0)
                 return false;
 
             return true;

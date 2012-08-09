@@ -9,45 +9,25 @@ namespace OWASP.WebGoat.NET.App_Code.DB
     //NOT THREAD SAFE!
     public class DbProviderFactory
     {
-        private static DummyDbProvider _dummyProvider = new DummyDbProvider();
         private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         
-        public static IDbProvider Create(string filePath)
+        public static IDbProvider Create(ConfigFile configFile)
         {
-            ConfigFile configFile = new ConfigFile(filePath);
-            
             configFile.Load();
-            
-            switch (configFile.Get(DbConstants.KEY_DB_TYPE))
+
+            string dbType = configFile.Get(DbConstants.KEY_DB_TYPE);
+
+            log.Info("Creating provider for" + dbType);
+
+            switch (dbType)
             {
                 case DbConstants.DB_TYPE_MYSQL:
-                    return CreateMySqlDbProvider(configFile);
+                    return new MySqlDbProvider(configFile);
                 case DbConstants.DB_TYPE_SQLITE:
-                    return CreateSqliteProvider(configFile);
+                    return new SqliteDbProvider(configFile);
                 default:
-                    log.Info("Empty DB Type. Returning Dummy provider");        
-                    return _dummyProvider;
+                    throw new Exception(string.Format("Don't know Data Provider type {0}", dbType));
             }
-        }
-        
-        private static IDbProvider CreateMySqlDbProvider(ConfigFile configFile)
-        {
-            log.Info("Creating MySql Provider");
-                                                             
-            IDbProvider provider = new MySqlDbProvider();
-            provider.DbConfigFile = configFile;
-            
-            return provider;
-        }
-        
-        private static IDbProvider CreateSqliteProvider(ConfigFile configFile)
-        {
-            log.Info("Creating Sqlite Provider");
-            
-            IDbProvider provider = new SqliteDbProvider();
-            provider.DbConfigFile = configFile;
-            
-            return provider;
         }
     }
 }

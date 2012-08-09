@@ -8,8 +8,6 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         string Name { get; }
 
         bool TestConnection();
-        
-        ConfigFile DbConfigFile { get; set; }
 
         DataSet GetCatalogData();
 

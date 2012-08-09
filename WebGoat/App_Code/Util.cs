@@ -11,25 +11,6 @@ namespace OWASP.WebGoat.NET.App_Code
     {
         private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         
-        public static string Which(string exec)
-        {
-            ProcessStartInfo whichProcInfo = new ProcessStartInfo
-            {
-                FileName = "which",
-                Arguments = exec,
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-            };
-            
-            using (Process whichProc = Process.Start(whichProcInfo))
-            {
-                string sqlExec = whichProc.StandardOutput.ReadLine();
-                whichProc.WaitForExit();
-
-                return sqlExec;
-            }
-        }
-
         public static int RunProcessWithInput(string cmd, string args, string input)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo

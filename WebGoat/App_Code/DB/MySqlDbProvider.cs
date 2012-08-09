@@ -11,19 +11,24 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 {
     public class MySqlDbProvider : IDbProvider
     {
-        private string _connectionString;
-        ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        
-        public string Name { get { return DbConstants.DB_TYPE_MYSQL; } }
-        
-        private string ConfigConnection(ConfigFile configFile)
+        private readonly string _connectionString;
+        private readonly string _host;
+        private readonly string _port;
+        private readonly string _pwd;
+        private readonly string _uid;
+        private readonly string _database;
+        private readonly string _clientExec;
+
+        private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        public MySqlDbProvider(ConfigFile configFile)
         {
             if (configFile == null)
-                return string.Empty;
+                _connectionString = string.Empty;
                 
             if (!string.IsNullOrEmpty(configFile.Get(DbConstants.KEY_PWD)))
             {
-                return string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
+                _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
                                                   configFile.Get(DbConstants.KEY_HOST),
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
@@ -32,25 +37,23 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
             else
             {
-                 return string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3}",
+                 _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3}",
                                                   configFile.Get(DbConstants.KEY_HOST),
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
                                                   configFile.Get(DbConstants.KEY_UID));
             }
-        }
-        
-        private ConfigFile _configFile;
 
-        public ConfigFile DbConfigFile
-        {
-            get { return _configFile; }
-            set
-            {
-                _connectionString = ConfigConnection(value);
-                _configFile = value;
-            }
+            _uid = configFile.Get(DbConstants.KEY_UID);
+            _pwd = configFile.Get(DbConstants.KEY_PWD);
+            _database = configFile.Get(DbConstants.KEY_DATABASE);
+            _host = configFile.Get(DbConstants.KEY_HOST);
+            _clientExec = configFile.Get(DbConstants.KEY_CLIENT_EXEC);
+            _port = configFile.Get(DbConstants.KEY_PORT);
         }
+
+        public string Name { get { return DbConstants.DB_TYPE_MYSQL; } }
+        
 
         public bool TestConnection()
         {
@@ -91,30 +94,23 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             string args;
             
-            if (string.IsNullOrEmpty(DbConfigFile.Get(DbConstants.KEY_PWD)))
+            if (string.IsNullOrEmpty(_pwd))
             {
-                args = string.Format("--user={0} --database={1} --host={2} -f",
-                        DbConfigFile.Get(DbConstants.KEY_UID),
-                        DbConfigFile.Get(DbConstants.KEY_DATABASE),
-                        DbConfigFile.Get(DbConstants.KEY_HOST));
+                args = string.Format("--user={0} --database={1} --host={2} --port={3} -f",
+                        _uid, _database, _host, _port);
             }
             else
             {
-                args = string.Format("--user={0} --password={1} --database={2} --host={3} -f",
-                        DbConfigFile.Get(DbConstants.KEY_UID),
-                        DbConfigFile.Get(DbConstants.KEY_PWD),
-                        DbConfigFile.Get(DbConstants.KEY_DATABASE),
-                        DbConfigFile.Get(DbConstants.KEY_HOST));
+                args = string.Format("--user={0} --password={1} --database={2} --host={3} --port={4} -f",
+                        _uid, _pwd, _database, _host, _port);
             }
 
             log.Info("Running recreate");
-        
-            string cmd = Util.Which("mysql");
 
-            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_CREATE_SCRIPT) != 0)
+            if (Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_SCRIPT) != 0)
                 return false;
 
-            if (Util.RunProcessWithInput(cmd, args, DbConstants.DB_LOAD_MYSQL_SCRIPT) != 0)
+            if (Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_LOAD_MYSQL_SCRIPT) != 0)
                 return false;
 
             return true;

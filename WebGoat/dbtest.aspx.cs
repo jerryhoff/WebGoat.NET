@@ -14,20 +14,20 @@ namespace OWASP.WebGoat.NET
 {
 	public partial class RebuildDatabase : System.Web.UI.Page
 	{	   
-        private IDbProvider du = Settings.CurrentDbProvider;
-        
 		protected void Page_Load (object sender, EventArgs e)
 		{
-            if(!Page.IsPostBack && du != null && du.DbConfigFile != null)
+            ConfigFile configFile = Settings.CurrentConfigFile;
+
+            if(!Page.IsPostBack)
             {
-                dropDownDataProvider.Text = du.DbConfigFile.Get(DbConstants.KEY_DB_TYPE);
-                txtClientExecutable.Text = du.DbConfigFile.Get(DbConstants.KEY_CLIENT_EXEC);
-                txtFilePath.Text = du.DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
-                txtServer.Text = du.DbConfigFile.Get(DbConstants.KEY_HOST);
-                txtPort.Text = du.DbConfigFile.Get(DbConstants.KEY_PORT);
-                txtDatabase.Text = du.DbConfigFile.Get(DbConstants.KEY_DATABASE);
-                txtUserName.Text = du.DbConfigFile.Get(DbConstants.KEY_UID);
-                txtPassword.Text = du.DbConfigFile.Get(DbConstants.KEY_PWD);
+                dropDownDataProvider.Text = configFile.Get(DbConstants.KEY_DB_TYPE);
+                txtClientExecutable.Text = configFile.Get(DbConstants.KEY_CLIENT_EXEC);
+                txtFilePath.Text = configFile.Get(DbConstants.KEY_FILE_NAME);
+                txtServer.Text = configFile.Get(DbConstants.KEY_HOST);
+                txtPort.Text = configFile.Get(DbConstants.KEY_PORT);
+                txtDatabase.Text = configFile.Get(DbConstants.KEY_DATABASE);
+                txtUserName.Text = configFile.Get(DbConstants.KEY_UID);
+                txtPassword.Text = configFile.Get(DbConstants.KEY_PWD);
             }
 
             PanelSuccess.Visible = false;
@@ -40,59 +40,19 @@ namespace OWASP.WebGoat.NET
 
 		protected void btnTest_Click (object sender, EventArgs e)
 		{			
-            lblOutput.Text = du.TestConnection() ? "Works!" : "Problem";
+            lblOutput.Text = Settings.CurrentDbProvider.TestConnection() ? "Works!" : "Problem";
 		}
 
         protected void btnTestConfiguration_Click(object sender, EventArgs e)
         {
-            if (du == null || du.DbConfigFile == null)
-            {
-                labelError.Text = "Error testing database. Config not set.";
-                PanelError.Visible = true;
-                Session["DBConfigured"] = null;
-
-                return;
-            }
+            ConfigFile configFile = Settings.CurrentConfigFile;
 
             //TODO: Need to provide interface for saving multiple configs need VS for it.
-            if (string.IsNullOrEmpty(txtServer.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_HOST);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_HOST, txtServer.Text);
+            UpdateConfigFile(configFile);
 
-            if (string.IsNullOrEmpty(txtFilePath.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_FILE_NAME);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_FILE_NAME, txtFilePath.Text);
+            Settings.CurrentDbProvider = DbProviderFactory.Create(configFile);
 
-            if (string.IsNullOrEmpty(dropDownDataProvider.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_DB_TYPE);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_DB_TYPE, dropDownDataProvider.Text);
-
-            if (string.IsNullOrEmpty(txtPort.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_PORT);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_PORT, txtPort.Text);
-
-            if (string.IsNullOrEmpty(txtDatabase.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_DATABASE);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_DATABASE, txtDatabase.Text);
-            
-            if (string.IsNullOrEmpty(txtUserName.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_UID);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_UID, txtUserName.Text);
-
-            if (string.IsNullOrEmpty(txtPassword.Text))
-                du.DbConfigFile.Remove(DbConstants.KEY_PWD);
-            else
-                du.DbConfigFile.Set(DbConstants.KEY_PWD, txtPassword.Text);
-            
-            du.DbConfigFile.Save();
-            
-            if (du.TestConnection())
+            if (Settings.CurrentDbProvider.TestConnection())
             {
                 labelSuccess.Text = "Connection to Database Successful!";
                 PanelSuccess.Visible = true;
@@ -108,7 +68,14 @@ namespace OWASP.WebGoat.NET
 
         protected void btnRebuildDatabase_Click(object sender, EventArgs e)
         {
-            if (du.RecreateGoatDb())
+            ConfigFile configFile = Settings.CurrentConfigFile;
+
+            UpdateConfigFile(configFile);
+
+            Settings.CurrentDbProvider = DbProviderFactory.Create(configFile);
+            Settings.CurrentDbProvider.RecreateGoatDb();
+
+            if (Settings.CurrentDbProvider.TestConnection())
             {
                 labelRebuildSuccess.Text = "Database Rebuild Successful!";
                 PanelRebuildSuccess.Visible = true;
@@ -120,6 +87,51 @@ namespace OWASP.WebGoat.NET
                 PanelRebuildFailure.Visible = true;
                 Session["DBConfigured"] = null;
             }
+        }
+
+        private void UpdateConfigFile(ConfigFile configFile)
+        {
+           if (string.IsNullOrEmpty(txtServer.Text))
+                configFile.Remove(DbConstants.KEY_HOST);
+            else
+                configFile.Set(DbConstants.KEY_HOST, txtServer.Text);
+
+            if (string.IsNullOrEmpty(txtFilePath.Text))
+                configFile.Remove(DbConstants.KEY_FILE_NAME);
+            else
+                configFile.Set(DbConstants.KEY_FILE_NAME, txtFilePath.Text);
+
+            if (string.IsNullOrEmpty(dropDownDataProvider.Text))
+                configFile.Remove(DbConstants.KEY_DB_TYPE);
+            else
+                configFile.Set(DbConstants.KEY_DB_TYPE, dropDownDataProvider.Text);
+
+            if (string.IsNullOrEmpty(txtPort.Text))
+                configFile.Remove(DbConstants.KEY_PORT);
+            else
+                configFile.Set(DbConstants.KEY_PORT, txtPort.Text);
+
+            if (string.IsNullOrEmpty(txtClientExecutable.Text))
+                configFile.Remove(DbConstants.KEY_CLIENT_EXEC);
+            else
+                configFile.Set(DbConstants.KEY_CLIENT_EXEC, txtClientExecutable.Text);
+
+            if (string.IsNullOrEmpty(txtDatabase.Text))
+                configFile.Remove(DbConstants.KEY_DATABASE);
+            else
+                configFile.Set(DbConstants.KEY_DATABASE, txtDatabase.Text);
+            
+            if (string.IsNullOrEmpty(txtUserName.Text))
+                configFile.Remove(DbConstants.KEY_UID);
+            else
+                configFile.Set(DbConstants.KEY_UID, txtUserName.Text);
+
+            if (string.IsNullOrEmpty(txtPassword.Text))
+                configFile.Remove(DbConstants.KEY_PWD);
+            else
+                configFile.Set(DbConstants.KEY_PWD, txtPassword.Text);
+            
+            configFile.Save();
         }
 	}
 }
