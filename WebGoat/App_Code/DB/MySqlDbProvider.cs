@@ -95,25 +95,18 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             string args;
             
             if (string.IsNullOrEmpty(_pwd))
-            {
                 args = string.Format("--user={0} --database={1} --host={2} --port={3} -f",
                         _uid, _database, _host, _port);
-            }
             else
-            {
                 args = string.Format("--user={0} --password={1} --database={2} --host={3} --port={4} -f",
                         _uid, _pwd, _database, _host, _port);
-            }
 
             log.Info("Running recreate");
 
-            if (Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_SCRIPT) != 0)
-                return false;
-
-            if (Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_LOAD_MYSQL_SCRIPT) != 0)
-                return false;
-
-            return true;
+            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_SCRIPT));
+            int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_LOAD_MYSQL_SCRIPT));
+            
+            return Math.Abs(retVal1) + Math.Abs(retVal2) == 0;
         }
 
         public bool IsValidCustomerLogin(string email, string password)

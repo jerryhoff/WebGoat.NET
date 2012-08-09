@@ -101,13 +101,10 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             log.Info("Running recreate");
 
-            if (Util.RunProcessWithInput(_clientExec, _dbFileName, DbConstants.DB_CREATE_SCRIPT) != 0)
-                return false;
-
-            if (Util.RunProcessWithInput(_clientExec, _dbFileName, DbConstants.DB_LOAD_SQLITE_SCRIPT) != 0)
-                return false;
-
-            return true;
+            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, _dbFileName, DbConstants.DB_CREATE_SCRIPT));
+            int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, _dbFileName, DbConstants.DB_LOAD_SQLITE_SCRIPT));
+            
+            return Math.Abs(retVal1) + Math.Abs(retVal2) == 0;
         }
 
         //Find the bugs!

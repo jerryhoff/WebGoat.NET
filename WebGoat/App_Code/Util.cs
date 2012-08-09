@@ -65,12 +65,18 @@ namespace OWASP.WebGoat.NET.App_Code
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
     
-                are.WaitOne();
+                //NOTE: Looks like we have a mono bug: https://bugzilla.xamarin.com/show_bug.cgi?id=6291
+                //have a wait time for now.
+                
+                are.WaitOne(10 * 1000);
 
                 if (process.HasExited)
                     return process.ExitCode;
                 else //WTF? Should have exited dammit!
+                {
+                    process.Kill();
                     return 1;
+                }
             }
         }
     }
