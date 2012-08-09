@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
 <h2>Headers</h2>
-<asp:label ID="lblHeaders" runat="server"></asp:label>
+<asp:Label ID="lblHeaders" runat="server"></asp:Label>
 <br />
 <h2>Cookies</h2>
 <asp:GridView ID="gvCookies" runat="server" AutoGenerateColumns="true" />
