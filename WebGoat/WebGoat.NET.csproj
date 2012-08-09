@@ -976,10 +976,10 @@
   <ItemGroup>
     <Content Include="WebGoatCoins\ProductDetails.aspx" />
     <Content Include="WebGoatCoins\Web.config" />
-    <None Include="downloads\authentication.pdf" />
-    <None Include="downloads\csrf.pdf" />
-    <None Include="downloads\transport_layer.pdf" />
-    <None Include="downloads\architecture.pdf" />
+    <None Include="Downloads\authentication.pdf" />
+    <None Include="Downloads\csrf.pdf" />
+    <None Include="Downloads\transport_layer.pdf" />
+    <None Include="Downloads\architecture.pdf" />
     <None Include="TODO.txt" />
     <None Include="DB_Scripts\create_webgoatcoins.sql" />
     <None Include="DB_Scripts\load_webgoatcoins.sql" />
