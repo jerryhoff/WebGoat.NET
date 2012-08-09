@@ -20,6 +20,9 @@ namespace OWASP.WebGoat.NET
 		{
             if(!Page.IsPostBack)
             {
+                dropDownDataProvider.Text = du.DbConfigFile.Get(DbConstants.KEY_DB_TYPE);
+                txtClientExecutable.Text = du.DbConfigFile.Get(DbConstants.KEY_CLIENT_EXEC);
+                txtFilePath.Text = du.DbConfigFile.Get(DbConstants.KEY_FILE_NAME);
                 txtServer.Text = du.DbConfigFile.Get(DbConstants.KEY_HOST);
                 txtPort.Text = du.DbConfigFile.Get(DbConstants.KEY_PORT);
                 txtDatabase.Text = du.DbConfigFile.Get(DbConstants.KEY_DATABASE);
@@ -43,11 +46,40 @@ namespace OWASP.WebGoat.NET
         protected void btnTestConfiguration_Click(object sender, EventArgs e)
         {
             //TODO: Need to provide interface for saving multiple configs need VS for it.
-            du.DbConfigFile.Set(DbConstants.KEY_HOST, txtServer.Text);
-            du.DbConfigFile.Set(DbConstants.KEY_PORT, txtPort.Text);
-            du.DbConfigFile.Set(DbConstants.KEY_DATABASE, txtDatabase.Text);
-            du.DbConfigFile.Set(DbConstants.KEY_UID, txtUserName.Text);
-            du.DbConfigFile.Set(DbConstants.KEY_PWD, txtPassword.Text);
+            if (string.IsNullOrEmpty(txtServer.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_HOST);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_HOST, txtServer.Text);
+
+            if (string.IsNullOrEmpty(txtFilePath.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_FILE_NAME);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_FILE_NAME, txtFilePath.Text);
+
+            if (string.IsNullOrEmpty(dropDownDataProvider.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_DB_TYPE);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_DB_TYPE, dropDownDataProvider.Text);
+
+            if (string.IsNullOrEmpty(txtPort.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_PORT);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_PORT, txtPort.Text);
+
+            if (string.IsNullOrEmpty(txtDatabase.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_DATABASE);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_DATABASE, txtDatabase.Text);
+            
+            if (string.IsNullOrEmpty(txtUserName.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_UID);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_UID, txtUserName.Text);
+
+            if (string.IsNullOrEmpty(txtPassword.Text))
+                du.DbConfigFile.Remove(DbConstants.KEY_PWD);
+            else
+                du.DbConfigFile.Set(DbConstants.KEY_PWD, txtPassword.Text);
             
             du.DbConfigFile.Save();
             

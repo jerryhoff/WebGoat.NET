@@ -10,7 +10,7 @@
         
         <asp:Panel ID="PanelWelcome" runat="server">
             <div class="notice">
-            <asp:Literal runat="server" EnableViewState="False" ID="labelMessage">WebGoat.NET requires a working MySQL server.&nbsp; Fill in the following fields:</asp:Literal>
+            <asp:Literal runat="server" EnableViewState="False" ID="labelMessage">WebGoat.NET requires a working data provider.&nbsp; Fill in the following (applicable) fields:</asp:Literal>
             </div>
         </asp:Panel>
 
@@ -18,6 +18,33 @@
         <br />
         <br />
             <table style="width:100%;">
+                <tr>
+                    <td class="style1">
+                        Data Provider:</td>
+                    <td class="style2">
+                        <asp:DropDownList ID="dropDownDataProvider" runat="server" CssClass="container_24" 
+                            Width="371px">
+                            <asp:ListItem>Sqlite</asp:ListItem>
+                            <asp:ListItem>MySql</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style1">
+                        Data File Path:</td>
+                    <td class="style2">
+                        <asp:TextBox ID="txtFilePath" runat="server" Height="16px" Width="371px" 
+                            CssClass="text"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="style1">
+                        Client Executable:</td>
+                    <td class="style2">
+                        <asp:TextBox ID="txtClientExecutable" runat="server" Height="16px" Width="371px" 
+                            CssClass="text"></asp:TextBox>
+                    </td>
+                </tr>
                 <tr>
                     <td class="style1">
                         Server:</td>
@@ -126,11 +153,21 @@
             <style type="text/css">
                 .style1
                 {
-                    width: 76px;
+                    width: 101px;
                 }
                 .style2
                 {
                     width: 444px;
+                }
+                .style3
+                {
+                    width: 101px;
+                    height: 32px;
+                }
+                .style4
+                {
+                    width: 444px;
+                    height: 32px;
                 }
             </style>
 </asp:Content>

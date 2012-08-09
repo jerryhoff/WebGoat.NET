@@ -31,6 +31,33 @@ namespace OWASP.WebGoat.NET {
         protected global::System.Web.UI.WebControls.Literal labelMessage;
         
         /// <summary>
+        /// dropDownDataProvider control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropDownDataProvider;
+        
+        /// <summary>
+        /// txtFilePath control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFilePath;
+        
+        /// <summary>
+        /// txtClientExecutable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtClientExecutable;
+        
+        /// <summary>
         /// txtServer control.
         /// </summary>
         /// <remarks>
@@ -121,13 +148,22 @@ namespace OWASP.WebGoat.NET {
         protected global::System.Web.UI.WebControls.Button btnTestConfiguration;
         
         /// <summary>
-        /// txtPathToDB control.
+        /// PanelRebuildFailure control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPathToDB;
+        protected global::System.Web.UI.WebControls.Panel PanelRebuildFailure;
+        
+        /// <summary>
+        /// labelRebuildFailure control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal labelRebuildFailure;
         
         /// <summary>
         /// PanelRebuildSuccess control.
@@ -146,24 +182,6 @@ namespace OWASP.WebGoat.NET {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal labelRebuildSuccess;
-        
-        /// <summary>
-        /// PanelRebuildFailure control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelRebuildFailure;
-        
-        /// <summary>
-        /// labelRebuildFailure control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal labelRebuildFailure;
         
         /// <summary>
         /// btnRebuildDatabase control.

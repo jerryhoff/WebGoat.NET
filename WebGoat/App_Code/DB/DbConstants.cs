@@ -6,6 +6,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
     {
         //Keys
         public const string KEY_DB_TYPE = "dbtype";
+        public const string KEY_CLIENT_EXEC = "client";
         public const string KEY_HOST = "host";
         public const string KEY_PORT = "port";
         public const string KEY_FILE_NAME = "filename";
