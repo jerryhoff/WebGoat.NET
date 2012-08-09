@@ -18,7 +18,7 @@ namespace OWASP.WebGoat.NET
         
 		protected void Page_Load (object sender, EventArgs e)
 		{
-            if(!Page.IsPostBack)
+            if(!Page.IsPostBack && du != null && du.DbConfigFile != null)
             {
                 dropDownDataProvider.Text = du.DbConfigFile.Get(DbConstants.KEY_DB_TYPE);
                 txtClientExecutable.Text = du.DbConfigFile.Get(DbConstants.KEY_CLIENT_EXEC);
@@ -45,6 +45,15 @@ namespace OWASP.WebGoat.NET
 
         protected void btnTestConfiguration_Click(object sender, EventArgs e)
         {
+            if (du == null || du.DbConfigFile == null)
+            {
+                labelError.Text = "Error testing database. Config not set.";
+                PanelError.Visible = true;
+                Session["DBConfigured"] = null;
+
+                return;
+            }
+
             //TODO: Need to provide interface for saving multiple configs need VS for it.
             if (string.IsNullOrEmpty(txtServer.Text))
                 du.DbConfigFile.Remove(DbConstants.KEY_HOST);
