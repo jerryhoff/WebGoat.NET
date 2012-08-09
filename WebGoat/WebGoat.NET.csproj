@@ -480,6 +480,7 @@
     <Content Include="DB_Scripts\products\thumbBuffaloBullion.jpg" />
     <Content Include="DB_Scripts\products\thumbJMonroe.jpg" />
     <Content Include="DB_Scripts\products\thumbWashington.jpg" />
+    <Content Include="Content\Trace.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -912,6 +913,12 @@
     <Compile Include="App_Code\ConfigFile.cs" />
     <Compile Include="App_Code\DB\DbConstants.cs" />
     <Compile Include="App_Code\Util.cs" />
+    <Compile Include="Content\Trace.aspx.cs">
+      <DependentUpon>Trace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Trace.aspx.designer.cs">
+      <DependentUpon>Trace.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!--Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" /-->

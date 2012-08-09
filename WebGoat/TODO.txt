@@ -48,7 +48,7 @@ Ray:
 + Session id to the screen / log (Done) 
 + URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
 + Basic Auth
-
++ Trace (Done)
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)
