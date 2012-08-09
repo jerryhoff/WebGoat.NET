@@ -482,6 +482,7 @@
     <Content Include="DB_Scripts\products\thumbWashington.jpg" />
     <Content Include="Content\Trace.aspx" />
     <Content Include="Content\XPathInjection.aspx" />
+    <Content Include="Content\HeaderInjection.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -925,6 +926,12 @@
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.designer.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HeaderInjection.aspx.cs">
+      <DependentUpon>HeaderInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HeaderInjection.aspx.designer.cs">
+      <DependentUpon>HeaderInjection.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
