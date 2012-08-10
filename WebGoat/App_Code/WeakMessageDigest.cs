@@ -39,7 +39,7 @@ namespace OWASP.WebGoat.NET.App_Code
                 val += (byte) c;
 
             //NOTE: Need to be between 32 and 126 in the ASCII table to be printable
-            bVal = (byte) (val % (127 - 31 -1) + 32);
+            bVal = (byte) (val % (127 - 32 -1) + 33);
 
             return bVal;
         }
