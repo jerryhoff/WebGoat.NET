@@ -948,6 +948,7 @@
     <Compile Include="Content\XMLInjection.aspx.designer.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\WeakMessageDigest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

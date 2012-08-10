@@ -19,6 +19,10 @@ namespace OWASP.WebGoat.NET.Content
 
 		protected System.Web.UI.WebControls.Content Content3;
                 
-		protected System.Web.UI.WebControls.Label lblTest;
+		protected System.Web.UI.WebControls.Label lblDigest;
+
+		protected System.Web.UI.WebControls.TextBox txtBoxMsg;
+                
+		protected System.Web.UI.WebControls.Label lblResultDigest;
 	}
 }
