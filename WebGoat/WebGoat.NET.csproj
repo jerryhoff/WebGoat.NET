@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <GenerateFullPaths>True</GenerateFullPaths>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
@@ -18,23 +19,23 @@
     </UpgradeBackupLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
@@ -483,6 +484,8 @@
     <Content Include="Content\Trace.aspx" />
     <Content Include="Content\XPathInjection.aspx" />
     <Content Include="Content\HeaderInjection.aspx" />
+    <Content Include="Content\MessageDigest.aspx" />
+    <Content Include="Content\XMLInjection.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -933,13 +936,22 @@
     <Compile Include="Content\HeaderInjection.aspx.designer.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Content\MessageDigest.aspx.cs">
+      <DependentUpon>MessageDigest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\MessageDigest.aspx.designer.cs">
+      <DependentUpon>MessageDigest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XMLInjection.aspx.cs">
+      <DependentUpon>XMLInjection.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!--Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" /-->
   <!--Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" /-->
   <ProjectExtensions>
     <MonoDevelop>
-      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+      <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
         <Policies>
           <TextStylePolicy inheritsSet="null" scope="application/x-aspx" />
           <TextStylePolicy inheritsSet="null" scope="application/x-asax" />
@@ -952,26 +964,9 @@
           <TextStylePolicy inheritsSet="null" scope="application/x-master-page" />
           <TextStylePolicy inheritsSet="null" scope="application/x-ashx" />
         </Policies>
-        <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+        <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
-    <VisualStudio>
-      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
-        <WebProjectProperties>
-          <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5660</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-        </WebProjectProperties>
-      </FlavorProperties>
-    </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="WebGoatCoins\uploads\" />
@@ -1006,6 +1001,4 @@
     <None Include="DB_Scripts\products\.DS_Store" />
   </ItemGroup>
   <ItemGroup />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
 </Project>
