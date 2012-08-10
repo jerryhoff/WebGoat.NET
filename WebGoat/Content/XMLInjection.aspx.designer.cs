@@ -9,12 +9,12 @@
 // ------------------------------------------------------------------------------
 
 namespace OWASP.WebGoat.NET {
-    
-    
-    public partial class XMLInjection {
-        
-        protected System.Web.UI.WebControls.Content Content1;
-        
-        protected System.Web.UI.WebControls.Content Content2;
-    }
+	
+	
+	public partial class XMLInjection {
+		
+		protected System.Web.UI.WebControls.Content Content1;
+		
+		protected System.Web.UI.WebControls.Content Content2;
+	}
 }
