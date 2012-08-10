@@ -4,7 +4,6 @@ Unassigned:
 + Entity SQLi
 + NHibernate SQLi
 + Hard Code Passwords  (PWD in source code)
-+ XML Injection
 + Httponly (cookie flag)
 + Secure (cookie) flag
   * Flag for cookie to be sent only over HTTPS
@@ -13,7 +12,6 @@ Unassigned:
   * Google verb tampering by author: Rshan 
 + Unsafe
 + LDAP injection (research the APIs / point to the APIs) 
-
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
   * Find out an example where we specify bad values
@@ -21,7 +19,7 @@ Unassigned:
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
 + Denial Of Service
-+ Readline (denial of service)
+
 + Unpatched libraries 
 
 
@@ -39,9 +37,11 @@ Harry:
 
 Ray:
 
++ XML Injection
++ Readline (denial of service)
 + LINQ SQLi
 + URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
-+ Basic Auth
++ Basic Auth 
 + Hard coded salts, keys
 + XSS (Done)
 + Information disclosure (Done)
