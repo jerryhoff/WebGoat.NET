@@ -2,7 +2,13 @@
     AutoEventWireup="true" CodeBehind="MessageDigest.aspx.cs" Inherits="OWASP.WebGoat.NET.Content.MessageDigest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 
-    <%-- Throw in some hints here. Many will have a hard time figuring it out. --%>
+    <%--
+        Throw in some hints here. Many will have a hard time figuring it out:
+            - Have in mind we're using ASCII encoding for everything.
+            - Take a look at the ASCII table.
+            - Try typing in one character per word, see what you get.
+            - Type in: Well done! You can now consider yourself an expert hacker! Well almost. Surely this is an easy digest to break!
+    --%>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
