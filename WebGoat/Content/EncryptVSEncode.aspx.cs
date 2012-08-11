@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Drawing;
 using OWASP.WebGoat.NET.App_Code;
+using System.Text;
 
 namespace OWASP.WebGoat.NET
 {
@@ -14,6 +15,9 @@ namespace OWASP.WebGoat.NET
     {
 		enum WG_Hash {Sha1=1, Sha256};
 		    
+        private string password = "123456";
+        private string hardCodedKey = "key";
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,11 +30,12 @@ namespace OWASP.WebGoat.NET
         	//encryption with password
 			
 			string secret = txtString.Text;
-			string key = txtPassword.Text;
+			string key = String.IsNullOrEmpty(txtPassword.Text) ? hardCodedKey : txtPassword.Text;
 			
         	Table t = new Table();
         	t.Width = new Unit("100%");
 			
+            t.Rows.Add(MakeRow("Custom Crypto", CustomCryptoEncrypt(secret)));
 			t.Rows.Add(MakeRow("URL Encoded:", Server.UrlEncode(secret)));
 			t.Rows.Add(MakeRow("Base64 Encoded:", Base64(secret)));
 			t.Rows.Add(MakeRow("SHA1 Hashed:", SHA(secret, WG_Hash.Sha1)));
@@ -82,11 +87,11 @@ namespace OWASP.WebGoat.NET
     	{
     		byte[] bytes = System.Text.ASCIIEncoding.ASCII.GetBytes(s);
 			byte[] result;
-            HashAlgorithm sha = new SHA1Managed();
+            HashAlgorithm sha;
 			switch(hash){
-				//case WG_Hash.Sha1:
-				//	sha = new SHA1Managed();
-				//	break;
+				case WG_Hash.Sha1:
+					sha = new SHA1Managed();
+			    	break;
 				case WG_Hash.Sha256:
 					sha = new SHA256Managed();
 					break;
@@ -97,8 +102,28 @@ namespace OWASP.WebGoat.NET
 
         private string Encypt(string s, string key)
         {
-            string result = Encoder.EncryptStringAES(s, key);
+            string result = OWASP.WebGoat.NET.App_Code.Encoder.EncryptStringAES(s, key);
             return result;
+        }
+
+        private string CustomCryptoEncrypt(String s)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes(s);
+            // needs work but you get the point
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                if (i % 2 == 0) 
+                {
+                    bytes[i] = (byte) (bytes[i] | 2);
+                }
+                else
+                {
+                    bytes[i] = (byte) (bytes[i] & 2);
+                }
+           
+            }
+
+            return Encoding.UTF8.GetString(bytes);
         }
     }
 }

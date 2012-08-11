@@ -15,11 +15,9 @@ Unassigned:
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
   * Find out an example where we specify bad values
-+ Custom crypto (args have to use a byte array and do a bitwise operation)
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
 + Denial Of Service
-
 + Unpatched libraries 
 
 
@@ -42,7 +40,7 @@ Ray:
 + LINQ SQLi
 + URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
 + Basic Auth 
-+ Hard coded salts, keys
++ Hard coded salts, keys (Done)
 + XSS (Done)
 + Information disclosure (Done)
   * Extra sensitive information that may go out (server that is running etc.)
@@ -50,6 +48,7 @@ Ray:
 + Trace (Done)
 + XPATH Injection (Done)
 + Header injection (Done)
++ Custom crypto (args have to use a byte array and do a bitwise operation)
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)
