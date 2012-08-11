@@ -48,7 +48,7 @@ Ray:
 + Trace (Done)
 + XPATH Injection (Done)
 + Header injection (Done)
-+ Custom crypto (args have to use a byte array and do a bitwise operation)
++ Custom crypto (args have to use a byte array and do a bitwise operation) (Done)
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)
