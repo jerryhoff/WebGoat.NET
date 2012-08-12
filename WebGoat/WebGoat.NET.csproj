@@ -486,6 +486,7 @@
     <Content Include="Content\HeaderInjection.aspx" />
     <Content Include="Content\MessageDigest.aspx" />
     <Content Include="Content\XMLInjection.aspx" />
+    <Content Include="Content\ReadlineDoS.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -949,8 +950,15 @@
       <DependentUpon>XMLInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\WeakMessageDigest.cs" />
+    <Compile Include="Content\ReadlineDoS.aspx.cs">
+      <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
+      <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
