@@ -3,7 +3,6 @@ Unassigned:
 
 + Entity SQLi
 + NHibernate SQLi
-+ Hard Code Passwords  (PWD in source code)
 + Httponly (cookie flag)
 + Secure (cookie) flag
   * Flag for cookie to be sent only over HTTPS
@@ -36,10 +35,10 @@ Harry:
 Ray:
 
 + XML Injection
-+ Readline (denial of service)
 + LINQ SQLi
 + URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
 + Basic Auth 
+
 + Hard coded salts, keys (Done)
 + XSS (Done)
 + Information disclosure (Done)
@@ -49,6 +48,8 @@ Ray:
 + XPATH Injection (Done)
 + Header injection (Done)
 + Custom crypto (args have to use a byte array and do a bitwise operation) (Done)
++ Readline (denial of service) (Done)
++ Hard Code Passwords  (PWD in source code) (Done)
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)
