@@ -487,6 +487,7 @@
     <Content Include="Content\MessageDigest.aspx" />
     <Content Include="Content\XMLInjection.aspx" />
     <Content Include="Content\ReadlineDoS.aspx" />
+    <Content Include="Content\RegexDoS.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -956,8 +957,15 @@
     <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Content\RegexDoS.aspx.cs">
+      <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\RegexDoS.aspx.designer.cs">
+      <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">

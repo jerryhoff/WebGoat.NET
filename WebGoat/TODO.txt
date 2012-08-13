@@ -15,7 +15,6 @@ Unassigned:
   * Find out an example where we specify bad values
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
-+ Denial Of Service
 + Unpatched libraries 
 
 
@@ -50,6 +49,7 @@ Ray:
 + Custom crypto (args have to use a byte array and do a bitwise operation) (Done)
 + Readline (denial of service) (Done)
 + Hard Code Passwords  (PWD in source code) (Done)
++ Denial Of Service (RegEx) (Done)
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)
