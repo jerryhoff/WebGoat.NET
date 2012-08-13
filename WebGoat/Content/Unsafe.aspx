@@ -11,6 +11,12 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
+    <h1 class="title-regular-4 clearfix">Unsafe blocks in .NET</h1>
+
+    <p>In this lesson we'll take a look at .NET's unsafe block and how it can be exploited through user input.
+     When typing a string in the textbox below, the server will read it and compute its reverse. Try to exploit the
+      server by typing in a 'bad' input.</p>
+ 
     <p><asp:TextBox ID="txtBoxMsg" runat="server" TextMode="MultiLine" Width="400px" Height="100px"/></p>
     
     <p><asp:Button ID="btnReverse" runat="server" onclick="btnReverse_Click" 

@@ -26,8 +26,7 @@ namespace OWASP.WebGoat.NET
             //possibly going to be used later for something interesting
             if (Request.QueryString["Cookie"] != null)
             {
-                HttpCookie cookie = new HttpCookie();
-                cookie.Name = "UserAddedCookie";
+                HttpCookie cookie = new HttpCookie("UserAddedCookie");
                 cookie.Value = Request.QueryString["Cookie"];
 
                 Response.Cookies.Add(cookie);

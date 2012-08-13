@@ -42,8 +42,6 @@ namespace OWASP.WebGoat.NET.Content
 
             StringBuilder strBuilder = new StringBuilder();
 
-            strBuilder.Append("Result: ");
-
             while (*revCur != '\0')
                 strBuilder.Append((char) *revCur++);
 
