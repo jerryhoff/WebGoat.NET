@@ -13,7 +13,8 @@ namespace OWASP.WebGoat.NET
         protected void Page_Load(object sender, EventArgs e)
         {
             //Headers
-            lblHeaders.Text = Request.Headers.ToString().Replace("&", "<br />");;
+            lblHeaders.Text = Request.Headers.ToString().Replace("&", "<br />");
+            ;
 
             //Cookies
             ArrayList colCookies = new ArrayList();
@@ -22,6 +23,15 @@ namespace OWASP.WebGoat.NET
 
             gvCookies.DataSource = colCookies;
             gvCookies.DataBind();
+
+            if (Request.QueryString["Cookie"] != null)
+            {
+                HttpCookie cookie = new HttpCookie();
+                cookie.Name = "UserAddedCookie";
+                cookie.Value = Request.QueryString["Cookie"];
+
+                Response.Cookies.Add(cookie);
+            }
         }
     }
 }
