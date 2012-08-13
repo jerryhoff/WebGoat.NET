@@ -491,6 +491,7 @@
     <Content Include="Content\ReadlineDoS.aspx" />
     <Content Include="Content\RegexDoS.aspx" />
     <Content Include="Content\Unsafe.aspx" />
+    <Content Include="Content\Random.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -972,6 +973,13 @@
     <Compile Include="Content\Unsafe.aspx.designer.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Content\Random.aspx.cs">
+      <DependentUpon>Random.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Random.aspx.designer.cs">
+      <DependentUpon>Random.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WeakRandom.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

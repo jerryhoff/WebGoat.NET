@@ -26,10 +26,10 @@ Harry:
   * Amend Rebuild Page to easily switchout DBs (DONE)
 + Debugging leaks (DONE)
 + Insecure message digest (DONE)
-+ Unsafe
++ Unsafe (DONE)
++ Not using SSL (DONE - already present when logging in)
 + Insecure random # gen
-+ Hard coded seed (For when using random funcationality)
-+ Not using SSL
++ Hard coded seed (For when using random functionality)
 
 Ray:
 
