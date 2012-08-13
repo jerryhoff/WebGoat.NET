@@ -28,6 +28,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -37,6 +38,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -488,6 +490,7 @@
     <Content Include="Content\XMLInjection.aspx" />
     <Content Include="Content\ReadlineDoS.aspx" />
     <Content Include="Content\RegexDoS.aspx" />
+    <Content Include="Content\Unsafe.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -962,6 +965,12 @@
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.designer.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Unsafe.aspx.cs">
+      <DependentUpon>Unsafe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Unsafe.aspx.designer.cs">
+      <DependentUpon>Unsafe.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

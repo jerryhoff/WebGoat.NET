@@ -39,6 +39,9 @@
             <siteMapNode url="~/Content/EncryptVSEncode.aspx" title="Encryption vs Encoding" description="Encrypt vs Encode" />
             <siteMapNode url="~/Content/MessageDigest.aspx" title="Insecure Message Digest" description="Insecure Message Digest" />
         </siteMapNode>
+        <siteMapNode url="~/Content/DotNet.aspx" title=".NET Exploits" description=".NET Exploits">
+            <siteMapNode url="~/Content/Unsafe.aspx" title="Unsafe blocks" description="Unsafe blocks" />
+        </siteMapNode>
     </siteMapNode>
 </siteMap>
 <!-- 
