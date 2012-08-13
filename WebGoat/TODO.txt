@@ -9,7 +9,6 @@ Unassigned:
 + Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
 + Verb tampering (changing POST/GET etc. request to something different)
   * Google verb tampering by author: Rshan 
-+ Unsafe
 + LDAP injection (research the APIs / point to the APIs) 
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
@@ -27,7 +26,8 @@ Harry:
 + Create adaptor for switching out DBs (DONE)
   * Amend Rebuild Page to easily switchout DBs (DONE)
 + Debugging leaks (DONE)
-+ Insecure message digest
++ Insecure message digest (DONE)
++ Unsafe
 + Insecure random # gen
 + Hard coded seed (For when using random funcationality)
 + Not using SSL
