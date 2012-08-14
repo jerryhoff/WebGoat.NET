@@ -13,10 +13,14 @@ namespace OWASP.WebGoat.NET.Content {
 	
 	public partial class Random {
 		
-		protected System.Web.UI.WebControls.Content Content1;
+		protected System.Web.UI.WebControls.Label lblSequence;
 		
-		protected System.Web.UI.WebControls.Content Content2;
+		protected System.Web.UI.WebControls.Button btnOneMore;
 		
-		protected System.Web.UI.WebControls.Content Content3;
+		protected System.Web.UI.WebControls.TextBox txtNextNumber;
+		
+		protected System.Web.UI.WebControls.Button btnGo;
+		
+		protected System.Web.UI.WebControls.Label lblResult;
 	}
 }
