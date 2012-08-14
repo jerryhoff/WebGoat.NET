@@ -3,15 +3,6 @@ Unassigned:
 
 + Entity SQLi
 + NHibernate SQLi
-<<<<<<< HEAD
-+ Httponly (cookie flag)
-+ Secure (cookie) flag
-  * Flag for cookie to be sent only over HTTPS
-+ Verb tampering (changing POST/GET etc. request to something different)
-  * Google verb tampering by author: Rshan 
-=======
-+ Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
->>>>>>> XmlInjection
 + LDAP injection (research the APIs / point to the APIs) 
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
