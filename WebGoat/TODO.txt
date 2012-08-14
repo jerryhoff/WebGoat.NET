@@ -3,11 +3,15 @@ Unassigned:
 
 + Entity SQLi
 + NHibernate SQLi
+<<<<<<< HEAD
 + Httponly (cookie flag)
 + Secure (cookie) flag
   * Flag for cookie to be sent only over HTTPS
 + Verb tampering (changing POST/GET etc. request to something different)
   * Google verb tampering by author: Rshan 
+=======
++ Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
+>>>>>>> XmlInjection
 + LDAP injection (research the APIs / point to the APIs) 
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
@@ -33,7 +37,6 @@ Harry:
 
 Ray:
 
-+ XML Injection
 + LINQ SQLi
 + URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
 + Basic Auth 
@@ -50,6 +53,12 @@ Ray:
 + Readline (denial of service) (Done)
 + Hard Code Passwords  (PWD in source code) (Done)
 + Denial Of Service (RegEx) (Done)
++ Httponly (cookie flag) (Done)
++ Secure (cookie flag) (Done)
++ XML Injection(Done)
++ Verb tampering (changing POST/GET etc. request to something different)
+  * Google verb tampering by author: Rshan 
+
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)
