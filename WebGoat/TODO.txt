@@ -6,7 +6,6 @@ Unassigned:
 + Httponly (cookie flag)
 + Secure (cookie) flag
   * Flag for cookie to be sent only over HTTPS
-+ Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
 + Verb tampering (changing POST/GET etc. request to something different)
   * Google verb tampering by author: Rshan 
 + LDAP injection (research the APIs / point to the APIs) 
@@ -28,8 +27,9 @@ Harry:
 + Insecure message digest (DONE)
 + Unsafe (DONE)
 + Not using SSL (DONE - already present when logging in)
-+ Insecure random # gen
-+ Hard coded seed (For when using random functionality)
++ Insecure random # gen (DONE)
++ Hard coded seed (For when using random functionality) (DONE)
++ Role manipulation (standard .net api for role (isInRole(request.getParameter("role"))) (WORKING)
 
 Ray:
 
