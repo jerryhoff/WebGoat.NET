@@ -47,8 +47,7 @@ Ray:
 + Httponly (cookie flag) (Done)
 + Secure (cookie flag) (Done)
 + XML Injection(Done)
-+ Verb tampering (changing POST/GET etc. request to something different)
-  * Google verb tampering by author: Rshan 
++ Verb tampering (changing POST/GET etc. request to something different) (Done)
 
 
 + Session timeout (config setting) (Done)
