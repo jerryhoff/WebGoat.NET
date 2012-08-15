@@ -492,6 +492,8 @@
     <Content Include="Content\RegexDoS.aspx" />
     <Content Include="Content\Unsafe.aspx" />
     <Content Include="Content\Random.aspx" />
+    <Content Include="Content\VerbTampering.aspx" />
+    <Content Include="Content\VerbTamperingAttack.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -980,9 +982,21 @@
       <DependentUpon>Random.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\WeakRandom.cs" />
+    <Compile Include="Content\VerbTampering.aspx.cs">
+      <DependentUpon>VerbTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTampering.aspx.designer.cs">
+      <DependentUpon>VerbTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTamperingAttack.aspx.cs">
+      <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTamperingAttack.aspx.designer.cs">
+      <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
