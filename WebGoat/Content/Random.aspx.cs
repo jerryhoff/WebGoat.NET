@@ -33,7 +33,6 @@ namespace OWASP.WebGoat.NET.Content
         public void btnGo_Click(object sender, EventArgs args)
         {
             WeakRandom rnd = (WeakRandom) Session["Random"];
-            IList<uint> numbers = (IList<uint>) Session["Numbers"];
 
             uint next = rnd.Peek(MIN, MAX);
 
