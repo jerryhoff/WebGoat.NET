@@ -2,6 +2,8 @@ using System;
 using OWASP.WebGoat.NET.App_Code.DB;
 using System.IO;
 using System.Web;
+using log4net;
+using System.Reflection;
 
 namespace OWASP.WebGoat.NET.App_Code
 {
@@ -12,11 +14,15 @@ namespace OWASP.WebGoat.NET.App_Code
         private const string DATA_FOLDER = "App_Data";
         private const string DEFAULT_SQLITE_NAME = "webgoat_coins.sqlite";
 
+        private static ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
   
         public static void Init(HttpServerUtility server)
         {
             string configPath = Path.Combine(PARENT_CONFIG_PATH, DefaultConfigName);
             DefaultConfigPath = server.MapPath(configPath);
+
+            log.Debug("DYLD_FALLBACK_LIBRARY_PATH: " + Environment.GetEnvironmentVariable("DYLD_FALLBACK_LIBRARY_PATH"));
+            log.Debug("PWD: " + Environment.CurrentDirectory);
 
             //By default if there's no config let's create a sqlite db.
             string defaultConfigPath = DefaultConfigPath;
