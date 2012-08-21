@@ -32,6 +32,11 @@ namespace OWASP.WebGoat.NET
 
         }
 
+        void Application_PreSendRequestHeaders(Object sender, EventArgs e)
+        {
+                Response.Headers.Set("X-XSS-Protection", "0");
+        }
+
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
             //get the role data out of the encrypted cookie and add to current context
