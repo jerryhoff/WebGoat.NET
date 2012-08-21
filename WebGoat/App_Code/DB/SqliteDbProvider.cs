@@ -67,7 +67,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public bool IsValidCustomerLogin(string email, string password)
         {
-                        //encode password
+            //encode password
             string encoded_password = Encoder.Encode(password);
             
             //check email/password
@@ -242,6 +242,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
                 using (SqliteConnection connection = new SqliteConnection(_connectionString))
                 {
+                    connection.Open();
                     SqliteCommand command = new SqliteCommand(sql, connection);
                     command.ExecuteNonQuery();
                 }
