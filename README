@@ -1,22 +1,19 @@
-	
-	From the prompt, cd into the WebGoat.NET DB directory
+***************************** Webgoat.NET *************************************
+* Source Code: https://github.com/jerryhoff/WebGoat.NET
+* Download zip: https://github.com/jerryhoff/WebGoat.NET/zipball/master
+*******************************************************************************
 
-        % cd /WebGoat.NET/DB
+This web application is a learning platform that attempts to teach about
+common web security flaws. It contains generic security flaws that apply to
+most web applications. It also contains lessons that specifically pertain to
+the .NET framework. The excercises in this app are intented to teach about web
+security attacks and how developers can overcome them.
 
-    Start the mysql utility, giving the name (and password, if needed) of a user permission to create databases. For example, to use the default root user:
+WARNING: THIS WEB APPLICATION CONTAINS NUMEROUS SECURITY VULNERABILITIES WHICH
+WILL RENDER YOUR COMPUTER VERY INSECURURE WHILE RUNNING! IT IS HIGHLY
+RECOMMENDED TO COMPLETELY DISCONNECT YOUR COMPUTER FROM ALL NETWORKS WHILE
+RUNNING!
 
-        % mysql --user=root 
-
-    Create the webgoat_coins database and load the schema. (Loading the schema the schema the first time will give error messages as it attemps to empty any existing tables, just ignore these.)
-
-        mysql> create database webgoat_coins; 
-		mysql> use webgoat_coins; 
-        mysql> source create_webgoatcoins.sql; 
-
-    Load the table contents:
-
-        mysql> source load_webgoatcoins.sql; 
-
-    Exit from mysql:
-
-        mysql> quit; 
+Notes:
+ - Google Chrome performs filtering for reflected XSS attacks. These attacks
+   will not work unless chrome is run with the argument --disable-xss-auditor. 
