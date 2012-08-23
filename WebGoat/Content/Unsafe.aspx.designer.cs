@@ -23,8 +23,6 @@ namespace OWASP.WebGoat.NET.Content {
 		
 		protected System.Web.UI.WebControls.Label lblReverse;
 		
-		protected System.Web.UI.WebControls.Label lblServMsg;
-		
 		protected System.Web.UI.WebControls.Content Content3;
 	}
 }

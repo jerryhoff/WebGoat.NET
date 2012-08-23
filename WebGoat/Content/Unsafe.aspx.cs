@@ -11,50 +11,26 @@ namespace OWASP.WebGoat.NET.Content
 
         public unsafe void btnReverse_Click(object sender, EventArgs args)
         {
-            const string msg = "Thanks for your input!";
+            const string msg = "passwor";
             const int INPUT_LEN = 256;
+            char[] fixedChar = new char[INPUT_LEN];
 
-            char* returnMsg = stackalloc char[msg.Length  + 1];
-            char* revLine = stackalloc char[INPUT_LEN];
+            for (int i = 0; i < fixedChar.Length; i++)
+                fixedChar[i] = '\0';
 
-            char* msgCur = returnMsg;
-
-            foreach (var c in msg)
-                *msgCur++ = c;
-
-            *msgCur = '\0';
-
-            int lineLen = txtBoxMsg.Text.Length;
-
-            try
+            fixed (char* revLine = fixedChar)
             {
+                int lineLen = txtBoxMsg.Text.Length;
+
                 for (int i = 0; i < lineLen; i++)
                     *(revLine + i) = txtBoxMsg.Text[lineLen - i - 1];
 
-                *(revLine + lineLen) = '\0';
+                char* revCur = revLine;
+
+                lblReverse.Text = string.Empty;
+                while (*revCur != '\0')
+                    lblReverse.Text += (char)*revCur++;
             }
-            catch (Exception)
-            {
-                //Ignore overflow exception
-            }
-
-            char* revCur = revLine;
-
-            StringBuilder strBuilder = new StringBuilder();
-
-            while (*revCur != '\0')
-                strBuilder.Append((char) *revCur++);
-
-            lblReverse.Text = strBuilder.ToString();
-
-            msgCur = returnMsg;
-
-            strBuilder = new StringBuilder();
-            
-            while (*msgCur != '\0')
-                strBuilder.Append((char) *msgCur++);
-
-            lblServMsg.Text = strBuilder.ToString();
         }
     }
 }

@@ -23,8 +23,6 @@
             Text="Reverse Message!" SkinID="Button"/></p>
 
     <p>Result: <asp:Label ID="lblReverse" runat="server" /></p>
-
-    <p><asp:Label ID="lblServMsg" runat="server" /></p>
     
 </asp:Content>
 
