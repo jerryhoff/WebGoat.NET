@@ -162,7 +162,7 @@ CREATE TABLE Products (
 );
 
 CREATE TABLE Comments(
-	commentNumber INTEGER NOT NULL,
+	commentNumber INTEGER NOT NULL AUTO_INCREMENT,
 	productCode VARCHAR(15) NOT NULL,
 	email VARCHAR(100) NOT NULL,
 	comment TEXT NOT NULL,
