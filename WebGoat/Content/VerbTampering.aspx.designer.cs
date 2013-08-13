@@ -11,12 +11,12 @@
 namespace OWASP.WebGoat.NET {
 	
 	
-	public partial class XMLInjection {
+	public partial class VerbTampering {
 		
 		protected System.Web.UI.WebControls.Content Content1;
 		
 		protected System.Web.UI.WebControls.Content Content2;
 		
-		protected System.Web.UI.WebControls.GridView gvUsers;
+		protected System.Web.UI.WebControls.Label lblTampered;
 	}
 }

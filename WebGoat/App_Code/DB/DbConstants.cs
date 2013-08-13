@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -18,10 +19,12 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         public const string DB_TYPE_MYSQL = "MySql";
         public const string DB_TYPE_SQLITE = "Sqlite";
         public const string CONFIG_EXT = "config";
-            
+
         //DB Scripts
-        public const string DB_CREATE_SCRIPT = "DB_Scripts/create_webgoatcoins.sql";
-        public const string DB_LOAD_MYSQL_SCRIPT = "DB_Scripts/load_webgoatcoins.sql";
-        public const string DB_LOAD_SQLITE_SCRIPT = "DB_Scripts/load_webgoatcoins_sqlite3.sql";
+        private const string SCRIPT_DIR = "DB_Scripts";
+        public static readonly string DB_CREATE_MYSQL_SCRIPT = Path.Combine(SCRIPT_DIR, "create_webgoatcoins.sql");
+        public static readonly string DB_CREATE_SQLITE_SCRIPT = Path.Combine(SCRIPT_DIR, "create_webgoatcoins_sqlite3.sql");
+        public static readonly string DB_LOAD_MYSQL_SCRIPT = Path.Combine(SCRIPT_DIR, "load_webgoatcoins.sql");
+        public static readonly string DB_LOAD_SQLITE_SCRIPT = Path.Combine(SCRIPT_DIR, "load_webgoatcoins_sqlite3.sql");
     }
 }

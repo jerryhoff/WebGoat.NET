@@ -1,16 +1,13 @@
 # Project Files #
 #################
 *.userprefs
-WebGoat/WebGoat.NET.pidb
-WebGoat/bin
-WebGoat/obj
+*.pidb
+bin
+obj
 WebGoat/App_Data/*.txt
-WebGoat/App_Data/.DS_Store
-WebGoat/App_Data/*.sqlite 
+*.sqlite
 WebGoat/Configuration/*.config
 
 # Trash Files #
 ###############
 .DS_Store
-DB/.DS_Store
-WebGoat/DB_Scripts/.DS_Store

@@ -103,7 +103,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
             log.Info("Running recreate");
 
-            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_SCRIPT));
+            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_MYSQL_SCRIPT));
             int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_LOAD_MYSQL_SCRIPT));
             
             return Math.Abs(retVal1) + Math.Abs(retVal2) == 0;

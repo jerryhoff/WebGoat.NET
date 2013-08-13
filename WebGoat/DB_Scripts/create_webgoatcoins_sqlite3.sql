@@ -49,7 +49,7 @@ DROP TABLE Comments;
 /* Create the full set of Classic Models Tables */
 
 CREATE TABLE Customers (
-  customerNumber INTEGER NOT NULL AUTO_INCREMENT,
+  customerNumber INTEGER NOT NULL,
   customerName VARCHAR(50) NOT NULL,
   logoFileName VARCHAR(100) NULL,
   contactLastName VARCHAR(50) NOT NULL,
@@ -76,14 +76,14 @@ CREATE TABLE CustomerLogin (
 );
 
 CREATE TABLE SecurityQuestions (
-	question_id SMALLINT NOT NULL AUTO_INCREMENT,
+	question_id SMALLINT NOT NULL,
 	question_text VARCHAR(400) NOT NULL,
 	PRIMARY KEY (question_id)
 );
 
 
 CREATE TABLE Employees (
-  employeeNumber INTEGER NOT NULL AUTO_INCREMENT,
+  employeeNumber INTEGER NOT NULL,
   lastName VARCHAR(50) NOT NULL,
   firstName VARCHAR(50) NOT NULL,
   extension VARCHAR(10) NOT NULL,
@@ -117,7 +117,7 @@ CREATE TABLE OrderDetails (
 );
 
 CREATE TABLE Orders (
-  orderNumber INTEGER NOT NULL AUTO_INCREMENT,
+  orderNumber INTEGER NOT NULL,
   orderDate DATETIME NOT NULL,
   requiredDate DATETIME NOT NULL,
   shippedDate DATETIME NULL,
@@ -142,7 +142,7 @@ CREATE TABLE Payments (
 );
 
 CREATE TABLE Categories(
-  catNumber INTEGER NOT NULL AUTO_INCREMENT,
+  catNumber INTEGER NOT NULL,
   catName VARCHAR(50) NOT NULL,
   catDesc TEXT NOT NULL,
   PRIMARY KEY (catNumber)
@@ -162,7 +162,7 @@ CREATE TABLE Products (
 );
 
 CREATE TABLE Comments(
-	commentNumber INTEGER NOT NULL AUTO_INCREMENT,
+	commentNumber INTEGER NOT NULL,
 	productCode VARCHAR(15) NOT NULL,
 	email VARCHAR(100) NOT NULL,
 	comment TEXT NOT NULL,

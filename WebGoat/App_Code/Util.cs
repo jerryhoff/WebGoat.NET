@@ -15,6 +15,7 @@ namespace OWASP.WebGoat.NET.App_Code
         {
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
+                WorkingDirectory = Settings.RootDir,
                 FileName = cmd,
                 Arguments = args,
                 UseShellExecute = false,
@@ -27,7 +28,6 @@ namespace OWASP.WebGoat.NET.App_Code
             {
                 process.EnableRaisingEvents = true;
                 process.StartInfo = startInfo;
-                process.Start();
 
                 process.OutputDataReceived += (sender, e) => {
                     if (e.Data != null)
@@ -47,16 +47,26 @@ namespace OWASP.WebGoat.NET.App_Code
                     Thread.Sleep(1000);
                     are.Set();
                     log.Info("Process exited");
+
                 };
 
                 process.Start();
 
                 using (StreamReader reader = new StreamReader(new FileStream(input, FileMode.Open)))
-                {  
+                {
                     string line;
-                    
+                    string replaced;
                     while ((line = reader.ReadLine()) != null)
-                        process.StandardInput.WriteLine(line);
+                    {
+                        if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+                            replaced = line.Replace("DB_Scripts/datafiles/", "DB_Scripts\\\\datafiles\\\\");
+                        else
+                            replaced = line;
+
+                        log.Debug("Line: " + replaced);
+
+                        process.StandardInput.WriteLine(replaced);
+                    }
                 }
     
                 process.StandardInput.Close();

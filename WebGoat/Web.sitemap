@@ -38,6 +38,10 @@
         <siteMapNode url="~/Content/Encryption.aspx" title="Encryption" description="Encoding">
             <siteMapNode url="~/Content/EncryptVSEncode.aspx" title="Encryption vs Encoding" description="Encrypt vs Encode" />
             <siteMapNode url="~/Content/MessageDigest.aspx" title="Insecure Message Digest" description="Insecure Message Digest" />
+            <siteMapNode url="~/Content/Random.aspx" title="Weak Random Number Generators" description="Weak Random Number Generators" />
+        </siteMapNode>
+        <siteMapNode url="~/Content/DotNet.aspx" title=".NET Exploits" description=".NET Exploits">
+            <siteMapNode url="~/Content/Unsafe.aspx" title="Unsafe blocks" description="Unsafe blocks" />
         </siteMapNode>
     </siteMapNode>
 </siteMap>

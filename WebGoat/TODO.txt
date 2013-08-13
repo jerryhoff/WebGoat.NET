@@ -3,19 +3,12 @@ Unassigned:
 
 + Entity SQLi
 + NHibernate SQLi
-+ Httponly (cookie flag)
-+ Secure (cookie) flag
-  * Flag for cookie to be sent only over HTTPS
-+ Role manipulation (standard .net api for role (isInRole(request.getParameter("role")))
-+ Verb tampering (changing POST/GET etc. request to something different)
-  * Google verb tampering by author: Rshan 
 + LDAP injection (research the APIs / point to the APIs) 
 + Weak cryptographic cypher (mode & padding). 
   * Find out the default behavior (mode & padding)
   * Find out an example where we specify bad values
 + Using an insecure protocol (web client / http client) (weak ssl algo) 
 + Global error handling
-+ Denial Of Service
 + Unpatched libraries 
 
 
@@ -27,14 +20,14 @@ Harry:
   * Amend Rebuild Page to easily switchout DBs (DONE)
 + Debugging leaks (DONE)
 + Insecure message digest (DONE)
-+ Unsafe
-+ Insecure random # gen
-+ Hard coded seed (For when using random funcationality)
-+ Not using SSL
++ Unsafe (DONE)
++ Not using SSL (DONE - already present when logging in)
++ Insecure random # gen (DONE)
++ Hard coded seed (For when using random functionality) (DONE)
++ Role manipulation (standard .net api for role (isInRole(request.getParameter("role"))) (WORKING)
 
 Ray:
 
-+ XML Injection
 + LINQ SQLi
 + URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
 + Basic Auth 
@@ -50,6 +43,12 @@ Ray:
 + Custom crypto (args have to use a byte array and do a bitwise operation) (Done)
 + Readline (denial of service) (Done)
 + Hard Code Passwords  (PWD in source code) (Done)
++ Denial Of Service (RegEx) (Done)
++ Httponly (cookie flag) (Done)
++ Secure (cookie flag) (Done)
++ XML Injection(Done)
++ Verb tampering (changing POST/GET etc. request to something different) (Done)
+
 
 + Session timeout (config setting) (Done)
 + Dir traversal (Done)

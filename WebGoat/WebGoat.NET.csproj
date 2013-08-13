@@ -28,6 +28,14 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnvironmentVariables>
+      <EnvironmentVariables>
+        <Variable name="MONO_LOG_LEVEL" value="debug" />
+        <Variable name="MONO_LOG_MASK" value="dll" />
+        <Variable name="DYLD_FALLBACK_LIBRARY_PATH" value=".:/usr/local/lib:/lib:/usr/lib" />
+      </EnvironmentVariables>
+    </EnvironmentVariables>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -37,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,8 +70,8 @@
     <Reference Include="log4net">
       <HintPath>lib\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite">
-      <HintPath>lib\System.Data.SQLite.dll</HintPath>
+    <Reference Include="Mono.Data.Sqlite">
+        <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -487,6 +496,11 @@
     <Content Include="Content\MessageDigest.aspx" />
     <Content Include="Content\XMLInjection.aspx" />
     <Content Include="Content\ReadlineDoS.aspx" />
+    <Content Include="Content\RegexDoS.aspx" />
+    <Content Include="Content\Unsafe.aspx" />
+    <Content Include="Content\Random.aspx" />
+    <Content Include="Content\VerbTampering.aspx" />
+    <Content Include="Content\VerbTamperingAttack.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -911,7 +925,6 @@
     <Compile Include="App_Code\DB\SqliteDbProvider.cs" />
     <Compile Include="App_Code\DB\MySqlDbProvider.cs" />
     <Compile Include="App_Code\Encoder.cs" />
-    <Compile Include="App_Code\DB\IDbProvider.cs" />
     <Compile Include="App_Code\DB\DbProviderFactory.cs" />
     <Compile Include="App_Code\Settings.cs" />
     <Compile Include="App_Code\CookieManager.cs" />
@@ -956,6 +969,38 @@
     <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Content\RegexDoS.aspx.cs">
+      <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\RegexDoS.aspx.designer.cs">
+      <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Unsafe.aspx.cs">
+      <DependentUpon>Unsafe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Unsafe.aspx.designer.cs">
+      <DependentUpon>Unsafe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Random.aspx.cs">
+      <DependentUpon>Random.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Random.aspx.designer.cs">
+      <DependentUpon>Random.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WeakRandom.cs" />
+    <Compile Include="Content\VerbTampering.aspx.cs">
+      <DependentUpon>VerbTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTampering.aspx.designer.cs">
+      <DependentUpon>VerbTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTamperingAttack.aspx.cs">
+      <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTamperingAttack.aspx.designer.cs">
+      <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DB\IDbProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -1009,6 +1054,7 @@
     <None Include="DB_Scripts\datafiles\securityquestions.txt" />
     <None Include="DB_Scripts\products\.DS_Store" />
     <None Include="App_Data\XmlInjectionUsers.xml" />
+    <None Include="DB_Scripts\create_webgoatcoins_sqlite3.sql" />
   </ItemGroup>
   <ItemGroup />
 </Project>
