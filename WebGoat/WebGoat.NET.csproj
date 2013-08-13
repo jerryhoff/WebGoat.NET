@@ -19,16 +19,16 @@
     </UpgradeBackupLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <EnvironmentVariables>
       <EnvironmentVariables>
         <Variable name="MONO_LOG_LEVEL" value="debug" />
@@ -39,13 +39,13 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -71,7 +71,7 @@
       <HintPath>lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite">
-        <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
+      <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -501,6 +501,7 @@
     <Content Include="Content\Random.aspx" />
     <Content Include="Content\VerbTampering.aspx" />
     <Content Include="Content\VerbTamperingAttack.aspx" />
+    <Content Include="Configuration\Default.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
@@ -1003,9 +1004,10 @@
     <Compile Include="App_Code\DB\IDbProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
-      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+      <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
         <Policies>
           <TextStylePolicy inheritsSet="null" scope="application/x-aspx" />
           <TextStylePolicy inheritsSet="null" scope="application/x-asax" />
@@ -1018,7 +1020,7 @@
           <TextStylePolicy inheritsSet="null" scope="application/x-master-page" />
           <TextStylePolicy inheritsSet="null" scope="application/x-ashx" />
         </Policies>
-        <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+        <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
