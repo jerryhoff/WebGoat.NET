@@ -16,9 +16,9 @@ namespace OWASP.WebGoat.NET {
 		protected System.Web.UI.WebControls.Content Content1;
 		
 		protected System.Web.UI.WebControls.Content Content2;
-		
-		protected System.Web.UI.WebControls.Label lblHeaders;
-		
-		protected System.Web.UI.WebControls.GridView gvCookies;
+
+        protected System.Web.UI.WebControls.Label lblHeaders;
+
+        protected System.Web.UI.WebControls.GridView gvCookies;
 	}
 }
