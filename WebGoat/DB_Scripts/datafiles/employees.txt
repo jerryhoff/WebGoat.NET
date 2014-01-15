@@ -1,0 +1,23 @@
+1002|Murphy|Diane|x5800|dmurphy@webgoatcoins.com|1|NULL|President
+1056|Patterson|Mary|x4611|mpatterso@webgoatcoins.com|1|1002|VP Sales
+1076|Firrelli|Jeff|x9273|jfirrelli@webgoatcoins.com|1|1002|VP Marketing
+1088|Patterson|William|x4871|wpatterson@webgoatcoins.com|6|1056|Sales Manager (APAC)
+1102|Bondur|Gerard|x5408|gbondur@webgoatcoins.com|4|1056|Sale Manager (EMEA)
+1143|Bow|Anthony|x5428|abow@webgoatcoins.com|1|1056|Sales Manager (NA)
+1165|Jennings|Leslie|x3291|ljennings@webgoatcoins.com|1|1143|Sales Rep
+1166|Thompson|Leslie|x4065|lthompson@webgoatcoins.com|1|1143|Sales Rep
+1188|Firrelli|Julie|x2173|jfirrelli@webgoatcoins.com|2|1143|Sales Rep
+1216|Patterson|Steve|x4334|spatterson@webgoatcoins.com|2|1143|Sales Rep
+1286|Tseng|Foon Yue|x2248|ftseng@webgoatcoins.com|3|1143|Sales Rep
+1323|Vanauf|George|x4102|gvanauf@webgoatcoins.com|3|1143|Sales Rep
+1337|Bondur|Loui|x6493|lbondur@webgoatcoins.com|4|1102|Sales Rep
+1370|Hernandez|Gerard|x2028|ghernande@webgoatcoins.com|4|1102|Sales Rep
+1401|Castillo|Pamela|x2759|pcastillo@webgoatcoins.com|4|1102|Sales Rep
+1501|Bott|Larry|x2311|lbott@webgoatcoins.com|7|1102|Sales Rep
+1504|Jones|Barry|x102|bjones@webgoatcoins.com|7|1102|Sales Rep
+1611|Fixter|Andy|x101|afixter@webgoatcoins.com|6|1088|Sales Rep
+1612|Marsh|Peter|x102|pmarsh@webgoatcoins.com|6|1088|Sales Rep
+1619|King|Tom|x103|tking@webgoatcoins.com|6|1088|Sales Rep
+1621|Nishi|Mami|x101|mnishi@webgoatcoins.com|5|1056|Sales Rep
+1625|Kato|Yoshimi|x102|ykato@webgoatcoins.com|5|1621|Sales Rep
+1702|Gerard|Martin|x2312|mgerard@webgoatcoins.com|4|1102|Sales Rep

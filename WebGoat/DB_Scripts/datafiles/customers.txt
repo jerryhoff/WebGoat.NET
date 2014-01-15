@@ -1,0 +1,122 @@
+103|Atelier Graphique|ateliergraphique.png|Schmitt|Carine |40.32.2555|54, rue Royale|NULL|Nantes|NULL|44000|France|1370|21000
+112|Goat Gold Store|goatgoldstore.png|King|Jerry|7025551838|8489 Strong St.|NULL|Las Vegas|NV|83030|USA|1166|71800
+114|Australian Collectors, Co.|australiancollectors.png|Ferguson|Peter|03 9520 4555|636 St Kilda Road|Level 3|Melbourne|Victoria|3004|Australia|1611|117300
+119|La Rochelle Gold|larochellegold.png|Labrune|Janine |40.67.8555|67, rue des Cinquante Otages|NULL|Nantes|NULL|44000|France|1370|118200
+121|Baane Precious Imports|baanepreciousimports.png|Bergulfsen|Jonas |07-98 9555|Erling Skakkes gate 78|NULL|Stavern|NULL|4110|Norway|1504|81700
+124|Precious Gold Distributors Ltd.|preciousgolddistributorsltd.png|Nelson|Susan|4155551450|5677 Strong St.|NULL|San Rafael|CA|97562|USA|1165|210500
+125|Havel & Zbyszek Co|havelzbyszekco.png|Piestrzeniewicz|Zbyszek |(26) 642-7555|ul. Filtrowa 68|NULL|Warszawa|NULL|01-012|Poland|NULL|0
+128|Blauer See Metals, Co.|blauerseemetals.png|Keitel|Roland|+49 69 66 90 2555|Lyonerstr. 34|NULL|Frankfurt|NULL|60528|Germany|1504|59700
+129|Precious Metals Co.|preciousmetalsco.png|Murphy|Julie|6505555787|5557 North Pendale Street|NULL|San Francisco|CA|94217|USA|1165|64600
+131|Land of Coins Inc.|landofcoinsinc.png|Lee|Kwai|2125557818|897 Long Airport Avenue|NULL|NYC|NY|10022|USA|1323|114900
+141|Euro+ Shopping Channel|euroshoppingchannel.png|Freyre|Diego |(91) 555 94 44|C/ Moralzarzal, 86|NULL|Madrid|NULL|28034|Spain|1370|227600
+144|Volvo Model Replicas, Co|volvomodelreplicas.png|Berglund|Christina |0921-12 3555|Berguvsvegen  8|NULL|Lulee|NULL|S-958 22|Sweden|1504|53100
+145|Danish Wholesale Imports|danishwholesaleimports.png|Petersen|Jytte |31 12 3555|Vinbeltet 34|NULL|Kobenhavn|NULL|1734|Denmark|1401|83400
+146|Saveley & Henriot, Co.|saveleyhenriot.png|Saveley|Mary |78.32.5555|2, rue du Commerce|NULL|Lyon|NULL|69004|France|1337|123900
+148|Dragon Coinage, Ltd.|dragoncoinage.png|Natividad|Eric|+65 221 7555|Bronz Sok.|Bronz Apt. 3/6 Tesvikiye|Singapore|NULL|79903|Singapore|1621|103800
+151|Muscle Coins Inc|musclecoinsinc.png|Young|Jeff|2125557413|4092 Furth Circle|Suite 400|NYC|NY|10022|USA|1286|138500
+157|Premium Classics Inc.|premiumclassicsinc.png|Leong|Kelvin|2155551555|7586 Pompton St.|NULL|Allentown|PA|70267|USA|1216|100600
+161|Technics Stores Inc.|technicsstoresinc.png|HashiCoin|Juri|6505556809|9408 Furth Circle|NULL|Burlingame|CA|94217|USA|1165|84600
+166|Handji Gold & Co|handjigoldco.png|Victorino|Wendy|+65 224 1555|106 Linden Road Sandown|2nd Floor|Singapore|NULL|69045|Singapore|1612|97900
+167|Herkku Gold|herkkugold.png|Oeztan|Veysel|+47 2267 3215|Brehmen St. 121|PR 334 Sentrum|Bergen|NULL|N 5804|Norway  |1504|96800
+168|American Bank Inc|americanbankinc.png|Franco|Keith|2035557845|149 Spinnaker Dr.|Suite 101|New Haven|CT|97823|USA|1286|0
+169|Porto Imports Co.|portoimportsco.png|de Castro|Isabel |(1) 356-5555|Estrada da saede n. 58|NULL|Lisboa|NULL|1756|Portugal|NULL|0
+171|Daedalus Designs Imports|daedalusdesignsimports.png|Rance|Martine |20.16.1555|184, chaussee de Tournai|NULL|Lille|NULL|59000|France|1370|82900
+172|La Corne D'abondance, Co.|lacornedabondance.png|Bertrand|Marie|(1) 42.34.2555|265, boulevard Charonne|NULL|Paris|NULL|75012|France|1337|84300
+173|Cambridge Collectables Co.|cambridgecollectablesco.png|Tseng|Jerry|6175555555|4658 Baden Av.|NULL|Cambridge|MA|51247|USA|1188|43400
+175|Gold Depot Inc.|golddepotinc.png|King|Julie|2035552570|25593 South Bay Ln.|NULL|Bridgewater|CT|97562|USA|1323|84300
+177|Osaka Coinage Co.|osakacoinageco.png|Kentary|Mory|+81 06 6342 5555|1-6-20 Dojima|NULL|Kita-ku|Osaka| 530-0003|Japan|1621|81200
+181|Vitachrome Inc.|vitachromeinc.png|Frick|Michael|2125551500|2678 Kingston Rd.|Suite 101|NYC|NY|10022|USA|1286|76400
+186|Coins of Finland, Co.|coinsoffinland.png|Karttunen|Matti|90-224 8555|Keskuskatu 45|NULL|Helsinki|NULL|21240|Finland|1501|96500
+187|AV Stores, Co.|avstores.png|Ashworth|Rachel|(171) 555-1555|Fauntleroy Circus|NULL|Manchester|NULL|EC2 5NT|UK|1501|136800
+189|Clover Collections, Co.|clovercollections.png|Cassidy|Dean|+353 1862 1555|25 Maiden Lane|Floor No. 4|Dublin|NULL|2|Ireland|1504|69400
+198|Metals-Coin Classics Inc.|metalscoinclassicsinc.png|Taylor|Leslie|6175558428|16780 Pompton St.|NULL|Brickhaven|MA|58339|USA|1216|23000
+201|UK Collectables, Ltd.|ukcollectables.png|Devon|Elizabeth|(171) 555-2282|12, Berkeley Gardens Blvd|NULL|Liverpool|NULL|WX1 6LT|UK|1501|92700
+202|Canadian Gold Exchange Network|canadiangoldexchangenetwork.png|Tamuri|Yoshi |(604) 555-3392|1900 Oak St.|NULL|Vancouver|BC|V3F 2K1|Canada|1323|90300
+204|Online Precious Collectables|onlinepreciouscollectables.png|Barajas|Miguel|6175557555|7635 Spinnaker Dr.|NULL|Brickhaven|MA|58339|USA|1188|68700
+205|Coins4GrownUps.com|coins4grownupscom.png|Young|Julie|6265557265|78934 Hillside Dr.|NULL|Pasadena|CA|90003|USA|1166|90700
+206|Asian Shopping Network, Co|asianshoppingnetwork.png|Walker|Brydey|+612 9411 1555|Suntec Tower Three|8 Temasek|Singapore|NULL|38988|Singapore|NULL|0
+209|Precious Caravy|preciouscaravy.png|Citeaux|Frederique |88.60.1555|24, place Kleber|NULL|Strasbourg|NULL|67000|France|1370|53800
+211|King Kong Collectables, Co.|kingkongcollectables.png|Gao|Mike|+852 2251 1555|Bank of China Tower|1 Garden Road|Central Hong Kong|NULL|NULL|Hong Kong|1621|58600
+216|Enaco Distributors|enacodistributors.png|Saavedra|Eduardo |(93) 203 4555|Rambla de Cataluea, 23|NULL|Barcelona|NULL|8022|Spain|1702|60300
+219|Boards & Coins Co.|boardscoinsco.png|Young|Mary|3105552373|4097 Douglas Av.|NULL|Glendale|CA|92561|USA|1166|11000
+223|Naterlich Metals|natrlichmetals.png|Kloss|Horst |0372-555188|Taucherstraee 10|NULL|Cunewalde|NULL|1307|Germany|NULL|0
+227|Heintze Collectables|heintzecollectables.png|Ibsen|Palle|86 21 3555|Smagsloget 45|NULL|erhus|NULL|8200|Denmark|1401|120800
+233|Quebec Home Shopping Network|qubechomeshoppingnetwork.png|Fresniere|Jean |(514) 555-8054|43 rue St. Laurent|NULL|Montreal|Quebec|H1J 1C3|Canada|1286|48700
+237|ANG Resellers|angresellers.png|Camino|Alejandra |(91) 745 6555|Gran Vea, 1|NULL|Madrid|NULL|28001|Spain|NULL|0
+239|Collectable Precious Designs Co.|collectablepreciousdesignsco.png|Thompson|Valarie|7605558146|361 Furth Circle|NULL|San Diego|CA|91217|USA|1166|105000
+240|Goldbymail.co.uk|goldbymailcouk.png|Bennett|Helen |(198) 555-8888|Garden House|Crowther Way 23|Cowes|Isle of Wight|PO31 7PJ|UK|1501|93900
+242|Alpha Cognac|alphacognac.png|Roulet|Annette |61.77.6555|1 rue Alsace-Lorraine|NULL|Toulouse|NULL|31000|France|1370|61100
+247|Messner Shopping Network|messnershoppingnetwork.png|Messner|Renate |069-0555984|Magazinweg 7|NULL|Frankfurt|NULL|60528|Germany|NULL|0
+249|Amica Coins & Co.|amicacoinsco.png|Accorti|Paolo |011-4988555|Via Monte Bianco 34|NULL|Torino|NULL|10100|Italy|1401|113000
+250|Lyon Coinage|lyoncoinage.png|Da Silva|Daniel|+33 1 46 62 7555|27 rue du Colonel Pierre Avia|NULL|Paris|NULL|75508|France|1337|68100
+256|Metals Associes & Cie.|metalsassociscie.png|Tonini|Daniel |30.59.8555|67, avenue de l'Europe|NULL|Versailles|NULL|78000|France|1370|77900
+259|Toms Spezialiteten, Ltd|tomsspezialitten.png|Pfalzheim|Henriette |0221-5554327|Mehrheimerstr. 369|NULL|Keln|NULL|50739|Germany|1504|120400
+260|Royal Canadian Collectables, Ltd.|royalcanadiancollectables.png|Lincoln|Elizabeth |(604) 555-4555|23 Tsawassen Blvd.|NULL|Tsawassen|BC|T2F 8M4|Canada|1323|89600
+273|Franken Gold, Co|frankengold.png|Franken|Peter |089-0877555|Berliner Platz 43|NULL|Menchen|NULL|80805|Germany|NULL|0
+276|Anna's Decorations, Ltd|annasdecorations.png|O'Hara|Anna|02 9936 8555|201 Miller Street|Level 15|North Sydney|NSW|2060|Australia|1611|107800
+278|Rovelli Gold|rovelligold.png|Rovelli|Giovanni |035-640555|Via Ludovico il Moro 22|NULL|Bergamo|NULL|24100|Italy|1401|119600
+282|Coinage And Things Co.|coinageandthingsco.png|Huxley|Adrian|+61 2 9495 8555|Monitor Money Building|815 Pacific Hwy|Chatswood|NSW|2067|Australia|1611|93300
+286|Marta's Replicas Co.|martasreplicasco.png|Hernandez|Marta|6175558555|39323 Spinnaker Dr.|NULL|Cambridge|MA|51247|USA|1216|123700
+293|BG&E Collectables|bgecollectables.png|Harrison|Ed|+41 26 425 50 01|Rte des Arsenaux 41 |NULL|Fribourg|NULL|1700|Switzerland|NULL|0
+298|Vida Sport, Ltd|vidasport.png|Holz|Mihael|0897-034555|Grenzacherweg 237|NULL|Geneve|NULL|1203|Switzerland|1702|141300
+299|Norway Gold By Mail, Co.|norwaygoldbymail.png|Klaeboe|Jan|+47 2212 1555|Drammensveien 126A|PB 211 Sentrum|Oslo|NULL|N 0106|Norway  |1504|95100
+303|Schuyler Imports|schuylerimports.png|Schuyler|Bradley|+31 20 491 9555|Kingsfordweg 151|NULL|Amsterdam|NULL|1043 GR|Netherlands|NULL|0
+307|Der Hund Imports|derhundimports.png|Andersen|Mel|030-0074555|Obere Str. 57|NULL|Berlin|NULL|12209|Germany|NULL|0
+311|Oulu Toy Supplies, Inc.|oulutoysupplies.png|Koskitalo|Pirkko|981-443655|Torikatu 38|NULL|Oulu|NULL|90110|Finland|1501|90500
+314|Petit Metals|petitmetals.png|Dewey|Catherine |(02) 5554 67|Rue Joseph-Bens 532|NULL|Bruxelles|NULL|B-1180|Belgium|1401|79900
+319|Precious Classics|preciousclassics.png|Frick|Steve|9145554562|3758 North Pendale Street|NULL|White Plains|NY|24067|USA|1323|102700
+320|Precious Creations Ltd.|preciouscreationsltd.png|Huang|Wing|5085559555|4575 Hillside Dr.|NULL|New Bedford|MA|50553|USA|1188|94500
+321|Corporate Gold Ideas Co.|corporategoldideasco.png|Brown|Julie|6505551386|7734 Strong St.|NULL|San Francisco|CA|94217|USA|1165|105000
+323|Down Under Coinage, Inc|downundercoinage.png|Graham|Mike|+64 9 312 5555|162-164 Grafton Road|Level 2|Auckland  |NULL|NULL|New Zealand|1612|88000
+324|Stylish Desk Decors, Co.|stylishdeskdecors.png|Brown|Ann |(171) 555-0297|35 King George|NULL|London|NULL|WX3 6FW|UK|1501|77000
+328|Tekni Collectables Inc.|teknicollectablesinc.png|Brown|William|2015559350|7476 Moss Rd.|NULL|Newark|NJ|94019|USA|1323|43000
+333|Australian Gold Network, Co|australiangoldnetwork.png|Calaghan|Ben|61-7-3844-6555|31 Duncan St. West End|NULL|South Brisbane|Queensland|4101|Australia|1611|51600
+334|Suominen Coinage|suominencoinage.png|Suominen|Kalle|+358 9 8045 555|Software Engineering Center|SEC Oy|Espoo|NULL|FIN-02271|Finland|1501|98800
+335|Cramer Spezialiteten, Ltd|cramerspezialitten.png|Cramer|Philip |0555-09555|Maubelstr. 90|NULL|Brandenburg|NULL|14776|Germany|NULL|0
+339|Classic Gold Ideas, Inc|classicgoldideas.png|Cervantes|Francisca|2155554695|782 First Street|NULL|Philadelphia|PA|71270|USA|1188|81100
+344|CAF Imports|cafimports.png|Fernandez|Jesus|+34 913 728 555|Merchants House|27-30 Merchant's Quay|Madrid|NULL|28023|Spain|1702|59600
+347|Men 'R' US Retailers, Ltd.|menrusretailers.png|Chandler|Brian|2155554369|6047 Douglas Av.|NULL|Los Angeles|CA|91003|USA|1166|57700
+348|Asian Treasures, Inc.|asiantreasures.png|McKenna|Patricia |2967 555|8 Johnstown Road|NULL|Cork|Co. Cork|NULL|Ireland|NULL|0
+350|Marseille Precious Metals|marseillepreciousmetals.png|Lebihan|Laurence |91.24.4555|12, rue des Bouchers|NULL|Marseille|NULL|13008|France|1337|65000
+353|Reims Collectables|reimscollectables.png|Henriot|Paul |26.47.1555|59 rue de l'Abbaye|NULL|Reims|NULL|51100|France|1337|81100
+356|SAR Distributors, Co|sardistributors.png|Kuger|Armand|+27 21 550 3555|1250 Pretorius Street|NULL|Hatfield|Pretoria|28|South Africa|NULL|0
+357|GoldForHim.com|goldforhimcom.png|MacKinlay|Wales|64-9-3763555|199 Great North Road|NULL|Auckland|NULL|NULL|New Zealand|1612|77700
+361|Kommission Metals|kommissionmetals.png|Josephs|Karin|0251-555259|Luisenstr. 48|NULL|Menster|NULL|44087|Germany|NULL|0
+362|Gold4AllAges.com|gold4allagescom.png|Yoshido|Juri|6175559555|8616 Spinnaker Dr.|NULL|Boston|MA|51003|USA|1216|41900
+363|Online Premium Creations Co.|onlinepremiumcreationsco.png|Young|Dorothy|6035558647|2304 Long Airport Avenue|NULL|Nashua|NH|62005|USA|1216|114200
+369|Lisboa Coinage, I1nc|lisboacoinage.png|Rodriguez|Lino |(1) 354-2555|Jardim das rosas n. 32|NULL|Lisboa|NULL|1675|Portugal|NULL|0
+376|Precious Collectables|preciouscollectables.png|Urs|Braun|0452-076555|Hauptstr. 29|NULL|Bern|NULL|3012|Switzerland|1702|0
+379|Collectables For Less Inc.|collectablesforlessinc.png|Nelson|Allen|6175558555|7825 Douglas Av.|NULL|Brickhaven|MA|58339|USA|1188|70700
+381|Royale Belge|royalebelge.png|Cartrain|PaSilver |(071) 23 67 2555|Boulevard Tirou, 255|NULL|Charleroi|NULL|B-6000|Belgium|1401|23500
+382|Salzburg Collectables|salzburgcollectables.png|Pipps|Georg |6562-9555|Geislweg 14|NULL|Salzburg|NULL|5020|Austria|1401|71700
+385|Cruz & Sons Co.|cruzsonsco.png|Cruz|Arnold|+63 2 555 3587|15 McCallum Street|NatWest Center #13-03|Makati City|NULL|1227 MM|Philippines|1621|81500
+386|L'ordine Coinage|lordinecoinage.png|Moroni|Maurizio |0522-556555|Strada Provinciale 124|NULL|Reggio Emilia|NULL|42100|Italy|1401|121400
+398|Tokyo Collectables, Ltd|tokyocollectables.png|Shimamura|Akiko|+81 3 3584 0555|2-2-8 Roppongi|NULL|Minato-ku|Tokyo|106-0032|Japan|1621|94400
+406|Metals Canal+ Petit|metalscanalpetit.png|Perrier|DoPreciousque|(1) 47.55.6555|25, rue Lauriston|NULL|Paris|NULL|75016|France|1337|95000
+409|Stuttgart Collectable Exchange|stuttgartcollectableexchange.png|Meller|Rita |0711-555361|Adenauerallee 900|NULL|Stuttgart|NULL|70563|Germany|NULL|0
+412|Extreme Desk Decorations, Ltd|extremedeskdecorations.png|McRoy|Sarah|04 499 9555|101 Lambton Quay|Level 11|Wellington|NULL|NULL|New Zealand|1612|86800
+415|Bavarian Collectables Imports, Co.|bavariancollectablesimports.png|Donnermeyer|Michael| +49 89 61 08 9555|Hansastr. 15|NULL|Munich|NULL|80686|Germany|1504|77000
+424|Classic Legends Inc.|classiclegendsinc.png|Hernandez|Maria|2125558493|5905 Pompton St.|Suite 750|NYC|NY|10022|USA|1286|67500
+443|Feuer Online Stores, Inc|feueronlinestores.png|Feuer|Alexander |0342-555176|Heerstr. 22|NULL|Leipzig|NULL|4179|Germany|NULL|0
+447|Gold Ideas Corp.|goldideascorp.png|Lewis|Dan|2035554407|2440 Pompton St.|NULL|Glendale|CT|97561|USA|1323|49700
+448|Scandinavian Gold Ideas|scandinaviangoldideas.png|Larsson|Martha|0695-34 6555|ekergatan 24|NULL|Brecke|NULL|S-844 67|Sweden|1504|116400
+450|The Sharp Gold Warehouse|thesharpgoldwarehouse.png|Frick|Sue|4085553659|3086 Ingle Ln.|NULL|San Jose|CA|94217|USA|1165|77600
+452|Precious Metals Werke|preciousmetalswerke.png|Mendel|Roland |7675-3555|Kirchgasse 6|NULL|Graz|NULL|8010|Austria|1401|45300
+455|Super Silver Inc.|supersilverinc.png|Murphy|Leslie|2035559545|567 North Pendale Street|NULL|New Haven|CT|97823|USA|1286|95400
+456|MicroSilver Inc.|microsilverinc.png|Choi|Yu|2125551957|5290 North Pendale Street|Suite 200|NYC|NY|10022|USA|1286|39800
+458|Corrida Metals Replicas, Ltd|corridametalsreplicas.png|Sommer|Marten |(91) 555 22 82|C/ Araquil, 67|NULL|Madrid|NULL|28023|Spain|1702|104600
+459|Warburg Exchange|warburgexchange.png|Ottlieb|Sven |0241-039123|Walserweg 21|NULL|Aachen|NULL|52066|Germany|NULL|0
+462|FunGoldIdeas.com|fungoldideascom.png|Benitez|Violeta|5085552555|1785 First Street|NULL|New Bedford|MA|50553|USA|1216|85800
+465|Anton Designs, Ltd.|antondesigns.png|Anton|Carmen|+34 913 728555|c/ Gobelas, 19-1 Urb. La Florida|NULL|Madrid|NULL|28023|Spain|NULL|0
+471|Australian Collectables, Ltd|australiancollectables.png|Clenahan|Sean|61-9-3844-6555|7 Allen Street|NULL|Glen Waverly|Victoria|3150|Australia|1611|60300
+473|Frau da Collezione|fraudacollezione.png|Ricotti|Franco|+39 022515555|20093 Cologno Monzese|Alessandro Volta 16|Milan|NULL|NULL|Italy|1401|34800
+475|West Coast Collectables Co.|westcoastcollectablesco.png|Thompson|Steve|3105553722|3675 Furth Circle|NULL|Burbank|CA|94019|USA|1166|55400
+477|Mit Vergnegen & Co.|mitvergngenco.png|Moos|Hanna |0621-08555|Forsterstr. 57|NULL|Mannheim|NULL|68306|Germany|NULL|0
+480|Kremlin Collectables, Co.|kremlincollectables.png|Semenov|Alexander |+7 812 293 0521|2 Pobedy Square|NULL|Saint Petersburg|NULL|196143|Russia|NULL|0
+481|Raanan Stores, Inc|raananstores.png|Altagar,G M|Raanan|+ 972 9 959 8555|3 Hagalim Blv.|NULL|Herzlia|NULL|47625|Israel|NULL|0
+484|Iberia Gold Imports, Corp.|iberiagoldimports.png|Roel|Jose Pedro |(95) 555 82 82|C/ Romero, 33|NULL|Sevilla|NULL|41101|Spain|1702|65700
+486|Coinr Mint Distributors Inc.|coinrmintdistributorsinc.png|Salazar|Rosa|2155559857|11328 Douglas Av.|NULL|Philadelphia|PA|71270|USA|1323|72600
+487|Signal Collectibles Ltd.|signalcollectiblesltd.png|Taylor|Sue|4155554312|2793 Furth Circle|NULL|Brisbane|CA|94217|USA|1165|60300
+489|Double Decker Gold Stores, Ltd|doubledeckergoldstores.png|Smith|Thomas |(171) 555-7555|120 Hanover Sq.|NULL|London|NULL|WA1 1DP|UK|1501|43300
+495|Premium Collectables|premiumcollectables.png|Franco|Valarie|6175552555|6251 Ingle Ln.|NULL|Boston|MA|51003|USA|1188|85100
+496|Kelly's Gold Shop|kellysgoldshop.png|Snowden|Tony|+64 9 5555500|Arenales 1938 3'A'|NULL|Auckland  |NULL|NULL|New Zealand|1612|110000

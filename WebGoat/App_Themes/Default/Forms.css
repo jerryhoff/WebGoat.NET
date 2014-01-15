@@ -1,0 +1,196 @@
+/* --------------------------------------------------------------
+
+   forms.css
+   * Sets up some default styling for forms
+   * Gives you classes to enhance your forms
+
+   Usage:
+   * For text fields, use class .title or .text
+   * For inline forms, use .inline (even when using columns)
+
+-------------------------------------------------------------- */
+
+label
+{
+    font-weight: normal;
+}
+fieldset
+{
+    padding: 1.4em;
+    margin: 0 0 1.5em 0;
+    border: 1px solid #ccc;
+}
+legend
+{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+/* Form fields
+-------------------------------------------------------------- */
+
+input[type=text], input[type=password], input.text, input.title, textarea, select
+{
+    background-color: #fff;
+    border: 1px solid #bbb;
+}
+input[type=text]:focus, input[type=password]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus
+{
+    border-color: #666;
+}
+
+input[type=text], input[type=password], input.text, input.title, textarea, select
+{
+    margin: 0.5em 0;
+}
+
+input.text, input.title
+{
+    width: 300px;
+    padding: 5px;
+}
+input.title
+{
+    font-size: 1.5em;
+}
+textarea
+{
+    padding: 5px;
+}
+
+input[type=checkbox], input[type=radio], input.checkbox, input.radio
+{
+    position: relative;
+    top: .25em;
+}
+
+form.inline
+{
+    line-height: 3;
+}
+form.inline p
+{
+    margin-bottom: 0;
+}
+
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+
+.error, .notice, .success, .message, .product, .product2, .logo
+{
+    padding: .8em;
+    margin-bottom: 1em;
+    border: 2px solid #ddd;
+}
+
+.error
+{
+    background: #FBE3E4;
+    color: #8a1f11;
+    border-color: #FBC2C4;
+}
+.notice
+{
+    background: #FFF6BF;
+    color: #514721;
+    border-color: #FFD324;
+}
+.success
+{
+    background: #E6EFC2;
+    color: #264409;
+    border-color: #C6D880;
+}
+.message
+{
+    background: #FFFFFF;
+    color: #264409;
+    border-color: #C6D880;    
+}
+
+.product, .product2
+{
+    background: #ffffff;
+    border-color: #463E3F;
+    border: 5px solid #ddd;
+    -moz-border-radius: 15px;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+}
+
+.product2
+{
+    width:80%;
+    text-transform:uppercase;
+    border-color: #6D6968;
+    padding:30px;
+}
+.logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+.error a
+{
+    color: #8a1f11;
+}
+.notice a
+{
+    color: #514721;
+}
+.success a
+{
+    color: #264409;
+}
+.product a
+{
+    color: #264409;
+}
+.product2 a
+{
+    color: #264409;
+}
+
+
+/*MODIFIED TO FIT THE APP'S NEEDS*/
+
+input[type="checkbox"], input[type="radio"], input.checkbox, input.radio
+{
+    top: 0.05em;
+}
+
+/*AUTOCLEAR COLOR*/
+
+.default
+{
+    color: Gray;
+}
+/*header search box*/
+.UtilityMenu .search-box .text
+{
+    width: 200px;
+}
+select
+{
+    padding: 5px;
+}
+
+.validator
+{
+    color:Red;
+}
+
+/* TINY */
+.tiny
+{
+   font-family: verdana,arial,helvetica,sans-serif;
+   font-size: x-small;
+   color: #E47911;
+}

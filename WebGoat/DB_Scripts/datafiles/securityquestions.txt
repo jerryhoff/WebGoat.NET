@@ -1,0 +1,5 @@
+1|What is your favorite color?
+2|In what state did you graduate high school?
+3|What is your favorite type of animal?
+4|What is your preferred internet password?
+5|Where did you go on your honeymoon?
