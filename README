@@ -18,8 +18,8 @@ Notes:
  - Google Chrome performs filtering for reflected XSS attacks. These attacks
    will not work unless chrome is run with the argument 
    --disable-xss-auditor. 
-- Some (but not all!) of the lessons require a working SQL database setup
-  guidelines on how to set it up with WebGoat.NET are shown below.
+- Some (but not all!) of the lessons require a working SQL database. Setup
+  guidelines are shown below.
 
 How To Build And Run under Mac OS X and Linux:
   1. Prerequisites
