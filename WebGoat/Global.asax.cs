@@ -34,7 +34,7 @@ namespace OWASP.WebGoat.NET
 
         void Application_PreSendRequestHeaders(Object sender, EventArgs e)
         {
-            Response.Headers.Set("X-XSS-Protection", "0");
+            Response.AddHeader("X-XSS-Protection", "0");
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
