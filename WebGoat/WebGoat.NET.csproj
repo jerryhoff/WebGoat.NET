@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>OWASP.WebGoat.NET</RootNamespace>
     <AssemblyName>DotNetGoat</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
@@ -23,6 +23,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,7 @@
         <Variable name="DYLD_FALLBACK_LIBRARY_PATH" value=".:/usr/local/lib:/lib:/usr/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -52,11 +54,17 @@
     <ConsolePause>false</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Data" />
@@ -79,6 +87,7 @@
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\ForgotPassword.aspx" />
@@ -917,6 +926,7 @@
     </Compile>
     <Compile Include="ProxySetup.aspx.cs">
       <DependentUpon>ProxySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProxySetup.aspx.designer.cs">
       <DependentUpon>ProxySetup.aspx</DependentUpon>
@@ -940,30 +950,35 @@
     <Compile Include="App_Code\Util.cs" />
     <Compile Include="Content\Trace.aspx.cs">
       <DependentUpon>Trace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Trace.aspx.designer.cs">
       <DependentUpon>Trace.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.designer.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\HeaderInjection.aspx.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\HeaderInjection.aspx.designer.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\MessageDigest.aspx.cs">
       <DependentUpon>MessageDigest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\MessageDigest.aspx.designer.cs">
       <DependentUpon>MessageDigest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\XMLInjection.aspx.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\XMLInjection.aspx.designer.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
@@ -971,24 +986,28 @@
     <Compile Include="App_Code\WeakMessageDigest.cs" />
     <Compile Include="Content\ReadlineDoS.aspx.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.designer.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\Unsafe.aspx.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Unsafe.aspx.designer.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\Random.aspx.cs">
       <DependentUpon>Random.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Random.aspx.designer.cs">
       <DependentUpon>Random.aspx</DependentUpon>
@@ -996,12 +1015,14 @@
     <Compile Include="App_Code\WeakRandom.cs" />
     <Compile Include="Content\VerbTampering.aspx.cs">
       <DependentUpon>VerbTampering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\VerbTampering.aspx.designer.cs">
       <DependentUpon>VerbTampering.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\VerbTamperingAttack.aspx.cs">
       <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\VerbTamperingAttack.aspx.designer.cs">
       <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
