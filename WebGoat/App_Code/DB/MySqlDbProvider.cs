@@ -24,8 +24,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         public MySqlDbProvider(ConfigFile configFile)
         {
             if (configFile == null)
+            {
                 _connectionString = string.Empty;
-                
+                return;
+            }
+
             if (!string.IsNullOrEmpty(configFile.Get(DbConstants.KEY_PWD)))
             {
                 _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
