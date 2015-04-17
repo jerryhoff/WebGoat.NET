@@ -116,6 +116,11 @@
     <Content Include="Content\ForgotPassword.aspx" />
     <Content Include="Content\UploadPathManipulation.aspx" />
     <Content Include="Global.asax" />
+    <None Include="Resources\client-scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.js" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.min.js" />
+    <Content Include="Resources\client-scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Resources\tabs.css" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -895,6 +900,13 @@
     <Compile Include="Entities\Payments.cs" />
     <Compile Include="Entities\Products.cs" />
     <Compile Include="Entities\SecurityQuestions.cs" />
+    <Compile Include="Resources\Master-Pages\SiteNew.Master.cs">
+      <DependentUpon>SiteNew.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\Master-Pages\SiteNew.Master.designer.cs">
+      <DependentUpon>SiteNew.Master</DependentUpon>
+    </Compile>
     <Compile Include="WebGoatCoins\Autocomplete.ashx.cs">
       <DependentUpon>Autocomplete.ashx</DependentUpon>
     </Compile>
@@ -1125,6 +1137,8 @@
     <None Include="Downloads\transport_layer.pdf" />
     <None Include="Downloads\architecture.pdf" />
     <Content Include="packages.config" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.min.map" />
+    <Content Include="Resources\Master-Pages\SiteNew.Master" />
     <None Include="TODO.txt" />
     <None Include="DB_Scripts\create_webgoatcoins.sql" />
     <None Include="DB_Scripts\load_webgoatcoins.sql" />
