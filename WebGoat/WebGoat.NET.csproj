@@ -112,6 +112,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\EFSQLInjection.aspx" />
     <Content Include="Content\ForgotPassword.aspx" />
     <Content Include="Content\UploadPathManipulation.aspx" />
     <Content Include="Global.asax" />
@@ -543,6 +544,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
+    <Compile Include="Content\EFSQLInjection.aspx.cs">
+      <DependentUpon>EFSQLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\EFSQLInjection.aspx.designer.cs">
+      <DependentUpon>EFSQLInjection.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Categories.cs" />
     <Compile Include="Entities\CoinsDB.cs" />
     <Compile Include="Entities\Comments.cs" />
