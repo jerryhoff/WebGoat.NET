@@ -26,6 +26,7 @@
         <siteMapNode url="~/Content/XSS.aspx" title="Cross Site Scripting (XSS)" description="XSS">
             <siteMapNode url="~/Content/StoredXSS.aspx" title="Stored XSS" description="Stored XSS" />
             <siteMapNode url="~/Content/ReflectedXSS.aspx" title="Reflected XSS" description="Reflected XSS" />
+            <siteMapNode url="~/Content/DomXSS.aspx" title="DOM XSS" description="DOM XSS" />
         </siteMapNode>
         <siteMapNode url="~/Content/Authentication.aspx" title="Authentication Issues" description="">
             <siteMapNode url="~/Content/ForgotPassword.aspx" title="Insecure Forgot Password" description="Insecure Forgot Password" />
