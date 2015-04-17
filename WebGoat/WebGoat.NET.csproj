@@ -116,6 +116,9 @@
     <Content Include="Content\ForgotPassword.aspx" />
     <Content Include="Content\UploadPathManipulation.aspx" />
     <Content Include="Global.asax" />
+    <None Include="Resources\client-scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.js" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.min.js" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -1125,6 +1128,7 @@
     <None Include="Downloads\transport_layer.pdf" />
     <None Include="Downloads\architecture.pdf" />
     <Content Include="packages.config" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.min.map" />
     <None Include="TODO.txt" />
     <None Include="DB_Scripts\create_webgoatcoins.sql" />
     <None Include="DB_Scripts\load_webgoatcoins.sql" />
