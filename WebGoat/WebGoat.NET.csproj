@@ -120,6 +120,7 @@
     <Content Include="Resources\client-scripts\jquery-1.10.2.js" />
     <Content Include="Resources\client-scripts\jquery-1.10.2.min.js" />
     <Content Include="Resources\client-scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Resources\tabs.css" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>

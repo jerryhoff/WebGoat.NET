@@ -3,8 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head id="Head1" runat="server">
-	<link type="text/css" href="~/Resources/jquery-ui/jquery-ui-1.8.16.custom.css" rel="stylesheet" runat="server" />
-	<link type="text/css" href="~/Resources/jquery-libs/autocomplete/styles.css" rel="stylesheet" runat="server" />
+    <link type="text/css" href="~/Resources/jquery-ui/jquery-ui-1.8.16.custom.css" rel="stylesheet" runat="server" />
+    <link type="text/css" href="~/Resources/jquery-libs/autocomplete/styles.css" rel="stylesheet" runat="server" />
+    <link type="text/css" href="~/Resources/tabs.css" rel="stylesheet" runat="server" />
     <title>WebGoat.NET</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="description" content="" />
@@ -13,14 +14,14 @@
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
 
-		<style type="text/css">
-			.demoHeaders { margin-top: 2em; }
-			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
-			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
-			ul#icons {margin: 0; padding: 0;}
-			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
-			ul#icons span.ui-icon {float: left; margin: 0 4px;}
-		</style>	
+        <style type="text/css">
+            .demoHeaders { margin-top: 2em; }
+            #dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+            #dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+            ul#icons {margin: 0; padding: 0;}
+            ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+            ul#icons span.ui-icon {float: left; margin: 0 4px;}
+        </style>	
 
 
 </head>
@@ -32,22 +33,22 @@
     <script type='text/javascript' src='<%=Page.ResolveUrl("~/Resources/client-scripts/jquery.autocomplete.js")%>'></script>
 
     <script type="text/javascript">
-			$.fx.speeds._default = 500;
-			$(function() {
-				$( "#dialog" ).dialog({
-					autoOpen: false,
-					show: "blind",
-					hide: "explode"
-				});
+            $.fx.speeds._default = 500;
+            $(function() {
+                $( "#dialog" ).dialog({
+                    autoOpen: false,
+                    show: "blind",
+                    hide: "explode"
+                });
 
-				$( "#dialog_link" ).click(function() {
-					$( "#dialog" ).dialog( "open" );
-						return false;
-				});
-				
-				
-			});
-		</script>
+                $( "#dialog_link" ).click(function() {
+                    $( "#dialog" ).dialog( "open" );
+                        return false;
+                });
+                
+                
+            });
+        </script>
     
     <form id="Form1" runat="server">
     <div class="FullWidth HeaderTop HeaderGrad clearfix">
@@ -104,7 +105,7 @@
 
                                     <%-- original
                                     <a href="<%# this.ResolveUrl(Eval("Url") as string) %>">
-                                    	<%# Eval("Title") %>
+                                        <%# Eval("Title") %>
                                     </a>
                                     --%>
 
@@ -130,7 +131,7 @@
             </div>
 
             <div class="grid_19 omega">
-				
+                
                 <div class="temp breadCrumb clearfix">
                     <asp:SiteMapPath ID="SiteMapPath1" runat="server" CssClass="bc-container">
                         <RootNodeStyle CssClass="first" />
@@ -148,24 +149,24 @@
                 
                 
     <!-- jquery help dialog -->  
-				
-				<div style="text-align:right; float:right" class="Content">          
-                	<a href="#" id="dialog_link" class="ui-state-default ui-corner-all">
-						<span class="ui-icon ui-icon-newwin"></span>
-						Lesson Instructions
-					</a>
-				</div>
-				
-				<div class="">
-					<div id="dialog" title="Help For This Lesson">
-						<p>
-						<asp:ContentPlaceHolder ID="HelpContentPlaceholder" runat="server">
-                		</asp:ContentPlaceHolder>
-						</p>
-					</div>
-				</div>
-				
-	<!-- /jquery help dialog -->
+                
+                <div style="text-align:right; float:right" class="Content">          
+                    <a href="#" id="dialog_link" class="ui-state-default ui-corner-all">
+                        <span class="ui-icon ui-icon-newwin"></span>
+                        Lesson Instructions
+                    </a>
+                </div>
+                
+                <div class="">
+                    <div id="dialog" title="Help For This Lesson">
+                        <p>
+                        <asp:ContentPlaceHolder ID="HelpContentPlaceholder" runat="server">
+                        </asp:ContentPlaceHolder>
+                        </p>
+                    </div>
+                </div>
+                
+    <!-- /jquery help dialog -->
                 <div class="Content">
                 <asp:ContentPlaceHolder ID="BodyContentPlaceholder" runat="server">
                 </asp:ContentPlaceHolder>
