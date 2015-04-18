@@ -23,7 +23,7 @@
 		Are you looking to contact one of our employees?&nbsp; Use this form to find 
 		their email quickly!<br />
 		<br />
-		Enter the first few letters of their first or last name:<br />
+		Enter the first few letters of their first name:<br />
 	<p>
 		<table>
 			<tr>

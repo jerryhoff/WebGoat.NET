@@ -19,11 +19,14 @@ namespace OWASP.WebGoat.NET.Content
             {
                 var name = txtName.Text;
                 var output = db.Database
-                    .SqlQuery<string>("SELECT email FROM Employees WHERE " +
-                                      "firstName LIKE '" + name + "%' OR lastName LIKE '" + name + "%'")
+                    .SqlQuery<string>("SELECT email FROM Employees " +
+                                      "WHERE firstName LIKE {0}", 
+                                      name+"%")
                     .FirstOrDefault();
 
-                HttpContext.Current.Response.Write(output == null ? "Not found email" : "Email: " + output);
+                lblOutput.Text = output == null
+                    ? "Not found email"
+                    : "Email: " + output;
             }
 
         }
