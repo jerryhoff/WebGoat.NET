@@ -22,11 +22,11 @@ namespace OWASP.WebGoat.NET.Content
                     .SqlQuery<string>("SELECT email FROM Employees " +
                                       "WHERE firstName LIKE {0}", 
                                       name+"%")
-                    .FirstOrDefault();
+                    .ToArray();
 
-                lblOutput.Text = output == null
+                lblOutput.Text = output.Length == 0
                     ? "Not found email"
-                    : "Email: " + output;
+                    : String.Join("<br/>", output);
             }
 
         }
