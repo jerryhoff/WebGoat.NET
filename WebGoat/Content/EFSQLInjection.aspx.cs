@@ -17,11 +17,11 @@ namespace OWASP.WebGoat.NET.Content
         {
             using (var db = new CoinsDB())
             {
-                var name = txtName.Text;
+                var code = txtOfficeCode.Text;
                 var output = db.Database
                     .SqlQuery<string>("SELECT email FROM Employees " +
-                                      "WHERE firstName LIKE {0}", 
-                                      name+"%")
+                                      "WHERE officeCode = {0}",
+                                      code)
                     .ToArray();
 
                 lblOutput.Text = output.Length == 0

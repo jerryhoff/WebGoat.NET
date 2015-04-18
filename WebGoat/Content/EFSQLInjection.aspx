@@ -20,13 +20,13 @@
     Are you looking to contact one of our employees?&nbsp; Use this form to find
     their email quickly!<br/>
     <br/>
-    Enter the first few letters of their first name:<br/>
+    Enter the office code of employer (e.g. 1 or 7):<br/>
     <p>
         <table>
             <tr>
-                <td>Name: </td>
+                <td>Code: </td>
                 <td>
-                    <asp:TextBox ID="txtName" runat="server" Columns="25"></asp:TextBox>
+                    <asp:TextBox ID="txtOfficeCode" runat="server" Columns="25"></asp:TextBox>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddlOrder" runat="server" Width="150px">

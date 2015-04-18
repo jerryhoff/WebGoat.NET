@@ -13,13 +13,13 @@ namespace OWASP.WebGoat.NET.Content {
     public partial class EFSQLInjection {
         
         /// <summary>
-        /// txtName control.
+        /// txtOfficeCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox txtOfficeCode;
         
         /// <summary>
         /// ddlOrder control.
