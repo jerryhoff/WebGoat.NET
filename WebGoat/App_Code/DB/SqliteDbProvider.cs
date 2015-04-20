@@ -92,7 +92,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 
                 try
                 {
-                    return ds.Tables[0].Rows.Count == 0;
+                    return ds.Tables[0].Rows.Count != 0;
                 }
                 catch (Exception ex)
                 {
