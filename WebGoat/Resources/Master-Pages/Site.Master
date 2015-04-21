@@ -60,6 +60,9 @@
                         <LoggedInTemplate>
                             Welcome <span class="bold">
                                 <asp:LoginName ID="HeadLoginName" runat="server" />
+                                <asp:Label ID="HeadLoginRole" runat="server">
+                                    <%=IsAdmin ? "(admin role)" : "(user role)" %>
+                                </asp:Label>
                             </span> | 
                         </LoggedInTemplate>
                     </asp:LoginView>
