@@ -1,4 +1,3 @@
-using System;
 using System.Data;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
@@ -22,6 +21,16 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         }
 
         public bool IsValidCustomerLogin(string email, string password)
+        {
+            return false;
+        }
+
+        public bool IsAdminCustomerLogin(string email)
+        {
+            return false;
+        }
+
+        public bool CreateCustomer(string name, string email, string password, bool isAdmin, int question, string answer)
         {
             return false;
         }
