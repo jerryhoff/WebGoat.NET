@@ -21,6 +21,15 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
 
         protected void CreateCustomer(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(Username.Text) ||
+                String.IsNullOrEmpty(Email.Text) ||
+                String.IsNullOrEmpty(Password.Text))
+            {
+                InvalidUserNameOrPasswordMessage.Text = "Fields Username, Email, Password should be filled.";
+                InvalidUserNameOrPasswordMessage.Visible = true;
+                return;
+            }
+
             var success = du.CreateCustomer(
                 Username.Text, Email.Text, Password.Text, IsAdmin.Checked, 1, "blue");
             if (success)
