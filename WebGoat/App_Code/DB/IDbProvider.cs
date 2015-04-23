@@ -13,6 +13,10 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         bool IsValidCustomerLogin(string email, string password);
 
+        bool IsAdminCustomerLogin(string email);
+
+        bool CreateCustomer(string name, string email, string password, bool isAdmin, int question, string answer);
+
         bool RecreateGoatDb();
 
         string GetCustomerEmail(string customerNumber);

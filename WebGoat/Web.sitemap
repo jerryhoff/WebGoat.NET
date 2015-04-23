@@ -10,6 +10,7 @@
             <siteMapNode url="~/WebGoatCoins/CustomerLogin.aspx" title="Customer Login" description="Customer Login" />
             <siteMapNode url="~/WebGoatCoins/ForgotPassword.aspx" title="Forgot Password" description="Forgot Password" />
             <siteMapNode url="~/WebGoatCoins/ChangePassword.aspx" title="Change Password" description="Change Password" />
+            <siteMapNode url="~/WebGoatCoins/AddNewCustomer.aspx" title="Add New Customer" description="Add New Customer" />
             <siteMapNode url="~/WebGoatCoins/MainPage.aspx" title="Customer Portal" description="Customer Portal" />
             <siteMapNode url="~/WebGoatCoins/Catalog.aspx" title="Product Catalog" description="Catalog" />
             <siteMapNode url="~/WebGoatCoins/ProductDetails.aspx" title="Product Details" description="Product Details" />
