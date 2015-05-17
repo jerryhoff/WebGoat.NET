@@ -20,7 +20,7 @@
         <siteMapNode url="~/Content/InjectionAttacks.aspx" title="Injection Attacks" description="Injection">
             <siteMapNode url="~/Content/SQLInjectionDiscovery.aspx" title="SQL Error Messages" description="SQL Errors" />
             <siteMapNode url="~/Content/SQLInjection.aspx" title="Exploiting SQL Injection" description="SQL Injection" />
-            <siteMapNode url="~/Content/EFSQLInjection.aspx" title="Exploiting SQL Injection by Entity Framework" description="SQL Injection" />
+            <siteMapNode url="~/Content/EFSQLInjection.aspx" title="Exploiting SQL Injection with Entity Framework" description="SQL Injection" />
             <siteMapNode url="~/Content/PathManipulation.aspx" title="File Download Path Manipulation" description="Download File Path Manipulation" />
             <siteMapNode url="~/Content/UploadPathManipulation.aspx" title="File Upload Path Manipulation" description="Upload File Path Manipulation" />
         </siteMapNode>
