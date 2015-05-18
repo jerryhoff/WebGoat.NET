@@ -355,6 +355,7 @@
     <Content Include="WebGoatCoins\images\products\thumbWashington.jpg" />
     <Content Include="WebGoatCoins\Logout.aspx" />
     <Content Include="WebGoatCoins\MainPage.aspx" />
+    <Content Include="WebGoatCoins\Messages.aspx" />
     <Content Include="WebGoatCoins\Orders.aspx" />
     <Content Include="ProxySetup.aspx" />
     <Content Include="App_Themes\Default\images\header-grad.png" />
@@ -973,6 +974,13 @@
     </Compile>
     <Compile Include="WebGoatCoins\MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGoatCoins\Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>

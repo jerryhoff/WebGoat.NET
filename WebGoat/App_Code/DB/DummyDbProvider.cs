@@ -55,6 +55,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             return null;
         }
 
+        public DataSet GetMessages(string customerLogin)
+        {
+            return null;
+        }
+
         public DataSet GetComments(string productCode)
         {
             return null;

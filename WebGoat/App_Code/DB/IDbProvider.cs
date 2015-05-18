@@ -25,6 +25,8 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         DataSet GetOffice(string city);
 
+        DataSet GetMessages(string customerLogin);
+
         DataSet GetComments(string productCode);
 
         string AddComment(string productCode, string email, string comment);

@@ -267,6 +267,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
         }
 
+        public DataSet GetMessages(string customerLogin)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataSet GetComments(string productCode)
         {
         

@@ -15,6 +15,7 @@
             <siteMapNode url="~/WebGoatCoins/Catalog.aspx" title="Product Catalog" description="Catalog" />
             <siteMapNode url="~/WebGoatCoins/ProductDetails.aspx" title="Product Details" description="Product Details" />
             <siteMapNode url="~/WebGoatCoins/Orders.aspx" title="Customer Orders" description="Customer Orders" />
+            <siteMapNode url="~/WebGoatCoins/Messages.aspx" title="Customer Messages" description="Customer Messages" />
             <siteMapNode url="~/WebGoatCoins/Logout.aspx" title="Logout" description="Customer Logout" />
         </siteMapNode>
         <siteMapNode url="~/Content/InjectionAttacks.aspx" title="Injection Attacks" description="Injection">
