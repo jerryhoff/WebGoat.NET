@@ -300,6 +300,24 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             }
         }
 
+        public DataSet GetMessages(string customerLogin)
+        {
+            using (SqliteConnection connection = new SqliteConnection(_connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT Messages.id, Messages.title, Messages.text " +
+                             "FROM   Messages " +
+                             "INNER JOIN CustomerLogin ON CustomerLogin.customerNumber = Messages.customerId " +
+                             "WHERE (CustomerLogin.email = @login)";
+                SqliteDataAdapter da = new SqliteDataAdapter(sql, connection);
+                da.SelectCommand.Parameters.AddWithValue("@login", customerLogin);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+        }
+
         public DataSet GetComments(string productCode)
         {
             using (SqliteConnection connection = new SqliteConnection(_connectionString))
