@@ -199,6 +199,7 @@
     <Content Include="RebuildDatabase.aspx" />
     <Content Include="AddNewUser.aspx" />
     <Content Include="WebGoatCoins\AddNewCustomer.aspx" />
+    <Content Include="WebGoatCoins\Buy.aspx" />
     <Content Include="WebGoatCoins\Catalog.aspx" />
     <Content Include="WebGoatCoins\ChangePassword.aspx" />
     <Content Include="WebGoatCoins\CustomerLogin.aspx" />
@@ -918,6 +919,13 @@
     </Compile>
     <Compile Include="WebGoatCoins\Autocomplete.ashx.cs">
       <DependentUpon>Autocomplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Buy.aspx.cs">
+      <DependentUpon>Buy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Buy.aspx.designer.cs">
+      <DependentUpon>Buy.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGoatCoins\Catalog.aspx.cs">
       <DependentUpon>Catalog.aspx</DependentUpon>
