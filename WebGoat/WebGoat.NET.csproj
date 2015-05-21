@@ -120,6 +120,7 @@
     <Content Include="Resources\client-scripts\jquery-1.10.2.js" />
     <Content Include="Resources\client-scripts\jquery-1.10.2.min.js" />
     <Content Include="Resources\client-scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Resources\css\bootstrap.css" />
     <Content Include="Resources\tabs.css" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
@@ -199,6 +200,7 @@
     <Content Include="RebuildDatabase.aspx" />
     <Content Include="AddNewUser.aspx" />
     <Content Include="WebGoatCoins\AddNewCustomer.aspx" />
+    <Content Include="WebGoatCoins\Buy.aspx" />
     <Content Include="WebGoatCoins\Catalog.aspx" />
     <Content Include="WebGoatCoins\ChangePassword.aspx" />
     <Content Include="WebGoatCoins\CustomerLogin.aspx" />
@@ -353,6 +355,7 @@
     <Content Include="WebGoatCoins\images\products\thumbBuffaloBullion.jpg" />
     <Content Include="WebGoatCoins\images\products\thumbJMonroe.jpg" />
     <Content Include="WebGoatCoins\images\products\thumbWashington.jpg" />
+    <Content Include="WebGoatCoins\Invoice.aspx" />
     <Content Include="WebGoatCoins\Logout.aspx" />
     <Content Include="WebGoatCoins\MainPage.aspx" />
     <Content Include="WebGoatCoins\Messages.aspx" />
@@ -919,6 +922,13 @@
     <Compile Include="WebGoatCoins\Autocomplete.ashx.cs">
       <DependentUpon>Autocomplete.ashx</DependentUpon>
     </Compile>
+    <Compile Include="WebGoatCoins\Buy.aspx.cs">
+      <DependentUpon>Buy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Buy.aspx.designer.cs">
+      <DependentUpon>Buy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebGoatCoins\Catalog.aspx.cs">
       <DependentUpon>Catalog.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -960,6 +970,13 @@
     </Compile>
     <Compile Include="WebGoatCoins\ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGoatCoins\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
