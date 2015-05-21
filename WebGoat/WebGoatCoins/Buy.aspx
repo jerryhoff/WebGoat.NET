@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
     
-    <asp:Wizard ID="BuyWizard" runat="server" ActiveStepIndex="2" Height="344px" Width="699px"
+    <asp:Wizard ID="BuyWizard" runat="server" ActiveStepIndex="0" Height="344px" Width="699px"
         OnActiveStepChanged="OnActiveStepChanged" OnFinishButtonClick="OnFinishButtonClick">
         <WizardSteps>
             <asp:WizardStep runat="server" EnableViewState="False" StepType="Start" title="Product">

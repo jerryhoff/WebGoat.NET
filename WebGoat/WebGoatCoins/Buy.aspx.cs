@@ -69,6 +69,7 @@ namespace OWASP.WebGoat.NET.WebGoatCoins
 
         protected void OnFinishButtonClick(object sender, WizardNavigationEventArgs e)
         {
+            Response.Redirect("~/WebGoatCoins/Invoice.aspx");
         }
 
         protected void OnSelectedIndexChanged(object sender, EventArgs e)
