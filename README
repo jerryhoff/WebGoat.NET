@@ -62,3 +62,9 @@ How to build and run under Windows:
      them empty.
   4. Click on 'Test Configuration', followed by 'Rebuild Database' and
      hopefully you should be good go! Enjoy your hackathon!
+
+How to build and run on Docker (docker image is ubuntu and webgoat will run on mono):
+1. Clone repo
+2. cd into WebGoat.NET folder
+3. docker build -t webgoat .
+4. docker run -it webgoat
