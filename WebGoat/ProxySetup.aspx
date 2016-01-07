@@ -17,7 +17,7 @@
             ErrorMessage="Name is Required" ControlToValidate="txtName"></asp:RequiredFieldValidator><br />
         <asp:RegularExpressionValidator ID="valRegEx" runat="server" 
             ErrorMessage="Invalid Characters Detected!" ControlToValidate="txtName" 
-            ValidationExpression="[a-zA-Z\-\ \_]*"></asp:RegularExpressionValidator>
+            ValidationExpression="[a-zA-Z\-\ _]*"></asp:RegularExpressionValidator>
         <p />
         Enter your name (letters only): 
 		<asp:TextBox ID="txtName" runat="server" Width="304px"></asp:TextBox>

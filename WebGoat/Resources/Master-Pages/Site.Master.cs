@@ -20,7 +20,7 @@ namespace OWASP.WebGoat.NET.resources.Master_Pages
         }
         protected void lbtGenerateTestData_Click(object sender, EventArgs e)
         {
-        	Response.Redirect("/RebuildDatabase.aspx");
+        	Response.Redirect("~/RebuildDatabase.aspx");
         }
         public void GreyOutMenu()
         {
