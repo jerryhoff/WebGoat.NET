@@ -48,15 +48,15 @@ How To Build And Run under Mac OS X and Linux:
      hopefully you should be good go! Enjoy your hackathon!
 
 How to build and run under Windows with MySql:
-  1. Prerequisites:
+   1. Prerequisites:
      a. Visual Studio 2010 and above.
      b. Create a Mysql database with empty database and at least one user with full permissions.
   2. Open WebGoat.sln file via Visual Studio, and click on debug.
   3. You should see the WebGoat.NET page at which point click on
      'Set Up Database'.
-  3. You should see a form with a bunch of setup information for the
-     database. For 'Data Provider' choose MySql. You'll need to fill in
-     the respective data entries for your mysql db. Data File Path is not necessary for MySql so you can leave
-     it empty.
-  4. Click on 'Test Configuration', followed by 'Rebuild Database' and
+  4. You should see a form with a bunch of setup information for the
+     database.  Some placeholder text is already entered for you.  
+     Edit it to match your configuration. 
+     'Data File Path' is not necessary for MySql so you can leave it empty.
+  5. Click on 'Test Configuration', followed by 'Rebuild Database' and
      hopefully you should be good go! Enjoy your hackathon!
