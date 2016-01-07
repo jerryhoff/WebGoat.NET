@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using System.Web;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -18,6 +19,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         private readonly string _uid;
         private readonly string _database;
         private readonly string _clientExec;
+        
 
         private readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -103,8 +105,12 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
             log.Info("Running recreate");
 
-            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_MYSQL_SCRIPT));
-            int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_LOAD_MYSQL_SCRIPT));
+            string createScript = HttpContext.Current.Server.MapPath(DbConstants.DB_CREATE_MYSQL_SCRIPT.Replace("\\", "/"));
+            string loadScript = HttpContext.Current.Server.MapPath(DbConstants.DB_LOAD_MYSQL_SCRIPT.Replace("\\", "/"));
+            
+
+            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, createScript));
+            int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, loadScript));
             
             return Math.Abs(retVal1) + Math.Abs(retVal2) == 0;
         }
