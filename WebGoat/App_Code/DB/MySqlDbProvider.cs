@@ -24,8 +24,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         public MySqlDbProvider(ConfigFile configFile)
         {
             if (configFile == null)
+            {
                 _connectionString = string.Empty;
-                
+                return;
+            }
+
             if (!string.IsNullOrEmpty(configFile.Get(DbConstants.KEY_PWD)))
             {
                 _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
@@ -88,6 +91,16 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             
                 return ds;
             }
+        }
+
+        public bool IsAdminCustomerLogin(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool CreateCustomer(string name, string email, string password, bool isAdmin, int question, string answer)
+        {
+            throw new NotImplementedException();
         }
 
         public bool RecreateGoatDb()
@@ -252,6 +265,11 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 da.Fill(ds);
                 return ds;
             }
+        }
+
+        public DataSet GetMessages(string customerLogin)
+        {
+            throw new NotImplementedException();
         }
 
         public DataSet GetComments(string productCode)

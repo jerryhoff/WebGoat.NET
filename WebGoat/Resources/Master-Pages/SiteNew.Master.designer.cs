@@ -10,7 +10,7 @@
 namespace OWASP.WebGoat.NET.resources.Master_Pages {
     
     
-    public partial class Site {
+    public partial class SiteNew {
         
         /// <summary>
         /// Head1 control.

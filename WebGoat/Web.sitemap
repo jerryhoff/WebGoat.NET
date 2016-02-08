@@ -10,21 +10,25 @@
             <siteMapNode url="~/WebGoatCoins/CustomerLogin.aspx" title="Customer Login" description="Customer Login" />
             <siteMapNode url="~/WebGoatCoins/ForgotPassword.aspx" title="Forgot Password" description="Forgot Password" />
             <siteMapNode url="~/WebGoatCoins/ChangePassword.aspx" title="Change Password" description="Change Password" />
+            <siteMapNode url="~/WebGoatCoins/AddNewCustomer.aspx" title="Add New Customer" description="Add New Customer" />
             <siteMapNode url="~/WebGoatCoins/MainPage.aspx" title="Customer Portal" description="Customer Portal" />
             <siteMapNode url="~/WebGoatCoins/Catalog.aspx" title="Product Catalog" description="Catalog" />
             <siteMapNode url="~/WebGoatCoins/ProductDetails.aspx" title="Product Details" description="Product Details" />
             <siteMapNode url="~/WebGoatCoins/Orders.aspx" title="Customer Orders" description="Customer Orders" />
+            <siteMapNode url="~/WebGoatCoins/Messages.aspx" title="Customer Messages" description="Customer Messages" />
             <siteMapNode url="~/WebGoatCoins/Logout.aspx" title="Logout" description="Customer Logout" />
         </siteMapNode>
         <siteMapNode url="~/Content/InjectionAttacks.aspx" title="Injection Attacks" description="Injection">
             <siteMapNode url="~/Content/SQLInjectionDiscovery.aspx" title="SQL Error Messages" description="SQL Errors" />
             <siteMapNode url="~/Content/SQLInjection.aspx" title="Exploiting SQL Injection" description="SQL Injection" />
+            <siteMapNode url="~/Content/EFSQLInjection.aspx" title="Exploiting SQL Injection with Entity Framework" description="SQL Injection" />
             <siteMapNode url="~/Content/PathManipulation.aspx" title="File Download Path Manipulation" description="Download File Path Manipulation" />
             <siteMapNode url="~/Content/UploadPathManipulation.aspx" title="File Upload Path Manipulation" description="Upload File Path Manipulation" />
         </siteMapNode>
         <siteMapNode url="~/Content/XSS.aspx" title="Cross Site Scripting (XSS)" description="XSS">
             <siteMapNode url="~/Content/StoredXSS.aspx" title="Stored XSS" description="Stored XSS" />
             <siteMapNode url="~/Content/ReflectedXSS.aspx" title="Reflected XSS" description="Reflected XSS" />
+            <siteMapNode url="~/Content/DomXSS.aspx" title="DOM XSS" description="DOM XSS" />
         </siteMapNode>
         <siteMapNode url="~/Content/Authentication.aspx" title="Authentication Issues" description="">
             <siteMapNode url="~/Content/ForgotPassword.aspx" title="Insecure Forgot Password" description="Insecure Forgot Password" />

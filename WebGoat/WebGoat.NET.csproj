@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <GenerateFullPaths>True</GenerateFullPaths>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -11,12 +12,19 @@
     <OutputType>Library</OutputType>
     <RootNamespace>OWASP.WebGoat.NET</RootNamespace>
     <AssemblyName>DotNetGoat</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>46e2aded</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +44,7 @@
         <Variable name="DYLD_FALLBACK_LIBRARY_PATH" value=".:/usr/local/lib:/lib:/usr/lib" />
       </EnvironmentVariables>
     </EnvironmentVariables>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -46,11 +55,38 @@
     <ConsolePause>false</ConsolePause>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.96.0\lib\net451\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.96.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.96.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.96.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Data" />
@@ -71,13 +107,21 @@
       <HintPath>lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite">
-        <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
+      <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\EFSQLInjection.aspx" />
     <Content Include="Content\ForgotPassword.aspx" />
     <Content Include="Content\UploadPathManipulation.aspx" />
     <Content Include="Global.asax" />
+    <None Include="Resources\client-scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.js" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.min.js" />
+    <Content Include="Resources\client-scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Resources\css\bootstrap.css" />
+    <Content Include="Resources\tabs.css" />
     <Content Include="Web.sitemap">
       <SubType>Designer</SubType>
     </Content>
@@ -150,9 +194,13 @@
     <Content Include="ChangePassword.aspx" />
     <Content Include="Content\PathManipulation.aspx" />
     <Content Include="Content\PwdComplexity.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="RebuildDatabase.aspx" />
     <Content Include="AddNewUser.aspx" />
+    <Content Include="WebGoatCoins\AddNewCustomer.aspx" />
+    <Content Include="WebGoatCoins\Buy.aspx" />
     <Content Include="WebGoatCoins\Catalog.aspx" />
     <Content Include="WebGoatCoins\ChangePassword.aspx" />
     <Content Include="WebGoatCoins\CustomerLogin.aspx" />
@@ -307,8 +355,10 @@
     <Content Include="WebGoatCoins\images\products\thumbBuffaloBullion.jpg" />
     <Content Include="WebGoatCoins\images\products\thumbJMonroe.jpg" />
     <Content Include="WebGoatCoins\images\products\thumbWashington.jpg" />
+    <Content Include="WebGoatCoins\Invoice.aspx" />
     <Content Include="WebGoatCoins\Logout.aspx" />
     <Content Include="WebGoatCoins\MainPage.aspx" />
+    <Content Include="WebGoatCoins\Messages.aspx" />
     <Content Include="WebGoatCoins\Orders.aspx" />
     <Content Include="ProxySetup.aspx" />
     <Content Include="App_Themes\Default\images\header-grad.png" />
@@ -504,6 +554,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\CustomerLoginData.cs" />
+    <Compile Include="Content\EFSQLInjection.aspx.cs">
+      <DependentUpon>EFSQLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\EFSQLInjection.aspx.designer.cs">
+      <DependentUpon>EFSQLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Categories.cs" />
+    <Compile Include="Entities\CoinsDB.cs" />
+    <Compile Include="Entities\Comments.cs" />
     <Compile Include="Content\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -518,6 +578,9 @@
     <Compile Include="Content\UploadPathManipulation.aspx.designer.cs">
       <DependentUpon>UploadPathManipulation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\CustomerLogin.cs" />
+    <Compile Include="Entities\Customers.cs" />
+    <Compile Include="Entities\Employees.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -836,8 +899,35 @@
     <Compile Include="AddNewUser.aspx.designer.cs">
       <DependentUpon>AddNewUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Offices.cs" />
+    <Compile Include="Entities\OrderDetails.cs" />
+    <Compile Include="Entities\Orders.cs" />
+    <Compile Include="Entities\Payments.cs" />
+    <Compile Include="Entities\Products.cs" />
+    <Compile Include="Entities\SecurityQuestions.cs" />
+    <Compile Include="Resources\Master-Pages\SiteNew.Master.cs">
+      <DependentUpon>SiteNew.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\Master-Pages\SiteNew.Master.designer.cs">
+      <DependentUpon>SiteNew.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\AddNewCustomer.aspx.cs">
+      <DependentUpon>AddNewCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\AddNewCustomer.aspx.designer.cs">
+      <DependentUpon>AddNewCustomer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebGoatCoins\Autocomplete.ashx.cs">
       <DependentUpon>Autocomplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Buy.aspx.cs">
+      <DependentUpon>Buy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Buy.aspx.designer.cs">
+      <DependentUpon>Buy.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGoatCoins\Catalog.aspx.cs">
       <DependentUpon>Catalog.aspx</DependentUpon>
@@ -881,6 +971,13 @@
     <Compile Include="WebGoatCoins\ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebGoatCoins\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebGoatCoins\Logout.aspx.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -894,6 +991,13 @@
     </Compile>
     <Compile Include="WebGoatCoins\MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebGoatCoins\Orders.aspx.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
@@ -911,6 +1015,7 @@
     </Compile>
     <Compile Include="ProxySetup.aspx.cs">
       <DependentUpon>ProxySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProxySetup.aspx.designer.cs">
       <DependentUpon>ProxySetup.aspx</DependentUpon>
@@ -934,30 +1039,35 @@
     <Compile Include="App_Code\Util.cs" />
     <Compile Include="Content\Trace.aspx.cs">
       <DependentUpon>Trace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Trace.aspx.designer.cs">
       <DependentUpon>Trace.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.designer.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\HeaderInjection.aspx.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\HeaderInjection.aspx.designer.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\MessageDigest.aspx.cs">
       <DependentUpon>MessageDigest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\MessageDigest.aspx.designer.cs">
       <DependentUpon>MessageDigest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\XMLInjection.aspx.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\XMLInjection.aspx.designer.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
@@ -965,24 +1075,28 @@
     <Compile Include="App_Code\WeakMessageDigest.cs" />
     <Compile Include="Content\ReadlineDoS.aspx.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.designer.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\Unsafe.aspx.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Unsafe.aspx.designer.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\Random.aspx.cs">
       <DependentUpon>Random.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Random.aspx.designer.cs">
       <DependentUpon>Random.aspx</DependentUpon>
@@ -990,18 +1104,24 @@
     <Compile Include="App_Code\WeakRandom.cs" />
     <Compile Include="Content\VerbTampering.aspx.cs">
       <DependentUpon>VerbTampering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\VerbTampering.aspx.designer.cs">
       <DependentUpon>VerbTampering.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\VerbTamperingAttack.aspx.cs">
       <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\VerbTamperingAttack.aspx.designer.cs">
       <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\DB\IDbProvider.cs" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
@@ -1021,13 +1141,26 @@
         <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
       </Properties>
     </MonoDevelop>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3273</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/WebGoat.NET</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="WebGoatCoins\uploads\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="App_Code\DB\" />
     <Folder Include="Configuration\" />
-    <Folder Include="DB_Scripts\" />
+    <Folder Include="WebGoatCoins\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="WebGoatCoins\ProductDetails.aspx" />
@@ -1036,6 +1169,9 @@
     <None Include="Downloads\csrf.pdf" />
     <None Include="Downloads\transport_layer.pdf" />
     <None Include="Downloads\architecture.pdf" />
+    <Content Include="packages.config" />
+    <Content Include="Resources\client-scripts\jquery-1.10.2.min.map" />
+    <Content Include="Resources\Master-Pages\SiteNew.Master" />
     <None Include="TODO.txt" />
     <None Include="DB_Scripts\create_webgoatcoins.sql" />
     <None Include="DB_Scripts\load_webgoatcoins.sql" />
@@ -1057,4 +1193,13 @@
     <None Include="DB_Scripts\create_webgoatcoins_sqlite3.sql" />
   </ItemGroup>
   <ItemGroup />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.96.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.96.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.96.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.96.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
 </Project>

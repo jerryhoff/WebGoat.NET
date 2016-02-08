@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace OWASP.WebGoat.NET
 {
-    public partial class DomXSS : System.Web.UI.Page
+    public partial class DomXSS : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

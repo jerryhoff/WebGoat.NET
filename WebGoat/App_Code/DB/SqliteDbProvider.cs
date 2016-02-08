@@ -1,11 +1,9 @@
 using System;
 using System.Data;
-using Mono.Data.Sqlite;
-using log4net;
-using System.Reflection;
 using System.IO;
-using System.Diagnostics;
-using System.Threading;
+using System.Reflection;
+using log4net;
+using Mono.Data.Sqlite;
 
 namespace OWASP.WebGoat.NET.App_Code.DB
 {
@@ -92,7 +90,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 
                 try
                 {
-                    return ds.Tables[0].Rows.Count == 0;
+                    return ds.Tables[0].Rows.Count != 0;
                 }
                 catch (Exception ex)
                 {
@@ -101,6 +99,63 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                     
                     throw new Exception("Error checking login", ex);
                 }
+            }
+        }
+
+        public bool IsAdminCustomerLogin(string email)
+        {
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                connection.Open();
+                var command = new SqliteCommand(
+                    "SELECT is_admin FROM CustomerLogin where email = @email", 
+                    connection);
+                command.Parameters.AddWithValue("@email", email);
+                var result = (long?)command.ExecuteScalar();
+                return result.HasValue && result.Value == 1;
+            }
+        }
+
+        public bool CreateCustomer(string name, string email, string password, bool isAdmin, int question, string answer)
+        {
+            using (var connection = new SqliteConnection(_connectionString))
+            {
+                connection.Open();
+                var da = new SqliteDataAdapter(
+                    "SELECT email FROM CustomerLogin WHERE email = '" + email + "'",
+                    connection);
+                var ds = new DataSet();
+                da.Fill(ds);
+                if (ds.Tables[0].Rows.Count != 0)
+                {
+                    return false;
+                }
+
+                var insertCustomerCommand  = new SqliteCommand(
+                    "INSERT INTO Customers " +
+                    "(customerName, logoFileName, contactLastName, contactFirstName, phone, addressLine1, addressLine2, city, state, postalCode, country, salesRepEmployeeNumber, creditLimit) " +
+                    "VALUES (@name, '', '', '', '', '', '', '', '', '', '', '', '')",
+                    connection);
+                insertCustomerCommand.Parameters.AddWithValue("@name", name);
+                insertCustomerCommand.ExecuteNonQuery();
+
+                var lastInsertRowidCommand = new SqliteCommand("SELECT last_insert_rowid()", connection);
+                var id = (long)lastInsertRowidCommand.ExecuteScalar();
+
+                var insertCustomerLogin = new SqliteCommand(
+                    "INSERT INTO CustomerLogin " +
+                    "(email, customerNumber, password, question_id, answer, is_admin) " +
+                    "VALUES (@email, @id, @password, @question, @answer, @is_admin)",
+                    connection);
+                insertCustomerLogin.Parameters.AddWithValue("@email", email);
+                insertCustomerLogin.Parameters.AddWithValue("@id", id);
+                insertCustomerLogin.Parameters.AddWithValue("@password", Encoder.Encode(password));
+                insertCustomerLogin.Parameters.AddWithValue("@question", question);
+                insertCustomerLogin.Parameters.AddWithValue("@answer", answer);
+                insertCustomerLogin.Parameters.AddWithValue("@is_admin", isAdmin ? 1 : 0);
+                insertCustomerLogin.ExecuteNonQuery();
+
+                return true;
             }
         }
 
@@ -239,6 +294,24 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 string sql = "select * from Offices where city = @city";
                 SqliteDataAdapter da = new SqliteDataAdapter(sql, connection);
                 da.SelectCommand.Parameters.AddWithValue("@city", city);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+        }
+
+        public DataSet GetMessages(string customerLogin)
+        {
+            using (SqliteConnection connection = new SqliteConnection(_connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT Messages.id, Messages.title, Messages.text " +
+                             "FROM   Messages " +
+                             "INNER JOIN CustomerLogin ON CustomerLogin.customerNumber = Messages.customerId " +
+                             "WHERE (CustomerLogin.email = @login)";
+                SqliteDataAdapter da = new SqliteDataAdapter(sql, connection);
+                da.SelectCommand.Parameters.AddWithValue("@login", customerLogin);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 return ds;
