@@ -62,3 +62,9 @@ How to build and run under Windows:
      them empty.
   4. Click on 'Test Configuration', followed by 'Rebuild Database' and
      hopefully you should be good go! Enjoy your hackathon!
+     
+Running Webgoat.NET using Docker:
+
+docker run --name webgoat -it -p 9000:9000 -d appsecco/owasp-webgoat-dot-net
+
+* Refer to https://github.com/appsecco/owasp-webgoat-dot-net-docker for detailed instructions
