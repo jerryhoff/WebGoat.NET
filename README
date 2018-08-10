@@ -30,7 +30,7 @@ How To Build And Run under Mac OS X and Linux:
         faster and easier to use for the purposes of these lessions.
         Binaries can be found here: http://www.sqlite.org/download.html
   2. Install the mono framework and sqlite3 binaries.
-  3. IMPORTANT: Make sure that the the mono executable is in your PATH.
+  3. IMPORTANT: Make sure that the mono executable is in your PATH.
   4. Grab WebGoat.NET and cd into the root dir.
   5. Run 'xbuild'. There may be a few warnings but there should be no 
      errors! If there are please let us know.
