@@ -40,6 +40,7 @@ steps:
     test: true
     monitor: false
     authType: 'endpoint'
+    endpoint: 'AzurePipeline-Snyk Token'
     failBuild: true
     dev: false
     trustPolicies: false
