@@ -31,7 +31,26 @@ steps:
 
 - task: Snyk@2
   inputs:
-    cwd: '$(Build.SourcesDirectory)\bin'
+    multiFile: true
+    files: |
+      #yarn.lock
+      #package.json
+      #package-lock.json
+      #Gemfile
+      #Gemfile.lock
+      #pom.xml
+      #Pipfile
+      #requirements.txt
+      #build.gradle
+      #build.gradle.kts
+      #build.sbt
+      #Gopkg.lock
+      #**/vendor/vendor.json
+      #**/obj/project.assets.json
+      #packages.config
+      #composer.lock
+      
+      #!**/node_modules/**/*
     protect: false
     test: true
     monitor: false
