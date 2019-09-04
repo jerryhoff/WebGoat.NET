@@ -32,7 +32,7 @@ steps:
 - task: Snyk@2
   inputs:
     cwd: '$(Build.SourcesDirectory)\'
-    protect: true
+    protect: false
     test: true
     monitor: false
     authType: 'endpoint'
