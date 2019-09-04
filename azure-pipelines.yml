@@ -15,6 +15,10 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
+- task: UseNode@1
+  inputs:
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
