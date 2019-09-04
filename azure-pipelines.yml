@@ -32,3 +32,12 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+- task: Snyk@2
+  inputs:
+    protect: true
+    test: true
+    monitor: true
+    authType: 'none'
+    failBuild: true
+    dev: false
+    trustPolicies: false
