@@ -37,6 +37,7 @@ steps:
     monitor: false
     authType: 'endpoint'
     endpoint: 'AzurePipeline-Snyk Token'
-    failBuild: true
-    dev: false
+    severityThreshold: 'default'
+    failBuild: false
+    dev: true
     trustPolicies: false
