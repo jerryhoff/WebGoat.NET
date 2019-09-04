@@ -31,7 +31,7 @@ steps:
 
 - task: Snyk@2
   inputs:
-    cwd: '$(Build.SourcesDirectory)\lib'
+    cwd: '$(Build.SourcesDirectory)\bin'
     protect: false
     test: true
     monitor: false
