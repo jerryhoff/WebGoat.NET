@@ -22,19 +22,35 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
-    arguments: 'Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.6.3'
+    custom: 'add'
+    arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.3'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
-    projects: 'D:\a\1\s\WebGoat\WebGoat.NET.csproj'
     custom: 'add'
-    arguments: 'package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.6.3'
+    arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.3'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    custom: 'add'
+    arguments: '$(build.sourcesDirectory) package Microsoft.CodeQuality.Analyzers --version 2.9.3'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    custom: 'add'
+    arguments: '$(build.sourcesDirectory) package Microsoft.NetCore.Analyzers --version 2.9.3'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    custom: 'add'
+    arguments: '$(build.sourcesDirectory) package Microsoft.NetFramework.Analyzers --version 2.9.3'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
