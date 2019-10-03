@@ -26,8 +26,9 @@ steps:
 - task: UseDotNet@2
   displayName: 'Use .NET Core sdk'
   inputs:
-   packageType: 'sdk'
-   version:
+    packageType: 'sdk'
+    version: '3.5'
+    includePreviewVersions: true
 
 - task: DotNetCoreCLI@2
   inputs:
