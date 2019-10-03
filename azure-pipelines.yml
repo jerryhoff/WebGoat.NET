@@ -1,62 +1,52 @@
-# ASP.NET Core (.NET Framework)
-# Build and test ASP.NET Core projects targeting the full .NET Framework.
-# Add steps that publish symbols, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
+ASP.NET
+Build and test ASP.NET projects.
+Add steps that publish symbols, save build artifacts, deploy, and more:
+https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+vmImage: 'vs2017-win2016'
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+solution: '*/.sln'
+buildPlatform: 'Any CPU'
+buildConfiguration: 'Debug'
+enableCustomProcessTemplate: true
+customWorkItemType: 'Bug'
+customPTActiveStatus: 'In Progress'
+customPTNewStatus: 'New'
+customPTResolvedStatus: 'Resolved'
+customPTCloseStatus: 'Closed'
 
 steps:
+- task: NuGetToolInstaller@1
 
-- task: UseNode@1
-  inputs:
-    versionSpec: $(node_version)
-    
-- task: VSBuild@1
-  inputs:
-    solution: '**\*.sln'
-    vsVersion: '15.0'
-    clean: true
-    restoreNugetPackages: true
-    createLogFile: true
+task: NuGetCommand@2
+inputs:
+restoreSolution: '$(solution)'
 
 
-- task: Snyk@2
-  inputs:
-    multiFile: true
-    files: |
-      #yarn.lock
-      #package.json
-      #package-lock.json
-      #Gemfile
-      #Gemfile.lock
-      #pom.xml
-      #Pipfile
-      #requirements.txt
-      #build.gradle
-      #build.gradle.kts
-      #build.sbt
-      #Gopkg.lock
-      #**/vendor/vendor.json
-      #**/obj/project.assets.json
-      #packages.config
-      #composer.lock
-      
-      #!**/node_modules/**/*
-    protect: false
-    test: true
-    monitor: false
-    authType: 'endpoint'
-    endpoint: 'AzurePipeline-Snyk Token'
-    severityThreshold: 'default'
-    failBuild: false
-    dev: true
-    trustPolicies: false
+task: 'NuGetCommand@2'
+inputs:
+command: 'custom'
+arguments: 'Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.6.3'
+
+task: DotNetCoreCLI@2
+inputs:
+command: 'custom'
+projects: 'D:\a\1\s\WebGoat\WebGoat.NET.csproj'
+custom: 'add'
+arguments: 'package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2..3'
+
+task: VSBuild@1
+inputs:
+solution: '$(solution)'
+msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=$(build.artifactStagingDirectory)'
+platform: '$(buildPlatform)'
+configuration: '$(buildConfiguration)'
+
+task: VSTest@2
+inputs:
+platform: '$(buildPlatform)'
+configuration: '$(buildConfiguration)'
