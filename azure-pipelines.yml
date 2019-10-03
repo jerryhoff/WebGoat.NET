@@ -16,16 +16,21 @@ variables:
     customPTCloseStatus: 'Closed'
 
 steps:
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
-    
-- task: VSBuild@1
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk'
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+   packageType: 'sdk'
+   version:
+
+- task: DotNetCoreCLI@2
+  inputs:
+   command: 'build'
+   projects: 'D:\a\1\s\WebGoat'
 
