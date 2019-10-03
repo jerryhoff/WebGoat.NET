@@ -23,12 +23,6 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
-- task: UseDotNet@2
-  displayName: 'Use .NET Core sdk'
-  inputs:
-    packageType: 'sdk'
-
-
 - task: DotNetCoreCLI@2
   inputs:
    command: 'build'
