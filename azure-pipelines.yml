@@ -1,49 +1,48 @@
-
 trigger:
 - master
 
 pool:
-vmImage: 'vs2017-win2016'
+    vmImage: 'vs2017-win2016'
 
 variables:
-solution: '*/.sln'
-buildPlatform: 'Any CPU'
-buildConfiguration: 'Debug'
-enableCustomProcessTemplate: true
-customWorkItemType: 'Bug'
-customPTActiveStatus: 'In Progress'
-customPTNewStatus: 'New'
-customPTResolvedStatus: 'Resolved'
-customPTCloseStatus: 'Closed'
+    solution: '*/.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Debug'
+    enableCustomProcessTemplate: true
+    customWorkItemType: 'Bug'
+    customPTActiveStatus: 'In Progress'
+    customPTNewStatus: 'New'
+    customPTResolvedStatus: 'Resolved'
+    customPTCloseStatus: 'Closed'
 
 steps:
 - task: NuGetToolInstaller@1
 
-task: NuGetCommand@2
-inputs:
-restoreSolution: '$(solution)'
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'custom'
+    arguments: 'Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.6.3'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    projects: 'D:\a\1\s\WebGoat\WebGoat.NET.csproj'
+    custom: 'add'
+    arguments: 'package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.6.3'
 
 
-task: 'NuGetCommand@2'
-inputs:
-command: 'custom'
-arguments: 'Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.6.3'
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=$(build.artifactStagingDirectory)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
-task: DotNetCoreCLI@2
-inputs:
-command: 'custom'
-projects: 'D:\a\1\s\WebGoat\WebGoat.NET.csproj'
-custom: 'add'
-arguments: 'package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2..3'
-
-task: VSBuild@1
-inputs:
-solution: '$(solution)'
-msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation=$(build.artifactStagingDirectory)'
-platform: '$(buildPlatform)'
-configuration: '$(buildConfiguration)'
-
-task: VSTest@2
-inputs:
-platform: '$(buildPlatform)'
-configuration: '$(buildConfiguration)'
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
