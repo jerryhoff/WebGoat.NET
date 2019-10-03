@@ -1,30 +1,40 @@
-trigger:
-- master
-
-pool:
+name: $(Date:yyyy.MM.dd).$(Rev:r)
+variables:
+  SNYK_TOKEN: 3e74cf14-a819-4424-9652-aee1fb06348b
+jobs:
+- job:
+  pool:
     vmImage: 'vs2017-win2016'
 
-variables:
-    solution: 'WebGoat/'
-    buildPlatform: 'Any CPU'
-    buildConfiguration: 'Debug'
-    enableCustomProcessTemplate: true
-    customWorkItemType: 'Bug'
-    customPTActiveStatus: 'In Progress'
-    customPTNewStatus: 'New'
-    customPTResolvedStatus: 'Resolved'
-    customPTCloseStatus: 'Closed'
+  steps:
 
-steps:
+  - task: NuGetToolInstaller@1
+    displayName: 'Installing Nuget'
+    inputs:
+      versionSpec: 
+      checkLatest: true
 
-- task: NuGetToolInstaller@1
+  - task: NuGetCommand@2
+    displayName: 'Installing Microsoft.CodeAnalysis.FxCopAnalyzer'
+    inputs:
+      command: 'custom'
+      arguments: 'install Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.6.3 -OutputDirectory D:\a\1\s\WebGoat.NET\packages'
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+  - task: NuGetCommand@2
+    displayName: 'Restoring Nuget Packages'
+    inputs:
+      command: 'restore'
+      restoreSolution: '**/*.sln'
+      feedsToUse: 'select'
 
-- task: DotNetCoreCLI@2
-  inputs:
-   command: 'build'
-   projects: 'D:\a\1\s\WebGoat'
+
+  - task: VSBuild@1
+    displayName: 'Visual Studio Build'
+    inputs:
+     solution: '**/*.sln'
+     vsVersion: '15.0'
+     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+     platform: '$(buildPlatform)'
+     configuration: '$(buildConfiguration)'
+
 
