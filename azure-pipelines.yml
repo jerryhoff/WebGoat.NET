@@ -5,7 +5,7 @@ pool:
     vmImage: 'vs2017-win2016'
 
 variables:
-    solution: 'WebGoat/WebGoat.NET.sln'
+    solution: 'WebGoat/'
     buildPlatform: 'Any CPU'
     buildConfiguration: 'Debug'
     enableCustomProcessTemplate: true
