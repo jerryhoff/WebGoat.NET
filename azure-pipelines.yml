@@ -26,31 +26,31 @@ steps:
   inputs:
     command: 'custom'
     custom: 'add'
-    arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.3'
+    arguments: '$(build.sourcesDirectory)\WebGoat package Microsoft.CodeAnalysis.FxCopAnalyzers --version 2.9.3'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
     custom: 'add'
-    arguments: '$(build.sourcesDirectory) package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.3'
+    arguments: '$(build.sourcesDirectory)\WebGoat package Microsoft.CodeAnalysis.VersionCheckAnalyzer --version 2.9.3'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
     custom: 'add'
-    arguments: '$(build.sourcesDirectory) package Microsoft.CodeQuality.Analyzers --version 2.9.3'
+    arguments: '$(build.sourcesDirectory)\WebGoat package Microsoft.CodeQuality.Analyzers --version 2.9.3'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
     custom: 'add'
-    arguments: '$(build.sourcesDirectory) package Microsoft.NetCore.Analyzers --version 2.9.3'
+    arguments: '$(build.sourcesDirectory)\WebGoat package Microsoft.NetCore.Analyzers --version 2.9.3'
 
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
     custom: 'add'
-    arguments: '$(build.sourcesDirectory) package Microsoft.NetFramework.Analyzers --version 2.9.3'
+    arguments: '$(build.sourcesDirectory)\WebGoat package Microsoft.NetFramework.Analyzers --version 2.9.3'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
