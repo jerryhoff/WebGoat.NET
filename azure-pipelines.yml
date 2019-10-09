@@ -21,6 +21,13 @@ jobs:
       arguments: 'install Microsoft.CodeAnalysis.FxCopAnalyzers -Version 2.6.3 -OutputDirectory D:\a\1\s\WebGoat.NET\packages'
 
   - task: NuGetCommand@2
+    displayName: 'Security Code Scan - static code analyzer for .NET'
+    inputs:
+      command: 'custom'
+      arguments: 'install SecurityCodeScan -Version 3.3.0 -OutputDirectory D:\a\1\s\WebGoat.NET\packages'
+
+
+  - task: NuGetCommand@2
     displayName: 'Restoring Nuget Packages'
     inputs:
       command: 'restore'
