@@ -1,0 +1,326 @@
+10100|2010-01-06|2010-01-13|2010-01-10|Shipped|NULL|363
+10101|2010-01-09|2010-01-18|2010-01-11|Shipped|Check on availability.|128
+10102|2010-01-10|2010-01-18|2010-01-14|Shipped|NULL|181
+10103|2010-01-29|2010-02-07|2010-02-02|Shipped|NULL|121
+10104|2010-01-31|2010-02-09|2010-02-01|Shipped|NULL|141
+10105|2010-02-11|2010-02-21|2010-02-12|Shipped|NULL|145
+10106|2010-02-17|2010-02-24|2010-02-21|Shipped|NULL|278
+10107|2010-02-24|2010-03-03|2010-02-26|Shipped|Difficult to negotiate with customer. We need more marketing materials|131
+10108|2010-03-03|2010-03-12|2010-03-08|Shipped|NULL|385
+10109|2010-03-10|2010-03-19|2010-03-11|Shipped|Customer requested that FedEx Ground is used for this shipping|486
+10110|2010-03-18|2010-03-24|2010-03-20|Shipped|NULL|187
+10111|2010-03-25|2010-03-31|2010-03-30|Shipped|NULL|129
+10112|2010-03-24|2010-04-03|2010-03-29|Shipped|Customer requested that ad materials (such as posters|
+10113|2010-03-26|2010-04-02|2010-03-27|Shipped|NULL|124
+10114|2010-04-01|2010-04-07|2010-04-02|Shipped|NULL|172
+10115|2010-04-04|2010-04-12|2010-04-07|Shipped|NULL|424
+10116|2010-04-11|2010-04-19|2010-04-13|Shipped|NULL|381
+10117|2010-04-16|2010-04-24|2010-04-17|Shipped|NULL|148
+10118|2010-04-21|2010-04-29|2010-04-26|Shipped|Customer has worked with some of our vendors in the past and is aware of their MSRP|216
+10119|2010-04-28|2010-05-05|2010-05-02|Shipped|NULL|382
+10120|2010-04-29|2010-05-08|2010-05-01|Shipped|NULL|114
+10121|2010-05-07|2010-05-13|2010-05-13|Shipped|NULL|353
+10122|2010-05-08|2010-05-16|2010-05-13|Shipped|NULL|350
+10123|2010-05-20|2010-05-29|2010-05-22|Shipped|NULL|103
+10124|2010-05-21|2010-05-29|2010-05-25|Shipped|Customer very concerned about the exact color of the coins. There is high risk that he may dispute the order because there is a slight color mismatch|112
+10125|2010-05-21|2010-05-27|2010-05-24|Shipped|NULL|114
+10126|2010-05-28|2010-06-07|2010-06-02|Shipped|NULL|458
+10127|2010-06-03|2010-06-09|2010-06-06|Shipped|Customer requested special shippment. The instructions were passed along to the warehouse|151
+10128|2010-06-06|2010-06-12|2010-06-11|Shipped|NULL|141
+10129|2010-06-12|2010-06-18|2010-06-14|Shipped|NULL|324
+10130|2010-06-16|2010-06-24|2010-06-21|Shipped|NULL|198
+10131|2010-06-16|2010-06-25|2010-06-21|Shipped|NULL|447
+10132|2010-06-25|2010-07-01|2010-06-28|Shipped|NULL|323
+10133|2010-06-27|2010-07-04|2010-07-03|Shipped|NULL|141
+10134|2010-07-01|2010-07-10|2010-07-05|Shipped|NULL|250
+10135|2010-07-02|2010-07-12|2010-07-03|Shipped|NULL|124
+10136|2010-07-04|2010-07-14|2010-07-06|Shipped|Customer is interested in buying more US Eagles coins|242
+10137|2010-07-10|2010-07-20|2010-07-14|Shipped|NULL|353
+10138|2010-07-07|2010-07-16|2010-07-13|Shipped|NULL|496
+10139|2010-07-16|2010-07-23|2010-07-21|Shipped|NULL|282
+10140|2010-07-24|2010-08-02|2010-07-30|Shipped|NULL|161
+10141|2010-08-01|2010-08-09|2010-08-04|Shipped|NULL|334
+10142|2010-08-08|2010-08-16|2010-08-13|Shipped|NULL|124
+10143|2010-08-10|2010-08-18|2010-08-12|Shipped|Can we deliver the new maple leaf coins by end-of-quarter?|320
+10144|2010-08-13|2010-08-21|2010-08-14|Shipped|NULL|381
+10145|2010-08-25|2010-09-02|2010-08-31|Shipped|NULL|205
+10146|2010-09-03|2010-09-13|2010-09-06|Shipped|NULL|447
+10147|2010-09-05|2010-09-12|2010-09-09|Shipped|NULL|379
+10148|2010-09-11|2010-09-21|2010-09-15|Shipped|They want to reevaluate their terms agreement with Finance.|276
+10149|2010-09-12|2010-09-18|2010-09-17|Shipped|NULL|487
+10150|2010-09-19|2010-09-27|2010-09-21|Shipped|They want to reevaluate their terms agreement with Finance.|148
+10151|2010-09-21|2010-09-30|2010-09-24|Shipped|NULL|311
+10152|2010-09-25|2010-10-03|2010-10-01|Shipped|NULL|333
+10153|2010-09-28|2010-10-05|2010-10-03|Shipped|NULL|141
+10154|2010-10-02|2010-10-12|2010-10-08|Shipped|NULL|219
+10155|2010-10-06|2010-10-13|2010-10-07|Shipped|NULL|186
+10156|2010-10-08|2010-10-17|2010-10-11|Shipped|NULL|141
+10157|2010-10-09|2010-10-15|2010-10-14|Shipped|NULL|473
+10158|2010-10-10|2010-10-18|2010-10-15|Shipped|NULL|121
+10159|2010-10-10|2010-10-19|2010-10-16|Shipped|NULL|321
+10160|2010-10-11|2010-10-17|2010-10-17|Shipped|NULL|347
+10161|2010-10-17|2010-10-25|2010-10-20|Shipped|NULL|227
+10162|2010-10-18|2010-10-26|2010-10-19|Shipped|NULL|321
+10163|2010-10-20|2010-10-27|2010-10-24|Shipped|NULL|424
+10164|2010-10-21|2010-10-30|2010-10-23|Resolved|This order was disputed|
+10165|2010-10-22|2010-10-31|2010-12-26|Shipped|This order was on hold because customers's credit limit had been exceeded. Order will ship when payment is received|148
+10166|2010-10-21|2010-10-30|2010-10-27|Shipped|NULL|462
+10167|2010-10-23|2010-10-30|NULL|Cancelled|Customer called to cancel. The warehouse was notified in time and the order didn't ship. They have a new VP of Sales and are shifting their sales model. Our VP of Sales should contact them.|448
+10168|2010-10-28|2010-11-03|2010-11-01|Shipped|NULL|161
+10169|2010-11-04|2010-11-14|2010-11-09|Shipped|NULL|276
+10170|2010-11-04|2010-11-12|2010-11-07|Shipped|NULL|452
+10171|2010-11-05|2010-11-13|2010-11-07|Shipped|NULL|233
+10172|2010-11-05|2010-11-14|2010-11-11|Shipped|NULL|175
+10173|2010-11-05|2010-11-15|2010-11-09|Shipped|Cautious optimism. We have happy customers here|
+10174|2010-11-06|2010-11-15|2010-11-10|Shipped|NULL|333
+10175|2010-11-06|2010-11-14|2010-11-09|Shipped|NULL|324
+10176|2010-11-06|2010-11-15|2010-11-12|Shipped|NULL|386
+10177|2010-11-07|2010-11-17|2010-11-12|Shipped|NULL|344
+10178|2010-11-08|2010-11-16|2010-11-10|Shipped|Custom shipping instructions sent to warehouse|242
+10179|2010-11-11|2010-11-17|2010-11-13|Cancelled|Customer cancelled due to urgent budgeting issues. Must be cautious when dealing with them in the future. Since order shipped already we must discuss who would cover the shipping charges.|496
+10180|2010-11-11|2010-11-19|2010-11-14|Shipped|NULL|171
+10181|2010-11-12|2010-11-19|2010-11-15|Shipped|NULL|167
+10182|2010-11-12|2010-11-21|2010-11-18|Shipped|NULL|124
+10183|2010-11-13|2010-11-22|2010-11-15|Shipped|We need to keep in close contact with their Marketing VP. He is the decision maker for all their purchases.|339
+10184|2010-11-14|2010-11-22|2010-11-20|Shipped|NULL|484
+10185|2010-11-14|2010-11-21|2010-11-20|Shipped|NULL|320
+10186|2010-11-14|2010-11-20|2010-11-18|Shipped|They want to reevaluate their terms agreement with the VP of Sales|489
+10187|2010-11-15|2010-11-24|2010-11-16|Shipped|NULL|211
+10188|2010-11-18|2010-11-26|2010-11-24|Shipped|NULL|167
+10189|2010-11-18|2010-11-25|2010-11-24|Shipped|They want to reevaluate their terms agreement with Finance.|205
+10190|2010-11-19|2010-11-29|2010-11-20|Shipped|NULL|141
+10191|2010-11-20|2010-11-30|2010-11-24|Shipped|We must be cautions with this customer. Their VP of Sales resigned. Company may be heading down.|259
+10192|2010-11-20|2010-11-29|2010-11-25|Shipped|NULL|363
+10193|2010-11-21|2010-11-28|2010-11-27|Shipped|NULL|471
+10194|2010-11-25|2010-12-02|2010-11-26|Shipped|NULL|146
+10195|2010-11-25|2010-12-01|2010-11-28|Shipped|NULL|319
+10196|2010-11-26|2010-12-03|2010-12-01|Shipped|NULL|455
+10197|2010-11-26|2010-12-02|2010-12-01|Shipped|Customer inquired about silver coins and gold coins.|216
+10198|2010-11-27|2010-12-06|2010-12-03|Shipped|NULL|385
+10199|2010-12-01|2010-12-10|2010-12-06|Shipped|NULL|475
+10200|2010-12-01|2010-12-09|2010-12-06|Shipped|NULL|211
+10201|2010-12-01|2010-12-11|2010-12-02|Shipped|NULL|129
+10202|2010-12-02|2010-12-09|2010-12-06|Shipped|NULL|357
+10203|2010-12-02|2010-12-11|2010-12-07|Shipped|NULL|141
+10204|2010-12-02|2010-12-10|2010-12-04|Shipped|NULL|151
+10205|2010-12-03|2010-12-09|2010-12-07|Shipped| I need all the information I can get on our competitors.|141
+10206|2010-12-05|2010-12-13|2010-12-08|Shipped|Can we renegotiate this one?|202
+10207|2010-12-09|2010-12-17|2010-12-11|Shipped|Check on availability.|495
+10208|2011-01-02|2011-01-11|2011-01-04|Shipped|NULL|146
+10209|2011-01-09|2011-01-15|2011-01-12|Shipped|NULL|347
+10210|2011-01-12|2011-01-22|2011-01-20|Shipped|NULL|177
+10211|2011-01-15|2011-01-25|2011-01-18|Shipped|NULL|406
+10212|2011-01-16|2011-01-24|2011-01-18|Shipped|NULL|141
+10213|2011-01-22|2011-01-28|2011-01-27|Shipped|Difficult to negotiate with customer. We need more marketing materials|489
+10214|2011-01-26|2011-02-04|2011-01-29|Shipped|NULL|458
+10215|2011-01-29|2011-02-08|2011-02-01|Shipped|Customer requested that FedEx Ground is used for this shipping|475
+10216|2011-02-02|2011-02-10|2011-02-04|Shipped|NULL|256
+10217|2011-02-04|2011-02-14|2011-02-06|Shipped|NULL|166
+10218|2011-02-09|2011-02-16|2011-02-11|Shipped|Customer requested that ad materials (such as posters|
+10219|2011-02-10|2011-02-17|2011-02-12|Shipped|NULL|487
+10220|2011-02-12|2011-02-19|2011-02-16|Shipped|NULL|189
+10221|2011-02-18|2011-02-26|2011-02-19|Shipped|NULL|314
+10222|2011-02-19|2011-02-27|2011-02-20|Shipped|NULL|239
+10223|2011-02-20|2011-02-28|2011-02-24|Shipped|NULL|114
+10224|2011-02-21|2011-03-02|2011-02-26|Shipped|Customer has worked with some of our vendors in the past and is aware of their MSRP|171
+10225|2011-02-22|2011-03-01|2011-02-24|Shipped|NULL|298
+10226|2011-02-26|2011-03-06|2011-03-02|Shipped|NULL|239
+10227|2011-03-02|2011-03-12|2011-03-08|Shipped|NULL|146
+10228|2011-03-10|2011-03-18|2011-03-13|Shipped|NULL|173
+10229|2011-03-11|2011-03-20|2011-03-12|Shipped|NULL|124
+10230|2011-03-15|2011-03-24|2011-03-20|Shipped|Customer very concerned about the exact color of the coins. There is high risk that he may dispute the order because there is a slight color mismatch|128
+10231|2011-03-19|2011-03-26|2011-03-25|Shipped|NULL|344
+10232|2011-03-20|2011-03-30|2011-03-25|Shipped|NULL|240
+10233|2011-03-29|2011-04-04|2011-04-02|Shipped|Customer requested special shippment. The instructions were passed along to the warehouse|328
+10234|2011-03-30|2011-04-05|2011-04-02|Shipped|NULL|412
+10235|2011-04-02|2011-04-12|2011-04-06|Shipped|NULL|260
+10236|2011-04-03|2011-04-11|2011-04-08|Shipped|NULL|486
+10237|2011-04-05|2011-04-12|2011-04-10|Shipped|NULL|181
+10238|2011-04-09|2011-04-16|2011-04-10|Shipped|NULL|145
+10239|2011-04-12|2011-04-21|2011-04-17|Shipped|NULL|311
+10240|2011-04-13|2011-04-20|2011-04-20|Shipped|NULL|177
+10241|2011-04-13|2011-04-20|2011-04-19|Shipped|NULL|209
+10242|2011-04-20|2011-04-28|2011-04-25|Shipped|Customer is interested in buying more krugerrand coins|456
+10243|2011-04-26|2011-05-03|2011-04-28|Shipped|NULL|495
+10244|2011-04-29|2011-05-09|2011-05-04|Shipped|NULL|141
+10245|2011-05-04|2011-05-12|2011-05-09|Shipped|NULL|455
+10246|2011-05-05|2011-05-13|2011-05-06|Shipped|NULL|141
+10247|2011-05-05|2011-05-11|2011-05-08|Shipped|NULL|334
+10248|2011-05-07|2011-05-14|NULL|Cancelled|Order was mistakenly placed. The warehouse noticed the lack of documentation.|131
+10249|2011-05-08|2011-05-17|2011-05-11|Shipped|Can we deliver the new krugerrand coins by end-of-quarter?|173
+10250|2011-05-11|2011-05-19|2011-05-15|Shipped|NULL|450
+10251|2011-05-18|2011-05-24|2011-05-24|Shipped|NULL|328
+10252|2011-05-26|2011-06-04|2011-05-29|Shipped|NULL|406
+10253|2011-06-01|2011-06-09|2011-06-02|Cancelled|Customer disputed the order and we agreed to cancel it. We must be more cautions with this customer going forward|
+10254|2011-06-03|2011-06-13|2011-06-04|Shipped|Customer requested that DHL is used for this shipping|323
+10255|2011-06-04|2011-06-12|2011-06-09|Shipped|NULL|209
+10256|2011-06-08|2011-06-16|2011-06-10|Shipped|NULL|145
+10257|2011-06-14|2011-06-24|2011-06-15|Shipped|NULL|450
+10258|2011-06-15|2011-06-25|2011-06-23|Shipped|NULL|398
+10259|2011-06-15|2011-06-22|2011-06-17|Shipped|NULL|166
+10260|2011-06-16|2011-06-22|NULL|Cancelled|Customer heard complaints from their customers and called to cancel this order. Will notify the Sales Manager.|357
+10261|2011-06-17|2011-06-25|2011-06-22|Shipped|NULL|233
+10262|2011-06-24|2011-07-01|NULL|Cancelled|This customer found a better offer from one of our competitors. Will call back to renegotiate.|141
+10263|2011-06-28|2011-07-04|2011-07-02|Shipped|NULL|175
+10264|2011-06-30|2011-07-06|2011-07-01|Shipped|Customer will send a truck to our local warehouse on 7-1-2011|362
+10265|2011-07-02|2011-07-09|2011-07-07|Shipped|NULL|471
+10266|2011-07-06|2011-07-14|2011-07-10|Shipped|NULL|386
+10267|2011-07-07|2011-07-17|2011-07-09|Shipped|NULL|151
+10268|2011-07-12|2011-07-18|2011-07-14|Shipped|NULL|412
+10269|2011-07-16|2011-07-22|2011-07-18|Shipped|NULL|382
+10270|2011-07-19|2011-07-27|2011-07-24|Shipped|Can we renegotiate this one?|282
+10271|2011-07-20|2011-07-29|2011-07-23|Shipped|NULL|124
+10272|2011-07-20|2011-07-26|2011-07-22|Shipped|NULL|157
+10273|2011-07-21|2011-07-28|2011-07-22|Shipped|NULL|314
+10274|2011-07-21|2011-07-29|2011-07-22|Shipped|NULL|379
+10275|2011-07-23|2011-08-02|2011-07-29|Shipped|NULL|119
+10276|2011-08-02|2011-08-11|2011-08-08|Shipped|NULL|204
+10277|2011-08-04|2011-08-12|2011-08-05|Shipped|NULL|148
+10278|2011-08-06|2011-08-16|2011-08-09|Shipped|NULL|112
+10279|2011-08-09|2011-08-19|2011-08-15|Shipped|Cautious optimism. We have happy customers here|
+10280|2011-08-17|2011-08-27|2011-08-19|Shipped|NULL|249
+10281|2011-08-19|2011-08-28|2011-08-23|Shipped|NULL|157
+10282|2011-08-20|2011-08-26|2011-08-22|Shipped|NULL|124
+10283|2011-08-20|2011-08-30|2011-08-23|Shipped|NULL|260
+10284|2011-08-21|2011-08-29|2011-08-26|Shipped|Custom shipping instructions sent to warehouse|299
+10285|2011-08-27|2011-09-04|2011-08-31|Shipped|NULL|286
+10286|2011-08-28|2011-09-06|2011-09-01|Shipped|NULL|172
+10287|2011-08-30|2011-09-06|2011-09-01|Shipped|NULL|298
+10288|2011-09-01|2011-09-11|2011-09-05|Shipped|NULL|166
+10289|2011-09-03|2011-09-13|2011-09-04|Shipped|We need to keep in close contact with their Marketing VP. He is the decision maker for all their purchases.|167
+10290|2011-09-07|2011-09-15|2011-09-13|Shipped|NULL|198
+10291|2011-09-08|2011-09-17|2011-09-14|Shipped|NULL|448
+10292|2011-09-08|2011-09-18|2011-09-11|Shipped|They want to reevaluate their terms agreement with Finance.|131
+10293|2011-09-09|2011-09-18|2011-09-14|Shipped|NULL|249
+10294|2011-09-10|2011-09-17|2011-09-14|Shipped|NULL|204
+10295|2011-09-10|2011-09-17|2011-09-14|Shipped|They want to reevaluate their terms agreement with Finance.|362
+10296|2011-09-15|2011-09-22|2011-09-16|Shipped|NULL|415
+10297|2011-09-16|2011-09-22|2011-09-21|Shipped|We must be cautions with this customer. Their VP of Sales resigned. Company may be heading down.|189
+10298|2011-09-27|2011-10-05|2011-10-01|Shipped|NULL|103
+10299|2011-09-30|2011-10-10|2011-10-01|Shipped|NULL|186
+10300|2010-10-04|2010-10-13|2010-10-09|Shipped|NULL|128
+10301|2010-10-05|2010-10-15|2010-10-08|Shipped|NULL|299
+10302|2010-10-06|2010-10-16|2010-10-07|Shipped|NULL|201
+10303|2011-10-06|2011-10-14|2011-10-09|Shipped|Customer inquired about half ounce and one ounce gold coins.|484
+10304|2011-10-11|2011-10-20|2011-10-17|Shipped|NULL|256
+10305|2011-10-13|2011-10-22|2011-10-15|Shipped|Check on availability.|286
+10306|2011-10-14|2011-10-21|2011-10-17|Shipped|NULL|187
+10307|2011-10-14|2011-10-23|2011-10-20|Shipped|NULL|339
+10308|2011-10-15|2011-10-24|2011-10-20|Shipped|Customer requested that FedEx Ground is used for this shipping|319
+10309|2011-10-15|2011-10-24|2011-10-18|Shipped|NULL|121
+10310|2011-10-16|2011-10-24|2011-10-18|Shipped|NULL|259
+10311|2011-10-16|2011-10-23|2011-10-20|Shipped|Difficult to negotiate with customer. We need more marketing materials|141
+10312|2011-10-21|2011-10-27|2011-10-23|Shipped|NULL|124
+10313|2011-10-22|2011-10-28|2011-10-25|Shipped|Customer requested that FedEx Ground is used for this shipping|202
+10314|2011-10-22|2011-11-01|2011-10-23|Shipped|NULL|227
+10315|2011-10-29|2011-11-08|2011-10-30|Shipped|NULL|119
+10316|2011-11-01|2011-11-09|2011-11-07|Shipped|Customer requested that ad materials (such as posters|
+10317|2011-11-02|2011-11-12|2011-11-08|Shipped|NULL|161
+10318|2011-11-02|2011-11-09|2011-11-07|Shipped|NULL|157
+10319|2011-11-03|2011-11-11|2011-11-06|Shipped|Customer requested that DHL is used for this shipping|456
+10320|2011-11-03|2011-11-13|2011-11-07|Shipped|NULL|144
+10321|2011-11-04|2011-11-12|2011-11-07|Shipped|NULL|462
+10322|2011-11-04|2011-11-12|2011-11-10|Shipped|Customer has worked with some of our vendors in the past and is aware of their MSRP|363
+10323|2011-11-05|2011-11-12|2011-11-09|Shipped|NULL|128
+10324|2011-11-05|2011-11-11|2011-11-08|Shipped|NULL|181
+10325|2011-11-05|2011-11-13|2011-11-08|Shipped|NULL|121
+10326|2011-11-09|2011-11-16|2011-11-10|Shipped|NULL|144
+10327|2011-11-10|2011-11-19|2011-11-13|Resolved|Order was disputed and resolved on 12-1-04. The Sales Manager was involved. Customer claims the scales of the coins don't match what was discussed.|145
+10328|2011-11-12|2011-11-21|2011-11-18|Shipped|Customer very concerned about the exact color of the coins. There is high risk that he may dispute the order because there is a slight color mismatch|278
+10329|2011-11-15|2011-11-24|2011-11-16|Shipped|NULL|131
+10330|2011-11-16|2011-11-25|2011-11-21|Shipped|NULL|385
+10331|2011-11-17|2011-11-23|2011-11-23|Shipped|Customer requested special shippment. The instructions were passed along to the warehouse|486
+10332|2011-11-17|2011-11-25|2011-11-18|Shipped|NULL|187
+10333|2011-11-18|2011-11-27|2011-11-20|Shipped|NULL|129
+10334|2011-11-19|2011-11-28|NULL|On Hold|The outstaniding balance for this customer exceeds their credit limit. Order will be shipped when a payment is received.|144
+10335|2011-11-19|2011-11-29|2011-11-23|Shipped|NULL|124
+10336|2011-11-20|2011-11-26|2011-11-24|Shipped|Customer requested that DHL is used for this shipping|172
+10337|2011-11-21|2011-11-30|2011-11-26|Shipped|NULL|424
+10338|2011-11-22|2011-12-02|2011-11-27|Shipped|NULL|381
+10339|2011-11-23|2011-11-30|2011-11-30|Shipped|NULL|398
+10340|2011-11-24|2011-12-01|2011-11-25|Shipped|Customer is interested in buying more coins|216
+10341|2011-11-24|2011-12-01|2011-11-29|Shipped|NULL|382
+10342|2011-11-24|2011-12-01|2011-11-29|Shipped|NULL|114
+10343|2011-11-24|2011-12-01|2011-11-26|Shipped|NULL|353
+10344|2011-11-25|2011-12-02|2011-11-29|Shipped|NULL|350
+10345|2011-11-25|2011-12-01|2011-11-26|Shipped|NULL|103
+10346|2011-11-29|2011-12-05|2011-11-30|Shipped|NULL|112
+10347|2011-11-29|2011-12-07|2011-11-30|Shipped|Can we deliver the new US Eagle coins by end-of-quarter?|114
+10348|2011-11-01|2011-11-08|2011-11-05|Shipped|NULL|458
+10349|2011-12-01|2011-12-07|2011-12-03|Shipped|NULL|151
+10350|2011-12-02|2011-12-08|2011-12-05|Shipped|NULL|141
+10351|2011-12-03|2011-12-11|2011-12-07|Shipped|NULL|324
+10352|2011-12-03|2011-12-12|2011-12-09|Shipped|NULL|198
+10353|2011-12-04|2011-12-11|2011-12-05|Shipped|NULL|447
+10354|2011-12-04|2011-12-10|2011-12-05|Shipped|NULL|323
+10355|2011-12-07|2011-12-14|2011-12-13|Shipped|NULL|141
+10356|2011-12-09|2011-12-15|2011-12-12|Shipped|NULL|250
+10357|2011-12-10|2011-12-16|2011-12-14|Shipped|NULL|124
+10358|2011-12-10|2011-12-16|2011-12-16|Shipped|Customer requested that DHL is used for this shipping|141
+10359|2011-12-15|2011-12-23|2011-12-18|Shipped|NULL|353
+10360|2011-12-16|2011-12-22|2011-12-18|Shipped|NULL|496
+10361|2011-12-17|2011-12-24|2011-12-20|Shipped|NULL|282
+10362|2012-01-05|2012-01-16|2012-01-10|Shipped|NULL|161
+10363|2012-01-06|2012-01-12|2012-01-10|Shipped|NULL|334
+10364|2012-01-06|2012-01-17|2012-01-09|Shipped|NULL|350
+10365|2012-01-07|2012-01-18|2012-01-11|Shipped|NULL|320
+10366|2012-01-10|2012-01-19|2012-01-12|Shipped|NULL|381
+10367|2012-01-12|2012-01-21|2012-01-16|Resolved|This order was disputed and resolved on 2-1-2012. Customer claimed that container with shipment was damaged. FedEx's investigation proved this wrong.|205
+10368|2012-01-19|2012-01-27|2012-01-24|Shipped|Can we renegotiate this one?|124
+10369|2012-01-20|2012-01-28|2012-01-24|Shipped|NULL|379
+10370|2012-01-20|2012-02-01|2012-01-25|Shipped|NULL|276
+10371|2012-01-23|2012-02-03|2012-01-25|Shipped|NULL|124
+10372|2012-01-26|2012-02-05|2012-01-28|Shipped|NULL|398
+10373|2012-01-31|2012-02-08|2012-02-06|Shipped|NULL|311
+10374|2012-02-02|2012-02-09|2012-02-03|Shipped|NULL|333
+10375|2012-02-03|2012-02-10|2012-02-06|Shipped|NULL|119
+10376|2012-02-08|2012-02-18|2012-02-13|Shipped|NULL|219
+10377|2012-02-09|2012-02-21|2012-02-12|Shipped|Cautious optimism. We have happy customers here|
+10378|2012-02-10|2012-02-18|2012-02-11|Shipped|NULL|141
+10379|2012-02-10|2012-02-18|2012-02-11|Shipped|NULL|141
+10380|2012-02-16|2012-02-24|2012-02-18|Shipped|NULL|141
+10381|2012-02-17|2012-02-25|2012-02-18|Shipped|NULL|321
+10382|2012-02-17|2012-02-23|2012-02-18|Shipped|Custom shipping instructions sent to warehouse|124
+10383|2012-02-22|2012-03-02|2012-02-25|Shipped|NULL|141
+10384|2012-02-23|2012-03-06|2012-02-27|Shipped|NULL|321
+10385|2012-02-28|2012-03-09|2012-03-01|Shipped|NULL|124
+10386|2012-03-01|2012-03-09|2012-03-06|Resolved|Disputed then Resolved on 3-15-2012. Customer doesn't like the craftsmaship of the coins.|141
+10387|2012-03-02|2012-03-09|2012-03-06|Shipped|We need to keep in close contact with their Marketing VP. He is the decision maker for all their purchases.|148
+10388|2012-03-03|2012-03-11|2012-03-09|Shipped|NULL|462
+10389|2012-03-03|2012-03-09|2012-03-08|Shipped|NULL|448
+10390|2012-03-04|2012-03-11|2012-03-07|Shipped|They want to reevaluate their terms agreement with Finance.|124
+10391|2012-03-09|2012-03-20|2012-03-15|Shipped|NULL|276
+10392|2012-03-10|2012-03-18|2012-03-12|Shipped|NULL|452
+10393|2012-03-11|2012-03-22|2012-03-14|Shipped|They want to reevaluate their terms agreement with Finance.|323
+10394|2012-03-15|2012-03-25|2012-03-19|Shipped|NULL|141
+10395|2012-03-17|2012-03-24|2012-03-23|Shipped|We must be cautions with this customer. Their VP of Sales resigned. Company may be heading down.|250
+10396|2012-03-23|2012-04-02|2012-03-28|Shipped|NULL|124
+10397|2012-03-28|2012-04-09|2012-04-01|Shipped|NULL|242
+10398|2012-03-30|2012-04-09|2012-03-31|Shipped|NULL|353
+10399|2012-04-01|2012-04-12|2012-04-03|Shipped|NULL|496
+10400|2012-04-01|2012-04-11|2012-04-04|Shipped|Customer requested that DHL is used for this shipping|450
+10401|2012-04-03|2012-04-14|NULL|On Hold|Customer credit limit exceeded. Will ship when a payment is received.|328
+10402|2012-04-07|2012-04-14|2012-04-12|Shipped|NULL|406
+10403|2012-04-08|2012-04-18|2012-04-11|Shipped|NULL|201
+10404|2012-04-08|2012-04-14|2012-04-11|Shipped|NULL|323
+10405|2012-04-14|2012-04-24|2012-04-20|Shipped|NULL|209
+10406|2012-04-15|2012-04-25|2012-04-21|Disputed|Customer claims container with shipment was damaged during shipping and some items were missing. I am talking to FedEx about this.|145
+10407|2012-04-22|2012-05-04|NULL|On Hold|Customer credit limit exceeded. Will ship when a payment is received.|450
+10408|2012-04-22|2012-04-29|2012-04-27|Shipped|NULL|398
+10409|2012-04-23|2012-05-05|2012-04-24|Shipped|NULL|166
+10410|2012-04-29|2012-05-10|2012-04-30|Shipped|NULL|357
+10411|2012-05-01|2012-05-08|2012-05-06|Shipped|NULL|233
+10412|2012-05-03|2012-05-13|2012-05-05|Shipped|NULL|141
+10413|2012-05-05|2012-05-14|2012-05-09|Shipped|Customer requested that DHL is used for this shipping|175
+10414|2012-05-06|2012-05-13|NULL|On Hold|Customer credit limit exceeded. Will ship when a payment is received.|362
+10415|2012-05-09|2012-05-20|2012-05-12|Disputed|Customer claims the scales of the coins don't match what was discussed. I keep all the paperwork though to prove otherwise|471
+10416|2012-05-10|2012-05-16|2012-05-14|Shipped|NULL|386
+10417|2012-05-13|2012-05-19|2012-05-19|Disputed|Customer doesn't like the colors and precision of the coins.|141
+10418|2012-05-16|2012-05-24|2012-05-20|Shipped|NULL|412
+10419|2012-05-17|2012-05-28|2012-05-19|Shipped|NULL|382
+10420|2012-05-29|2012-06-07|NULL|In Process|NULL|282
+10421|2012-05-29|2012-06-06|NULL|In Process|Custom shipping instructions were sent to warehouse|124
+10422|2012-05-30|2012-06-11|NULL|In Process|NULL|157
+10423|2012-05-30|2012-06-05|NULL|In Process|NULL|314
+10424|2012-05-31|2012-06-08|NULL|In Process|NULL|141
+10425|2012-05-31|2012-06-07|NULL|In Process|NULL|119
