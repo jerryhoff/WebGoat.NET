@@ -45,3 +45,13 @@ jobs:
      configuration: '$(buildConfiguration)'
 
 
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'szuredevopdtoken'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'webgoat-net'
+    cliProjectName: 'webgoat-net'
+    cliSources: '.'
+
+- task: SonarQubeAnalyze@5
