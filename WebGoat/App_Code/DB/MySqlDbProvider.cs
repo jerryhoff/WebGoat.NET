@@ -29,7 +29,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             if (!string.IsNullOrEmpty(configFile.Get(DbConstants.KEY_PWD)))
             {
                  _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
-                                                    configFile.Get(DbConstants.KEY_HOST),
+                                                  configFile.Get(DbConstants.KEY_HOST),
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
                                                   configFile.Get(DbConstants.KEY_UID),
@@ -38,7 +38,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
             else
             {
                 _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3}",
-                                                 configFile.Get(DbConstants.KEY_HOST),
+                                                  configFile.Get(DbConstants.KEY_HOST),
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
                                                   configFile.Get(DbConstants.KEY_UID),

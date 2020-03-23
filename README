@@ -64,5 +64,4 @@ How to build and run under Windows:
     Database = webgoat_coins
     User Name = root
     Password = root
-6. Click on 'Test Configuration', followed by 'Rebuild Database' and
-     hopefully you should be good go! Enjoy your hackathon!
+6. Click on 'Test Configuration', followed by 'Rebuild Database' and hopefully you should be good go! Enjoy your hackathon!
