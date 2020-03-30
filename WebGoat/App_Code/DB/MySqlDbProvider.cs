@@ -28,20 +28,21 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 
             if (!string.IsNullOrEmpty(configFile.Get(DbConstants.KEY_PWD)))
             {
-                _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
+                 _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3};PWD={4}",
+                                                  configFile.Get(DbConstants.KEY_HOST),
+                                                  configFile.Get(DbConstants.KEY_PORT),
+                                                  configFile.Get(DbConstants.KEY_DATABASE),
+                                                  configFile.Get(DbConstants.KEY_UID),
+                                                  configFile.Get(DbConstants.KEY_PWD));                                              
+            }
+            else
+            {
+                _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3}",
                                                   configFile.Get(DbConstants.KEY_HOST),
                                                   configFile.Get(DbConstants.KEY_PORT),
                                                   configFile.Get(DbConstants.KEY_DATABASE),
                                                   configFile.Get(DbConstants.KEY_UID),
                                                   configFile.Get(DbConstants.KEY_PWD));
-            }
-            else
-            {
-                 _connectionString = string.Format("SERVER={0};PORT={1};DATABASE={2};UID={3}",
-                                                  configFile.Get(DbConstants.KEY_HOST),
-                                                  configFile.Get(DbConstants.KEY_PORT),
-                                                  configFile.Get(DbConstants.KEY_DATABASE),
-                                                  configFile.Get(DbConstants.KEY_UID));
             }
 
             _uid = configFile.Get(DbConstants.KEY_UID);
@@ -59,15 +60,14 @@ namespace OWASP.WebGoat.NET.App_Code.DB
         {
             try
             {
-                /*using (MySqlConnection connection = new MySqlConnection(_connectionString))
-                {
-                    connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("select * from information_schema.TABLES", connection);
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                }*/
-                MySqlHelper.ExecuteNonQuery(_connectionString, "select * from information_schema.TABLES");
-                
+                //select statement changed for mysql version 5.7.28 without sample data
+                string testquery = "select * from sys.sys_config";              
+                MySqlCommand testcommand = new MySqlCommand(testquery);
+                MySqlConnection mysqlconnection = new MySqlConnection(_connectionString);
+                testcommand.Connection = mysqlconnection;
+                mysqlconnection.Open();
+                testcommand.ExecuteNonQuery();
+                testcommand.Connection.Close();          
                 return true;
             }
             catch (Exception ex)
@@ -103,9 +103,12 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
             log.Info("Running recreate");
 
-            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_CREATE_MYSQL_SCRIPT));
-            int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, DbConstants.DB_LOAD_MYSQL_SCRIPT));
-            
+            string createscript = Path.Combine(Settings.RootDir, DbConstants.DB_CREATE_MYSQL_SCRIPT);
+            string loadscript = Path.Combine(Settings.RootDir, DbConstants.DB_LOAD_MYSQL_SCRIPT);
+
+            int retVal1 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, createscript));
+            int retVal2 = Math.Abs(Util.RunProcessWithInput(_clientExec, args, loadscript));
+
             return Math.Abs(retVal1) + Math.Abs(retVal2) == 0;
         }
 

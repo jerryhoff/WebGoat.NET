@@ -48,17 +48,20 @@ How To Build And Run under Mac OS X and Linux:
      hopefully you should be good go! Enjoy your hackathon!
 
 How to build and run under Windows:
-  1. Prerequisites:
-     a. Visual Studio 2010 and above.
-     b. Mysql database that's up and running with at least one user
-        aleady setup with full permissions.
-  2. Open WebGoat.sln file via Visual Studio, and click on debug.
-  3. You should see the WebGoat.NET page at which point click on
-     'Set Up Database'.
-  3. You should see a form with a bunch of setup information for the
-     database. For 'Data Provider' choose MySql. You'll need to fill in
-     the respective data entries for your mysql db. 'Client Executable'
-     and 'Data File Path' are not necessary for MySql so you can leave
-     them empty.
-  4. Click on 'Test Configuration', followed by 'Rebuild Database' and
-     hopefully you should be good go! Enjoy your hackathon!
+1. Prerequisites:
+    a. Visual Studio 2010 and above.
+    b. Mysql database that's up and running with at least one user aleady setup with full permissions.
+2. Create a database in MySQL called "webgoat_coins".  Using the MYSQL Command line connect and use the following command "create database webgoat_coins;"
+3. Open WebGoat.sln file via Visual Studio, and click on debug.
+4. You should see the WebGoat.NET page at which point click on 'Set Up Database'.
+5. You should see a form with a bunch of setup information for the database. For 'Data Provider' choose MySql. You'll need to fill in the respective data entries for your mysql db.  'Data File Path' is not necessary for MySql so you can leave it empty.
+    Example values for MySQL 5.7.28 running on localhost
+    Data Provider = MySQL
+    Data File Path = empty
+    Client Executable = C:\Program Files\MySQL\MySQL Server 5.7\bin\mysql.exe
+    Server = localhost
+    Port = 3306
+    Database = webgoat_coins
+    User Name = root
+    Password = root
+6. Click on 'Test Configuration', followed by 'Rebuild Database' and hopefully you should be good go! Enjoy your hackathon!
