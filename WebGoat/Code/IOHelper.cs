@@ -8,6 +8,7 @@ namespace OWASP.WebGoat.NET
 {
     public class IOHelper
     {
+        /// Comentário teste
         public static string ReadAllFromFile(string path)
         {
             FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read);
