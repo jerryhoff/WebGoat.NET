@@ -6,6 +6,7 @@ using System.IO;
 
 namespace OWASP.WebGoat.NET
 {
+    // VAI!
     public class IOHelper
     {
         public static string ReadAllFromFile(string path)
