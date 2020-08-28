@@ -9,7 +9,7 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
-    <h1 class="title-regular-4 clearfix">Bem vindo ao WebGoat .NET</h1>
+    <h1 class="title-regular-4 clearfix">Bem vindo ao WebGoat dotNET</h1>
 WebGoat.NET is a purposefully insecure web application - use it to learn and understand about bad 
 coding practices in .NET.  Each Module on the left side illustrates a common web vulnerability.  WebGoat.NET was 
 designed to be used in live training and/or e-learning environments.
