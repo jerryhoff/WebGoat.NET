@@ -9,7 +9,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
-    <h1 class="title-regular-4 clearfix">Bem vindo ao WebGoat .NET</h1>
+    <h1 class="title-regular-4 clearfix">WebGoat .NET</h1>
 
     <asp:Label ID="lblOutput" runat="server"></asp:Label>
 
