@@ -6,7 +6,6 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">This is the Welcome Page...</asp:Content>
 
-
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
     <h1 class="title-regular-4 clearfix">WebGoat .NET</h1>
