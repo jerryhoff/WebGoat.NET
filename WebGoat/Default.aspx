@@ -4,7 +4,7 @@
     <asp:HtmlTitle>Welcome to WebGoat.NET</asp:HtmlTitle>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">This is the Welcome Page...</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">Seja bem vindo...</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
