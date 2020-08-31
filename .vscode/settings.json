@@ -1,0 +1,11 @@
+{
+    "cx.server": {
+        "url": "http://192.168.1.61/",
+        "alias": "Checkmarx",
+        "username": "cassio",
+        "password": "vMBBYLMG5TMzLv93JLgoWo3QRs0CM8X8zts=",
+        "project_id": 4,
+        "team_id": 1,
+        "project_name": "Damm Vulnerable dotNet Web Application"
+    }
+}
