@@ -4,7 +4,7 @@
     <asp:HtmlTitle>Welcome to WebGoat.NET</asp:HtmlTitle>
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">Seja bem vindo. E vulnerável</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="HelpContentPlaceholder" runat="server">Seja bem vindo. E cuidado pois está vulnerável</asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
