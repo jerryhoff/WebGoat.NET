@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
 using System.Drawing;
-using OWASP.WebGoat.NET.App_Code;
 using System.Text;
 
 namespace OWASP.WebGoat.NET
