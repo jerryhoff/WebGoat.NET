@@ -20,7 +20,7 @@ namespace OWASP.WebGoat.NET
             Sha1=1,
             Sha256
         };
-            
+           
         private string hardCodedKey = "key";
 
         protected void Page_Load(object sender, EventArgs e)
