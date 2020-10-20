@@ -3,7 +3,7 @@
         "url": "http://192.168.1.51/",
         "alias": "Checkmarx",
         "username": "cassio",
-        "password": "MIIIHodnC8hdG+urrv+MPJ6cOK8+aeJDwrk=",
+        "password": "CMyoOVQIAxN27zAxU1MhvEcsH8+feTZFUl8=",
         "project_id": 4,
         "team_id": 1,
         "project_name": "Damm Vulnerable dotNet Web Application"
