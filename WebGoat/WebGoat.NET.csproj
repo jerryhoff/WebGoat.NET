@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <GenerateFullPaths>True</GenerateFullPaths>
@@ -17,6 +17,13 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,7 +78,7 @@
       <HintPath>lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite">
-        <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
+      <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -911,6 +918,7 @@
     </Compile>
     <Compile Include="ProxySetup.aspx.cs">
       <DependentUpon>ProxySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ProxySetup.aspx.designer.cs">
       <DependentUpon>ProxySetup.aspx</DependentUpon>
@@ -934,30 +942,35 @@
     <Compile Include="App_Code\Util.cs" />
     <Compile Include="Content\Trace.aspx.cs">
       <DependentUpon>Trace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Trace.aspx.designer.cs">
       <DependentUpon>Trace.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\XPathInjection.aspx.designer.cs">
       <DependentUpon>XPathInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\HeaderInjection.aspx.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\HeaderInjection.aspx.designer.cs">
       <DependentUpon>HeaderInjection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\MessageDigest.aspx.cs">
       <DependentUpon>MessageDigest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\MessageDigest.aspx.designer.cs">
       <DependentUpon>MessageDigest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\XMLInjection.aspx.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\XMLInjection.aspx.designer.cs">
       <DependentUpon>XMLInjection.aspx</DependentUpon>
@@ -965,24 +978,28 @@
     <Compile Include="App_Code\WeakMessageDigest.cs" />
     <Compile Include="Content\ReadlineDoS.aspx.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
       <DependentUpon>ReadlineDoS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\RegexDoS.aspx.designer.cs">
       <DependentUpon>RegexDoS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\Unsafe.aspx.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Unsafe.aspx.designer.cs">
       <DependentUpon>Unsafe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\Random.aspx.cs">
       <DependentUpon>Random.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\Random.aspx.designer.cs">
       <DependentUpon>Random.aspx</DependentUpon>
@@ -990,12 +1007,14 @@
     <Compile Include="App_Code\WeakRandom.cs" />
     <Compile Include="Content\VerbTampering.aspx.cs">
       <DependentUpon>VerbTampering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\VerbTampering.aspx.designer.cs">
       <DependentUpon>VerbTampering.aspx</DependentUpon>
     </Compile>
     <Compile Include="Content\VerbTamperingAttack.aspx.cs">
       <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Content\VerbTamperingAttack.aspx.designer.cs">
       <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
@@ -1021,13 +1040,26 @@
         <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
       </Properties>
     </MonoDevelop>
+    <VisualStudio>
+      <FlavorProperties GUID="{349C5851-65DF-11DA-9384-00065B846F21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5838/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
   </ProjectExtensions>
   <ItemGroup>
-    <Folder Include="WebGoatCoins\uploads\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="App_Code\DB\" />
     <Folder Include="Configuration\" />
-    <Folder Include="DB_Scripts\" />
+    <Folder Include="WebGoatCoins\uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="WebGoatCoins\ProductDetails.aspx" />
