@@ -8,7 +8,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceholder" runat="server">
 
-    <h1 class="title-regular-4 clearfix">Demo Natura agora foi!</h1>
+    <h1 class="title-regular-4 clearfix">Demo Natura agora foi mesmo ;)</h1>
 
     <asp:Label ID="lblOutput" runat="server"></asp:Label>
 
