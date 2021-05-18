@@ -39,7 +39,7 @@ namespace OWASP.WebGoat.NET
             
             Table t = new Table();
             t.Width = new Unit("100%");
-            
+            //teste
             t.Rows.Add(MakeRow("Custom Crypto", CustomCryptoEncrypt(secret)));
             t.Rows.Add(MakeRow("URL Encoded:", Server.UrlEncode(secret)));
             t.Rows.Add(MakeRow("Base64 Encoded:", Base64(secret)));
@@ -50,8 +50,7 @@ namespace OWASP.WebGoat.NET
             ContentPlaceHolder cph = (ContentPlaceHolder)this.Master.FindControl("BodyContentPlaceholder");
             cph.Controls.Add(new LiteralControl("<p/>"));
             cph.Controls.Add(t);
-        
-        
+        // testando 1123
         }
 
         private TableRow MakeRow(string label, string val)
