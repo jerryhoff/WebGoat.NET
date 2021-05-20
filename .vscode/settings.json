@@ -1,20 +1,12 @@
 {
     "cx.server": {
-        "url": "http://192.168.15.9/",
+        "url": "http://n8lab/",
         "alias": "Checkmarx",
-<<<<<<< HEAD
-        "username": "",
-        "password": "",
-        "project_id": 0,
-        "team_id": 0,
-        "project_name": ""
-=======
-        "username": "marcos",
-        "password": "ayaaGLr62fOn0sKAJ7uErz+F3X91ANCzGP3G",
-        "project_id": 1,
-        "team_id": 1005,
+        "username": "admin",
+        "password": "Rt1Jv7aShwsRnGJfR6aqLfTG2k+n0QQrnKTFqA==",
+        "project_id": 2,
+        "team_id": 1,
         "project_name": "Damm Vulnerable dotNet Web Application"
->>>>>>> 2ddd6c4cdac225f33dc6f77c148bab4c7d5a0587
     },
     "cx.fileExtensions": "!**/*.DS_Store, !**/*.ipr, !**/*.iws, !**/*.bak, !**/*.tmp, !**/*.aac, !**/*.aif, !**/*.iff, !**/*.m3u, !**/*.mid, !**/*.mp3, !**/*.mpa, !**/*.ra, !**/*.wav, !**/*.wma, !**/*.3g2, !**/*.3gp, !**/*.asf, !**/*.asx, !**/*.avi, !**/*.flv, !**/*.mov, !**/*.mp4, !**/*.mpg, !**/*.rm, !**/*.swf, !**/*.vob, !**/*.wmv, !**/*.bmp, !**/*.gif, !**/*.jpg, !**/*.png, !**/*.psd, !**/*.tif, !**/*.swf, !**/*.jar, !**/*.zip, !**/*.rar, !**/*.exe, !**/*.dll, !**/*.pdb, !**/*.7z, !**/*.gz, !**/*.tar.gz, !**/*.tar, !**/*.gz, !**/*.ahtm, !**/*.ahtml, !**/*.fhtml, !**/*.hdm, !**/*.hdml, !**/*.hsql, !**/*.ht, !**/*.hta, !**/*.htc, !**/*.htd, !**/*.war, !**/*.ear, !**/*.htmls, !**/*.ihtml, !**/*.mht, !**/*.mhtm, !**/*.mhtml, !**/*.ssi, !**/*.stm, !**/*.stml, !**/*.ttml, !**/*.txn, !**/*.xhtm, !**/*.xhtml, !**/*.class, !**/*.iml",
     "cx.folderExclusions": "cvs, .svn, .hg, .git, .bzr, bin, obj, backup, .idea, .vscode, node_modules",
