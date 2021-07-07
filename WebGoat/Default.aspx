@@ -12,6 +12,8 @@
 
     <asp:Label ID="lblOutput" runat="server"></asp:Label>
 
+    <asp:Label ID="lblOutput" runat="server"></asp:Label>
+    
     <asp:Button ID="ButtonProceed" SkinID="Button" runat="server" Text="Set Up Database!" onclick="ButtonProceed_Click"/>
 
 </asp:Content>
