@@ -12,3 +12,6 @@ WebGoat/Configuration/*.config
 # Trash Files #
 ###############
 .DS_Store
+/Backup/.vs/WebGoat.NET/v16
+/Backup1
+/.vs/Damm-Vulnerable-dotNet-Web-Application/v16
