@@ -9,7 +9,7 @@ namespace OWASP.WebGoat.NET.App_Code
     {
         private string _filePath;
         
-        public string AWS_SECRET_ACCESS_KEY = "asd98qw7e89r4gd65s1231a32sd1a3sd13";
+        public string aws_secret = "ABCDEF+c2L7yXeGvUyrPgYsDnWRRC1AYEXAMPLE";
         private IDictionary<string, string> _settings = new Dictionary<string, string>();
         private IDictionary<string, string> _settingComments = new Dictionary<string, string>();
                

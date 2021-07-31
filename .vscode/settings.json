@@ -1,10 +1,10 @@
 {
     "cx.server": {
-        "url": "http://192.168.15.10/",
+        "url": "http://n8lab/",
         "alias": "Checkmarx",
-        "username": "cassio",
-        "password": "4ou6/stJ9cjvP+PaAUyNq59qxEs3xR7qOYI=",
-        "project_id": 4,
+        "username": "admin",
+        "password": "hCxvqw2BSrMu03Mhgjk76oALQOg7NktGeDDz3A==",
+        "project_id": 2,
         "team_id": 1,
         "project_name": "Damm Vulnerable dotNet Web Application"
     },
