@@ -111,11 +111,6 @@ namespace OWASP.WebGoat.NET
         {
             string result = OWASP.WebGoat.NET.App_Code.Encoder.EncryptStringAES(s, key);
             return result;
-            try
-            {
-                teste
-
-            };
         }
 
         private string CustomCryptoEncrypt(String s)
