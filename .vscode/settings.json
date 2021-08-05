@@ -1,11 +1,20 @@
 {
     "cx.server": {
+<<<<<<< HEAD
+        "url": "http://n8lab/",
+        "alias": "Checkmarx",
+        "username": "admin",
+        "password": "hCxvqw2BSrMu03Mhgjk76oALQOg7NktGeDDz3A==",
+        "project_id": 2,
+        "team_id": 1,
+=======
         "url": "https://cxprivatecloud.checkmarx.net/",
         "alias": "Checkmarx",
         "username": "marcos.santos",
         "password": "/cihcWGraQ7q/33F4RWHBxc5MWa9S5UbGZHc",
         "project_id": 254,
         "team_id": 46,
+>>>>>>> 3b6eaec90ab3b3813a359d7e193f55244e93f500
         "project_name": "Damm Vulnerable dotNet Web Application"
     },
     "cx.fileExtensions": "!**/*.DS_Store, !**/*.ipr, !**/*.iws, !**/*.bak, !**/*.tmp, !**/*.aac, !**/*.aif, !**/*.iff, !**/*.m3u, !**/*.mid, !**/*.mp3, !**/*.mpa, !**/*.ra, !**/*.wav, !**/*.wma, !**/*.3g2, !**/*.3gp, !**/*.asf, !**/*.asx, !**/*.avi, !**/*.flv, !**/*.mov, !**/*.mp4, !**/*.mpg, !**/*.rm, !**/*.swf, !**/*.vob, !**/*.wmv, !**/*.bmp, !**/*.gif, !**/*.jpg, !**/*.png, !**/*.psd, !**/*.tif, !**/*.swf, !**/*.jar, !**/*.zip, !**/*.rar, !**/*.exe, !**/*.dll, !**/*.pdb, !**/*.7z, !**/*.gz, !**/*.tar.gz, !**/*.tar, !**/*.gz, !**/*.ahtm, !**/*.ahtml, !**/*.fhtml, !**/*.hdm, !**/*.hdml, !**/*.hsql, !**/*.ht, !**/*.hta, !**/*.htc, !**/*.htd, !**/*.war, !**/*.ear, !**/*.htmls, !**/*.ihtml, !**/*.mht, !**/*.mhtm, !**/*.mhtml, !**/*.ssi, !**/*.stm, !**/*.stml, !**/*.ttml, !**/*.txn, !**/*.xhtm, !**/*.xhtml, !**/*.class, !**/*.iml",

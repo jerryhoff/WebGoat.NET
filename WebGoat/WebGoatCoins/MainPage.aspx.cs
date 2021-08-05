@@ -25,7 +25,7 @@ namespace OWASP.WebGoat.NET
             if (Request.Cookies["customerNumber"] != null)
             {
                 string customerNumber = Request.Cookies["customerNumber"].Value;
-
+                
                 DataSet ds = du.GetCustomerDetails(customerNumber);
                 DataRow row = ds.Tables[0].Rows[0]; //customer row
 
