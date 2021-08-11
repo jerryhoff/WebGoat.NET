@@ -3,7 +3,6 @@
 *.userprefs
 *.pidb
 *swp
-bin
 obj
 WebGoat/App_Data/*.txt
 *.sqlite*
