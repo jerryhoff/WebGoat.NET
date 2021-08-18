@@ -26,6 +26,8 @@ namespace OWASP.WebGoat.NET {
 		protected System.Web.UI.WebControls.TextBox Password;
 		
 		protected System.Web.UI.WebControls.TextBox Email;
+
+		protected System.Web.UI.WebControls.TextBox Content4;
 		
 		protected System.Web.UI.WebControls.Label SecurityQuestion;
 		
