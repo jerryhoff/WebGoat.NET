@@ -119,7 +119,6 @@ namespace OWASP.WebGoat.NET
             catch
             {
 
-
             }
         }
 
