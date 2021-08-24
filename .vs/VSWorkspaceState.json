@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WebGoat"
   ],
-  "SelectedNode": "\\WebGoat.NET.sln (WebGoat.NET.sln)",
+  "SelectedNode": "\\WebGoat\\AddNewUser.aspx.designer.cs",
   "PreviewInSolutionExplorer": false
 }
