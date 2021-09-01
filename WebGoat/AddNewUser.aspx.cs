@@ -66,7 +66,7 @@ namespace OWASP.WebGoat.NET
 	                break;
 	        }
 	    }
-
+		/*teste*/
 	    protected void RegisterUser_CreatingUser(object sender, LoginCancelEventArgs e)
 	    {
 	    	/*
