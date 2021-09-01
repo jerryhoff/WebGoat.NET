@@ -121,7 +121,7 @@ namespace OWASP.WebGoat.NET
 
             }
         }
-        //teste 2
+        //teste 3
         private string CustomCryptoEncrypt(String s)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(s);
