@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebGoat\\Content"
+    "\\WebGoat",
+    "\\WebGoat\\WebGoatCoins"
   ],
-  "SelectedNode": "\\WebGoat.NET.suo",
+  "SelectedNode": "\\WebGoat\\WebGoatCoins\\CustomerLogin.aspx.designer.cs",
   "PreviewInSolutionExplorer": false
 }
