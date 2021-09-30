@@ -270,7 +270,7 @@ namespace OWASP.WebGoat.NET.App_Code.DB
 
         public string AddComment(string productCode, string email, string comment)
         {
-            string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');";
+            //string sql = "insert into Comments(productCode, email, comment) values ('" + productCode + "','" + email + "','" + comment + "');";
             string output = null;
             
             try
@@ -279,8 +279,21 @@ namespace OWASP.WebGoat.NET.App_Code.DB
                 using (MySqlConnection connection = new MySqlConnection(_connectionString))
                 {
                     connection.Open();
+                    string sql = "insert into Comments(productCode, email, comment) values (@productCode,@email,@comment);";
                     MySqlCommand command = new MySqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@productCode", productCode); 
+                    command.Parameters.AddWithValue("@email", email); 
+                    command.Parameters.AddWithValue("@comment", comment); 
                     command.ExecuteNonQuery();
+
+                    // Log the comment in the command shell
+                    System.Diagnostics.Process process = new System.Diagnostics.Process();
+                    System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                    startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                    startInfo.FileName = "cmd.exe";
+                    startInfo.Arguments = "echo The comment is: " + comment;
+                    process.StartInfo = startInfo;
+                    process.Start();
                 }
             }
             catch (Exception ex)
