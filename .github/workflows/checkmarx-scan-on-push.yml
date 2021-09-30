@@ -1,0 +1,59 @@
+# This workflow is to automate Checkmarx SAST scans.  It runs on a push to the main branch.
+#
+# The following GitHub Secrets must be first defined:
+#   - CHECKMARX_URL
+#   - CHECKMARX_USERNAME
+#   - CHECKMARX_PASSWORD
+#   - CHECKMARX_CLIENT_SECRET
+#
+# The following variables must be inserted below:
+#   - <ProjectName>
+#
+# Update the 'team' field to reflect the team name used in Checkmarx.
+#
+# For full documentation, including a list of all inputs, please refer to the README https://github.com/checkmarx-ts/checkmarx-cxflow-github-action
+
+name: Checkmarx SAST/SCA Scan on Push
+on:
+  push:
+    branches:
+      - master
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    # Checkout the code
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    # Get the branch name (for some reason not easily vailable from GH variables)
+    - id: get-branch
+      run: |
+        branch=$(echo ${{ github.ref }} | cut -d/ -f3)
+        echo "::set-output name=branch::$branch"
+    
+    # Run CxSAST (and optionally CxSCA) scan with SARIF output
+    - name: Checkmarx Scan on Push and create SARIF file
+      uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.2 #Github Action version
+      with:
+        project: GitHub-WebGoat.NET-${{ steps.get-branch.outputs.branch }}
+        team: /CxServer/SP/ANZ/WebGoat-DotNET
+        preset: 'Checkmarx Default'
+        checkmarx_url: ${{ secrets.CHECKMARX_URL }} # To be stored in GitHub Secrets.
+        checkmarx_username: ${{ secrets.CHECKMARX_USERNAME }} # To be stored in GitHub Secrets.
+        checkmarx_password: ${{ secrets.CHECKMARX_PASSWORD }} # To be stored in GitHub Secrets.
+        checkmarx_client_secret: ${{ secrets.CHECKMARX_CLIENT_SECRET }} # To be stored in GitHub Secrets.
+        github_token: ${{ secrets.GH_TOKEN }}
+        incremental: false
+        break_build: false
+        scanners: sast
+        bug_tracker: Sarif
+        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
+    
+    #Upload SARIF file so it gets reflected in the "Code Scanning Alerts" tab
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: cx.sarif
