@@ -1,0 +1,201 @@
+body
+{
+	min-height:100%;
+    text-align: center;
+    /* background-color: #e7f0fa; */
+    background-color: #ffffff; 
+   	margin:0;
+    padding:0;
+    height:100%;
+    padding-bottom:10px;
+}
+.container_16
+{
+    display: block;
+    text-align: left;
+     min-height:100%;
+   position:relative;
+}
+.HeaderTop
+{
+    display: block;
+}
+.branding
+{
+    background-image: url('./images/logo.png');
+    background-repeat: no-repeat;
+    height: 69px;
+}
+.branding-x2
+{
+    background-image: url('./images/logo2.png');
+    background-repeat: no-repeat;
+    height: 67px;
+}
+.eisk-info
+{
+    color: #14283C;
+    font-size: 12px;
+    line-height: normal;
+   /* border-right: 1px solid #D6E0E4;*/
+}
+.eisk-info a
+{
+    color: #2489b0;
+    text-decoration: none;
+}
+.eisk-info a:hover
+{
+    color: #1e7495;
+    text-decoration: none;
+}
+.HeaderGrad
+{
+    background-image: url('./images/header-grad.png');
+    height: 96px;
+    width: 100%;
+}
+.Header
+{
+    padding-top: 20px;
+}
+
+.HeadingMain h1
+{
+    font-size: 5em;
+}
+
+.HeadingMain h2
+{
+    font-size: 3em;
+    margin-top: -1em;
+}
+.UtilityMenu
+{
+    color: #90B9D2;
+    text-align: right;
+}
+.UtilityMenu a, .UtilityMenu a:visited
+{
+    color: #fff;
+    text-decoration: none;
+}
+.UtilityMenu a:hover, .UtilityMenu a:active
+{
+    color: #e3eff6;
+}
+
+
+.ContentMain
+{
+	min-height:100%;
+	height:100%;
+    background-color: #fff;
+    /* border-bottom: solid 1px #cdd5de; */
+    text-align: left;
+    padding-bottom: 120px;
+}
+.Content
+{
+    padding-left: 50px;
+}
+.ContentArea a
+{
+    color: #4D8FCF;
+    
+}
+.ContentArea a:hover
+{
+    color: #417BAF;
+}
+.ContentArea ul
+{
+    list-style: square inside none;
+}
+.title-regular, .title-regular-2, .title-regular-3, .title-regular-4
+{
+    color: #2D5883;
+    font-weight: normal;
+    text-transform: uppercase;
+      }
+.title-regular
+{
+    border-bottom: 1px solid #D6E7F1;
+
+}
+.title-regular-2
+{
+    border: none;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.title-regular-3
+{
+    border: none;
+    font-size: 1.25em;
+    margin-bottom: 5px;
+}
+. .round-box
+{
+    -moz-border-radius: 6px;
+}
+.FooterMain
+{
+    text-align: left;
+    padding: 20px 0;
+    bottom:0;
+    width:100%;
+    height:60px;   
+}
+.grid-viewer
+{
+    overflow: auto;
+    margin: 0;
+}
+.button-right
+{
+    float: right;
+    position: relative;
+    top: 10px !important;
+}
+.ui-datepicker-trigger
+{
+    left: 5px;
+    position: relative;
+    top: 6px;
+    cursor: pointer;
+}
+.ui-datepicker-div select
+{
+    padding: 0;
+}
+
+.align-right
+{
+    text-align: right;
+}
+.required-field-indicator
+{
+    color: #CF0C2F;
+    vertical-align: sub;
+}
+
+table.customerdata {
+	border-width: 2px;
+	border-spacing: 5px;
+	border-style: dotted;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: rgb(250, 240, 230);
+	margin-left:auto;
+    margin-right:auto;
+    width:75%;
+}
+
+table.customerdata td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+}

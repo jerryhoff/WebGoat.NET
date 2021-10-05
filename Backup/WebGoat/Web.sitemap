@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+    <siteMapNode url="~/Content/mainpage.aspx" title="OWASP.WebGoat.NET" description="Root">
+        <siteMapNode url="~/Content/GettingStarted.aspx" title="Getting Started with WebGoat.NET" description="Getting Started">
+            <siteMapNode url="~/Default.aspx" title="Welcome" description="Welcome Page" />
+            <siteMapNode url="~/ProxySetup.aspx" title="Web Proxy Test" description="Test Proxy" />
+            <siteMapNode url="~/RebuildDatabase.aspx" title="Testing Database" description="Rebuild Database" />
+        </siteMapNode>
+        <siteMapNode url="~/WebGoatCoins/Welcome.aspx" title="WebGoat Coins Customer Portal" description="Coins Customer Portal">
+            <siteMapNode url="~/WebGoatCoins/CustomerLogin.aspx" title="Customer Login" description="Customer Login" />
+            <siteMapNode url="~/WebGoatCoins/ForgotPassword.aspx" title="Forgot Password" description="Forgot Password" />
+            <siteMapNode url="~/WebGoatCoins/ChangePassword.aspx" title="Change Password" description="Change Password" />
+            <siteMapNode url="~/WebGoatCoins/MainPage.aspx" title="Customer Portal" description="Customer Portal" />
+            <siteMapNode url="~/WebGoatCoins/Catalog.aspx" title="Product Catalog" description="Catalog" />
+            <siteMapNode url="~/WebGoatCoins/ProductDetails.aspx" title="Product Details" description="Product Details" />
+            <siteMapNode url="~/WebGoatCoins/Orders.aspx" title="Customer Orders" description="Customer Orders" />
+            <siteMapNode url="~/WebGoatCoins/Logout.aspx" title="Logout" description="Customer Logout" />
+        </siteMapNode>
+        <siteMapNode url="~/Content/InjectionAttacks.aspx" title="Injection Attacks" description="Injection">
+            <siteMapNode url="~/Content/SQLInjectionDiscovery.aspx" title="SQL Error Messages" description="SQL Errors" />
+            <siteMapNode url="~/Content/SQLInjection.aspx" title="Exploiting SQL Injection" description="SQL Injection" />
+            <siteMapNode url="~/Content/PathManipulation.aspx" title="File Download Path Manipulation" description="Download File Path Manipulation" />
+            <siteMapNode url="~/Content/UploadPathManipulation.aspx" title="File Upload Path Manipulation" description="Upload File Path Manipulation" />
+        </siteMapNode>
+        <siteMapNode url="~/Content/XSS.aspx" title="Cross Site Scripting (XSS)" description="XSS">
+            <siteMapNode url="~/Content/StoredXSS.aspx" title="Stored XSS" description="Stored XSS" />
+            <siteMapNode url="~/Content/ReflectedXSS.aspx" title="Reflected XSS" description="Reflected XSS" />
+        </siteMapNode>
+        <siteMapNode url="~/Content/Authentication.aspx" title="Authentication Issues" description="">
+            <siteMapNode url="~/Content/ForgotPassword.aspx" title="Insecure Forgot Password" description="Insecure Forgot Password" />
+        </siteMapNode>
+        <!--siteMapNode url="~/Content/CSRF.aspx" title="Cross Site Request Forgery (CSRF)" description="">
+      <siteMapNode url="~/Content/CSRFDemo.aspx" title="Form Vulnerable to CSRF" description="Form Vulnerable to CSRF"/>
+    </siteMapNode-->
+        <siteMapNode url="~/Content/Debug.aspx" title="Testing and Debugging" description="Testing and Debugging">
+            <siteMapNode url="~/Content/ExploitDebug.aspx" title="Exploiting Debug Page" description="Exploiting Debug Page" />
+        </siteMapNode>
+        <siteMapNode url="~/Content/Encryption.aspx" title="Encryption" description="Encoding">
+            <siteMapNode url="~/Content/EncryptVSEncode.aspx" title="Encryption vs Encoding" description="Encrypt vs Encode" />
+            <siteMapNode url="~/Content/MessageDigest.aspx" title="Insecure Message Digest" description="Insecure Message Digest" />
+            <siteMapNode url="~/Content/Random.aspx" title="Weak Random Number Generators" description="Weak Random Number Generators" />
+        </siteMapNode>
+        <siteMapNode url="~/Content/DotNet.aspx" title=".NET Exploits" description=".NET Exploits">
+            <siteMapNode url="~/Content/Unsafe.aspx" title="Unsafe blocks" description="Unsafe blocks" />
+        </siteMapNode>
+    </siteMapNode>
+</siteMap>
+<!-- 
+    <siteMapNode url="~/Content/AccessControl.aspx" title="Access Control" description="">
+            <siteMapNode url="~/Content/HorizontalEscalation.aspx" title="Horizontal Privilege Escalation" description="Horizontal Privilege Escalation"/>
+        </siteMapNode>
+-->
+<!--siteMapNode url="~/Content/RichClient.aspx" title="Rich Client Side UI" description="">
+            <siteMapNode url="~/Content/ClientSideStorage.aspx" title="Client Side Storage" description=""/>
+            <siteMapNode url="~/Content/JSONInjection.aspx" title="JSON Injection" description=""/>
+            <siteMapNode url="~/Content/jQueryInjection.aspx" title="JQuery Injection" description=""/>
+            <siteMapNode url="~/Content/FlashScripting.aspx" title="Flash Script Injection" description=""/>
+        </siteMapNode-->
+<!--siteMapNode url="~/Content/FinalChallenge.aspx" title="Final Challenge" description="">
+            <siteMapNode url="~/Content/Challenge1.aspx" title="Final Challenge Part 1" description=""/>
+            <siteMapNode url="~/Content/Challenge2.aspx" title="Final Challenge Part 2" description=""/>
+            <siteMapNode url="~/Content/Challenge3.aspx" title="Final Challenge Part 3" description=""/>
+        </siteMapNode -->
+<!--siteMapNode url="~/Content/WebServices.aspx" title="Web Services" description="">
+            <siteMapNode url="~/Content/WSDL.aspx" title="WSDL Exploits" description=""/>
+            <siteMapNode url="~/Content/WSAttacks.aspx" title="Web Service Attacks" description=""/>
+        </siteMapNode -->
+<!--
+    <siteMapNode url="~/Content/.aspx" title="" description="">
+            <siteMapNode url="~/Content/.aspx" title="" description=""/>
+            <siteMapNode url="~/Content/.aspx" title="" description=""/>
+            <siteMapNode url="~/Content/.aspx" title="" description=""/>
+            <siteMapNode url="~/Content/.aspx" title="" description=""/>
+        </siteMapNode>
+
+Getting Started
+    Proxy Test 
+    
+Injection Attacks
+    Numeric SQL Injection
+    String SQL Injection
+    XML Injection
+    Log Injection
+    Command Injection
+    Response Splitting
+    Exercise: Find and Fix the SQL Injection (Multi-Stage)?
+    
+Cross Site Scripting (XSS)
+    Stored XSS (here are the browsers people have used coming here)
+    Reflected XSS (Enter Name: name=Jerry)
+    DOM Based XSS (eval based)
+    Exercise: Find and Fix the XSS
+    
+Authentication 
+    Basic Authentication
+    Form-Based Authentication
+    Password Complexity (enfored by JS)
+
+Session Management
+    Session Fixation
+    Logout Issues
+    Change Password
+    Using XSS to hijack a session
+    
+Access Control
+    Forced Browsing (include /admin/, /log/, /test/, /dev/)
+    Simple Param Tampering (accountid=123)
+    Cookie Tampering
+    Exercise: User Account / Admin Panel Takeover
+    
+Cross Site Request Forgery (CSRF)
+    Simple CSRF
+    CSRF/XSS Worm
+    Fixing CSRF using the viewstate
+    
+Web Services
+    Finding WSDL
+    Web Service Attacks (SQL Injection, XSS, Parameter Tampering)
+    
+Error Handling
+    Error Pages in .NET
+    Error Page w/ Error Message Embedded
+    
+Testing and Debug
+    Exploiting Test Pages
+    
+Encryption
+    Encoding vs Encryption
+    
+Advanced User Interfaces
+    Client Side Storage (HTML 5.0)
+    JSON Injection
+    JQuery Injection
+    Flash Side Scripting
+
+Final Challenge (based on HB Gary attack?)
+    Stage 1 (SQL Injection -> Unencrypted Passwords... UNION SELECT USERNAME, PASSWORD FROM USERS).  Passwords twice base 64 encoded
+    Stage 2 Find Admin Panel (Access Control)
+    Stage 3
+    
+
+
+
+
+General
+    Http Basics
+    Http Splitting
+
+Access Control Flaws
+    Using an Access Control Matrix
+    Bypass a path based Access Control Scheme
+    LAB: Role Based Access Control
+        Stage 1: Bypass Business Layer AC
+        Stage 2: Add BL AC
+        Stage 3: Bypass Data Layer AC
+        Stage 4: Add Data Layer AC
+    Remote Admin Access
+
+AJAX security
+    LAB: DOM-Based Cross-Site Scripting
+    LAB: Client Side Filtering
+    Same Origin Policy Protection
+    DOM Injection
+    XML Injection
+    JSON Injection
+    Silent Transactions Attacks
+    Dangerous Use of Eval
+    Insecure Client Storage
+
+Authetication Flaws
+    Password Strength
+    Forgot Password
+    Basic Authentication
+    Multi Level Login 1
+    Multi Level Login 2
+
+Buffer Overflow
+    Buffer Overflow
+
+Code Quality
+    Discover Clues in the HTML
+
+Concurrency
+    Thread Safety Problems
+    Shopping Cart Concurrency Flaw
+
+Cross Site Scripting (XSS)
+    Phishing with XSS
+    LAB: Cross Site Scripting
+        Stage 1: Stored XSS
+        Stage 2: Block Stored XSS using Input Validation
+        Stage 3: Stored XSS Revisited
+        Stage 4: Block Stored XSS using Output Encoding
+        Stage 5: Reflected XSS
+        Stage 6: Block Reflected XSS
+    Stored XSS Attacks
+    Cross Site Request Forgery (CSRF)
+    Reflected XSS Attacks
+    HTTPOnly Test
+    Cross Site Tracing (XST) Attacks
+
+Denial of Service
+    Denial of Service from Multiple Logins
+
+Improper Error Handling
+    Fail Open Authentication Scheme
+
+Injection Flaws
+    Command Injection
+    Blind SQL Injection
+    Numeric SQL Injection
+    Log Spoofing
+    XPATH Injection
+    LAB: SQL Injection
+        Stage 1: String Injection
+        Stage 2: Parmeterized Query #1
+        Stage 3: Numeric SQL Injection
+        Stage 4: Parameterized Query #2
+    String SQL Injection
+    Database Backdoors
+
+Insecure Communications
+    Insecure Login
+
+Insecure Configuration
+    Forced Browsing
+
+Insecure Storage
+    Encoding Basics
+
+Parameter Tampering
+    Exploit Hidden Fields
+    Exploit Unchecked Emails
+    Bypass Client Side JavaScript Validation
+
+Session Management Flaws
+    Hijack a Session
+    Spoof an Authentication Cookie
+    Session Fixation
+
+Web Services
+    Create a SOAP Request
+    WSDL Scanning
+    Web Service SAX Injection
+    Web Service SQL Injection
+
+Admin Functions
+    Report Card
+
+Challenge
+
+
+
+
+
+
+
+
+
+
+
+-->

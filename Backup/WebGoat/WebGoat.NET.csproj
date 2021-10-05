@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <GenerateFullPaths>True</GenerateFullPaths>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83B04441-0F79-4424-AAD0-46E0C3CDDAA1}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OWASP.WebGoat.NET</RootNamespace>
+    <AssemblyName>DotNetGoat</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <EnvironmentVariables>
+      <EnvironmentVariables>
+        <Variable name="MONO_LOG_LEVEL" value="debug" />
+        <Variable name="MONO_LOG_MASK" value="dll" />
+        <Variable name="DYLD_FALLBACK_LIBRARY_PATH" value=".:/usr/local/lib:/lib:/usr/lib" />
+      </EnvironmentVariables>
+    </EnvironmentVariables>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>lib\mysql.data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>lib\mysql.data.entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.VisualStudio, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>lib\mysql.visualstudio.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>lib\mysql.web.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Data.Sqlite">
+        <HintPath>lib\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ForgotPassword.aspx" />
+    <Content Include="Content\UploadPathManipulation.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Themes\Default\left-menu.css" />
+    <Content Include="App_Themes\Default\grids.css" />
+    <Content Include="App_Themes\Default\Forms.css" />
+    <Content Include="App_Themes\Default\buttons.css" />
+    <Content Include="App_Themes\Default\BreadCrumb.css" />
+    <Content Include="App_Themes\Default\03.layout.css" />
+    <Content Include="App_Themes\Default\02.text.css" />
+    <Content Include="App_Themes\Default\01.960_24_col.css" />
+    <Content Include="App_Themes\Default\00.reset.css" />
+    <Content Include="App_Themes\Default\WebGoat.skin" />
+    <Content Include="App_Themes\Default\images\listing\asc.png" />
+    <Content Include="App_Themes\Default\images\listing\desc.png" />
+    <Content Include="App_Themes\Default\images\listing\ico-edit.png" />
+    <Content Include="App_Themes\Default\images\listing\ico-view.png" />
+    <Content Include="App_Themes\Default\images\listing\sort-regular.png" />
+    <Content Include="App_Themes\Default\images\extras\ico-delete.png" />
+    <Content Include="App_Themes\Default\images\extras\loader-modal.gif" />
+    <Content Include="App_Themes\Default\images\IconHome.gif" />
+    <Content Include="App_Themes\Default\images\blank.gif" />
+    <Content Include="App_Themes\Default\images\calendar.png" />
+    <Content Include="App_Themes\Default\images\Chevron.gif" />
+    <Content Include="App_Themes\Default\images\ChevronOverlay.png" />
+    <Content Include="App_Themes\Default\images\eisk-logo.png" />
+    <Content Include="Content\About.aspx" />
+    <Content Include="Content\BasicAuth.aspx" />
+    <Content Include="Content\Challenge1.aspx" />
+    <Content Include="Content\Challenge2.aspx" />
+    <Content Include="Content\Challenge3.aspx" />
+    <Content Include="Content\ChangePwd.aspx" />
+    <Content Include="Content\ClientSideStorage.aspx" />
+    <Content Include="Content\CommandInjection.aspx" />
+    <Content Include="Content\CSRFDemo.aspx" />
+    <Content Include="Content\DomXSS.aspx" />
+    <Content Include="Content\EmbeddedError.aspx" />
+    <Content Include="Content\EncryptVSEncode.aspx" />
+    <Content Include="Content\Error.aspx" />
+    <Content Include="Content\ExploitDebug.aspx" />
+    <Content Include="Content\FlashScripting.aspx" />
+    <Content Include="Content\ForcedBrowsing.aspx" />
+    <Content Include="Content\FormBasedAuth.aspx" />
+    <Content Include="Content\Global.asax" />
+    <Content Include="Content\HiddenField.aspx" />
+    <Content Include="Content\InjectionExercise.aspx" />
+    <Content Include="Content\jQueryInjection.aspx" />
+    <Content Include="Content\XSSExercise.aspx" />
+    <Content Include="Content\WSDL.aspx" />
+    <Content Include="Content\WSAttacks.aspx" />
+    <Content Include="Content\JSONInjection.aspx" />
+    <Content Include="Content\LogInjection.aspx" />
+    <Content Include="Content\LogoutIssues.aspx" />
+    <Content Include="Content\Worm.aspx" />
+    <Content Include="Content\Viewstate.aspx" />
+    <Content Include="Content\StoredXSS.aspx" />
+    <Content Include="Content\SQLInjectionDiscovery.aspx" />
+    <Content Include="Content\SQLInjection.aspx" />
+    <Content Include="Content\SessionExercise.aspx" />
+    <Content Include="Content\SessionFixation.aspx" />
+    <Content Include="Content\SamplePage.aspx" />
+    <Content Include="Content\ReflectedXSS.aspx" />
+    <Content Include="Content\ParamTampering.aspx" />
+    <Content Include="Content\ResponseSplitting.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="App_Themes\Default\images\logo.png" />
+    <Content Include="App_Themes\Default\images\logo2.png" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Content\PathManipulation.aspx" />
+    <Content Include="Content\PwdComplexity.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="RebuildDatabase.aspx" />
+    <Content Include="AddNewUser.aspx" />
+    <Content Include="WebGoatCoins\Catalog.aspx" />
+    <Content Include="WebGoatCoins\ChangePassword.aspx" />
+    <Content Include="WebGoatCoins\CustomerLogin.aspx" />
+    <Content Include="WebGoatCoins\CustomerSettings.aspx" />
+    <Content Include="WebGoatCoins\Debug.aspx" />
+    <Content Include="WebGoatCoins\ForgotPassword.aspx" />
+    <Content Include="WebGoatCoins\images\logos\alphacognac.png" />
+    <Content Include="WebGoatCoins\images\logos\americanbankinc.png" />
+    <Content Include="WebGoatCoins\images\logos\amicacoinsco.png" />
+    <Content Include="WebGoatCoins\images\logos\angresellers.png" />
+    <Content Include="WebGoatCoins\images\logos\annasdecorations.png" />
+    <Content Include="WebGoatCoins\images\logos\antondesigns.png" />
+    <Content Include="WebGoatCoins\images\logos\asianshoppingnetwork.png" />
+    <Content Include="WebGoatCoins\images\logos\asiantreasures.png" />
+    <Content Include="WebGoatCoins\images\logos\ateliergraphique.png" />
+    <Content Include="WebGoatCoins\images\logos\australiancollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\australiancollectors.png" />
+    <Content Include="WebGoatCoins\images\logos\australiangoldnetwork.png" />
+    <Content Include="WebGoatCoins\images\logos\avstores.png" />
+    <Content Include="WebGoatCoins\images\logos\baanepreciousimports.png" />
+    <Content Include="WebGoatCoins\images\logos\bavariancollectablesimports.png" />
+    <Content Include="WebGoatCoins\images\logos\bgecollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\blauerseemetals.png" />
+    <Content Include="WebGoatCoins\images\logos\boardscoinsco.png" />
+    <Content Include="WebGoatCoins\images\logos\cafimports.png" />
+    <Content Include="WebGoatCoins\images\logos\cambridgecollectablesco.png" />
+    <Content Include="WebGoatCoins\images\logos\canadiangoldexchangenetwork.png" />
+    <Content Include="WebGoatCoins\images\logos\classicgoldideas.png" />
+    <Content Include="WebGoatCoins\images\logos\classiclegendsinc.png" />
+    <Content Include="WebGoatCoins\images\logos\clovercollections.png" />
+    <Content Include="WebGoatCoins\images\logos\coinageandthingsco.png" />
+    <Content Include="WebGoatCoins\images\logos\coinrmintdistributorsinc.png" />
+    <Content Include="WebGoatCoins\images\logos\coins4grownupscom.png" />
+    <Content Include="WebGoatCoins\images\logos\coinsoffinland.png" />
+    <Content Include="WebGoatCoins\images\logos\collectablepreciousdesignsco.png" />
+    <Content Include="WebGoatCoins\images\logos\collectablesforlessinc.png" />
+    <Content Include="WebGoatCoins\images\logos\corporategoldideasco.png" />
+    <Content Include="WebGoatCoins\images\logos\corridametalsreplicas.png" />
+    <Content Include="WebGoatCoins\images\logos\cramerspezialitten.png" />
+    <Content Include="WebGoatCoins\images\logos\cruzsonsco.png" />
+    <Content Include="WebGoatCoins\images\logos\daedalusdesignsimports.png" />
+    <Content Include="WebGoatCoins\images\logos\danishwholesaleimports.png" />
+    <Content Include="WebGoatCoins\images\logos\derhundimports.png" />
+    <Content Include="WebGoatCoins\images\logos\doubledeckergoldstores.png" />
+    <Content Include="WebGoatCoins\images\logos\downundercoinage.png" />
+    <Content Include="WebGoatCoins\images\logos\dragoncoinage.png" />
+    <Content Include="WebGoatCoins\images\logos\enacodistributors.png" />
+    <Content Include="WebGoatCoins\images\logos\euroshoppingchannel.png" />
+    <Content Include="WebGoatCoins\images\logos\extremedeskdecorations.png" />
+    <Content Include="WebGoatCoins\images\logos\feueronlinestores.png" />
+    <Content Include="WebGoatCoins\images\logos\frankengold.png" />
+    <Content Include="WebGoatCoins\images\logos\fraudacollezione.png" />
+    <Content Include="WebGoatCoins\images\logos\fungoldideascom.png" />
+    <Content Include="WebGoatCoins\images\logos\goatgoldstore.png" />
+    <Content Include="WebGoatCoins\images\logos\gold4allagescom.png" />
+    <Content Include="WebGoatCoins\images\logos\goldbymailcouk.png" />
+    <Content Include="WebGoatCoins\images\logos\golddepotinc.png" />
+    <Content Include="WebGoatCoins\images\logos\goldforhimcom.png" />
+    <Content Include="WebGoatCoins\images\logos\goldideascorp.png" />
+    <Content Include="WebGoatCoins\images\logos\handjigoldco.png" />
+    <Content Include="WebGoatCoins\images\logos\havelzbyszekco.png" />
+    <Content Include="WebGoatCoins\images\logos\heintzecollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\herkkugold.png" />
+    <Content Include="WebGoatCoins\images\logos\iberiagoldimports.png" />
+    <Content Include="WebGoatCoins\images\logos\kellysgoldshop.png" />
+    <Content Include="WebGoatCoins\images\logos\kingkongcollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\kommissionmetals.png" />
+    <Content Include="WebGoatCoins\images\logos\kremlincollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\lacornedabondance.png" />
+    <Content Include="WebGoatCoins\images\logos\landofcoinsinc.png" />
+    <Content Include="WebGoatCoins\images\logos\larochellegold.png" />
+    <Content Include="WebGoatCoins\images\logos\lisboacoinage.png" />
+    <Content Include="WebGoatCoins\images\logos\lordinecoinage.png" />
+    <Content Include="WebGoatCoins\images\logos\lyoncoinage.png" />
+    <Content Include="WebGoatCoins\images\logos\marseillepreciousmetals.png" />
+    <Content Include="WebGoatCoins\images\logos\martasreplicasco.png" />
+    <Content Include="WebGoatCoins\images\logos\menrusretailers.png" />
+    <Content Include="WebGoatCoins\images\logos\messnershoppingnetwork.png" />
+    <Content Include="WebGoatCoins\images\logos\metalsassociscie.png" />
+    <Content Include="WebGoatCoins\images\logos\metalscanalpetit.png" />
+    <Content Include="WebGoatCoins\images\logos\metalscoinclassicsinc.png" />
+    <Content Include="WebGoatCoins\images\logos\microsilverinc.png" />
+    <Content Include="WebGoatCoins\images\logos\mitvergngenco.png" />
+    <Content Include="WebGoatCoins\images\logos\musclecoinsinc.png" />
+    <Content Include="WebGoatCoins\images\logos\natrlichmetals.png" />
+    <Content Include="WebGoatCoins\images\logos\norwaygoldbymail.png" />
+    <Content Include="WebGoatCoins\images\logos\onlinepreciouscollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\onlinepremiumcreationsco.png" />
+    <Content Include="WebGoatCoins\images\logos\osakacoinageco.png" />
+    <Content Include="WebGoatCoins\images\logos\oulutoysupplies.png" />
+    <Content Include="WebGoatCoins\images\logos\petitmetals.png" />
+    <Content Include="WebGoatCoins\images\logos\portoimportsco.png" />
+    <Content Include="WebGoatCoins\images\logos\preciouscaravy.png" />
+    <Content Include="WebGoatCoins\images\logos\preciousclassics.png" />
+    <Content Include="WebGoatCoins\images\logos\preciouscollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\preciouscreationsltd.png" />
+    <Content Include="WebGoatCoins\images\logos\preciousgolddistributorsltd.png" />
+    <Content Include="WebGoatCoins\images\logos\preciousmetalsco.png" />
+    <Content Include="WebGoatCoins\images\logos\preciousmetalswerke.png" />
+    <Content Include="WebGoatCoins\images\logos\premiumclassicsinc.png" />
+    <Content Include="WebGoatCoins\images\logos\premiumcollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\qubechomeshoppingnetwork.png" />
+    <Content Include="WebGoatCoins\images\logos\raananstores.png" />
+    <Content Include="WebGoatCoins\images\logos\reimscollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\rovelligold.png" />
+    <Content Include="WebGoatCoins\images\logos\royalcanadiancollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\royalebelge.png" />
+    <Content Include="WebGoatCoins\images\logos\salzburgcollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\sardistributors.png" />
+    <Content Include="WebGoatCoins\images\logos\saveleyhenriot.png" />
+    <Content Include="WebGoatCoins\images\logos\scandinaviangoldideas.png" />
+    <Content Include="WebGoatCoins\images\logos\schuylerimports.png" />
+    <Content Include="WebGoatCoins\images\logos\signalcollectiblesltd.png" />
+    <Content Include="WebGoatCoins\images\logos\stuttgartcollectableexchange.png" />
+    <Content Include="WebGoatCoins\images\logos\stylishdeskdecors.png" />
+    <Content Include="WebGoatCoins\images\logos\suominencoinage.png" />
+    <Content Include="WebGoatCoins\images\logos\supersilverinc.png" />
+    <Content Include="WebGoatCoins\images\logos\technicsstoresinc.png" />
+    <Content Include="WebGoatCoins\images\logos\teknicollectablesinc.png" />
+    <Content Include="WebGoatCoins\images\logos\thesharpgoldwarehouse.png" />
+    <Content Include="WebGoatCoins\images\logos\tokyocollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\tomsspezialitten.png" />
+    <Content Include="WebGoatCoins\images\logos\ukcollectables.png" />
+    <Content Include="WebGoatCoins\images\logos\vidasport.png" />
+    <Content Include="WebGoatCoins\images\logos\vitachromeinc.png" />
+    <Content Include="WebGoatCoins\images\logos\volvomodelreplicas.png" />
+    <Content Include="WebGoatCoins\images\logos\warburgexchange.png" />
+    <Content Include="WebGoatCoins\images\logos\westcoastcollectablesco.png" />
+    <Content Include="WebGoatCoins\images\products\07AEPltProofRevThumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2008_AESilverProof_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2008_AE_Plat_Bullion_Thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2009WHHarrisonObvthumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2010MFillmore_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2010_AEGoldProof_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2011-Gold-Eagle-unc-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2011-SilverEagle-unc-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2011-Unc-Gettysburg_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2011AJohnson_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2011_AE_PlatProof_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2012-ATB-El-Yunque_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2012-Gold-Eagle-bullion-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2012-Natl-Infantry-Commem-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2012-Proof-HalfDollar-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2012-Proof-Nickel-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\2012-SilverEagle-bullion-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\21_Arthur_Pre1_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\AEPlatUnc_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\EJohnson_Proof-thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\HOTSPRINGS_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\SSB_Gold_thumb_LineArt.jpg" />
+    <Content Include="WebGoatCoins\images\products\stacked-coins2_thumb.jpg" />
+    <Content Include="WebGoatCoins\images\products\thumbBuffaloBullion.jpg" />
+    <Content Include="WebGoatCoins\images\products\thumbJMonroe.jpg" />
+    <Content Include="WebGoatCoins\images\products\thumbWashington.jpg" />
+    <Content Include="WebGoatCoins\Logout.aspx" />
+    <Content Include="WebGoatCoins\MainPage.aspx" />
+    <Content Include="WebGoatCoins\Orders.aspx" />
+    <Content Include="ProxySetup.aspx" />
+    <Content Include="App_Themes\Default\images\header-grad.png" />
+    <Content Include="Resources\client-scripts\jquery-1.3.2.min.js" />
+    <Content Include="Resources\client-scripts\jquery.autocomplete-min.js" />
+    <Content Include="Resources\client-scripts\jquery.autocomplete.js" />
+    <Content Include="Resources\images\moreinfo.png" />
+    <Content Include="Resources\images\moreinfo1.png" />
+    <Content Include="Resources\images\moreinfo2.png" />
+    <Content Include="Resources\jquery-libs\autocomplete\images\shadow.png" />
+    <Content Include="Resources\jquery-libs\autocomplete\styles.css" />
+    <Content Include="Resources\Master-Pages\Site.Master" />
+    <Content Include="Resources\client-scripts\menu.js" />
+    <Content Include="Resources\client-scripts\jquery-1.4.2.min.js" />
+    <Content Include="Resources\client-scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Resources\jquery-ui\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Resources\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Resources\jquery-ui\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Resources\jquery-ui\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Resources\jquery-ui\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Resources\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Resources\jquery-ui\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Resources\images\infrared_logo.png" />
+    <Content Include="Resources\client-scripts\jquery-1.6.2.min.js" />
+    <Content Include="WebGoatCoins\Autocomplete.ashx" />
+    <Content Include="DB_Scripts\logos\alphacognac.png" />
+    <Content Include="DB_Scripts\logos\americanbankinc.png" />
+    <Content Include="DB_Scripts\logos\amicacoinsco.png" />
+    <Content Include="DB_Scripts\logos\angresellers.png" />
+    <Content Include="DB_Scripts\logos\annasdecorations.png" />
+    <Content Include="DB_Scripts\logos\antondesigns.png" />
+    <Content Include="DB_Scripts\logos\asianshoppingnetwork.png" />
+    <Content Include="DB_Scripts\logos\asiantreasures.png" />
+    <Content Include="DB_Scripts\logos\ateliergraphique.png" />
+    <Content Include="DB_Scripts\logos\australiancollectables.png" />
+    <Content Include="DB_Scripts\logos\australiancollectors.png" />
+    <Content Include="DB_Scripts\logos\australiangoldnetwork.png" />
+    <Content Include="DB_Scripts\logos\avstores.png" />
+    <Content Include="DB_Scripts\logos\baanepreciousimports.png" />
+    <Content Include="DB_Scripts\logos\bavariancollectablesimports.png" />
+    <Content Include="DB_Scripts\logos\bgecollectables.png" />
+    <Content Include="DB_Scripts\logos\blauerseemetals.png" />
+    <Content Include="DB_Scripts\logos\boardscoinsco.png" />
+    <Content Include="DB_Scripts\logos\cafimports.png" />
+    <Content Include="DB_Scripts\logos\cambridgecollectablesco.png" />
+    <Content Include="DB_Scripts\logos\canadiangoldexchangenetwork.png" />
+    <Content Include="DB_Scripts\logos\classicgoldideas.png" />
+    <Content Include="DB_Scripts\logos\classiclegendsinc.png" />
+    <Content Include="DB_Scripts\logos\clovercollections.png" />
+    <Content Include="DB_Scripts\logos\coinageandthingsco.png" />
+    <Content Include="DB_Scripts\logos\coinrmintdistributorsinc.png" />
+    <Content Include="DB_Scripts\logos\coins4grownupscom.png" />
+    <Content Include="DB_Scripts\logos\coinsoffinland.png" />
+    <Content Include="DB_Scripts\logos\collectablepreciousdesignsco.png" />
+    <Content Include="DB_Scripts\logos\collectablesforlessinc.png" />
+    <Content Include="DB_Scripts\logos\corporategoldideasco.png" />
+    <Content Include="DB_Scripts\logos\corridametalsreplicas.png" />
+    <Content Include="DB_Scripts\logos\cramerspezialitten.png" />
+    <Content Include="DB_Scripts\logos\cruzsonsco.png" />
+    <Content Include="DB_Scripts\logos\daedalusdesignsimports.png" />
+    <Content Include="DB_Scripts\logos\danishwholesaleimports.png" />
+    <Content Include="DB_Scripts\logos\derhundimports.png" />
+    <Content Include="DB_Scripts\logos\doubledeckergoldstores.png" />
+    <Content Include="DB_Scripts\logos\downundercoinage.png" />
+    <Content Include="DB_Scripts\logos\dragoncoinage.png" />
+    <Content Include="DB_Scripts\logos\enacodistributors.png" />
+    <Content Include="DB_Scripts\logos\euroshoppingchannel.png" />
+    <Content Include="DB_Scripts\logos\extremedeskdecorations.png" />
+    <Content Include="DB_Scripts\logos\feueronlinestores.png" />
+    <Content Include="DB_Scripts\logos\frankengold.png" />
+    <Content Include="DB_Scripts\logos\fraudacollezione.png" />
+    <Content Include="DB_Scripts\logos\fungoldideascom.png" />
+    <Content Include="DB_Scripts\logos\goatgoldstore.png" />
+    <Content Include="DB_Scripts\logos\gold4allagescom.png" />
+    <Content Include="DB_Scripts\logos\goldbymailcouk.png" />
+    <Content Include="DB_Scripts\logos\golddepotinc.png" />
+    <Content Include="DB_Scripts\logos\goldforhimcom.png" />
+    <Content Include="DB_Scripts\logos\goldideascorp.png" />
+    <Content Include="DB_Scripts\logos\handjigoldco.png" />
+    <Content Include="DB_Scripts\logos\havelzbyszekco.png" />
+    <Content Include="DB_Scripts\logos\heintzecollectables.png" />
+    <Content Include="DB_Scripts\logos\herkkugold.png" />
+    <Content Include="DB_Scripts\logos\iberiagoldimports.png" />
+    <Content Include="DB_Scripts\logos\kellysgoldshop.png" />
+    <Content Include="DB_Scripts\logos\kingkongcollectables.png" />
+    <Content Include="DB_Scripts\logos\kommissionmetals.png" />
+    <Content Include="DB_Scripts\logos\kremlincollectables.png" />
+    <Content Include="DB_Scripts\logos\lacornedabondance.png" />
+    <Content Include="DB_Scripts\logos\landofcoinsinc.png" />
+    <Content Include="DB_Scripts\logos\larochellegold.png" />
+    <Content Include="DB_Scripts\logos\lisboacoinage.png" />
+    <Content Include="DB_Scripts\logos\lordinecoinage.png" />
+    <Content Include="DB_Scripts\logos\lyoncoinage.png" />
+    <Content Include="DB_Scripts\logos\marseillepreciousmetals.png" />
+    <Content Include="DB_Scripts\logos\martasreplicasco.png" />
+    <Content Include="DB_Scripts\logos\menrusretailers.png" />
+    <Content Include="DB_Scripts\logos\messnershoppingnetwork.png" />
+    <Content Include="DB_Scripts\logos\metalsassociscie.png" />
+    <Content Include="DB_Scripts\logos\metalscanalpetit.png" />
+    <Content Include="DB_Scripts\logos\metalscoinclassicsinc.png" />
+    <Content Include="DB_Scripts\logos\microsilverinc.png" />
+    <Content Include="DB_Scripts\logos\mitvergngenco.png" />
+    <Content Include="DB_Scripts\logos\musclecoinsinc.png" />
+    <Content Include="DB_Scripts\logos\natrlichmetals.png" />
+    <Content Include="DB_Scripts\logos\norwaygoldbymail.png" />
+    <Content Include="DB_Scripts\logos\onlinepreciouscollectables.png" />
+    <Content Include="DB_Scripts\logos\onlinepremiumcreationsco.png" />
+    <Content Include="DB_Scripts\logos\osakacoinageco.png" />
+    <Content Include="DB_Scripts\logos\oulutoysupplies.png" />
+    <Content Include="DB_Scripts\logos\petitmetals.png" />
+    <Content Include="DB_Scripts\logos\portoimportsco.png" />
+    <Content Include="DB_Scripts\logos\preciouscaravy.png" />
+    <Content Include="DB_Scripts\logos\preciousclassics.png" />
+    <Content Include="DB_Scripts\logos\preciouscollectables.png" />
+    <Content Include="DB_Scripts\logos\preciouscreationsltd.png" />
+    <Content Include="DB_Scripts\logos\preciousgolddistributorsltd.png" />
+    <Content Include="DB_Scripts\logos\preciousmetalsco.png" />
+    <Content Include="DB_Scripts\logos\preciousmetalswerke.png" />
+    <Content Include="DB_Scripts\logos\premiumclassicsinc.png" />
+    <Content Include="DB_Scripts\logos\premiumcollectables.png" />
+    <Content Include="DB_Scripts\logos\qubechomeshoppingnetwork.png" />
+    <Content Include="DB_Scripts\logos\raananstores.png" />
+    <Content Include="DB_Scripts\logos\reimscollectables.png" />
+    <Content Include="DB_Scripts\logos\rovelligold.png" />
+    <Content Include="DB_Scripts\logos\royalcanadiancollectables.png" />
+    <Content Include="DB_Scripts\logos\royalebelge.png" />
+    <Content Include="DB_Scripts\logos\salzburgcollectables.png" />
+    <Content Include="DB_Scripts\logos\sardistributors.png" />
+    <Content Include="DB_Scripts\logos\saveleyhenriot.png" />
+    <Content Include="DB_Scripts\logos\scandinaviangoldideas.png" />
+    <Content Include="DB_Scripts\logos\schuylerimports.png" />
+    <Content Include="DB_Scripts\logos\signalcollectiblesltd.png" />
+    <Content Include="DB_Scripts\logos\stuttgartcollectableexchange.png" />
+    <Content Include="DB_Scripts\logos\stylishdeskdecors.png" />
+    <Content Include="DB_Scripts\logos\suominencoinage.png" />
+    <Content Include="DB_Scripts\logos\supersilverinc.png" />
+    <Content Include="DB_Scripts\logos\technicsstoresinc.png" />
+    <Content Include="DB_Scripts\logos\teknicollectablesinc.png" />
+    <Content Include="DB_Scripts\logos\thesharpgoldwarehouse.png" />
+    <Content Include="DB_Scripts\logos\tokyocollectables.png" />
+    <Content Include="DB_Scripts\logos\tomsspezialitten.png" />
+    <Content Include="DB_Scripts\logos\ukcollectables.png" />
+    <Content Include="DB_Scripts\logos\vidasport.png" />
+    <Content Include="DB_Scripts\logos\vitachromeinc.png" />
+    <Content Include="DB_Scripts\logos\volvomodelreplicas.png" />
+    <Content Include="DB_Scripts\logos\warburgexchange.png" />
+    <Content Include="DB_Scripts\logos\westcoastcollectablesco.png" />
+    <Content Include="DB_Scripts\products\07AEPltProofRevThumb.jpg" />
+    <Content Include="DB_Scripts\products\2008_AESilverProof_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2008_AE_Plat_Bullion_Thumb.jpg" />
+    <Content Include="DB_Scripts\products\2009WHHarrisonObvthumb.jpg" />
+    <Content Include="DB_Scripts\products\2010MFillmore_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2010_AEGoldProof_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2011-Gold-Eagle-unc-thumb.jpg" />
+    <Content Include="DB_Scripts\products\2011-SilverEagle-unc-thumb.jpg" />
+    <Content Include="DB_Scripts\products\2011-Unc-Gettysburg_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2011AJohnson_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2011_AE_PlatProof_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2012-ATB-El-Yunque_thumb.jpg" />
+    <Content Include="DB_Scripts\products\2012-Gold-Eagle-bullion-thumb.jpg" />
+    <Content Include="DB_Scripts\products\2012-Natl-Infantry-Commem-thumb.jpg" />
+    <Content Include="DB_Scripts\products\2012-Proof-HalfDollar-thumb.jpg" />
+    <Content Include="DB_Scripts\products\2012-Proof-Nickel-thumb.jpg" />
+    <Content Include="DB_Scripts\products\2012-SilverEagle-bullion-thumb.jpg" />
+    <Content Include="DB_Scripts\products\21_Arthur_Pre1_thumb.jpg" />
+    <Content Include="DB_Scripts\products\AEPlatUnc_thumb.jpg" />
+    <Content Include="DB_Scripts\products\EJohnson_Proof-thumb.jpg" />
+    <Content Include="DB_Scripts\products\HOTSPRINGS_thumb.jpg" />
+    <Content Include="DB_Scripts\products\SSB_Gold_thumb_LineArt.jpg" />
+    <Content Include="DB_Scripts\products\stacked-coins2_thumb.jpg" />
+    <Content Include="DB_Scripts\products\thumbBuffaloBullion.jpg" />
+    <Content Include="DB_Scripts\products\thumbJMonroe.jpg" />
+    <Content Include="DB_Scripts\products\thumbWashington.jpg" />
+    <Content Include="Content\Trace.aspx" />
+    <Content Include="Content\XPathInjection.aspx" />
+    <Content Include="Content\HeaderInjection.aspx" />
+    <Content Include="Content\MessageDigest.aspx" />
+    <Content Include="Content\XMLInjection.aspx" />
+    <Content Include="Content\ReadlineDoS.aspx" />
+    <Content Include="Content\RegexDoS.aspx" />
+    <Content Include="Content\Unsafe.aspx" />
+    <Content Include="Content\Random.aspx" />
+    <Content Include="Content\VerbTampering.aspx" />
+    <Content Include="Content\VerbTamperingAttack.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\CustomerLoginData.cs" />
+    <Compile Include="Content\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\UploadPathManipulation.aspx.cs">
+      <DependentUpon>UploadPathManipulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\UploadPathManipulation.aspx.designer.cs">
+      <DependentUpon>UploadPathManipulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Content\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\BasicAuth.aspx.cs">
+      <DependentUpon>BasicAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\BasicAuth.aspx.designer.cs">
+      <DependentUpon>BasicAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge1.aspx.cs">
+      <DependentUpon>Challenge1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Challenge1.aspx.designer.cs">
+      <DependentUpon>Challenge1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge2.aspx.cs">
+      <DependentUpon>Challenge2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Challenge2.aspx.designer.cs">
+      <DependentUpon>Challenge2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Challenge3.aspx.cs">
+      <DependentUpon>Challenge3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Challenge3.aspx.designer.cs">
+      <DependentUpon>Challenge3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ChangePwd.aspx.cs">
+      <DependentUpon>ChangePwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ChangePwd.aspx.designer.cs">
+      <DependentUpon>ChangePwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ClientSideStorage.aspx.cs">
+      <DependentUpon>ClientSideStorage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ClientSideStorage.aspx.designer.cs">
+      <DependentUpon>ClientSideStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\CommandInjection.aspx.cs">
+      <DependentUpon>CommandInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\CommandInjection.aspx.designer.cs">
+      <DependentUpon>CommandInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dbtest.aspx.cs">
+      <DependentUpon>RebuildDatabase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dbtest.aspx.designer.cs">
+      <DependentUpon>RebuildDatabase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\CSRFDemo.aspx.cs">
+      <DependentUpon>CSRFDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\CSRFDemo.aspx.designer.cs">
+      <DependentUpon>CSRFDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\DomXSS.aspx.cs">
+      <DependentUpon>DomXSS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\DomXSS.aspx.designer.cs">
+      <DependentUpon>DomXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EmbeddedError.aspx.cs">
+      <DependentUpon>EmbeddedError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\EmbeddedError.aspx.designer.cs">
+      <DependentUpon>EmbeddedError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\EncryptVSEncode.aspx.cs">
+      <DependentUpon>EncryptVSEncode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\EncryptVSEncode.aspx.designer.cs">
+      <DependentUpon>EncryptVSEncode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ExploitDebug.aspx.cs">
+      <DependentUpon>ExploitDebug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ExploitDebug.aspx.designer.cs">
+      <DependentUpon>ExploitDebug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FlashScripting.aspx.cs">
+      <DependentUpon>FlashScripting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\FlashScripting.aspx.designer.cs">
+      <DependentUpon>FlashScripting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ForcedBrowsing.aspx.cs">
+      <DependentUpon>ForcedBrowsing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ForcedBrowsing.aspx.designer.cs">
+      <DependentUpon>ForcedBrowsing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FormBasedAuth.aspx.cs">
+      <DependentUpon>FormBasedAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\FormBasedAuth.aspx.designer.cs">
+      <DependentUpon>FormBasedAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HiddenField.aspx.cs">
+      <DependentUpon>HiddenField.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\HiddenField.aspx.designer.cs">
+      <DependentUpon>HiddenField.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\InjectionExercise.aspx.cs">
+      <DependentUpon>InjectionExercise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\InjectionExercise.aspx.designer.cs">
+      <DependentUpon>InjectionExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\jQueryInjection.aspx.cs">
+      <DependentUpon>jQueryInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\jQueryInjection.aspx.designer.cs">
+      <DependentUpon>jQueryInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XSSExercise.aspx.cs">
+      <DependentUpon>XSSExercise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\XSSExercise.aspx.designer.cs">
+      <DependentUpon>XSSExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\WSDL.aspx.cs">
+      <DependentUpon>WSDL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\WSDL.aspx.designer.cs">
+      <DependentUpon>WSDL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\WSAttacks.aspx.cs">
+      <DependentUpon>WSAttacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\WSAttacks.aspx.designer.cs">
+      <DependentUpon>WSAttacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\JSONInjection.aspx.cs">
+      <DependentUpon>JSONInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\JSONInjection.aspx.designer.cs">
+      <DependentUpon>JSONInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\LogInjection.aspx.cs">
+      <DependentUpon>LogInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\LogInjection.aspx.designer.cs">
+      <DependentUpon>LogInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\LogoutIssues.aspx.cs">
+      <DependentUpon>LogoutIssues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\LogoutIssues.aspx.designer.cs">
+      <DependentUpon>LogoutIssues.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Worm.aspx.cs">
+      <DependentUpon>Worm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Worm.aspx.designer.cs">
+      <DependentUpon>Worm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Viewstate.aspx.cs">
+      <DependentUpon>Viewstate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\Viewstate.aspx.designer.cs">
+      <DependentUpon>Viewstate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\StoredXSS.aspx.cs">
+      <DependentUpon>StoredXSS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\StoredXSS.aspx.designer.cs">
+      <DependentUpon>StoredXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SQLInjectionDiscovery.aspx.cs">
+      <DependentUpon>SQLInjectionDiscovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\SQLInjectionDiscovery.aspx.designer.cs">
+      <DependentUpon>SQLInjectionDiscovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SQLInjection.aspx.cs">
+      <DependentUpon>SQLInjection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\SQLInjection.aspx.designer.cs">
+      <DependentUpon>SQLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SessionExercise.aspx.cs">
+      <DependentUpon>SessionExercise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\SessionExercise.aspx.designer.cs">
+      <DependentUpon>SessionExercise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SessionFixation.aspx.cs">
+      <DependentUpon>SessionFixation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\SessionFixation.aspx.designer.cs">
+      <DependentUpon>SessionFixation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\SamplePage.aspx.cs">
+      <DependentUpon>SamplePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\SamplePage.aspx.designer.cs">
+      <DependentUpon>SamplePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReflectedXSS.aspx.cs">
+      <DependentUpon>ReflectedXSS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ReflectedXSS.aspx.designer.cs">
+      <DependentUpon>ReflectedXSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ParamTampering.aspx.cs">
+      <DependentUpon>ParamTampering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ParamTampering.aspx.designer.cs">
+      <DependentUpon>ParamTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ResponseSplitting.aspx.cs">
+      <DependentUpon>ResponseSplitting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\ResponseSplitting.aspx.designer.cs">
+      <DependentUpon>ResponseSplitting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PathManipulation.aspx.cs">
+      <DependentUpon>PathManipulation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\PathManipulation.aspx.designer.cs">
+      <DependentUpon>PathManipulation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PwdComplexity.aspx.cs">
+      <DependentUpon>PwdComplexity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewUser.aspx.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewUser.aspx.designer.cs">
+      <DependentUpon>AddNewUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Autocomplete.ashx.cs">
+      <DependentUpon>Autocomplete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Catalog.aspx.cs">
+      <DependentUpon>Catalog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Catalog.aspx.designer.cs">
+      <DependentUpon>Catalog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\CustomerLogin.aspx.cs">
+      <DependentUpon>CustomerLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\CustomerLogin.aspx.designer.cs">
+      <DependentUpon>CustomerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\CustomerSettings.aspx.cs">
+      <DependentUpon>CustomerSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\CustomerSettings.aspx.designer.cs">
+      <DependentUpon>CustomerSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Debug.aspx.cs">
+      <DependentUpon>Debug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Debug.aspx.designer.cs">
+      <DependentUpon>Debug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebGoatCoins\ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebGoatCoins\ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProxySetup.aspx.cs">
+      <DependentUpon>ProxySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProxySetup.aspx.designer.cs">
+      <DependentUpon>ProxySetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Master-Pages\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Resources\Master-Pages\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DB\SqliteDbProvider.cs" />
+    <Compile Include="App_Code\DB\MySqlDbProvider.cs" />
+    <Compile Include="App_Code\Encoder.cs" />
+    <Compile Include="App_Code\DB\DbProviderFactory.cs" />
+    <Compile Include="App_Code\Settings.cs" />
+    <Compile Include="App_Code\CookieManager.cs" />
+    <Compile Include="App_Code\DB\DummyDbProvider.cs" />
+    <Compile Include="App_Code\ConfigFile.cs" />
+    <Compile Include="App_Code\DB\DbConstants.cs" />
+    <Compile Include="App_Code\Util.cs" />
+    <Compile Include="Content\Trace.aspx.cs">
+      <DependentUpon>Trace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Trace.aspx.designer.cs">
+      <DependentUpon>Trace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XPathInjection.aspx.cs">
+      <DependentUpon>XPathInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XPathInjection.aspx.designer.cs">
+      <DependentUpon>XPathInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HeaderInjection.aspx.cs">
+      <DependentUpon>HeaderInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\HeaderInjection.aspx.designer.cs">
+      <DependentUpon>HeaderInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\MessageDigest.aspx.cs">
+      <DependentUpon>MessageDigest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\MessageDigest.aspx.designer.cs">
+      <DependentUpon>MessageDigest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XMLInjection.aspx.cs">
+      <DependentUpon>XMLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\XMLInjection.aspx.designer.cs">
+      <DependentUpon>XMLInjection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WeakMessageDigest.cs" />
+    <Compile Include="Content\ReadlineDoS.aspx.cs">
+      <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ReadlineDoS.aspx.designer.cs">
+      <DependentUpon>ReadlineDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\RegexDoS.aspx.cs">
+      <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\RegexDoS.aspx.designer.cs">
+      <DependentUpon>RegexDoS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Unsafe.aspx.cs">
+      <DependentUpon>Unsafe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Unsafe.aspx.designer.cs">
+      <DependentUpon>Unsafe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Random.aspx.cs">
+      <DependentUpon>Random.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Random.aspx.designer.cs">
+      <DependentUpon>Random.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\WeakRandom.cs" />
+    <Compile Include="Content\VerbTampering.aspx.cs">
+      <DependentUpon>VerbTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTampering.aspx.designer.cs">
+      <DependentUpon>VerbTampering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTamperingAttack.aspx.cs">
+      <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\VerbTamperingAttack.aspx.designer.cs">
+      <DependentUpon>VerbTamperingAttack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DB\IDbProvider.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
+        <Policies>
+          <TextStylePolicy inheritsSet="null" scope="application/x-aspx" />
+          <TextStylePolicy inheritsSet="null" scope="application/x-asax" />
+          <TextStylePolicy inheritsSet="null" scope="text/css" />
+          <TextStylePolicy inheritsSet="null" scope="application/config+xml" />
+          <XmlFormattingPolicy inheritsSet="null" scope="application/config+xml" />
+          <TextStylePolicy inheritsSet="null" scope="application/xml" />
+          <XmlFormattingPolicy inheritsSet="Mono" inheritsScope="application/xml" scope="application/xml" />
+          <TextStylePolicy inheritsSet="null" scope="application/javascript" />
+          <TextStylePolicy inheritsSet="null" scope="application/x-master-page" />
+          <TextStylePolicy inheritsSet="null" scope="application/x-ashx" />
+        </Policies>
+        <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="WebGoatCoins\uploads\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Code\DB\" />
+    <Folder Include="Configuration\" />
+    <Folder Include="DB_Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebGoatCoins\ProductDetails.aspx" />
+    <Content Include="WebGoatCoins\Web.config" />
+    <None Include="Downloads\authentication.pdf" />
+    <None Include="Downloads\csrf.pdf" />
+    <None Include="Downloads\transport_layer.pdf" />
+    <None Include="Downloads\architecture.pdf" />
+    <None Include="TODO.txt" />
+    <None Include="DB_Scripts\create_webgoatcoins.sql" />
+    <None Include="DB_Scripts\load_webgoatcoins.sql" />
+    <None Include="DB_Scripts\load_webgoatcoins_sqlite3.sql" />
+    <None Include="DB_Scripts\datafiles\categories.txt" />
+    <None Include="DB_Scripts\datafiles\customerlogin.txt" />
+    <None Include="DB_Scripts\datafiles\customers.txt" />
+    <None Include="DB_Scripts\datafiles\employees.txt" />
+    <None Include="DB_Scripts\datafiles\offices.txt" />
+    <None Include="DB_Scripts\datafiles\orderdetails.txt" />
+    <None Include="DB_Scripts\datafiles\orders.txt" />
+    <None Include="DB_Scripts\datafiles\payments.txt" />
+    <None Include="DB_Scripts\datafiles\productlines.txt" />
+    <None Include="DB_Scripts\datafiles\products.txt" />
+    <None Include="DB_Scripts\datafiles\products_old.txt" />
+    <None Include="DB_Scripts\datafiles\securityquestions.txt" />
+    <None Include="DB_Scripts\products\.DS_Store" />
+    <None Include="App_Data\XmlInjectionUsers.xml" />
+    <None Include="DB_Scripts\create_webgoatcoins_sqlite3.sql" />
+  </ItemGroup>
+  <ItemGroup />
+</Project>

@@ -1,0 +1,24 @@
+﻿<asp:GridView runat="server" SkinID="GridView" AllowPaging="True" BorderWidth="1px" 
+BorderStyle="Solid" UseAccessibleHeader="False" AllowSorting="True" CssClass="GridView" AutoGenerateColumns="False">
+    <AlternatingRowStyle CssClass="AlternatingRowStyle" />
+    <FooterStyle CssClass="FooterStyle" />
+    <HeaderStyle CssClass="HeaderStyle" />
+    <PagerStyle CssClass="PagerStyle" />
+    <RowStyle CssClass="RowStyle" />
+
+    <PagerSettings Mode="NumericFirstLast" PageButtonCount="7" FirstPageText="«" LastPageText="»" />
+    <PagerStyle />
+    <EditRowStyle />
+    <EmptyDataRowStyle />
+    <EmptyDataTemplate>
+        <div class="notice">
+            Sorry, no data available.
+         </div>
+    </EmptyDataTemplate>
+</asp:GridView>
+
+<asp:Button runat="server" SkinID="Button" CssClass="button medium blue" />
+<asp:Button runat="server" SkinID="AltButton" CssClass="button medium gray" />
+
+<asp:LinkButton runat="server" SkinID="LinkButton" CssClass="button medium blue" />
+<asp:LinkButton runat="server" SkinID="AltLinkButton" CssClass="button medium gray" />

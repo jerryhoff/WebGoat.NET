@@ -1,0 +1,59 @@
+Unassigned:
+
+
++ Entity SQLi
++ NHibernate SQLi
++ LDAP injection (research the APIs / point to the APIs) 
++ Weak cryptographic cypher (mode & padding). 
+  * Find out the default behavior (mode & padding)
+  * Find out an example where we specify bad values
++ Using an insecure protocol (web client / http client) (weak ssl algo) 
++ Global error handling
++ Unpatched libraries 
+
+
+Harry:
+
++ Command Injection (DONE)
+  * Also part of automatic DB setup (DONE)
++ Create adaptor for switching out DBs (DONE)
+  * Amend Rebuild Page to easily switchout DBs (DONE)
++ Debugging leaks (DONE)
++ Insecure message digest (DONE)
++ Unsafe (DONE)
++ Not using SSL (DONE - already present when logging in)
++ Insecure random # gen (DONE)
++ Hard coded seed (For when using random functionality) (DONE)
++ Role manipulation (standard .net api for role (isInRole(request.getParameter("role"))) (WORKING)
+
+Ray:
+
++ LINQ SQLi
++ URL rewriting (e.g. session cookie in url. can rewrite) <-- might be an issue. Cookieless is sitewide and breaks site when set to true.
++ Basic Auth 
+
++ Hard coded salts, keys (Done)
++ XSS (Done)
++ Information disclosure (Done)
+  * Extra sensitive information that may go out (server that is running etc.)
++ Session id to the screen / log (Done) 
++ Trace (Done)
++ XPATH Injection (Done)
++ Header injection (Done)
++ Custom crypto (args have to use a byte array and do a bitwise operation) (Done)
++ Readline (denial of service) (Done)
++ Hard Code Passwords  (PWD in source code) (Done)
++ Denial Of Service (RegEx) (Done)
++ Httponly (cookie flag) (Done)
++ Secure (cookie flag) (Done)
++ XML Injection(Done)
++ Verb tampering (changing POST/GET etc. request to something different) (Done)
+
+
++ Session timeout (config setting) (Done)
++ Dir traversal (Done)
++ Cleartext passwords (commonly used config files) (in web.config) (Done)
++ Debugging enabled (Done)
++ Password disclosure to screen or to log (Done)
++ Unchecked redirects (already in there) (Done)
++ Unencrypted viewstate (Done)
