@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Management</name>
+    </assembly>
+    <members>
+        <member name="P:System.SR.InvalidQuery">
+            <summary>The Query string supplied was invalid or improperly formed</summary>
+        </member>
+        <member name="P:System.SR.InvalidQueryDuplicatedToken">
+            <summary>The Query string supplied was invalid because it contains a duplicate token</summary>
+        </member>
+        <member name="P:System.SR.InvalidQueryNullToken">
+            <summary>The Query string supplied was invalid because a supplied token was null</summary>
+        </member>
+        <member name="P:System.SR.WorkerThreadWakeupFailed">
+            <summary>Unable to wakeup the worker thread to create an object in MTA</summary>
+        </member>
+        <member name="P:System.SR.ClassNameNotInitializedException">
+            <summary>ClassName not initialized.</summary>
+        </member>
+        <member name="P:System.SR.ClassNameNotFoundException">
+            <summary>Class name does not match.</summary>
+        </member>
+        <member name="P:System.SR.CommentAttributeProperty">
+            <summary>Every property added to the class for WMI property has attributes set to define its behavior in Visual Studio designer and also to define a TypeConverter to be used.</summary>
+        </member>
+        <member name="P:System.SR.CommentAutoCommitProperty">
+            <summary>Property to show the commit behavior for the WMI object. If true, WMI object will be automatically saved after each property modification.(ie. Put() is called after modification of a property).</summary>
+        </member>
+        <member name="P:System.SR.CommentClassBegin">
+            <summary>An Early Bound class generated for the WMI class.</summary>
+        </member>
+        <member name="P:System.SR.CommentConstructors">
+            <summary>Below are different overloads of constructors to initialize an instance of the class with a WMI object.</summary>
+        </member>
+        <member name="P:System.SR.CommentCreatedClass">
+            <summary>Private property to hold the name of WMI class which created this class.</summary>
+        </member>
+        <member name="P:System.SR.CommentCreatedWmiNamespace">
+            <summary>Private property to hold the WMI namespace in which the class resides.</summary>
+        </member>
+        <member name="P:System.SR.CommentCurrentObject">
+            <summary>The current WMI object used</summary>
+        </member>
+        <member name="P:System.SR.CommentDateConversionFunction">
+            <summary>Datetime conversion functions ToDateTime and ToDmtfDateTime are added to the class to convert DMTF datetime to System.DateTime and vice-versa.</summary>
+        </member>
+        <member name="P:System.SR.CommentEmbeddedObject">
+            <summary>Private variable to hold the embedded property representing the instance.</summary>
+        </member>
+        <member name="P:System.SR.CommentEnumeratorImplementation">
+            <summary>Enumerator implementation for enumerating instances of the class.</summary>
+        </member>
+        <member name="P:System.SR.CommentFlagForEmbedded">
+            <summary>Flag to indicate if the instance is an embedded object.</summary>
+        </member>
+        <member name="P:System.SR.CommentGetInstances">
+            <summary>Different overloads of GetInstances() help in enumerating instances of the WMI class.</summary>
+        </member>
+        <member name="P:System.SR.CommentIsPropNull">
+            <summary>Functions Is&lt;PropertyName&gt;Null() are used to check if a property is NULL.</summary>
+        </member>
+        <member name="P:System.SR.CommentLateBoundObject">
+            <summary>Underlying lateBound WMI object.</summary>
+        </member>
+        <member name="P:System.SR.CommentLateBoundProperty">
+            <summary>Property returning the underlying lateBound object.</summary>
+        </member>
+        <member name="P:System.SR.CommentManagementPath">
+            <summary>The ManagementPath of the underlying WMI object.</summary>
+        </member>
+        <member name="P:System.SR.CommentManagementScope">
+            <summary>ManagementScope of the object.</summary>
+        </member>
+        <member name="P:System.SR.CommentOriginNamespace">
+            <summary>Property returns the namespace of the WMI class.</summary>
+        </member>
+        <member name="P:System.SR.CommentPrivateAutoCommit">
+            <summary>Member variable to store the 'automatic commit' behavior for the class.</summary>
+        </member>
+        <member name="P:System.SR.CommentPrototypeConverter">
+            <summary>TypeConverter to handle null values for ValueType properties</summary>
+        </member>
+        <member name="P:System.SR.CommentResetProperty">
+            <summary>Functions Reset&lt;PropertyName&gt; are added for Nullable Read/Write properties. These functions are used by VS designer in property browser to set a property to NULL.</summary>
+        </member>
+        <member name="P:System.SR.CommentShouldSerialize">
+            <summary>Functions ShouldSerialize&lt;PropertyName&gt; are functions used by VS property browser to check if a particular property has to be serialized. These functions are added for all ValueType properties ( properties of type Int32, BOOL etc.. which cannot be set to n ...</summary>
+        </member>
+        <member name="P:System.SR.CommentStaticManagementScope">
+            <summary>Private member variable to hold the ManagementScope which is used by the various methods.</summary>
+        </member>
+        <member name="P:System.SR.CommentStaticScopeProperty">
+            <summary>Public static scope property which is used by the various methods.</summary>
+        </member>
+        <member name="P:System.SR.CommentSystemObject">
+            <summary>Property pointing to an embedded object to get System properties of the WMI object.</summary>
+        </member>
+        <member name="P:System.SR.CommentSystemPropertiesClass">
+            <summary>Embedded class to represent WMI system Properties.</summary>
+        </member>
+        <member name="P:System.SR.CommentTimeSpanConvertionFunction">
+            <summary>Time interval functions  ToTimeSpan and ToDmtfTimeInterval are added to the class to convert DMTF Time Interval to  System.TimeSpan and vice-versa.</summary>
+        </member>
+        <member name="P:System.SR.CommentToDateTime">
+            <summary>Converts a given datetime in DMTF format to System.DateTime object.</summary>
+        </member>
+        <member name="P:System.SR.CommentToDmtfDateTime">
+            <summary>Converts a given System.DateTime object to DMTF datetime format.</summary>
+        </member>
+        <member name="P:System.SR.CommentToDmtfTimeInterval">
+            <summary>Converts a given System.TimeSpan object to DMTF Time interval format.</summary>
+        </member>
+        <member name="P:System.SR.CommentToTimeSpan">
+            <summary>Converts a given time interval in DMTF format to System.TimeSpan object.</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment">
+            <summary>If the embedded property is strongly typed then, to strongly type the property to the type of</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment2">
+            <summary>the embedded object, you have to do the following things.</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment3">
+            <summary>\t1. Generate Managed class for the WMI class of the embedded property. This can be done with MgmtClassGen.exe tool or from Server Explorer.</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment4">
+            <summary>\t2. Include the namespace of the generated class.</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment5">
+            <summary>\t3. Change the property get/set functions so as return the instance of the Managed class.</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment6">
+            <summary>Below is a sample code.</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment7">
+            <summary>VB Code</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedComment8">
+            <summary>C# Code</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment1">
+            <summary>public &lt;ManagedClassName of Embedded property&gt; &lt;PropertyName&gt;</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment10">
+            <summary>\t\tIf (AutoCommitProp == true &amp;&amp; isEmbedded == false)</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment11">
+            <summary>\t\t{</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment12">
+            <summary>\t\t\tPrivateLateBoundObject.Put();</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment13">
+            <summary>\t\t}</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment14">
+            <summary>\t}</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment15">
+            <summary>}</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment2">
+            <summary>{</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment3">
+            <summary>\tget</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment4">
+            <summary>\t{</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment5">
+            <summary>\t\treturn new &lt;ManagedClassName of Embedded property&gt;((System.Management.ManagementBaseObject)(curObj["&lt;PropertyName&gt;"]));</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment6">
+            <summary>\t}</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment7">
+            <summary>\tset</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment8">
+            <summary>\t{</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedCSharpComment9">
+            <summary>\t\tcurObj["&lt;PropertyName&gt;"] = value.LateBoundObject;</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment1">
+            <summary>Public Property &lt;PropertyName&gt;() As &lt;ManagedClassName of Embedded property&gt;</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment10">
+            <summary>\tEnd Set</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment2">
+            <summary>\tGet</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment3">
+            <summary>\t\tReturn New &lt;ManagedClassName of Embedded Property&gt;(CType(curObj("&lt;PropertyName&gt;"),System.Management.ManagementBaseObject))</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment4">
+            <summary>\tEnd Get</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment5">
+            <summary>\tSet(ByVal Value As &lt;ManagedClassName of Embedded property&gt;)</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment6">
+            <summary>\t\tcurObj("EObject")=Value.LateBoundObject</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment7">
+            <summary>\t\tIf (AutoCommitProp = True And isEmbedded = False) Then</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment8">
+            <summary>\t\t\tPrivateLateBoundObject.Put()</summary>
+        </member>
+        <member name="P:System.SR.EmbeddedVisualBasicComment9">
+            <summary>\t\tEnd If</summary>
+        </member>
+        <member name="P:System.SR.EmptyFilePathException">
+            <summary>FilePath cannot be empty.</summary>
+        </member>
+        <member name="P:System.SR.NamespaceNotInitializedException">
+            <summary>Namespace not initialized.</summary>
+        </member>
+        <member name="P:System.SR.NullFilePathException">
+            <summary>FilePath or code generator object is null.</summary>
+        </member>
+        <member name="P:System.SR.UnableToCreateCodeGeneratorException">
+            <summary>Unable to create code generator for '{0}'</summary>
+        </member>
+        <member name="P:System.SR.PlatformNotSupported_SystemManagement">
+            <summary>System.Management currently is only supported for Windows desktop applications.</summary>
+        </member>
+        <member name="P:System.SR.PlatformNotSupported_FullFrameworkRequired">
+            <summary>Could not find an installation of .NET Framework v4.0.30319. System.Management requires native modules from the .NET Framework to operate.</summary>
+        </member>
+        <member name="P:System.SR.LoadLibraryFailed">
+            <summary>Failed to load required native library '{0}'.</summary>
+        </member>
+        <member name="P:System.SR.PlatformNotSupported_FrameworkUpdatedRequired">
+            <summary>The native library '{0}' does not have all required functions. Please, update the .NET Framework.</summary>
+        </member>
+        <member name="P:System.SR.InvalidQueryTokenExpected">
+            <summary>The Query string supplied was invalid or improperly formed. Token `{0}` is expected</summary>
+        </member>
+        <member name="T:System.Runtime.Versioning.OSPlatformAttribute">
+            <summary>
+            Base type for all platform-specific API attributes.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.Versioning.TargetPlatformAttribute">
+            <summary>
+            Records the platform that the project targeted.
+            </summary>
+        </member>
+        <member name="T:System.Runtime.Versioning.SupportedOSPlatformAttribute">
+             <summary>
+             Records the operating system (and minimum version) that supports an API. Multiple attributes can be
+             applied to indicate support on multiple operating systems.
+             </summary>
+             <remarks>
+             Callers can apply a <see cref="T:System.Runtime.Versioning.SupportedOSPlatformAttribute" />
+             or use guards to prevent calls to APIs on unsupported operating systems.
+            
+             A given platform should only be specified once.
+             </remarks>
+        </member>
+        <member name="T:System.Runtime.Versioning.UnsupportedOSPlatformAttribute">
+            <summary>
+            Marks APIs that were removed in a given operating system version.
+            </summary>
+            <remarks>
+            Primarily used by OS bindings to indicate APIs that are only available in
+            earlier versions.
+            </remarks>
+        </member>
+        <member name="T:System.Runtime.Versioning.SupportedOSPlatformGuardAttribute">
+             <summary>
+             Annotates a custom guard field, property or method with a supported platform name and optional version.
+             Multiple attributes can be applied to indicate guard for multiple supported platforms.
+             </summary>
+             <remarks>
+             Callers can apply a <see cref="T:System.Runtime.Versioning.SupportedOSPlatformGuardAttribute" /> to a field, property or method
+             and use that field, property or method in a conditional or assert statements in order to safely call platform specific APIs.
+            
+             The type of the field or property should be boolean, the method return type should be boolean in order to be used as platform guard.
+             </remarks>
+        </member>
+        <member name="T:System.Runtime.Versioning.UnsupportedOSPlatformGuardAttribute">
+             <summary>
+             Annotates the custom guard field, property or method with an unsupported platform name and optional version.
+             Multiple attributes can be applied to indicate guard for multiple unsupported platforms.
+             </summary>
+             <remarks>
+             Callers can apply a <see cref="T:System.Runtime.Versioning.UnsupportedOSPlatformGuardAttribute" /> to a field, property or method
+             and use that  field, property or method in a conditional or assert statements as a guard to safely call APIs unsupported on those platforms.
+            
+             The type of the field or property should be boolean, the method return type should be boolean in order to be used as platform guard.
+             </remarks>
+        </member>
+    </members>
+</doc>

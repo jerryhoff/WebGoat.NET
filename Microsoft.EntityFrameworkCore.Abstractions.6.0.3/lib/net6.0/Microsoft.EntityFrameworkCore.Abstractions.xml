@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.EntityFrameworkCore.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.EntityFrameworkCore.BackingFieldAttribute">
+            <summary>
+                Names the backing field associated with this property or navigation property.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.BackingFieldAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.BackingFieldAttribute" /> class.
+            </summary>
+            <param name="name">The name of the backing field.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.BackingFieldAttribute.Name">
+            <summary>
+                The name of the backing field.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.#ctor(System.Collections.Generic.ICollection{`0})">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.AddNewCore">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.CancelNew(System.Int32)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.ClearItems">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.EndNew(System.Int32)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.InsertItem(System.Int32,`0)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.RemoveItem(System.Int32)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ObservableBackedBindingList`1.SetItem(System.Int32,`0)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.#ctor(System.Collections.Generic.List{`0})">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.ApplySortCore(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.RemoveSortCore">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.IsSortedCore">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.SortDirectionCore">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.SortPropertyCore">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.ChangeTracking.Internal.SortableBindingList`1.SupportsSortingCore">
+            <summary>
+                This is an internal API that supports the Entity Framework Core infrastructure and not subject to
+                the same compatibility standards as public APIs. It may be changed or removed without notice in
+                any release. You should only use it directly in your code with extreme caution and knowing that
+                doing so can result in application failures when updating to a new Entity Framework Core release.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1">
+            <summary>
+                <para>
+                    Extends <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" /> and adds an explicit implementation of <see cref="T:System.ComponentModel.IListSource" />.
+                </para>
+                <para>
+                    The method <see cref="M:System.ComponentModel.IListSource.GetList" /> is implemented to return an <see cref="T:System.ComponentModel.IBindingList" />
+                    implementation that stays in sync with the ObservableCollection.
+                </para>
+                <para>
+                    This class can be used to implement navigation properties on entities for use in Windows Forms data binding.
+                    For WPF data binding use an ObservableCollection rather than an instance of this class.
+                </para>
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-local-views">Local views of tracked entities in EF Core</see> for more information.
+            </remarks>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1" /> class that
+                contains elements copied from the specified collection.
+            </summary>
+            <param name="collection">The collection from which the elements are copied.</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1.#ctor(System.Collections.Generic.List{`0})">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1" /> class that
+                contains elements copied from the specified list.
+            </summary>
+            <param name="list">The list from which the elements are copied.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1.System#ComponentModel#IListSource#ContainsListCollection">
+            <summary>
+                Always false because there is never a contained collection.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ChangeTracking.ObservableCollectionListSource`1.System#ComponentModel#IListSource#GetList">
+            <summary>
+                Returns an <see cref="T:System.ComponentModel.IBindingList" /> implementation that stays in sync with
+                this <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />. The returned list is cached on this object
+                such that the same list is returned each time this method is called.
+            </summary>
+            <returns>
+                An <see cref="T:System.ComponentModel.IBindingList" /> in sync with the ObservableCollection.
+            </returns>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.CommentAttribute">
+            <summary>
+                Marks a class, property or field with a comment to be set on the corresponding database table or column.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.CommentAttribute.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.CommentAttribute" /> class.
+            </summary>
+            <param name="comment">The comment.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.CommentAttribute.Comment">
+            <summary>
+                The comment to be configured.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.DbFunctionAttribute">
+            <summary>
+                Maps a static CLR method to a database function so that the CLR method may be used in LINQ queries.
+                By convention uses the .NET method name as name of the database function and the default schema.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-database-functions">Database functions</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbFunctionAttribute.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.DbFunctionAttribute" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbFunctionAttribute.#ctor(System.String,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.DbFunctionAttribute" /> class.
+            </summary>
+            <param name="name">The name of the function in the database.</param>
+            <param name="schema">The schema of the function in the database.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.DbFunctionAttribute.Name">
+            <summary>
+                The name of the function in the database.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.DbFunctionAttribute.Schema">
+            <summary>
+                The schema of the function in the database.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.DbFunctionAttribute.IsBuiltIn">
+            <summary>
+                The value indicating whether the database function is built-in or not.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.DbFunctionAttribute.IsNullable">
+            <summary>
+                The value indicating whether the database function can return null result or not.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.DbFunctionAttribute.IsNullableHasValue">
+            <summary>
+                Checks whether <see cref="P:Microsoft.EntityFrameworkCore.DbFunctionAttribute.IsNullable" /> has been explicitly set to a value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.EntityTypeConfigurationAttribute">
+            <summary>
+                Specifies the configuration type for the entity type.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.EntityTypeConfigurationAttribute.#ctor(System.Type)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.EntityTypeConfigurationAttribute" /> class.
+            </summary>
+            <param name="entityConfigurationType">The IEntityTypeConfiguration&lt;&gt; type to use.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.EntityTypeConfigurationAttribute.EntityTypeConfigurationType">
+            <summary>
+                Type of the entity type configuration.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.IndexAttribute">
+            <summary>
+                Specifies an index to be generated in the database.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.IndexAttribute.#ctor(System.String[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.IndexAttribute" /> class.
+            </summary>
+            <param name="propertyNames">The properties which constitute the index, in order (there must be at least one).</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.IndexAttribute.PropertyNames">
+            <summary>
+                The properties which constitute the index, in order.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.IndexAttribute.Name">
+            <summary>
+                The name of the index.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.IndexAttribute.IsUnique">
+            <summary>
+                Whether the index is unique.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.IndexAttribute.IsUniqueHasValue">
+            <summary>
+                Checks whether <see cref="P:Microsoft.EntityFrameworkCore.IndexAttribute.IsUnique" /> has been explicitly set to a value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader">
+            <summary>
+                <para>
+                    A service that can be injected into entities to give them the capability
+                    of loading navigation properties automatically the first time they are accessed.
+                </para>
+                <para>
+                    The service lifetime is 'ServiceLifetime.Transient'. This means that each
+                    entity instance will use its own instance of this service.
+                    The implementation may depend on other services registered with any lifetime.
+                    The implementation does not need to be thread-safe.
+                </para>
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-lazy-loading">Lazy loading</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader.SetLoaded(System.Object,System.String,System.Boolean)">
+            <summary>
+                Sets the given navigation as known to be completely loaded or known to be
+                no longer completely loaded.
+            </summary>
+            <param name="entity">The entity on which the navigation property is located.</param>
+            <param name="navigationName">The navigation property name.</param>
+            <param name="loaded">Determines whether the navigation is set as loaded or not.</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader.Load(System.Object,System.String)">
+            <summary>
+                Loads a navigation property if it has not already been loaded.
+            </summary>
+            <param name="entity">The entity on which the navigation property is located.</param>
+            <param name="navigationName">The navigation property name.</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader.LoadAsync(System.Object,System.Threading.CancellationToken,System.String)">
+            <summary>
+                Loads a navigation property if it has not already been loaded.
+            </summary>
+            <param name="entity">The entity on which the navigation property is located.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.</param>
+            <param name="navigationName">The navigation property name.</param>
+            <returns>A task that represents the asynchronous operation.</returns>
+            <exception cref="T:System.OperationCanceledException">If the <see cref="T:System.Threading.CancellationToken" /> is canceled.</exception>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.Infrastructure.LazyLoaderExtensions">
+            <summary>
+                Extension methods for the <see cref="T:Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader" /> service that make it more
+                convenient to use from entity classes.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-lazy-loading">Lazy loading</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Infrastructure.LazyLoaderExtensions.Load``1(Microsoft.EntityFrameworkCore.Infrastructure.ILazyLoader,System.Object,``0@,System.String)">
+            <summary>
+                Loads a navigation property if it has not already been loaded.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-lazy-loading">Lazy loading</see> for more information.
+            </remarks>
+            <typeparam name="TRelated">The type of the navigation property.</typeparam>
+            <param name="loader">The loader instance, which may be <see langword="null" />.</param>
+            <param name="entity">The entity on which the navigation property is located.</param>
+            <param name="navigationField">A reference to the backing field for the navigation.</param>
+            <param name="navigationName">The navigation property name.</param>
+            <returns>
+                The loaded navigation property value, or the navigation property value unchanged if the loader is <see langword="null" />.
+            </returns>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.KeylessAttribute">
+            <summary>
+                Marks a type as keyless entity.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.ObservableCollectionExtensions">
+            <summary>
+                Extension methods for <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-local-views">Local views of tracked entities in EF Core</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ObservableCollectionExtensions.ToBindingList``1(System.Collections.ObjectModel.ObservableCollection{``0})">
+            <summary>
+                Returns a <see cref="T:System.ComponentModel.BindingList`1" /> implementation that stays in sync with the given
+                <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />.
+            </summary>
+            <typeparam name="T">The element type.</typeparam>
+            <param name="source">The collection that the binding list will stay in sync with.</param>
+            <returns>The binding list.</returns>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.OwnedAttribute">
+            <summary>
+                Marks a type as owned. All references to this type will be configured as owned entity types.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.PrecisionAttribute">
+            <summary>
+                Configures the precision of data that is allowed in this property.
+                For example, if the property is a <see cref="T:System.Decimal" />
+                then this is the maximum number of digits.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.PrecisionAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.PrecisionAttribute" /> class.
+            </summary>
+            <param name="precision">The precision of the property.</param>
+            <param name="scale">The scale of the property.</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.PrecisionAttribute.#ctor(System.Int32)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.PrecisionAttribute" /> class.
+            </summary>
+            <param name="precision">The precision of the property.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.PrecisionAttribute.Precision">
+            <summary>
+                The precision of the property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.PrecisionAttribute.Scale">
+            <summary>
+                The scale of the property.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings">
+            <summary>
+                <para>
+            	    String resources used in EF exceptions, etc.
+                </para>
+                <para>
+            	    These strings are exposed publicly for use by database providers and extensions.
+                    It is unusual for application code to need these strings.
+                </para>
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.ArgumentIsEmpty(System.Object)">
+            <summary>
+                The string argument '{argumentName}' cannot be empty.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.ArgumentIsNegativeNumber(System.Object)">
+            <summary>
+                The number argument '{argumentName}' cannot be negative number.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.CollectionArgumentHasEmptyElements(System.Object)">
+            <summary>
+                The collection argument '{argumentName}' must not contain any empty elements.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Diagnostics.AbstractionsStrings.CollectionArgumentIsEmpty(System.Object)">
+            <summary>
+                The collection argument '{argumentName}' must contain at least one element.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.Query.NotParameterizedAttribute">
+            <summary>
+                Signals that custom LINQ operator parameter should not be parameterized during query compilation.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-query">Querying data with EF Core</see> for more information.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.UnicodeAttribute">
+            <summary>
+                Configures the property as capable of persisting unicode characters.
+            </summary>
+            <remarks>
+                See <see href="https://aka.ms/efcore-docs-modeling">Modeling entity types and relationships</see> for more information.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.UnicodeAttribute.#ctor(System.Boolean)">
+            <summary>
+                Initializes a new instance of the <see cref="T:Microsoft.EntityFrameworkCore.UnicodeAttribute" /> class.
+            </summary>
+            <param name="unicode">A value indicating whether the property can contain unicode characters or not.</param>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.UnicodeAttribute.IsUnicode">
+            <summary>
+                A value indicating whether the property can contain unicode characters or not.
+            </summary>
+        </member>
+    </members>
+</doc>
