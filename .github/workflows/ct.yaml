@@ -29,6 +29,6 @@ jobs:
             FAILED_ARGS: |
                  - max_number_of_critical: 500
                  - max_number_of_high: 500
-                 - weakness_is: ""
+                 - weakness_is: ".*abcd"
                  - condition: 'OR'
                  - automerge: true
