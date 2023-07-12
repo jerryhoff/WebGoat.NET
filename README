@@ -61,4 +61,4 @@ How to build and run under Windows:
      and 'Data File Path' are not necessary for MySql so you can leave
      them empty.
   4. Click on 'Test Configuration', followed by 'Rebuild Database' and
-     hopefully you should be good go! Enjoy your hackathon!>
+     hopefully you should be good go! Enjoy your hackathon!>.
