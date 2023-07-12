@@ -17,13 +17,14 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
       - name: CodeThreat Scanner
-        uses: CodeThreat/codethreat-scan-action@v1.0.9
+        uses: CodeThreat/codethreat-scan-action@v1.0.12
         env:
            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
            CT_SERVER: ${{ secrets.CT_SERVER }}
            USERNAME: ${{ secrets.USERNAME }}
            PASSWORD: ${{ secrets.PASSWORD }}
+           ORGNAME: ${{ secrets.ORGNAME }}
         with: 
             FAILED_ARGS: |
                  - max_number_of_critical: 500
