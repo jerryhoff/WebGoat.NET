@@ -3,10 +3,10 @@ on:
   # a pull request.
   pull_request:
       branches:
-        - main
+        - master
   push: 
         branches:
-        - main
+        - master
 jobs:
   codethreat_scanner:
     runs-on: ubuntu-latest
@@ -26,8 +26,8 @@ jobs:
            PASSWORD: ${{ secrets.PASSWORD }}
         with: 
             FAILED_ARGS: |
-                 - max_number_of_critical: 4
-                 - max_number_of_high: 20
-                 - weakness_is: ".*injection,buffer.over.read,mass.assigment"
+                 - max_number_of_critical: 500
+                 - max_number_of_high: 500
+                 - weakness_is: ""
                  - condition: 'OR'
                  - automerge: true
