@@ -1,0 +1,33 @@
+on:
+  # Trigger scan when pushing in master or pull requests, and when creating
+  # a pull request.
+  pull_request:
+      branches:
+        - main
+  push: 
+        branches:
+        - main
+jobs:
+  codethreat_scanner:
+    runs-on: ubuntu-latest
+    name: Codethreat Github Actions
+    steps:
+      - name: Check Out Source Code
+        uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+      - name: CodeThreat Scanner
+        uses: CodeThreat/codethreat-scan-action@v1.0.9
+        env:
+           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           CT_SERVER: ${{ secrets.CT_SERVER }}
+           USERNAME: ${{ secrets.USERNAME }}
+           PASSWORD: ${{ secrets.PASSWORD }}
+        with: 
+            FAILED_ARGS: |
+                 - max_number_of_critical: 4
+                 - max_number_of_high: 20
+                 - weakness_is: ".*injection,buffer.over.read,mass.assigment"
+                 - condition: 'OR'
+                 - automerge: true
